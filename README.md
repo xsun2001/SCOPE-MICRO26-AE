@@ -54,19 +54,19 @@ Every experiment stores bundled measurements under `actual-results/<validated-ru
 
 ## Expected runtimes
 
-These reference times exclude initial dependency, model, and dataset downloads and any Slurm queue delay. The CPU reference host is a dual-socket AMD EPYC 9654 machine, but `JOBS=8` restricts the artifact to eight workers. GPU times use one NVIDIA H100 80 GB (Hopper); the parenthesized values show expected wall time with the documented 15-worker Slurm execution, where every worker has one H100.
+These reference times exclude initial dependency, model, and dataset downloads and any Slurm queue delay. The CPU reference host is a dual-socket AMD EPYC 9654 machine, but `JOBS=8` restricts the artifact to eight workers. GPU-hours are measured H100 allocation or task times; wall times are shown only where directly available. Figure 16 used 16 one-GPU workers, while the documented Table 5 workflow uses up to 15.
 
 | Scope | Reference time |
 | --- | ---: |
 | `make evidence && make validate` | about 15 seconds on the reference CPU |
 | `make reproduce-cpu` | 37 minutes measured with `JOBS=8` |
-| Figure 16 | about 16--24 GPU-hours (about 2--4 hours with 15 H100 GPUs) |
-| Figure 17 | about 12--18 GPU-hours (about 1--2 hours with 15 H100 GPUs) |
-| Figure 20 | about 6--10 GPU-hours (about 0.5--1 hour with 15 H100 GPUs) |
+| Figure 16 | 18.80 GPU-hours measured (2:26:32 wall time with 16 H100 GPUs) |
+| Figure 17 | 25.74 GPU-hours measured for its 36 required tasks |
+| Figure 20 | 12.51 GPU-hours measured for its 18 required tasks |
 | Table 5 | 14.6 GPU-hours measured (about 3 hours with 15 H100 GPUs) |
-| Complete GPU suite | about 49--67 GPU-hours (about 7--10 hours with 15 H100 GPUs) |
+| Complete GPU suite | 71.66 GPU-hours when targets run separately; 65.37 with Figure 17/20 overlap reused |
 
-The CPU measurement came from a clean extracted bundle with the Python and sbt dependency caches already populated; Figure 13 accounts for about 33 of the 37 minutes. Allow additional time for `make setup` and a cold sbt cache. Only Table 5 has complete per-job timestamps in the portable bundle; the other GPU ranges are conservative planning estimates from the run matrices and observed 7B-model workload. On another CPU or GPU generation, use the reference times as planning baselines rather than assuming exact linear scaling from core count or peak FLOP/s.
+The CPU measurement came from a clean extracted bundle with the Python and sbt dependency caches already populated; Figure 13 accounts for about 33 of the 37 minutes. Allow additional time for `make setup` and a cold sbt cache. Figure 16 comes from Slurm accounting for job `410219`. Figures 17 and 20 are required-task sums extracted from timestamped worker logs and Slurm allocation boundaries for shared job `410238`; their task sets overlap by nine runs totaling 6.29 GPU-hours. The original 72-task shared sweep consumed 51.33 GPU-hours and 3:51:36 wall time with 16 H100 GPUs, but included 27 runs outside both artifact targets. Because the two required subsets were not scheduled separately, they have no directly measured standalone wall times. Table 5 comes from the included job timestamps. On another CPU or GPU generation, use these measurements as planning baselines rather than assuming exact linear scaling from core count or peak FLOP/s.
 
 ## Shared source layout
 
