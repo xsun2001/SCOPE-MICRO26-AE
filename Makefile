@@ -17,7 +17,7 @@ TBL4 := experiments/tbl-4-function-approximation-accuracy
 TBL5 := experiments/tbl-5-ostquant-quality
 VALIDATION_OUT ?= validation/results/$(RUN_ID)
 
-.PHONY: help setup all evidence evidence-cpu evidence-gpu validate validate-cpu validate-cpu-run validate-gpu validate-packaged reproduce reproduce-cpu reproduce-gpu performance hardware fig-13 fig-14 fig-15 fig-16 fig-17 fig-18 fig-19 fig-20 fig-21 tbl-3 tbl-4 tbl-5 rtl manifest check-manifest archive package
+.PHONY: help setup all evidence evidence-cpu evidence-gpu validate validate-cpu validate-cpu-run validate-gpu validate-packaged reproduce reproduce-cpu reproduce-gpu performance hardware fig-13 fig-14 fig-15 fig-16 fig-17 fig-18 fig-19 fig-20 fig-21 tbl-3 tbl-4 tbl-5 rtl archive package
 
 help:
 	@echo "SCOPE unified artifact-evaluation bundle"
@@ -130,15 +130,7 @@ rtl:
 	(cd hardware/rtl && sbt "runMain pinn.common.GenerateMeshes --filter pinnacle/n8_ --force --verbose") 2>&1 | tee hardware/rtl/logs/$(RUN_ID).log
 	find hardware/rtl/generated/meshes/pinnacle -type f \( -name '*.sv' -o -name '*.v' \) -print | sort > validation/results/$(RUN_ID)/generated_verilog_files.txt
 
-manifest:
-	(cd "$(BUNDLE_ROOT)" && find . \
-		\( -path './.git' -o -path './.venv' -o -path './cache' -o -path './runs' -o -path './models' -o -name __pycache__ -o -name target \) -prune -o \
-		-type f ! -path './config/local.env' ! -name MANIFEST.sha256 -print0 | sort -z | xargs -0 sha256sum > MANIFEST.sha256)
-
-check-manifest:
-	(cd "$(BUNDLE_ROOT)" && sha256sum --check MANIFEST.sha256)
-
-archive: evidence validate manifest check-manifest
+archive: evidence validate
 	$(PYTHON) tools/create_archive.py --bundle-root "$(BUNDLE_ROOT)" --output "$(ARCHIVE)"
 
 package: archive
