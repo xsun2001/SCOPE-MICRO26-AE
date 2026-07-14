@@ -61,7 +61,6 @@ Every experiment stores bundled measurements under `actual-results/<validated-ru
 - `validation/`: CPU paper-value and report validation.
 - `tools/`: unified GPU evidence validation and archive creation.
 - `PAPER_RESULTS.md`: paper-to-artifact result map.
-- `MANIFEST.sha256`: checksums for the portable bundle.
 
 ## Correct experiment semantics
 
