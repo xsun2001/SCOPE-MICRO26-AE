@@ -22,6 +22,8 @@ For direct execution on an already allocated GPU:
 make reproduce EXECUTOR=local WORKERS=1
 ```
 
+A fresh run needs an NVIDIA CUDA GPU from the Ampere generation or newer with at least 80 GB of device memory. H100 80 GB (Hopper) is the validated reference, not a device lock; an A100 80 GB (Ampere), H100/H200 (Hopper), or B100/B200 (Blackwell) is suitable with a compatible PyTorch/CUDA installation. The included timestamps measure 14.6 total GPU-hours on H100: 7.6 hours for exact-checkpoint preparation, 0.7 hours for quantized-checkpoint generation, and 6.3 hours for the evaluations. The documented 15-worker Slurm execution (one H100 per worker) takes about 3 hours of wall time, excluding downloads and queue delay.
+
 To reuse expensive intermediates, set `TABLE5_CHECKPOINT_SOURCE` to a directory containing the four `exact_*_sdpa` and four `qmodel_*_sdpa` folders. If it is empty, the Makefile regenerates them from the model weights before the sixteen evaluations.
 
 Only results from the corrected `2026-06-12_140246_corrected_protocol` lineage and the fresh 2026-07-13/14 rerun are included. Older eager-attention runs had a causal-mask alignment bug and are deliberately excluded. The paper-aligned rows use full-precision SCNA inputs (`scna_input_quant_bits=0`) on top of the W6A6/W4A4 OSTQuant backbone.

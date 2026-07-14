@@ -33,6 +33,8 @@ make reproduce-gpu                 # Slurm by default
 make reproduce-gpu EXECUTOR=local WORKERS=1  # already allocated GPU
 ```
 
+Fresh GPU runs require an NVIDIA CUDA GPU from the Ampere generation or newer. The validated reference is an 80 GB H100 (Hopper), but H100 is not an architectural requirement: A100 80 GB (Ampere), H100/H200 (Hopper), and B100/B200 (Blackwell) are suitable when the installed PyTorch/CUDA stack supports the device. Figure 16 and Table 5 should be given at least 80 GB of device memory; Figures 17 and 20 need at least 16 GB. The memory thresholds, rather than the H100 model name, are the relevant limits.
+
 Run both suites with `make reproduce`. Table 4 remains evidence-only because the shared evaluation grid and raw common-protocol baseline outputs are unavailable.
 
 ## Experiment index
@@ -42,13 +44,29 @@ Run both suites with `make reproduce`. Table 4 remains evidence-only because the
 | Table 3 | `experiments/tbl-3-integer-softmax` | CPU |
 | Figures 13, 14, 15, 21 | matching `experiments/fig-*` directories | CPU |
 | Figures 18 and 19 | matching `experiments/fig-*` directories | report extraction/calculation on CPU |
-| Figure 16 | `experiments/fig-16-end-to-end-quality` | NVIDIA GPU |
-| Figure 17 | `experiments/fig-17-neuron-scalability` | CUDA GPU |
-| Figure 20 | `experiments/fig-20-shape-constraints` | CUDA GPU |
-| Table 5 | `experiments/tbl-5-ostquant-quality` | NVIDIA H100-class GPU |
+| Figure 16 | `experiments/fig-16-end-to-end-quality` | NVIDIA CUDA GPU (Ampere or newer), 80 GB or more |
+| Figure 17 | `experiments/fig-17-neuron-scalability` | NVIDIA CUDA GPU (Ampere or newer), 16 GB or more |
+| Figure 20 | `experiments/fig-20-shape-constraints` | NVIDIA CUDA GPU (Ampere or newer), 16 GB or more |
+| Table 5 | `experiments/tbl-5-ostquant-quality` | NVIDIA CUDA GPU (Ampere or newer), 80 GB or more |
 | Table 4 | `experiments/tbl-4-function-approximation-accuracy` | evidence-only |
 
 Every experiment stores bundled measurements under `actual-results/<validated-run>/` and paper targets under `expected-results/`. Fresh CPU runs use the same timestamped experiment directories. Fresh GPU runs are written under the ignored `runs/<RUN_ID>/` tree because Table 5 intermediates can exceed 60 GB.
+
+## Expected runtimes
+
+These reference times exclude initial dependency, model, and dataset downloads and any Slurm queue delay. The CPU reference host is a dual-socket AMD EPYC 9654 machine, but `JOBS=8` restricts the artifact to eight workers. GPU times use one NVIDIA H100 80 GB (Hopper); the parenthesized values show expected wall time with the documented 15-worker Slurm execution, where every worker has one H100.
+
+| Scope | Reference time |
+| --- | ---: |
+| `make evidence && make validate` | about 15 seconds on the reference CPU |
+| `make reproduce-cpu` | 37 minutes measured with `JOBS=8` |
+| Figure 16 | about 16--24 GPU-hours (about 2--4 hours with 15 H100 GPUs) |
+| Figure 17 | about 12--18 GPU-hours (about 1--2 hours with 15 H100 GPUs) |
+| Figure 20 | about 6--10 GPU-hours (about 0.5--1 hour with 15 H100 GPUs) |
+| Table 5 | 14.6 GPU-hours measured (about 3 hours with 15 H100 GPUs) |
+| Complete GPU suite | about 49--67 GPU-hours (about 7--10 hours with 15 H100 GPUs) |
+
+The CPU measurement came from a clean extracted bundle with the Python and sbt dependency caches already populated; Figure 13 accounts for about 33 of the 37 minutes. Allow additional time for `make setup` and a cold sbt cache. Only Table 5 has complete per-job timestamps in the portable bundle; the other GPU ranges are conservative planning estimates from the run matrices and observed 7B-model workload. On another CPU or GPU generation, use the reference times as planning baselines rather than assuming exact linear scaling from core count or peak FLOP/s.
 
 ## Shared source layout
 

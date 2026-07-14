@@ -10,4 +10,6 @@ This directory contains only the 36 shape-constrained runs used for the 4/8/16/3
 
 Run through Slurm with `make reproduce`, or directly on an allocated GPU with `make reproduce EXECUTOR=local WORKERS=1`. Use `make evidence` to recollect all 36 best-MSE comparisons from the bundled summaries and regenerate `actual-results/2026-07-13_ae-validation/generated/figure17.{png,pdf}` from the bundled raw histories without a GPU.
 
+A fresh run needs an NVIDIA CUDA GPU from the Ampere generation or newer with at least 16 GB of device memory. H100 80 GB (Hopper) is the validated reference, but A100 (Ampere), H100/H200 (Hopper), and B100/B200 (Blackwell) devices are also suitable with a compatible PyTorch/CUDA installation. Budget about 12--18 GPU-hours on one H100, or about 1--2 hours of wall time with the documented 15-worker Slurm execution (one H100 per worker), excluding environment setup and queue delay. This is a conservative planning estimate for the 36 training jobs.
+
 The fresh run matched 36/36 constrained best-MSE values. Its 32-vs-4 gain range is 97.2×–2837.8×. The paper prose says 32 neurons are lowest in every case; the saved Exp sweep instead has width 16 at `5.52e-9` versus width 32 at `1.35e-8`. The bundle preserves the saved data and does not conceal that exception.
