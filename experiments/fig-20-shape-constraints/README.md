@@ -10,4 +10,6 @@ This directory contains only the 18 width-16 runs used by the ablation: nine sha
 
 Run through Slurm with `make reproduce`, or on an already allocated GPU with `make reproduce EXECUTOR=local WORKERS=1`. Use `make evidence` to recollect all 18 best-MSE comparisons from the bundled summaries and regenerate `actual-results/2026-07-13_ae-validation/generated/figure20.{png,pdf}` from the bundled raw histories without a GPU.
 
+A fresh run needs an NVIDIA CUDA GPU from the Ampere generation or newer with at least 16 GB of device memory. H100 80 GB (Hopper) is the validated reference, but A100 (Ampere), H100/H200 (Hopper), and B100/B200 (Blackwell) devices are also suitable with a compatible PyTorch/CUDA installation. Budget about 6--10 GPU-hours on one H100, or about 0.5--1 hour of wall time with the documented 15-worker Slurm execution (one H100 per worker), excluding environment setup and queue delay. This is a conservative planning estimate for the 18 training jobs.
+
 The fresh run matched 18/18 best-MSE values and reproduced the 47.1×–2264.3× improvement range.

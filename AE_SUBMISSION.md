@@ -35,13 +35,15 @@ Fresh CPU and GPU execution is separated into `make reproduce-cpu` and `make rep
 | --- | --- | ---: | ---: | ---: |
 | Bundled evidence and result validation | None | 2 cores | 8 GB | 5 GB plus dependency caches |
 | Fresh CPU performance, report analysis, and RTL | None | 8 cores | 16 GB | 20 GB |
-| Fresh Figure 16 | 1 NVIDIA H100 80 GB | 8 cores | 96 GB | Model and dataset caches |
-| Fresh Table 5 | 1 NVIDIA H100 80 GB | 8 cores | 192 GB | About 200 GB including models and approximately 60 GB of generated intermediates |
-| Fresh Figures 17 and 20 | 1 CUDA-capable NVIDIA GPU | 8 cores | 16 GB | Less than 10 GB beyond the environment |
+| Fresh Figure 16 | 1 NVIDIA CUDA GPU (Ampere or newer) with at least 80 GB | 8 cores | 96 GB | Model and dataset caches |
+| Fresh Table 5 | 1 NVIDIA CUDA GPU (Ampere or newer) with at least 80 GB | 8 cores | 192 GB | About 200 GB including models and approximately 60 GB of generated intermediates |
+| Fresh Figures 17 and 20 | 1 NVIDIA CUDA GPU (Ampere or newer) with at least 16 GB | 8 cores | 16 GB | Less than 10 GB beyond the environment |
 
-A 32-core CPU host with 64 GB memory is recommended for faster CPU reproduction. CPU Makefiles use at most eight workers by default and accept `JOBS=<n>`. The B200, B300, H100, AWSv4, and TPUv6e performance results are obtained from bundled analytical/cycle-level models; those physical accelerators are not required.
+A 32-core CPU host with 64 GB memory is recommended for faster CPU reproduction. CPU Makefiles use at most eight workers by default and accept `JOBS=<n>`. A clean extracted-bundle run of `make reproduce-cpu` took 2,219 seconds (37 minutes) with `JOBS=8` on the dual-socket AMD EPYC 9654 reference host; Figure 13 accounted for about 33 minutes. The Python and sbt dependency caches were already populated, so first-time setup is additional. The B200, B300, H100, AWSv4, and TPUv6e performance results are obtained from bundled analytical/cycle-level models; those physical accelerators are not required.
 
-The validated full GPU configuration is one NVIDIA H100 80 GB GPU, 8 CPU cores, 192 GB host memory, and about 200 GB of free storage. Slurm is optional: `EXECUTOR=local WORKERS=1` runs on an already allocated GPU. No FPGA board, microcontroller, or custom accelerator is required.
+The validated full GPU configuration is one NVIDIA H100 80 GB (Hopper), 8 CPU cores, 192 GB host memory, and about 200 GB of free storage. H100 is the reference platform rather than a device restriction. A100 80 GB (Ampere), H100/H200 (Hopper), and B100/B200 (Blackwell) are suitable when the installed PyTorch/CUDA stack supports the device and the stated memory capacity is available. Slurm is optional: `EXECUTOR=local WORKERS=1` runs on an already allocated GPU. No FPGA board, microcontroller, or custom accelerator is required.
+
+On the reference H100, allow about 16--24 GPU-hours for Figure 16, 12--18 for Figure 17, 6--10 for Figure 20, and a measured 14.6 for Table 5. The documented 15-worker Slurm execution, with one H100 per worker, reduces expected wall time to about 2--4, 1--2, 0.5--1, and 3 hours, respectively. The complete GPU suite is therefore about 49--67 GPU-hours on one H100 or 7--10 hours with 15 H100 GPUs. These times exclude model/dataset downloads and queue delay; only Table 5 has complete per-job timestamps in the portable bundle, so the other ranges are conservative planning estimates.
 
 ## Software Dependencies
 
@@ -55,7 +57,7 @@ The artifact targets 64-bit GNU/Linux and uses:
 - NVIDIA CUDA 12.8-compatible drivers/runtime for fresh GPU reproduction. The validated PyTorch build is `torch 2.10.0+cu128`.
 - Optional Slurm with `sbatch`; local execution is supported.
 - OpenJDK 21 and an sbt launcher for RTL regeneration. The RTL project pins sbt 1.12.5, Scala 2.13.18, and Chisel 7.9.0.
-- Standard command-line utilities: `tar`, `find`, and `sha256sum`.
+- Standard command-line utilities such as `tar` and `find`.
 
 Network access is normally needed during `make setup`, the first sbt invocation, and model/dataset acquisition. An existing environment can be selected with `PYTHON=/path/to/python`.
 
@@ -80,4 +82,4 @@ The weights are not redistributed. Reviewers must obtain them and accept applica
 - ARC-Easy, HellaSwag, PIQA, and WinoGrande for Figure 16.
 - ARC-Challenge, ARC-Easy, BoolQ, HellaSwag, LAMBADA OpenAI, OpenBookQA, PIQA, Social IQA, and WinoGrande for Table 5.
 
-Figures 17 and 20 generate samples synthetically and require no external dataset. Table 5's large `model.bin` and `qmodel.pt` intermediates are omitted; they can be regenerated or supplied through `TABLE5_CHECKPOINT_SOURCE`. Compact actual results, expected paper values, manifests, synthesis evidence, and `paper/SCOPE-revision.pdf` are included.
+Figures 17 and 20 generate samples synthetically and require no external dataset. Table 5's large `model.bin` and `qmodel.pt` intermediates are omitted; they can be regenerated or supplied through `TABLE5_CHECKPOINT_SOURCE`. Compact actual results, expected paper values, synthesis evidence, and `paper/SCOPE-revision.pdf` are included.
