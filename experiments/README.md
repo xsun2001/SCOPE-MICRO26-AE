@@ -19,6 +19,8 @@ Fresh GPU experiments use an NVIDIA CUDA GPU from the Ampere generation or newer
 | `fig-20-shape-constraints` | Figure 20 | NVIDIA CUDA GPU (Ampere or newer), at least 16 GB | about 6--10 H100 GPU-hours; 0.5--1 hour with 15 H100 GPUs | 18/18 configurations pass |
 | `fig-21-scale-fusion` | Figure 21 | CPU, 8 workers | less than 1 minute after Figure 13 | Reproduced |
 
+The four required fresh GPU experiments total **48.6--66.6 H100 GPU-hours**: 16--24 for Figure 16, 14.6 for Table 5, 12--18 for Figure 17, and 6--10 for Figure 20. For allocation requests, round this to **49--67 H100 GPU-hours**. The documented 15-GPU execution is expected to take about **7--10 hours of elapsed time** because Table 5 has dependent checkpoint-generation and evaluation stages; GPU-hours should not be divided by 15 as if every job were fully parallel.
+
 At the repository root, use `make evidence && make validate` for a hardware-free audit, `make reproduce-cpu` for the CPU suite, and `make reproduce-gpu` for the GPU suite.
 
 The complete `make reproduce-cpu` suite took 2,219 seconds (37 minutes) with `JOBS=8` on a dual-socket AMD EPYC 9654 host. This clean-bundle measurement had populated Python and sbt dependency caches; allow extra time for setup on a new host. The GPU ranges exclude setup/download and scheduler queue time. Each Slurm worker has one GPU. Table 5 is measured from the included job timestamps; the other GPU values are planning estimates.
