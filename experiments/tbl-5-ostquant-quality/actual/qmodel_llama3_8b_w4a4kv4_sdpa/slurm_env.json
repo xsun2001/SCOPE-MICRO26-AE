@@ -1,0 +1,12 @@
+{
+  "job_id": "349111",
+  "job_name": "ostq_qmodel_llama3_8b_w4a4kv4",
+  "model_key": "llama3_8b",
+  "quant_key": "w4a4kv4",
+  "mode": "qmodel_sdpa_gptq",
+  "run_root": "/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol",
+  "resume_path": "/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/exact_llama3_8b_w4a4kv4_sdpa/model.bin",
+  "qmodel_path": "/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/qmodel_llama3_8b_w4a4kv4_sdpa/qmodel.pt",
+  "node_list": "ACD1-12",
+  "started_at": "2026-06-12T17:20:42+08:00"
+}

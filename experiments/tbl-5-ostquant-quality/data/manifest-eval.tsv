@@ -1,0 +1,17 @@
+model	quant	mode
+llama2_7b	w6a6kv6	exact_eager
+llama2_7b	w6a6kv6	scna_d8
+llama2_7b	w6a6kv6	scna_d16
+llama2_7b	w6a6kv6	scna_d32
+llama2_7b	w4a4kv4	exact_eager
+llama2_7b	w4a4kv4	scna_d8
+llama2_7b	w4a4kv4	scna_d16
+llama2_7b	w4a4kv4	scna_d32
+llama3_8b	w6a6kv6	exact_eager
+llama3_8b	w6a6kv6	scna_d8
+llama3_8b	w6a6kv6	scna_d16
+llama3_8b	w6a6kv6	scna_d32
+llama3_8b	w4a4kv4	exact_eager
+llama3_8b	w4a4kv4	scna_d8
+llama3_8b	w4a4kv4	scna_d16
+llama3_8b	w4a4kv4	scna_d32

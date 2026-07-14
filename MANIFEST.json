@@ -1,0 +1,34 @@
+{
+  "bundle": "SCOPE accuracy and precision artifact evaluation",
+  "paper": "paper/SCOPE-revision.pdf",
+  "created": "2026-07-14",
+  "validated_run": "2026-07-13_214407_scope_ae",
+  "source_directories": [
+    "end2endacc",
+    "OSTQuant",
+    "train"
+  ],
+  "host_scope": [
+    "Table 4 numerical-accuracy evidence audit",
+    "Figure 16 perplexity and zero-shot accuracy",
+    "Table 5 OSTQuant perplexity and zero-shot accuracy",
+    "Figure 17 neuron-count MSE convergence",
+    "Figure 20 shape-constraint MSE convergence"
+  ],
+  "excluded_scope": [
+    "end-to-end performance",
+    "hardware performance",
+    "area and power",
+    "simulator and synthesis experiments"
+  ],
+  "results": {
+    "fig-16-end-to-end-quality": "pass: 80/80",
+    "tbl-5-ostquant-quality": "pass: 16/16",
+    "fig-17-neuron-scalability": "pass: 36/36",
+    "fig-20-shape-constraints": "pass: 18/18",
+    "tbl-4-function-approximation-accuracy": "not-reproducible: unified baseline harness and raw grid absent"
+  },
+  "parent_repository_commit": "e5bbb21d6ae47a3aeac16a91f76d6c243944a857",
+  "paper_trainer_commit": "20b562040e1d07c888b1c1e3efbedc6f71048453",
+  "ostquant_base_commit": "ab64362da147291612d077accaab5d3ed7b508b6"
+}

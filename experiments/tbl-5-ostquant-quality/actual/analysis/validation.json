@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "comparisons": 16,
+  "passed": 16,
+  "ppl_tolerance": 0.03,
+  "accuracy_tolerance_percent": 0.25
+}

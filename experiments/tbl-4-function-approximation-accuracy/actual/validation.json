@@ -1,0 +1,12 @@
+{
+  "status": "not-reproducible",
+  "published_rows": 11,
+  "reason": "Taylor/Frac-T/Interp/Frac-I/LinearLUT/NN-LUT/T-LUT shared-grid harness and raw results are absent from the workspace.",
+  "included_code": [
+    "SCNA trainer",
+    "GQA-LUT",
+    "NLI",
+    "NN-LUT",
+    "local Taylor diagnostic"
+  ]
+}
