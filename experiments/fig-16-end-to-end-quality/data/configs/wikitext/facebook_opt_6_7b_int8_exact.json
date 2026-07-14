@@ -1,0 +1,42 @@
+{
+  "approximation": {
+    "backend": "none",
+    "scope": "all"
+  },
+  "backbone_quant": {
+    "activation_bits": 8,
+    "activation_dtype": "int8",
+    "activation_scheme": "per_channel",
+    "calibration_mode": "static",
+    "calibration_samples": 128,
+    "calibration_seq_len": 2048,
+    "enabled": true,
+    "quantize_lm_head": false,
+    "smoothquant": true,
+    "smoothquant_alpha": 0.85,
+    "weight_bits": 8,
+    "weight_dtype": "int8",
+    "weight_scheme": "per_channel"
+  },
+  "dataset": {
+    "batch_size": 1,
+    "config": "wikitext-2-raw-v1",
+    "joiner": "\n\n",
+    "name": "wikitext",
+    "sequence_length": 2048,
+    "split": "test",
+    "text_column": "text"
+  },
+  "experiment_name": "facebook_opt_6_7b_int8_exact_wikitext",
+  "limits": {
+    "max_blocks": null,
+    "max_chunks": null,
+    "max_tokens": null,
+    "num_samples": null
+  },
+  "runtime": {
+    "job_name": "scope_ae",
+    "model": "models/facebook-opt-6.7b",
+    "torch_dtype": "bfloat16"
+  }
+}

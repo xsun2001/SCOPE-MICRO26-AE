@@ -1,15 +1,20 @@
 # Experiment Index
 
-Every experiment uses `make run`, writes timestamped outputs to `actual-results/<RUN_ID>/`, and retains the paper-matched archive under `expected-results/`.
+All experiment directories use `fig-X-description` or `tbl-X-description`, include a Makefile and README, store bundled measurements under `actual-results/<validated-run>/`, and store paper targets under `expected-results/`.
 
-| Directory | Paper item | CPU action |
-| --- | --- | --- |
-| `fig-13-prefill-attention` | Figure 13 | Simulate FP16/INT8 prefill attention on B200, AWSv4, and TPUv6e and render throughput/speedup plots. |
-| `fig-14-full-prefill` | Figure 14 | Extend attention to 512K, derive Llama 3 8B full-prefill latency, and render the main-device panel. |
-| `fig-15-b300-sensitivity` | Figure 15 | Model the doubled-SFU B300 sensitivity configuration and render its panel. |
-| `tbl-3-integer-softmax` | Table 3 | Model SCOPE, I-LLM, and IntAttention useful H100 INT8 throughput. |
-| `fig-18-pe-area-power` | Figure 18 | Extract 112 filtered native report sets, fit per-PE values across completed array sizes, and render area/power. |
-| `fig-19-hardware-comparison` | Figure 19 | Calculate x16/x32 incremental overhead over a 32x32 baseline SA and render the comparison. |
-| `fig-21-scale-fusion` | Figure 21 | Render the INT8 scale-conversion fusion ablation from paired conditions. |
+| Directory | Paper item | Host for fresh run | Bundled evidence |
+| --- | --- | --- | --- |
+| `tbl-3-integer-softmax` | Table 3 | CPU | Reproduced |
+| `tbl-4-function-approximation-accuracy` | Table 4 | GPU-side source audit | Evidence-only; missing common raw baseline protocol |
+| `tbl-5-ostquant-quality` | Table 5 | NVIDIA H100 80 GB | 16/16 configurations pass |
+| `fig-13-prefill-attention` | Figure 13 | CPU | Reproduced |
+| `fig-14-full-prefill` | Figure 14 | CPU | Reproduced |
+| `fig-15-b300-sensitivity` | Figure 15 | CPU | Reproduced |
+| `fig-16-end-to-end-quality` | Figure 16 | NVIDIA H100 80 GB | 80/80 comparisons pass |
+| `fig-17-neuron-scalability` | Figure 17 | CUDA GPU | 36/36 configurations pass |
+| `fig-18-pe-area-power` | Figure 18 | CPU report analysis | 112 report sets; 18 fitted result rows pass |
+| `fig-19-hardware-comparison` | Figure 19 | CPU calculation | 14 plotted result rows pass |
+| `fig-20-shape-constraints` | Figure 20 | CUDA GPU | 18/18 configurations pass |
+| `fig-21-scale-fusion` | Figure 21 | CPU | Reproduced |
 
-The shared simulator implementation is at the bundle root in `LLMCompass/` and `SCALE-Sim/`. The single filtered native-report tree is in `hardware/synthesis/reports/`; corresponding RTL snapshots are in `hardware/rtl/`.
+At the repository root, use `make evidence && make validate` for a hardware-free audit, `make reproduce-cpu` for the CPU suite, and `make reproduce-gpu` for the GPU suite.

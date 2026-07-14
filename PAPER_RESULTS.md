@@ -1,24 +1,25 @@
-# Paper Experiment and Result Index
+# Paper-to-Artifact Result Map
 
-The following values were extracted from the evaluation section of `SCOPE-revision.pdf` and are the source of truth for this AE bundle.
+The paper source of truth is `paper/SCOPE-revision.pdf`. Bundled measurements are under each experiment's `actual-results/2026-07-13_ae-validation/` directory; paper targets are under `expected-results/`.
 
-## CPU-reproduced performance
+## CPU performance and hardware
 
-- Figure 13, attention: FP16 geometric-mean speedup is reported as 1.28x; at 32K the device gains are approximately 1.34x (B200), 1.34x (AWSv4), and 1.70x (TPUv6e). INT8 maximum/32K gains are 3.05x, 2.51x, and 2.81x respectively.
-- Figure 14, full prefill: at 32K, AWSv4/B200/TPUv6e achieve 1.207x/1.183x/1.473x. At 512K FP16 they achieve 1.329x/1.341x/1.681x; at 512K INT8 they achieve 1.28x/2.69x/1.91x.
-- Figure 15, B300: at the longest context, FP16 attention/full-prefill gains are 1.09x/1.08x and INT8 gains are 1.94x/1.90x.
-- Table 3, useful H100 INT8 attention throughput at 2K/4K/8K/16K: SCOPE is 1130.86/1526.51/1672.82/1713.89 TFLOP/s; I-LLM is 641.65/746.36/772.04/782.08 TFLOP/s; IntAttention is 888.73/1093.30/1170.41/1104.60 TFLOP/s.
-- Figure 21, scale fusion: B200 rises from 1.06x at 2K to 1.11x at 32K; TPUv6e rises from 1.10x to 1.46x; AWSv4 is 1.12x/1.73x/1.91x/1.97x at 4K/8K/16K/32K.
+- Table 3 → `experiments/tbl-3-integer-softmax/`: SCOPE H100 INT8 useful throughput is 1130.86/1526.51/1672.82/1713.89 TFLOP/s at 2K/4K/8K/16K.
+- Figure 13 → `experiments/fig-13-prefill-attention/`: at 32K, FP16 speedups are 1.34x/1.34x/1.70x and INT8 speedups are 3.05x/2.51x/2.81x on B200/AWSv4/TPUv6e.
+- Figure 14 → `experiments/fig-14-full-prefill/`: 512K FP16 speedups are 1.341x/1.329x/1.681x on B200/AWSv4/TPUv6e; INT8 speedups are 2.69x/1.28x/1.91x.
+- Figure 15 → `experiments/fig-15-b300-sensitivity/`: longest-context FP16 attention/full-prefill gains are 1.09x/1.08x; INT8 gains are 1.94x/1.90x.
+- Figure 18 → `experiments/fig-18-pe-area-power/`: SCOPE uses 1.09--1.44x area and 1.18--1.34x power per PE. Seventeen cells are constant least-squares fits of completed meshes; FSA FP8 uses the disclosed corrected N=4 hierarchy rows.
+- Figure 19 → `experiments/fig-19-hardware-comparison/`: SCNA-8 has 12.8x geometric-mean area and 9.5x power reductions over plotted prior designs under the paper's 32x32 incremental-overhead accounting.
+- Figure 21 → `experiments/fig-21-scale-fusion/`: longest reported scale-fusion gains reach 1.11x on B200, 1.97x on AWSv4, and 1.46x on TPUv6e.
 
-## Hardware evidence and locally reproduced plots
+## GPU accuracy and numerical precision
 
-- Figure 18: SCOPE adds 1.09--1.44x area and 1.18--1.34x power per PE. OneSA adds 1.59--1.98x area and 2.06--2.63x power; FuseMax reaches 8.05x area and 7.30x power.
-- Figure 19: SCNA-8 has a 12.8x geometric-mean area reduction and 9.5x power reduction relative to the plotted prior designs. FP16 reductions span 5.1--52.9x area and 5.2--15.8x power; INT32 reductions span 2.5--35.7x area and 3.1--35.2x power.
-- Seventeen Figure 18 cells are constant least-squares fits (arithmetic means) of per-PE samples from completed whole meshes. The FSA FP8 cell is the named hierarchy evidence `mesh_1_2` area = 1838.214 and `mesh_3_3` power = 0.588 mW from the filtered corrected N=4 report.
-- RTL is elaborated from Chisel for four current N=8 SCOPE/Pinnacle data-type configurations. The paper-input SystemVerilog snapshots are retained separately with per-job hashes and provenance. Archived synthesis used Synopsys Design Compiler V-2023.12, TSMC 28 nm libraries, and a 1 GHz target.
+- Table 4 → `experiments/tbl-4-function-approximation-accuracy/`: paper values are preserved for evidence, but fresh reproduction is not claimed because the common raw baseline grid and unified harness are absent.
+- Figure 16 → `experiments/fig-16-end-to-end-quality/`: 80/80 bundled perplexity and four-task mean-accuracy comparisons pass.
+- Table 5 → `experiments/tbl-5-ostquant-quality/`: 16/16 corrected OSTQuant PPL/accuracy configurations pass.
+- Figure 17 → `experiments/fig-17-neuron-scalability/`: 36/36 configurations pass; measured 32-vs-4 MSE gain is 97.2x--2837.8x. The saved Exp sweep exception is documented in the experiment README.
+- Figure 20 → `experiments/fig-20-shape-constraints/`: 18/18 width-16 configurations pass; shape constraints improve MSE by 47.1x--2264.3x.
 
-## GPU/model-host experiments retained as paper claims only
+## RTL and synthesis provenance
 
-- Table 4: the function-approximation geometric-mean MSE improvement is 431x over NN-LUT and 14.9x over T-LUT.
-- Figure 20: shape constraints reduce MSE by 47.1--2264.3x (Exp 705.5x, Exp2 976.3x, Rsqrt 2264.3x, Sigmoid 54.8x, Erf 47.1x, Tanh 94.9x).
-- Table 5, Figure 16, and Figure 17 cover low-bit quantization, end-to-end LLM accuracy/perplexity, and neuron-count convergence; they are not rerun on this CPU machine.
+Four current N=8 SCOPE/Pinnacle configurations can be regenerated from Chisel. The synthesis-time SystemVerilog snapshots and 112 filtered native Design Compiler V-2023.12 area, power, and timing report sets are bundled under `hardware/`.

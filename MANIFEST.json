@@ -1,0 +1,51 @@
+{
+  "bundle": "SCOPE unified artifact evaluation",
+  "paper": "paper/SCOPE-revision.pdf",
+  "created": "2026-07-14",
+  "packaged_run": "2026-07-13_ae-validation",
+  "source_directories": [
+    "LLMCompass",
+    "SCALE-Sim",
+    "hardware",
+    "end2endacc",
+    "OSTQuant",
+    "train"
+  ],
+  "reproduced_results": [
+    "Table 3 integer-softmax throughput",
+    "Figure 13 prefill-attention performance",
+    "Figure 14 full-prefill performance",
+    "Figure 15 B300 sensitivity",
+    "Figure 16 end-to-end model quality",
+    "Figure 17 neuron-count scalability",
+    "Figure 18 per-PE area and power",
+    "Figure 19 32x32 hardware comparison",
+    "Figure 20 shape-constraint ablation",
+    "Figure 21 scale-conversion fusion",
+    "Table 5 OSTQuant model quality",
+    "RTL generation and synthesis-report audit"
+  ],
+  "evidence_only": [
+    "Table 4 function-approximation accuracy: common raw baseline protocol is unavailable"
+  ],
+  "validation": {
+    "cpu": "pass: 68/68 checks",
+    "fig-16-end-to-end-quality": "pass: 80/80 comparisons",
+    "tbl-5-ostquant-quality": "pass: 16/16 configurations",
+    "fig-17-neuron-scalability": "pass: 36/36 configurations",
+    "fig-20-shape-constraints": "pass: 18/18 configurations",
+    "tbl-4-function-approximation-accuracy": "evidence-only"
+  },
+  "hardware_evidence": {
+    "native_synthesis_report_sets": 112,
+    "tool": "Synopsys Design Compiler V-2023.12",
+    "technology": "TSMC 28 nm",
+    "target_frequency": "1 GHz",
+    "proprietary_tools_required_for_validation": false
+  },
+  "gpu_source_provenance": {
+    "parent_repository_commit": "e5bbb21d6ae47a3aeac16a91f76d6c243944a857",
+    "paper_trainer_commit": "20b562040e1d07c888b1c1e3efbedc6f71048453",
+    "ostquant_base_commit": "ab64362da147291612d077accaab5d3ed7b508b6"
+  }
+}
