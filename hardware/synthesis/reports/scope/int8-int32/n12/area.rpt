@@ -1,0 +1,115 @@
+ 
+****************************************
+Report : area
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 04:45:01 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                        13994
+Number of nets:                        104138
+Number of cells:                        86160
+Number of combinational cells:          78600
+Number of sequential cells:              7488
+Number of macros/black boxes:               0
+Number of buf/inv:                      12593
+Number of references:                      75
+
+Combinational area:              54623.015446
+Buf/Inv area:                     3204.558049
+Noncombinational area:           14163.659890
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 68786.675336
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ------------
+SystolicArray                     68786.6753    100.0    362.8800      0.0000  0.0000  SystolicArray
+pairs_0                             954.4500      1.4    757.8900    196.5600  0.0000  StripPair_71
+pairs_0_1                           954.3240      1.4    757.3860    196.9380  0.0000  StripPair_65
+pairs_0_10                          951.4260      1.4    754.8660    196.5600  0.0000  StripPair_11
+pairs_0_11                          951.1740      1.4    754.6140    196.5600  0.0000  StripPair_5
+pairs_0_2                           952.9380      1.4    756.3780    196.5600  0.0000  StripPair_59
+pairs_0_3                           953.0640      1.4    756.5040    196.5600  0.0000  StripPair_53
+pairs_0_4                           953.4420      1.4    756.8820    196.5600  0.0000  StripPair_47
+pairs_0_5                           951.0480      1.4    754.4880    196.5600  0.0000  StripPair_41
+pairs_0_6                           951.9300      1.4    754.9920    196.9380  0.0000  StripPair_35
+pairs_0_7                           951.9300      1.4    755.3700    196.5600  0.0000  StripPair_29
+pairs_0_8                           955.3320      1.4    758.3940    196.9380  0.0000  StripPair_23
+pairs_0_9                           948.9060      1.4    752.3460    196.5600  0.0000  StripPair_17
+pairs_1                             954.9540      1.4    758.3940    196.5600  0.0000  StripPair_70
+pairs_1_1                           952.0560      1.4    755.1180    196.9380  0.0000  StripPair_64
+pairs_1_10                          951.0480      1.4    754.4880    196.5600  0.0000  StripPair_10
+pairs_1_11                          951.3000      1.4    754.3620    196.9380  0.0000  StripPair_4
+pairs_1_2                           951.9300      1.4    755.3700    196.5600  0.0000  StripPair_58
+pairs_1_3                           950.9220      1.4    754.3620    196.5600  0.0000  StripPair_52
+pairs_1_4                           949.9140      1.4    752.9760    196.9380  0.0000  StripPair_46
+pairs_1_5                           952.9380      1.4    756.3780    196.5600  0.0000  StripPair_40
+pairs_1_6                           950.4180      1.4    753.8580    196.5600  0.0000  StripPair_34
+pairs_1_7                           951.0480      1.4    754.1100    196.9380  0.0000  StripPair_28
+pairs_1_8                           950.2920      1.4    753.7320    196.5600  0.0000  StripPair_22
+pairs_1_9                           952.8120      1.4    755.8740    196.9380  0.0000  StripPair_16
+pairs_2                             955.0800      1.4    758.5200    196.5600  0.0000  StripPair_69
+pairs_2_1                           949.2840      1.4    752.7240    196.5600  0.0000  StripPair_63
+pairs_2_10                          953.0640      1.4    756.1260    196.9380  0.0000  StripPair_9
+pairs_2_11                          950.2920      1.4    753.7320    196.5600  0.0000  StripPair_3
+pairs_2_2                           953.1900      1.4    756.2520    196.9380  0.0000  StripPair_57
+pairs_2_3                           951.8040      1.4    755.2440    196.5600  0.0000  StripPair_51
+pairs_2_4                           952.3080      1.4    755.3700    196.9380  0.0000  StripPair_45
+pairs_2_5                           951.4260      1.4    754.4880    196.9380  0.0000  StripPair_39
+pairs_2_6                           952.1820      1.4    755.6220    196.5600  0.0000  StripPair_33
+pairs_2_7                           950.7960      1.4    754.2360    196.5600  0.0000  StripPair_27
+pairs_2_8                           953.1900      1.4    756.6300    196.5600  0.0000  StripPair_21
+pairs_2_9                           949.4100      1.4    752.8500    196.5600  0.0000  StripPair_15
+pairs_3                             954.0720      1.4    757.5120    196.5600  0.0000  StripPair_68
+pairs_3_1                           949.5360      1.4    752.5980    196.9380  0.0000  StripPair_62
+pairs_3_10                          949.7880      1.4    752.8500    196.9380  0.0000  StripPair_8
+pairs_3_11                          952.9380      1.4    756.3780    196.5600  0.0000  StripPair_2
+pairs_3_2                           949.4100      1.4    752.4720    196.9380  0.0000  StripPair_56
+pairs_3_3                           951.1740      1.4    754.6140    196.5600  0.0000  StripPair_50
+pairs_3_4                           950.6700      1.4    754.1100    196.5600  0.0000  StripPair_44
+pairs_3_5                           953.5680      1.4    756.6300    196.9380  0.0000  StripPair_38
+pairs_3_6                           953.9460      1.4    757.3860    196.5600  0.0000  StripPair_32
+pairs_3_7                           952.4340      1.4    755.4960    196.9380  0.0000  StripPair_26
+pairs_3_8                           949.7880      1.4    753.2280    196.5600  0.0000  StripPair_20
+pairs_3_9                           950.2920      1.4    753.7320    196.5600  0.0000  StripPair_14
+pairs_4                             955.2060      1.4    758.6460    196.5600  0.0000  StripPair_67
+pairs_4_1                           950.2920      1.4    753.7320    196.5600  0.0000  StripPair_61
+pairs_4_10                          950.2920      1.4    753.7320    196.5600  0.0000  StripPair_7
+pairs_4_11                          951.3000      1.4    754.3620    196.9380  0.0000  StripPair_1
+pairs_4_2                           952.5600      1.4    755.6220    196.9380  0.0000  StripPair_55
+pairs_4_3                           950.9220      1.4    754.3620    196.5600  0.0000  StripPair_49
+pairs_4_4                           953.4420      1.4    756.5040    196.9380  0.0000  StripPair_43
+pairs_4_5                           950.5440      1.4    753.9840    196.5600  0.0000  StripPair_37
+pairs_4_6                           951.3000      1.4    754.7400    196.5600  0.0000  StripPair_31
+pairs_4_7                           952.1820      1.4    755.6220    196.5600  0.0000  StripPair_25
+pairs_4_8                           952.9380      1.4    756.0000    196.9380  0.0000  StripPair_19
+pairs_4_9                           953.1900      1.4    756.6300    196.5600  0.0000  StripPair_13
+pairs_5                             943.3620      1.4    746.8020    196.5600  0.0000  StripPair_66
+pairs_5_1                           942.8580      1.4    745.9200    196.9380  0.0000  StripPair_60
+pairs_5_10                          941.3460      1.4    744.4080    196.9380  0.0000  StripPair_6
+pairs_5_11                          939.3300      1.4    742.3920    196.9380  0.0000  StripPair_0
+pairs_5_2                           942.2280      1.4    744.9120    197.3160  0.0000  StripPair_54
+pairs_5_3                           943.7400      1.4    747.1800    196.5600  0.0000  StripPair_48
+pairs_5_4                           943.7400      1.4    747.1800    196.5600  0.0000  StripPair_42
+pairs_5_5                           942.1020      1.4    745.1640    196.9380  0.0000  StripPair_36
+pairs_5_6                           942.1020      1.4    745.5420    196.5600  0.0000  StripPair_30
+pairs_5_7                           943.2360      1.4    746.2980    196.9380  0.0000  StripPair_24
+pairs_5_8                           942.2280      1.4    745.2900    196.9380  0.0000  StripPair_18
+pairs_5_9                           944.1180      1.4    747.1800    196.9380  0.0000  StripPair_12
+--------------------------------  ----------  -------  ----------  ----------  ------  ------------
+Total                                                  54623.0154  14163.6599  0.0000
+
+1

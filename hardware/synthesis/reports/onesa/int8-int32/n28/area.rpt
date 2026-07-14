@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : OneSaArray
+Version: V-2023.12
+Date   : Tue Apr  7 15:41:39 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                         9132
+Number of nets:                        521711
+Number of cells:                       441796
+Number of combinational cells:         360931
+Number of sequential cells:             80864
+Number of macros/black boxes:               0
+Number of buf/inv:                      56482
+Number of references:                       1
+
+Combinational area:             310952.245831
+Buf/Inv area:                    14270.382225
+Noncombinational area:          154641.310993
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                465593.556824
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  -------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
+                                  Total        Total    national     national     boxes   Design
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+OneSaArray                        465593.5568    100.0       0.0000       0.0000  0.0000  OneSaArray
+mesh                              465593.5568    100.0  310952.2458  154641.3110  0.0000  OneSaMesh
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+Total                                                   310952.2458  154641.3110  0.0000
+
+1

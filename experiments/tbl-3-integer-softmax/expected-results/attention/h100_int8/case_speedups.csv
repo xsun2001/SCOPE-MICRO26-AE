@@ -1,0 +1,37 @@
+case_name,case_label,data_type,prefill_length,baseline_variant,baseline_label,variant,variant_label,baseline_total_ms,variant_total_ms,speedup_vs_baseline_x,tensor_vector_ratio,source
+h100_int8,H100 INT8,int8,2048,baseline,FlashAttention,baseline,FlashAttention,0.07252267978934646,0.07252267978934646,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,2048,baseline,FlashAttention,customsa,FlashAttention-CustomSA,0.07252267978934646,0.060767521367521365,1.1934447572862157,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,2048,baseline,FlashAttention,illm,FlashAttention + I-LLM,0.07252267978934646,0.10709804023137356,0.6771615954191987,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,2048,baseline,FlashAttention,intattention,FlashAttention + IntAttention,0.07252267978934646,0.07732309418976085,0.9379174559591011,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,4096,baseline,FlashAttention,baseline,FlashAttention,0.22709071915738582,0.22709071915738582,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,4096,baseline,FlashAttention,customsa,FlashAttention-CustomSA,0.22709071915738582,0.18007008547008546,1.2611240704670614,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,4096,baseline,FlashAttention,illm,FlashAttention + I-LLM,0.22709071915738582,0.3682918587585255,0.6166053192782638,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,4096,baseline,FlashAttention,intattention,FlashAttention + IntAttention,0.22709071915738582,0.2514198912198912,0.9032329067343874,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,8192,baseline,FlashAttention,baseline,FlashAttention,0.8453628766295432,0.8453628766295432,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,8192,baseline,FlashAttention,customsa,FlashAttention-CustomSA,0.8453628766295432,0.6572803418803419,1.2861526851862577,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,8192,baseline,FlashAttention,illm,FlashAttention + I-LLM,0.8453628766295432,1.4241708538375206,0.5935824865055047,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,8192,baseline,FlashAttention,intattention,FlashAttention + IntAttention,0.8453628766295432,0.9394262453595786,0.8998714702780831,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,16384,baseline,FlashAttention,baseline,FlashAttention,3.318451506518173,3.318451506518173,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,16384,baseline,FlashAttention,customsa,FlashAttention-CustomSA,3.318451506518173,2.566121367521368,1.2931779254554454,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,16384,baseline,FlashAttention,illm,FlashAttention + I-LLM,3.318451506518173,5.623499110765778,0.5901043889497983,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,16384,baseline,FlashAttention,intattention,FlashAttention + IntAttention,3.318451506518173,3.981562893896227,0.8334544988867035,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,32768,baseline,FlashAttention,baseline,FlashAttention,13.210806026072692,13.210806026072692,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,32768,baseline,FlashAttention,customsa,FlashAttention-CustomSA,13.210806026072692,10.201485470085471,1.294988466612207,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,32768,baseline,FlashAttention,illm,FlashAttention + I-LLM,13.210806026072692,21.838043598376935,0.6049445760358568,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,32768,baseline,FlashAttention,intattention,FlashAttention + IntAttention,13.210806026072692,16.08730627643961,0.8211944124803762,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,65536,baseline,FlashAttention,baseline,FlashAttention,52.780224104290774,52.780224104290774,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,65536,baseline,FlashAttention,customsa,FlashAttention-CustomSA,52.780224104290774,40.74294188034188,1.295444601406085,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,65536,baseline,FlashAttention,illm,FlashAttention + I-LLM,52.780224104290774,87.23485810239143,0.6050359369226036,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,65536,baseline,FlashAttention,intattention,FlashAttention + IntAttention,52.780224104290774,65.55360523180524,0.8051460162664389,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,131072,baseline,FlashAttention,baseline,FlashAttention,211.05789641716308,211.05789641716308,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,131072,baseline,FlashAttention,customsa,FlashAttention-CustomSA,211.05789641716308,160.36364615384616,1.3161205889187815,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,131072,baseline,FlashAttention,illm,FlashAttention + I-LLM,211.05789641716308,296.1172083052749,0.7127512028938825,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,131072,baseline,FlashAttention,intattention,FlashAttention + IntAttention,211.05789641716308,267.6192608995942,0.7886498741073352,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,262144,baseline,FlashAttention,baseline,FlashAttention,844.1685856686523,844.1685856686523,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,262144,baseline,FlashAttention,customsa,FlashAttention-CustomSA,844.1685856686523,636.301341880342,1.3266805051424837,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,262144,baseline,FlashAttention,illm,FlashAttention + I-LLM,844.1685856686523,1132.9864109643445,0.7450827101713744,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,262144,baseline,FlashAttention,intattention,FlashAttention + IntAttention,844.1685856686523,1074.75934688768,0.7854489361857803,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,524288,baseline,FlashAttention,baseline,FlashAttention,3376.611342674609,3376.611342674609,1.0,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,524288,baseline,FlashAttention,customsa,FlashAttention-CustomSA,3376.611342674609,2534.961882051282,1.3320166139706477,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,524288,baseline,FlashAttention,illm,FlashAttention + I-LLM,3376.611342674609,4474.524640438574,0.7546301817534852,32.0,fixed_tile_model
+h100_int8,H100 INT8,int8,524288,baseline,FlashAttention,intattention,FlashAttention + IntAttention,3376.611342674609,4319.25246956747,0.7817582710122853,32.0,fixed_tile_model

@@ -1,0 +1,5 @@
+RoundAnyRawFNToRecFN_ie5_is11_oe5_os3.sv
+RecFNToRecFN.sv
+verification/assert/FuseMax2DPE_Verification_Assert.sv
+FuseMax2DPE.sv
+FuseMax2DArray.sv

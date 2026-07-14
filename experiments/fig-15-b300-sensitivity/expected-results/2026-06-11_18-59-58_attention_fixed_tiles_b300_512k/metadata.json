@@ -1,0 +1,16 @@
+{
+  "outputs": {
+    "b300": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_18-59-58_attention_fixed_tiles_b300_512k/b300"
+  },
+  "lengths": [
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072,
+    262144,
+    524288
+  ]
+}

@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : area
+Design : FuseMax2DArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:13:59 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                         2306
+Number of nets:                         61561
+Number of cells:                        56567
+Number of combinational cells:          51175
+Number of sequential cells:              5376
+Number of macros/black boxes:               0
+Number of buf/inv:                       8499
+Number of references:                      16
+
+Combinational area:              32462.135950
+Buf/Inv area:                     2154.096034
+Noncombinational area:           10173.239928
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 42635.375878
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  --------------
+FuseMax2DArray                    42635.3759    100.0      0.0000      0.0000  0.0000  FuseMax2DArray
+pe_0_0                             2683.8000      6.3   2048.7600    635.0400  0.0000  FuseMax2DPE_15
+pe_0_1                             2681.6580      6.3   2045.6100    636.0480  0.0000  FuseMax2DPE_14
+pe_0_2                             2681.2800      6.3   2045.2320    636.0480  0.0000  FuseMax2DPE_13
+pe_0_3                             2682.9180      6.3   2046.8700    636.0480  0.0000  FuseMax2DPE_12
+pe_1_0                             2685.6900      6.3   2050.6500    635.0400  0.0000  FuseMax2DPE_11
+pe_1_1                             2682.4140      6.3   2046.3660    636.0480  0.0000  FuseMax2DPE_10
+pe_1_2                             2685.3120      6.3   2049.2640    636.0480  0.0000  FuseMax2DPE_9
+pe_1_3                             2682.2880      6.3   2046.2400    636.0480  0.0000  FuseMax2DPE_8
+pe_2_0                             2686.1940      6.3   2051.1540    635.0400  0.0000  FuseMax2DPE_7
+pe_2_1                             2684.9340      6.3   2048.8860    636.0480  0.0000  FuseMax2DPE_6
+pe_2_2                             2683.5480      6.3   2047.5000    636.0480  0.0000  FuseMax2DPE_5
+pe_2_3                             2681.1540      6.3   2045.1060    636.0480  0.0000  FuseMax2DPE_4
+pe_3_0                             2609.0820      6.1   1973.9160    635.1660  0.0000  FuseMax2DPE_3
+pe_3_1                             2607.8220      6.1   1971.6480    636.1740  0.0000  FuseMax2DPE_2
+pe_3_2                             2606.1840      6.1   1970.1360    636.0480  0.0000  FuseMax2DPE_1
+pe_3_3                             2611.0980      6.1   1974.7980    636.3000  0.0000  FuseMax2DPE_0
+--------------------------------  ----------  -------  ----------  ----------  ------  --------------
+Total                                                  32462.1360  10173.2399  0.0000
+
+1

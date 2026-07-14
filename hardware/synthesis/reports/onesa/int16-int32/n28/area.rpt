@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : OneSaArray
+Version: V-2023.12
+Date   : Tue Apr  7 17:31:49 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                        10924
+Number of nets:                       1374941
+Number of cells:                      1185229
+Number of combinational cells:        1073676
+Number of sequential cells:            111552
+Number of macros/black boxes:               0
+Number of buf/inv:                     160800
+Number of references:                       1
+
+Combinational area:             953481.309279
+Buf/Inv area:                    40602.618644
+Noncombinational area:          215712.502575
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:               1169193.811854
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area               Local cell area
+                                  ---------------------  -------------------------------- 
+Hierarchical cell                 Absolute      Percent  Combi-       Noncombi-    Black-
+                                  Total         Total    national     national     boxes   Design
+--------------------------------  ------------  -------  -----------  -----------  ------  ---------
+OneSaArray                        1169193.8119    100.0       0.0000       0.0000  0.0000  OneSaArray
+mesh                              1169193.8119    100.0  953481.3093  215712.5026  0.0000  OneSaMesh
+--------------------------------  ------------  -------  -----------  -----------  ------  ---------
+Total                                                    953481.3093  215712.5026  0.0000
+
+1

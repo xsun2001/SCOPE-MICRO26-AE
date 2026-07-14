@@ -1,0 +1,228 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'SystolicArray' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:46:44 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+  Startpoint: pairs_3_4/left/regW_bits_reg[3]
+              (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Endpoint: pairs_3_4/right/regS_bits_reg[10]
+            (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Path Group: ideal_clock1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  StripPair_20       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_16       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_12       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_8        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_4        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_0        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_30       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_29       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_26       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_25       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_23       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_22       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_21       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_19       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_18       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_17       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_15       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_14       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_13       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_11       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_10       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_9        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_7        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_6        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_5        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_3        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_2        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_1        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_24       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_27       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_28       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  SystolicArray      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_31       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                                            Fanout     Trans      Incr       Path      Attributes
+  ------------------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock1 (rise edge)                                                         0.00       0.00
+  clock network delay (ideal)                                                            0.00       0.00
+  pairs_3_4/left/regW_bits_reg[3]/CP (DFQD4BWP30P140)                          0.00      0.00 #     0.00 r
+  pairs_3_4/left/regW_bits_reg[3]/Q (DFQD4BWP30P140)                           0.01      0.03       0.03 f
+  pairs_3_4/left/regW_bits[3] (net)                                  5                   0.00       0.03 f
+  pairs_3_4/U389/Z (CKMUX2D0BWP30P140)                                         0.01      0.02       0.05 f
+  pairs_3_4/n1864 (net)                                              3                   0.00       0.05 f
+  pairs_3_4/U479/Z (AO22D0BWP30P140)                                           0.02      0.02       0.07 f
+  pairs_3_4/n76 (net)                                                1                   0.00       0.07 f
+  pairs_3_4/U577/CO (FA1D1BWP30P140)                                           0.01      0.02       0.10 f
+  pairs_3_4/n84 (net)                                                1                   0.00       0.10 f
+  pairs_3_4/U585/CO (FA1D2BWP30P140)                                           0.01      0.02       0.12 f
+  pairs_3_4/n79 (net)                                                1                   0.00       0.12 f
+  pairs_3_4/U581/CO (FA1D1BWP30P140)                                           0.01      0.02       0.14 f
+  pairs_3_4/n163 (net)                                               1                   0.00       0.14 f
+  pairs_3_4/U604/S (FA1D1BWP30P140)                                            0.01      0.04       0.18 r
+  pairs_3_4/n78 (net)                                                1                   0.00       0.18 r
+  pairs_3_4/U578/Z (CKAN2D1BWP30P140)                                          0.01      0.02       0.20 r
+  pairs_3_4/n236 (net)                                               4                   0.00       0.20 r
+  pairs_3_4/U580/ZN (NR2D1BWP30P140)                                           0.01      0.01       0.20 f
+  pairs_3_4/n162 (net)                                               1                   0.00       0.20 f
+  pairs_3_4/U394/ZN (OAI21D2BWP30P140)                                         0.01      0.01       0.21 r
+  pairs_3_4/n169 (net)                                               1                   0.00       0.21 r
+  pairs_3_4/U393/ZN (AOI21D4BWP30P140)                                         0.01      0.01       0.22 f
+  pairs_3_4/n172 (net)                                               4                   0.00       0.22 f
+  pairs_3_4/U610/Z (BUFFD4BWP30P140)                                           0.02      0.02       0.24 f
+  pairs_3_4/n2213 (net)                                             37                   0.00       0.24 f
+  pairs_3_4/U414/ZN (MUX2NUD1BWP30P140)                                        0.02      0.02       0.27 f
+  pairs_3_4/n13 (net)                                                1                   0.00       0.27 f
+  pairs_3_4/U196/CO (FA1D1BWP30P140)                                           0.01      0.03       0.29 f
+  pairs_3_4/n240 (net)                                               1                   0.00       0.29 f
+  pairs_3_4/U91/CO (FA1D1BWP30P140)                                            0.01      0.02       0.32 f
+  pairs_3_4/n247 (net)                                               1                   0.00       0.32 f
+  pairs_3_4/U380/CO (FA1OPTCD1BWP30P140)                                       0.01      0.02       0.34 f
+  pairs_3_4/n244 (net)                                               1                   0.00       0.34 f
+  pairs_3_4/U485/CO (FA1OPTCD2BWP30P140)                                       0.01      0.01       0.35 f
+  pairs_3_4/n245 (net)                                               1                   0.00       0.35 f
+  pairs_3_4/U62/Z (XOR2D1BWP30P140)                                            0.01      0.02       0.37 f
+  pairs_3_4/n312 (net)                                               4                   0.00       0.37 f
+  pairs_3_4/U188/Z (OR3D1BWP30P140)                                            0.01      0.02       0.39 f
+  pairs_3_4/n345 (net)                                               3                   0.00       0.39 f
+  pairs_3_4/U87/ZN (INVD0BWP30P140)                                            0.01      0.01       0.40 r
+  pairs_3_4/n346 (net)                                               1                   0.00       0.40 r
+  pairs_3_4/U770/ZN (AOI31D1BWP30P140)                                         0.02      0.01       0.40 f
+  pairs_3_4/n352 (net)                                               1                   0.00       0.40 f
+  pairs_3_4/U56/ZN (OAI31D1BWP30P140)                                          0.02      0.02       0.42 r
+  pairs_3_4/n356 (net)                                               1                   0.00       0.42 r
+  pairs_3_4/U773/ZN (ND4D2BWP30P140)                                           0.03      0.02       0.44 f
+  pairs_3_4/n358 (net)                                               1                   0.00       0.44 f
+  pairs_3_4/U774/Z (XOR2OPTND2BWP30P140)                                       0.02      0.01       0.45 r
+  pairs_3_4/n1830 (net)                                              2                   0.00       0.45 r
+  pairs_3_4/U145/ZN (ND2OPTPAD2BWP30P140)                                      0.01      0.01       0.46 f
+  pairs_3_4/n1831 (net)                                              4                   0.00       0.46 f
+  pairs_3_4/U775/ZN (NR2D2BWP30P140)                                           0.01      0.01       0.47 r
+  pairs_3_4/n385 (net)                                               2                   0.00       0.47 r
+  pairs_3_4/U796/ZN (INVD1BWP30P140)                                           0.01      0.01       0.48 f
+  pairs_3_4/n1117 (net)                                              4                   0.00       0.48 f
+  pairs_3_4/U797/ZN (NR2D1BWP30P140)                                           0.02      0.01       0.50 r
+  pairs_3_4/n392 (net)                                               2                   0.00       0.50 r
+  pairs_3_4/U404/ZN (ND2D1BWP30P140)                                           0.02      0.01       0.51 f
+  pairs_3_4/n389 (net)                                               1                   0.00       0.51 f
+  pairs_3_4/U51/Z (XOR2D1BWP30P140)                                            0.01      0.02       0.53 f
+  pairs_3_4/right/sharedMacOut_mac/l00OOO0l[7] (net)                 5                   0.00       0.53 f
+  pairs_3_4/U47/ZN (INVD1BWP30P140)                                            0.01      0.01       0.54 r
+  pairs_3_4/n6 (net)                                                 3                   0.00       0.54 r
+  pairs_3_4/U409/Z (CKAN2D1BWP30P140)                                          0.01      0.01       0.55 r
+  pairs_3_4/n8 (net)                                                 1                   0.00       0.55 r
+  pairs_3_4/U903/ZN (ND2D1BWP30P140)                                           0.01      0.01       0.56 f
+  pairs_3_4/n547 (net)                                               1                   0.00       0.56 f
+  pairs_3_4/U904/ZN (NR2OPTPAD1BWP30P140)                                      0.01      0.01       0.57 r
+  pairs_3_4/n1041 (net)                                              2                   0.00       0.57 r
+  pairs_3_4/U272/ZN (INVD2BWP30P140)                                           0.01      0.01       0.58 f
+  pairs_3_4/n1146 (net)                                              7                   0.00       0.58 f
+  pairs_3_4/U1436/ZN (NR2D1BWP30P140)                                          0.01      0.01       0.59 r
+  pairs_3_4/n1148 (net)                                              1                   0.00       0.59 r
+  pairs_3_4/U1437/ZN (XNR2UD1BWP30P140)                                        0.02      0.01       0.60 r
+  pairs_3_4/n1149 (net)                                              1                   0.00       0.60 r
+  pairs_3_4/U1438/Z (MUX2D2BWP30P140)                                          0.01      0.02       0.62 r
+  pairs_3_4/right/sharedMacOut_mac/l00OOO0l[22] (net)                6                   0.00       0.62 r
+  pairs_3_4/right/sharedMacOut_mac/U9/U1/UORT0_1_13/ZN (NR2D1BWP30P140)        0.01      0.01       0.63 f    mo 
+  pairs_3_4/right/sharedMacOut_mac/U9/U1/enc_tree[1][1][26] (net)     2                  0.00       0.63 f
+  pairs_3_4/right/sharedMacOut_mac/U9/U1/UORT1_2_6/ZN (ND2D1BWP30P140)         0.01      0.01       0.64 r    mo 
+  pairs_3_4/right/sharedMacOut_mac/U9/U1/enc_tree[2][2][24] (net)     3                  0.00       0.64 r
+  pairs_3_4/U2235/ZN (INVD1BWP30P140)                                          0.01      0.00       0.64 f
+  pairs_3_4/right/sharedMacOut_mac/U9/U1/or2_inv[2][24] (net)        1                   0.00       0.64 f
+  pairs_3_4/right/sharedMacOut_mac/U9/U1/UEN0_2_3_1/ZN (AOI21D1BWP30P140)      0.01      0.01       0.65 r    mo 
+  pairs_3_4/right/sharedMacOut_mac/U9/U1/enc_tree[2][3][24] (net)     1                  0.00       0.65 r
+  pairs_3_4/U1856/Z (OA21D2BWP30P140)                                          0.01      0.02       0.67 r
+  pairs_3_4/n2038 (net)                                              3                   0.00       0.67 r
+  pairs_3_4/U1857/ZN (INVD1BWP30P140)                                          0.01      0.01       0.68 f
+  pairs_3_4/n1650 (net)                                              2                   0.00       0.68 f
+  pairs_3_4/U1860/Z (AN2D2BWP30P140)                                           0.00      0.01       0.69 f
+  pairs_3_4/n1651 (net)                                              1                   0.00       0.69 f
+  pairs_3_4/U1861/ZN (AOI21D1BWP30P140)                                        0.01      0.01       0.70 r
+  pairs_3_4/n1653 (net)                                              1                   0.00       0.70 r
+  pairs_3_4/U261/ZN (OAI21D2BWP30P140)                                         0.01      0.01       0.71 f
+  pairs_3_4/n1669 (net)                                              1                   0.00       0.71 f
+  pairs_3_4/U1870/ZN (AOI21D2BWP30P140)                                        0.01      0.01       0.72 r
+  pairs_3_4/n1672 (net)                                              1                   0.00       0.72 r
+  pairs_3_4/U260/ZN (ND2OPTPAD4BWP30P140)                                      0.01      0.01       0.73 f
+  pairs_3_4/n1705 (net)                                              9                   0.00       0.73 f
+  pairs_3_4/U1872/ZN (IOA22D2BWP30P140)                                        0.01      0.02       0.74 f
+  pairs_3_4/n1675 (net)                                              1                   0.00       0.74 f
+  pairs_3_4/U259/Z (BUFFD6BWP30P140)                                           0.01      0.02       0.76 f
+  pairs_3_4/n2020 (net)                                             12                   0.00       0.76 f
+  pairs_3_4/U252/ZN (INR2D4BWP30P140)                                          0.01      0.02       0.78 f
+  pairs_3_4/n1999 (net)                                             14                   0.00       0.78 f
+  pairs_3_4/U168/ZN (INVD2BWP30P140)                                           0.01      0.01       0.79 r
+  pairs_3_4/n1942 (net)                                              9                   0.00       0.79 r
+  pairs_3_4/U1982/ZN (OAI21D1BWP30P140)                                        0.01      0.01       0.80 f
+  pairs_3_4/n1750 (net)                                              1                   0.00       0.80 f
+  pairs_3_4/U517/ZN (NR3D0P7BWP30P140)                                         0.02      0.02       0.81 r
+  pairs_3_4/n1948 (net)                                              3                   0.00       0.81 r
+  pairs_3_4/U1985/ZN (INVD1BWP30P140)                                          0.01      0.01       0.82 f
+  pairs_3_4/n1850 (net)                                              3                   0.00       0.82 f
+  pairs_3_4/U2067/ZN (MUX2NUD1BWP30P140)                                       0.01      0.01       0.83 r
+  pairs_3_4/n1853 (net)                                              1                   0.00       0.83 r
+  pairs_3_4/U2069/ZN (MUX2NUD1BWP30P140)                                       0.01      0.01       0.84 f
+  pairs_3_4/n1856 (net)                                              1                   0.00       0.84 f
+  pairs_3_4/U2071/ZN (NR2D1BWP30P140)                                          0.02      0.02       0.86 r
+  pairs_3_4/n1992 (net)                                              2                   0.00       0.86 r
+  pairs_3_4/U229/ZN (OAI21D4BWP30P140)                                         0.03      0.02       0.88 f
+  pairs_3_4/n2081 (net)                                             11                   0.00       0.88 f
+  pairs_3_4/U134/ZN (INVD1BWP30P140)                                           0.01      0.01       0.89 r
+  pairs_3_4/n2051 (net)                                              2                   0.00       0.89 r
+  pairs_3_4/U2194/ZN (MUX2NUD1BWP30P140)                                       0.02      0.02       0.91 r
+  pairs_3_4/n2092 (net)                                              2                   0.00       0.91 r
+  pairs_3_4/U2195/ZN (ND3D1BWP30P140)                                          0.02      0.01       0.92 f
+  pairs_3_4/n2059 (net)                                              1                   0.00       0.92 f
+  pairs_3_4/U214/ZN (NR3D1P5BWP30P140)                                         0.01      0.01       0.93 r
+  pairs_3_4/n2086 (net)                                              1                   0.00       0.93 r
+  pairs_3_4/U211/ZN (ND3D2BWP30P140)                                           0.02      0.01       0.95 f
+  pairs_3_4/n2183 (net)                                              2                   0.00       0.95 f
+  pairs_3_4/U5/ZN (CKND2D3BWP30P140)                                           0.01      0.01       0.96 r
+  pairs_3_4/n2242 (net)                                              4                   0.00       0.96 r
+  pairs_3_4/U2/ZN (OAI22D1P5BWP30P140)                                         0.02      0.02       0.98 f
+  pairs_3_4/n2209 (net)                                              5                   0.00       0.98 f
+  pairs_3_4/U2293/Z (AO211D1BWP30P140)                                         0.01      0.02       1.00 f
+  pairs_3_4/n2304 (net)                                              1                   0.00       1.00 f
+  pairs_3_4/right/regS_bits_reg[10]/D (DFQD1BWP30P140)                         0.01      0.00       1.00 f
+  data arrival time                                                                                 1.00
+
+  clock ideal_clock1 (rise edge)                                                         1.00       1.00
+  clock network delay (ideal)                                                            0.00       1.00
+  pairs_3_4/right/regS_bits_reg[10]/CP (DFQD1BWP30P140)                                  0.00       1.00 r
+  library setup time                                                                     0.00       1.00
+  data required time                                                                                1.00
+  ------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                1.00
+  data arrival time                                                                                -1.00
+  ------------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                       0.00
+
+
+1

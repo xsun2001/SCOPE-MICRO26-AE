@@ -1,0 +1,606 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'SystolicArray' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 14:51:51 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+  Startpoint: pes_2_13/regW_bits_reg[6]
+              (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Endpoint: pes_3_13/regS_bits_reg[10]
+            (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Path Group: ideal_clock1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  PE_360             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_340             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_320             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_300             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_280             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_260             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_240             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_220             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_200             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_180             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_160             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_140             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_120             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_100             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_80              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_60              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_40              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_20              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_0               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_398             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_397             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_396             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_395             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_394             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_393             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_392             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_391             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_390             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_389             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_388             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_387             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_386             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_385             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_384             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_383             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_382             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_381             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_379             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_378             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_377             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_376             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_375             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_374             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_373             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_372             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_371             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_370             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_369             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_368             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_367             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_366             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_365             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_364             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_363             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_362             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_361             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_359             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_358             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_357             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_356             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_355             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_354             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_353             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_352             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_351             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_350             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_349             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_348             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_347             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_346             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_345             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_344             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_343             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_342             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_341             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_339             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_338             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_337             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_336             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_335             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_334             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_333             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_332             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_331             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_330             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_329             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_328             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_327             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_326             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_325             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_324             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_323             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_322             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_321             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_319             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_318             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_317             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_316             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_315             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_314             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_313             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_312             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_311             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_310             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_309             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_308             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_307             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_306             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_305             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_304             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_303             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_302             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_301             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_299             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_298             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_297             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_296             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_295             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_294             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_293             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_292             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_291             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_290             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_289             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_288             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_287             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_286             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_285             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_284             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_283             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_282             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_281             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_279             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_278             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_277             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_276             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_275             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_274             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_273             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_272             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_271             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_270             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_269             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_268             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_267             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_266             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_265             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_264             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_263             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_262             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_261             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_259             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_258             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_257             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_256             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_255             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_254             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_253             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_252             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_251             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_250             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_249             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_248             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_247             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_246             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_245             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_244             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_243             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_242             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_241             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_239             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_238             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_237             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_236             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_235             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_234             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_233             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_232             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_231             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_230             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_229             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_228             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_227             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_226             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_225             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_224             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_223             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_222             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_221             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_219             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_218             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_217             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_216             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_215             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_214             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_213             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_212             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_211             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_210             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_209             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_208             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_207             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_206             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_205             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_204             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_203             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_202             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_201             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_199             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_198             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_197             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_196             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_195             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_194             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_193             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_192             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_191             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_190             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_189             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_188             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_187             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_186             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_185             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_184             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_183             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_182             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_181             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_179             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_178             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_177             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_176             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_175             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_174             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_173             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_172             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_171             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_170             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_169             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_168             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_167             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_166             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_165             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_164             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_163             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_162             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_161             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_159             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_158             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_157             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_156             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_155             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_154             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_153             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_152             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_151             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_150             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_149             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_148             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_147             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_146             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_145             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_144             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_143             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_142             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_141             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_139             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_138             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_137             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_136             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_135             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_134             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_133             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_132             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_131             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_130             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_129             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_128             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_127             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_126             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_125             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_124             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_123             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_122             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_121             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_119             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_118             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_117             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_116             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_115             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_114             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_113             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_112             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_111             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_110             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_109             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_108             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_107             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_106             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_105             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_104             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_103             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_102             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_101             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_99              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_98              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_97              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_96              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_95              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_94              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_93              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_92              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_91              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_90              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_89              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_88              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_87              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_86              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_85              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_84              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_83              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_82              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_81              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_79              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_78              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_77              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_76              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_75              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_74              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_73              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_72              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_71              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_70              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_69              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_68              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_67              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_66              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_65              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_64              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_63              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_62              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_61              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_59              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_58              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_57              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_56              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_55              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_54              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_53              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_52              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_51              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_50              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_49              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_48              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_47              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_46              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_45              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_44              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_43              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_42              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_41              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_39              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_38              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_37              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_36              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_35              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_34              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_33              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_32              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_31              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_30              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_29              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_28              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_27              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_26              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_25              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_24              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_23              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_22              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_21              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_19              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_18              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_17              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_16              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_15              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_14              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_13              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_12              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_11              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_10              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_9               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_8               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_7               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_6               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_5               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_4               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_3               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_2               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_1               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_380             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  SystolicArray      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_399             ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                               Fanout     Trans      Incr       Path      Attributes
+  -----------------------------------------------------------------------------------------------------------------
+  clock ideal_clock1 (rise edge)                                            0.00       0.00
+  clock network delay (ideal)                                               0.00       0.00
+  pes_2_13/regW_bits_reg[6]/CP (DFQD1BWP30P140)                   0.00      0.00 #     0.00 r
+  pes_2_13/regW_bits_reg[6]/Q (DFQD1BWP30P140)                    0.02      0.04       0.04 f
+  pes_2_13/regW_bits[6] (net)                           5                   0.00       0.04 f
+  pes_2_13/U1074/Z (CKMUX2D0BWP30P140)                            0.03      0.03       0.07 f
+  pes_2_13/io_eastOut_bits[6] (net)                     5                   0.00       0.07 f
+  pes_2_13/io_eastOut_bits[6] (PE_137)                                      0.00       0.07 f
+  _pes_2_13_io_eastOut_bits[6] (net)                                        0.00       0.07 f
+  pes_3_13/io_westIn_bits[6] (PE_136)                                       0.00       0.07 f
+  pes_3_13/io_westIn_bits[6] (net)                                          0.00       0.07 f
+  pes_3_13/U111/ZN (NR2D1BWP30P140)                               0.01      0.01       0.09 r
+  pes_3_13/n61 (net)                                    1                   0.00       0.09 r
+  pes_3_13/U112/ZN (ND2D1BWP30P140)                               0.01      0.01       0.10 f
+  pes_3_13/n1020 (net)                                  2                   0.00       0.10 f
+  pes_3_13/U116/ZN (ND2D1BWP30P140)                               0.02      0.01       0.11 r
+  pes_3_13/n1007 (net)                                  7                   0.00       0.11 r
+  pes_3_13/U117/ZN (INVD1BWP30P140)                               0.02      0.02       0.13 f
+  pes_3_13/n1017 (net)                                  8                   0.00       0.13 f
+  pes_3_13/U157/Z (AN2D2BWP30P140)                                0.01      0.02       0.15 f
+  pes_3_13/n121 (net)                                   3                   0.00       0.15 f
+  pes_3_13/U161/ZN (NR2D1BWP30P140)                               0.01      0.01       0.15 r
+  pes_3_13/n89 (net)                                    1                   0.00       0.15 r
+  pes_3_13/U163/Z (OA21D1BWP30P140)                               0.01      0.01       0.17 r
+  pes_3_13/n93 (net)                                    1                   0.00       0.17 r
+  pes_3_13/U165/ZN (OAI21D1BWP30P140)                             0.01      0.01       0.18 f
+  pes_3_13/n97 (net)                                    1                   0.00       0.18 f
+  pes_3_13/U167/ZN (AOI21D1BWP30P140)                             0.01      0.01       0.19 r
+  pes_3_13/n100 (net)                                   1                   0.00       0.19 r
+  pes_3_13/U168/ZN (OAI21D1BWP30P140)                             0.02      0.01       0.20 f
+  pes_3_13/n106 (net)                                   1                   0.00       0.20 f
+  pes_3_13/U171/ZN (AOI21D2BWP30P140)                             0.02      0.01       0.21 r
+  pes_3_13/n118 (net)                                   3                   0.00       0.21 r
+  pes_3_13/U172/Z (BUFFD6BWP30P140)                               0.01      0.02       0.23 r
+  pes_3_13/n1009 (net)                                 27                   0.00       0.23 r
+  pes_3_13/U184/Z (MUX2D4BWP30P140)                               0.01      0.02       0.25 f
+  pes_3_13/n717 (net)                                   7                   0.00       0.25 f
+  pes_3_13/U185/Z (OR2D4BWP30P140)                                0.01      0.01       0.26 f
+  pes_3_13/n132 (net)                                   1                   0.00       0.26 f
+  pes_3_13/U205/S (FA1D2BWP30P140)                                0.03      0.05       0.32 r
+  pes_3_13/n133 (net)                                  17                   0.00       0.32 r
+  pes_3_13/U209/ZN (INR2D1BWP30P140)                              0.02      0.02       0.33 f
+  pes_3_13/n244 (net)                                   7                   0.00       0.33 f
+  pes_3_13/U95/ZN (MOAI22D0BWP30P140)                             0.02      0.02       0.36 f
+  pes_3_13/n161 (net)                                   1                   0.00       0.36 f
+  pes_3_13/U252/ZN (INR2D1BWP30P140)                              0.01      0.01       0.37 r
+  pes_3_13/n293 (net)                                   3                   0.00       0.37 r
+  pes_3_13/U258/ZN (MUX2NUD1BWP30P140)                            0.02      0.01       0.38 f
+  pes_3_13/n309 (net)                                   3                   0.00       0.38 f
+  pes_3_13/U392/ZN (INVD0BWP30P140)                               0.01      0.01       0.39 r
+  pes_3_13/n310 (net)                                   1                   0.00       0.39 r
+  pes_3_13/U393/ZN (NR2D1BWP30P140)                               0.01      0.01       0.40 f
+  pes_3_13/n311 (net)                                   1                   0.00       0.40 f
+  pes_3_13/U394/Z (XOR2UD1BWP30P140)                              0.02      0.01       0.41 f
+  pes_3_13/n335 (net)                                   2                   0.00       0.41 f
+  pes_3_13/U424/ZN (ND2D1BWP30P140)                               0.01      0.01       0.42 r
+  pes_3_13/n446 (net)                                   2                   0.00       0.42 r
+  pes_3_13/U425/ZN (INVD0BWP30P140)                               0.01      0.01       0.43 f
+  pes_3_13/n336 (net)                                   1                   0.00       0.43 f
+  pes_3_13/U426/ZN (AOI21D1BWP30P140)                             0.01      0.01       0.44 r
+  pes_3_13/n337 (net)                                   1                   0.00       0.44 r
+  pes_3_13/U427/ZN (OAI21D1BWP30P140)                             0.01      0.01       0.45 f
+  pes_3_13/n339 (net)                                   1                   0.00       0.45 f
+  pes_3_13/U8/ZN (AOI21D1BWP30P140)                               0.01      0.01       0.47 r
+  pes_3_13/n450 (net)                                   2                   0.00       0.47 r
+  pes_3_13/U429/ZN (OAI21D1BWP30P140)                             0.01      0.01       0.48 f
+  pes_3_13/n343 (net)                                   1                   0.00       0.48 f
+  pes_3_13/U430/ZN (AOI21OPTREPBD1BWP30P140)                      0.02      0.01       0.49 r
+  pes_3_13/n462 (net)                                   2                   0.00       0.49 r
+  pes_3_13/U56/ZN (OAI21D2BWP30P140)                              0.02      0.01       0.50 f
+  pes_3_13/n465 (net)                                   2                   0.00       0.50 f
+  pes_3_13/U439/ZN (AOI21D2BWP30P140)                             0.01      0.01       0.51 r
+  pes_3_13/n473 (net)                                   2                   0.00       0.51 r
+  pes_3_13/U444/ZN (OAI21D2BWP30P140)                             0.01      0.01       0.52 f
+  pes_3_13/n480 (net)                                   2                   0.00       0.52 f
+  pes_3_13/U448/Z (AO21D2BWP30P140)                               0.01      0.02       0.54 f
+  pes_3_13/n370 (net)                                   1                   0.00       0.54 f
+  pes_3_13/U449/CO (FA1OPTCD1BWP30P140)                           0.01      0.01       0.55 f
+  pes_3_13/n375 (net)                                   2                   0.00       0.55 f
+  pes_3_13/U7/ZN (NR2OPTPAD1BWP30P140)                            0.02      0.01       0.57 r
+  pes_3_13/n1006 (net)                                  3                   0.00       0.57 r
+  pes_3_13/U6/ZN (INVD3BWP30P140)                                 0.02      0.01       0.58 f
+  pes_3_13/n536 (net)                                  11                   0.00       0.58 f
+  pes_3_13/U551/Z (CKMUX2D0BWP30P140)                             0.02      0.03       0.61 r
+  pes_3_13/macOut_mac/l00OOO0l[20] (net)                6                   0.00       0.61 r
+  pes_3_13/macOut_mac/U9/U1/UORT0_1_12/ZN (NR2D1BWP30P140)        0.01      0.01       0.62 f    mo 
+  pes_3_13/macOut_mac/U9/U1/enc_tree[1][1][24] (net)     2                  0.00       0.62 f
+  pes_3_13/macOut_mac/U9/U1/UOR21_1_2_3/ZN (ND2D1BWP30P140)       0.01      0.01       0.63 r    mo 
+  pes_3_13/macOut_mac/U9/U1/or2_tree[1][2][24] (net)     2                  0.00       0.63 r
+  pes_3_13/U609/ZN (INVD1BWP30P140)                               0.01      0.00       0.63 f
+  pes_3_13/macOut_mac/U9/U1/or2_inv[1][24] (net)        1                   0.00       0.63 f
+  pes_3_13/macOut_mac/U9/U1/UEN0_1_3_1/ZN (AOI21D1BWP30P140)      0.01      0.01       0.64 r    mo 
+  pes_3_13/macOut_mac/U9/U1/enc_tree[1][3][24] (net)     1                  0.00       0.64 r
+  pes_3_13/U617/Z (OA21D1BWP30P140)                               0.01      0.02       0.66 r
+  pes_3_13/n576 (net)                                   2                   0.00       0.66 r
+  pes_3_13/U618/ZN (INVD1BWP30P140)                               0.01      0.01       0.67 f
+  pes_3_13/n542 (net)                                   2                   0.00       0.67 f
+  pes_3_13/U621/Z (CKAN2D1BWP30P140)                              0.01      0.01       0.68 f
+  pes_3_13/n543 (net)                                   1                   0.00       0.68 f
+  pes_3_13/U622/ZN (AOI21D1BWP30P140)                             0.01      0.01       0.69 r
+  pes_3_13/n555 (net)                                   1                   0.00       0.69 r
+  pes_3_13/U630/ZN (OAI21D1BWP30P140)                             0.01      0.01       0.70 f
+  pes_3_13/n569 (net)                                   1                   0.00       0.70 f
+  pes_3_13/U28/ZN (AOI21D1BWP30P140)                              0.01      0.01       0.71 r
+  pes_3_13/n572 (net)                                   1                   0.00       0.71 r
+  pes_3_13/U47/ZN (ND2OPTPAD2BWP30P140)                           0.01      0.01       0.72 f
+  pes_3_13/n607 (net)                                   7                   0.00       0.72 f
+  pes_3_13/U640/ZN (INR2D2BWP30P140)                              0.02      0.01       0.73 r
+  pes_3_13/n606 (net)                                   5                   0.00       0.73 r
+  pes_3_13/U644/ZN (ND2D2BWP30P140)                               0.01      0.01       0.74 f
+  pes_3_13/n578 (net)                                   1                   0.00       0.74 f
+  pes_3_13/U646/ZN (ND2OPTIBD4BWP30P140)                          0.02      0.01       0.76 r
+  pes_3_13/n683 (net)                                  10                   0.00       0.76 r
+  pes_3_13/U647/ZN (NR2D4BWP30P140)                               0.02      0.01       0.77 f
+  pes_3_13/n809 (net)                                  22                   0.00       0.77 f
+  pes_3_13/U661/ZN (MOAI22D0BWP30P140)                            0.02      0.02       0.79 f
+  pes_3_13/n583 (net)                                   1                   0.00       0.79 f
+  pes_3_13/U662/ZN (NR2D1BWP30P140)                               0.01      0.01       0.81 r
+  pes_3_13/n783 (net)                                   3                   0.00       0.81 r
+  pes_3_13/U663/ZN (INVD0BWP30P140)                               0.01      0.01       0.81 f
+  pes_3_13/n587 (net)                                   1                   0.00       0.81 f
+  pes_3_13/U665/ZN (MUX2ND0BWP30P140)                             0.02      0.01       0.82 r
+  pes_3_13/n591 (net)                                   1                   0.00       0.82 r
+  pes_3_13/U669/ZN (ND2D1BWP30P140)                               0.01      0.01       0.84 f
+  pes_3_13/n853 (net)                                   2                   0.00       0.84 f
+  pes_3_13/U104/ZN (ND2D1BWP30P140)                               0.01      0.01       0.84 r
+  pes_3_13/n611 (net)                                   1                   0.00       0.84 r
+  pes_3_13/U710/ZN (MUX2ND0BWP30P140)                             0.02      0.01       0.85 f
+  pes_3_13/n612 (net)                                   1                   0.00       0.85 f
+  pes_3_13/U711/ZN (INR2D1BWP30P140)                              0.02      0.02       0.87 r
+  pes_3_13/n895 (net)                                   4                   0.00       0.87 r
+  pes_3_13/U949/ZN (ND3D1BWP30P140)                               0.02      0.02       0.89 f
+  pes_3_13/n894 (net)                                   1                   0.00       0.89 f
+  pes_3_13/U957/ZN (NR3D1BWP30P140)                               0.01      0.02       0.90 r
+  pes_3_13/n983 (net)                                   3                   0.00       0.90 r
+  pes_3_13/U958/ZN (AOI22D1BWP30P140)                             0.02      0.01       0.91 f
+  pes_3_13/n897 (net)                                   1                   0.00       0.91 f
+  pes_3_13/U69/ZN (OAI21D2BWP30P140)                              0.01      0.01       0.92 r
+  pes_3_13/n40 (net)                                    2                   0.00       0.92 r
+  pes_3_13/U68/ZN (NR4D0BWP30P140)                                0.02      0.01       0.93 f
+  pes_3_13/n972 (net)                                   1                   0.00       0.93 f
+  pes_3_13/U1025/Z (AN4D2BWP30P140)                               0.01      0.02       0.95 f
+  pes_3_13/n1040 (net)                                  4                   0.00       0.95 f
+  pes_3_13/U1026/ZN (NR2D1BWP30P140)                              0.01      0.01       0.95 r
+  pes_3_13/n973 (net)                                   1                   0.00       0.95 r
+  pes_3_13/U1027/ZN (OAI21D1BWP30P140)                            0.03      0.02       0.98 f
+  pes_3_13/n1005 (net)                                  5                   0.00       0.98 f
+  pes_3_13/U1033/ZN (OAI211D1BWP30P140)                           0.01      0.01       0.99 r
+  pes_3_13/n1067 (net)                                  1                   0.00       0.99 r
+  pes_3_13/regS_bits_reg[10]/D (DFQD1BWP30P140)                   0.01      0.00       0.99 r
+  data arrival time                                                                    0.99
+
+  clock ideal_clock1 (rise edge)                                            1.00       1.00
+  clock network delay (ideal)                                               0.00       1.00
+  pes_3_13/regS_bits_reg[10]/CP (DFQD1BWP30P140)                            0.00       1.00 r
+  library setup time                                                       -0.01       0.99
+  data required time                                                                   0.99
+  -----------------------------------------------------------------------------------------------------------------
+  data required time                                                                   0.99
+  data arrival time                                                                   -0.99
+  -----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                          0.00
+
+
+1

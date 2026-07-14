@@ -1,0 +1,41 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : OneSaArray
+Version: V-2023.12
+Date   : Tue Apr  7 01:31:34 2026
+****************************************
+
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+OneSaArray             ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+OneSaMesh              ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+OneSaArray                               25.708  196.638 4.50e+06  226.849 100.0
+  mesh (OneSaMesh)                       25.676  196.614 4.50e+06  226.785 100.0
+1

@@ -1,0 +1,1191 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : FuseMax2DArray
+Version: V-2023.12
+Date   : Tue Apr  7 12:47:26 2026
+****************************************
+
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FuseMax2DArray         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_575        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_552        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_0          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_24         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_48         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_72         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_96         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_120        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_144        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_168        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_192        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_216        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_240        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_264        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_288        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_312        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_336        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_360        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_384        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_408        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_432        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_456        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_480        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_504        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_528        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_1          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_2          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_3          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_4          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_5          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_6          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_7          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_8          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_9          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_10         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_11         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_12         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_13         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_14         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_15         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_16         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_17         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_18         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_19         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_20         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_21         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_22         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_23         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_25         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_26         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_27         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_28         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_29         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_30         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_31         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_32         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_33         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_34         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_35         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_36         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_37         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_38         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_39         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_40         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_41         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_42         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_43         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_44         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_45         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_46         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_47         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_49         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_50         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_51         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_52         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_53         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_54         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_55         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_56         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_57         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_58         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_59         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_60         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_61         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_62         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_63         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_64         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_65         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_66         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_67         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_68         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_69         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_70         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_71         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_73         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_74         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_75         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_76         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_77         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_78         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_79         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_80         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_81         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_82         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_83         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_84         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_85         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_86         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_87         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_88         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_89         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_90         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_91         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_92         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_93         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_94         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_95         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_97         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_98         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_99         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_100        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_101        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_102        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_103        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_104        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_105        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_106        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_107        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_108        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_109        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_110        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_111        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_112        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_113        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_114        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_115        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_116        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_117        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_118        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_119        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_121        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_122        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_123        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_124        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_125        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_126        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_127        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_128        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_129        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_130        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_131        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_132        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_133        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_134        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_135        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_136        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_137        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_138        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_139        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_140        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_141        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_142        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_143        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_145        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_146        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_147        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_148        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_149        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_150        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_151        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_152        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_153        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_154        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_155        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_156        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_157        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_158        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_159        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_160        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_161        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_162        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_163        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_164        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_165        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_166        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_167        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_169        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_170        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_171        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_172        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_173        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_174        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_175        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_176        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_177        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_178        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_179        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_180        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_181        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_182        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_183        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_184        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_185        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_186        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_187        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_188        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_189        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_190        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_191        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_193        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_194        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_195        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_196        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_197        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_198        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_199        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_200        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_201        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_202        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_203        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_204        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_205        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_206        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_207        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_208        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_209        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_210        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_211        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_212        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_213        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_214        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_215        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_217        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_218        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_219        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_220        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_221        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_222        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_223        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_224        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_225        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_226        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_227        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_228        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_229        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_230        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_231        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_232        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_233        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_234        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_235        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_236        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_237        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_238        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_239        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_241        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_242        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_243        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_244        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_245        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_246        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_247        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_248        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_249        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_250        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_251        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_252        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_253        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_254        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_255        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_256        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_257        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_258        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_259        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_260        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_261        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_262        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_263        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_265        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_266        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_267        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_268        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_269        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_270        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_271        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_272        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_273        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_274        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_275        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_276        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_277        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_278        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_279        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_280        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_281        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_282        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_283        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_284        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_285        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_286        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_287        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_289        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_290        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_291        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_292        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_293        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_294        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_295        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_296        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_297        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_298        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_299        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_300        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_301        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_302        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_303        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_304        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_305        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_306        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_307        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_308        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_309        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_310        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_311        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_313        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_314        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_315        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_316        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_317        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_318        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_319        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_320        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_321        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_322        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_323        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_324        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_325        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_326        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_327        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_328        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_329        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_330        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_331        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_332        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_333        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_334        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_335        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_337        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_338        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_339        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_340        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_341        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_342        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_343        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_344        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_345        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_346        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_347        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_348        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_349        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_350        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_351        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_352        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_353        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_354        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_355        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_356        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_357        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_358        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_359        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_361        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_362        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_363        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_364        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_365        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_366        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_367        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_368        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_369        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_370        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_371        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_372        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_373        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_374        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_375        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_376        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_377        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_378        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_379        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_380        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_381        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_382        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_383        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_385        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_386        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_387        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_388        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_389        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_390        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_391        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_392        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_393        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_394        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_395        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_396        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_397        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_398        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_399        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_400        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_401        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_402        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_403        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_404        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_405        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_406        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_407        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_409        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_410        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_411        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_412        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_413        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_414        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_415        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_416        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_417        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_418        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_419        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_420        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_421        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_422        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_423        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_424        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_425        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_426        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_427        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_428        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_429        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_430        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_431        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_433        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_434        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_435        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_436        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_437        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_438        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_439        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_440        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_441        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_442        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_443        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_444        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_445        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_446        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_447        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_448        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_449        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_450        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_451        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_452        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_453        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_454        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_455        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_457        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_458        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_459        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_460        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_461        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_462        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_463        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_464        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_465        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_466        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_467        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_468        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_469        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_470        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_471        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_472        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_473        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_474        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_475        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_476        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_477        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_478        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_479        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_481        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_482        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_483        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_484        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_485        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_486        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_487        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_488        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_489        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_490        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_491        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_492        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_493        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_494        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_495        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_496        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_497        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_498        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_499        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_500        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_501        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_502        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_503        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_505        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_506        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_507        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_508        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_509        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_510        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_511        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_512        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_513        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_514        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_515        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_516        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_517        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_518        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_519        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_520        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_521        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_522        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_523        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_524        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_525        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_526        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_527        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_529        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_530        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_531        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_532        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_533        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_534        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_535        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_536        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_537        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_538        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_539        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_540        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_541        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_542        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_543        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_544        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_545        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_546        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_547        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_548        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_549        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_550        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_551        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_553        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_554        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_555        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_556        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_557        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_558        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_559        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_560        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_561        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_562        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_563        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_564        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_565        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_566        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_567        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_568        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_569        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_570        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_571        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_572        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_573        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_574        ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+FuseMax2DArray                           45.487  459.279 6.71e+06  511.474 100.0
+  pe_23_23 (FuseMax2DPE_0)             8.08e-02    0.780 1.18e+04    0.873   0.2
+  pe_23_22 (FuseMax2DPE_1)             7.98e-02    0.779 1.17e+04    0.870   0.2
+  pe_23_21 (FuseMax2DPE_2)             7.52e-02    0.772 1.14e+04    0.859   0.2
+  pe_23_20 (FuseMax2DPE_3)             8.04e-02    0.777 1.18e+04    0.869   0.2
+  pe_23_19 (FuseMax2DPE_4)             8.23e-02    0.779 1.17e+04    0.873   0.2
+  pe_23_18 (FuseMax2DPE_5)             8.18e-02    0.779 1.16e+04    0.872   0.2
+  pe_23_17 (FuseMax2DPE_6)             8.59e-02    0.785 1.17e+04    0.883   0.2
+  pe_23_16 (FuseMax2DPE_7)             8.31e-02    0.784 1.17e+04    0.879   0.2
+  pe_23_15 (FuseMax2DPE_8)             8.30e-02    0.781 1.17e+04    0.876   0.2
+  pe_23_14 (FuseMax2DPE_9)             8.12e-02    0.778 1.17e+04    0.871   0.2
+  pe_23_13 (FuseMax2DPE_10)            8.10e-02    0.779 1.15e+04    0.872   0.2
+  pe_23_12 (FuseMax2DPE_11)            8.43e-02    0.786 1.19e+04    0.882   0.2
+  pe_23_11 (FuseMax2DPE_12)            8.31e-02    0.780 1.15e+04    0.875   0.2
+  pe_23_10 (FuseMax2DPE_13)            8.59e-02    0.783 1.15e+04    0.881   0.2
+  pe_23_9 (FuseMax2DPE_14)             8.73e-02    0.785 1.16e+04    0.884   0.2
+  pe_23_8 (FuseMax2DPE_15)             8.36e-02    0.783 1.15e+04    0.878   0.2
+  pe_23_7 (FuseMax2DPE_16)             8.87e-02    0.789 1.18e+04    0.889   0.2
+  pe_23_6 (FuseMax2DPE_17)             8.73e-02    0.788 1.15e+04    0.887   0.2
+  pe_23_5 (FuseMax2DPE_18)             9.09e-02    0.790 1.16e+04    0.892   0.2
+  pe_23_4 (FuseMax2DPE_19)             9.64e-02    0.795 1.17e+04    0.903   0.2
+  pe_23_3 (FuseMax2DPE_20)             9.28e-02    0.792 1.17e+04    0.897   0.2
+  pe_23_2 (FuseMax2DPE_21)             9.33e-02    0.798 1.18e+04    0.903   0.2
+  pe_23_1 (FuseMax2DPE_22)             9.38e-02    0.800 1.17e+04    0.905   0.2
+  pe_23_0 (FuseMax2DPE_23)                0.104    0.804 1.20e+04    0.920   0.2
+  pe_22_23 (FuseMax2DPE_24)            6.89e-02    0.786 1.17e+04    0.867   0.2
+  pe_22_22 (FuseMax2DPE_25)            6.78e-02    0.784 1.15e+04    0.864   0.2
+  pe_22_21 (FuseMax2DPE_26)            7.01e-02    0.788 1.17e+04    0.869   0.2
+  pe_22_20 (FuseMax2DPE_27)            6.84e-02    0.784 1.16e+04    0.864   0.2
+  pe_22_19 (FuseMax2DPE_28)            6.95e-02    0.782 1.15e+04    0.863   0.2
+  pe_22_18 (FuseMax2DPE_29)            7.13e-02    0.788 1.17e+04    0.871   0.2
+  pe_22_17 (FuseMax2DPE_30)            6.78e-02    0.784 1.15e+04    0.863   0.2
+  pe_22_16 (FuseMax2DPE_31)            7.20e-02    0.785 1.18e+04    0.869   0.2
+  pe_22_15 (FuseMax2DPE_32)            7.16e-02    0.787 1.15e+04    0.870   0.2
+  pe_22_14 (FuseMax2DPE_33)            7.13e-02    0.791 1.18e+04    0.874   0.2
+  pe_22_13 (FuseMax2DPE_34)            7.26e-02    0.790 1.17e+04    0.875   0.2
+  pe_22_12 (FuseMax2DPE_35)            7.28e-02    0.791 1.16e+04    0.875   0.2
+  pe_22_11 (FuseMax2DPE_36)            7.38e-02    0.777 1.16e+04    0.862   0.2
+  pe_22_10 (FuseMax2DPE_37)            7.63e-02    0.793 1.16e+04    0.881   0.2
+  pe_22_9 (FuseMax2DPE_38)             7.75e-02    0.793 1.15e+04    0.882   0.2
+  pe_22_8 (FuseMax2DPE_39)             7.54e-02    0.796 1.17e+04    0.883   0.2
+  pe_22_7 (FuseMax2DPE_40)             7.99e-02    0.800 1.17e+04    0.891   0.2
+  pe_22_6 (FuseMax2DPE_41)             7.69e-02    0.793 1.14e+04    0.881   0.2
+  pe_22_5 (FuseMax2DPE_42)             8.15e-02    0.797 1.16e+04    0.890   0.2
+  pe_22_4 (FuseMax2DPE_43)             8.47e-02    0.803 1.17e+04    0.900   0.2
+  pe_22_3 (FuseMax2DPE_44)             8.34e-02    0.805 1.15e+04    0.900   0.2
+  pe_22_2 (FuseMax2DPE_45)             8.48e-02    0.802 1.16e+04    0.898   0.2
+  pe_22_1 (FuseMax2DPE_46)             8.91e-02    0.810 1.16e+04    0.910   0.2
+  pe_22_0 (FuseMax2DPE_47)             8.76e-02    0.808 1.16e+04    0.907   0.2
+  pe_21_23 (FuseMax2DPE_48)            6.83e-02    0.778 1.15e+04    0.857   0.2
+  pe_21_22 (FuseMax2DPE_49)            7.06e-02    0.787 1.18e+04    0.870   0.2
+  pe_21_21 (FuseMax2DPE_50)            6.85e-02    0.784 1.14e+04    0.864   0.2
+  pe_21_20 (FuseMax2DPE_51)            6.90e-02    0.787 1.16e+04    0.867   0.2
+  pe_21_19 (FuseMax2DPE_52)            6.81e-02    0.786 1.16e+04    0.865   0.2
+  pe_21_18 (FuseMax2DPE_53)            6.97e-02    0.785 1.16e+04    0.866   0.2
+  pe_21_17 (FuseMax2DPE_54)            7.04e-02    0.772 1.17e+04    0.854   0.2
+  pe_21_16 (FuseMax2DPE_55)            7.51e-02    0.793 1.16e+04    0.879   0.2
+  pe_21_15 (FuseMax2DPE_56)            7.01e-02    0.789 1.16e+04    0.870   0.2
+  pe_21_14 (FuseMax2DPE_57)            7.20e-02    0.789 1.17e+04    0.872   0.2
+  pe_21_13 (FuseMax2DPE_58)            7.18e-02    0.792 1.17e+04    0.876   0.2
+  pe_21_12 (FuseMax2DPE_59)            7.24e-02    0.791 1.15e+04    0.875   0.2
+  pe_21_11 (FuseMax2DPE_60)            7.09e-02    0.789 1.15e+04    0.871   0.2
+  pe_21_10 (FuseMax2DPE_61)            7.85e-02    0.796 1.17e+04    0.886   0.2
+  pe_21_9 (FuseMax2DPE_62)             7.49e-02    0.796 1.16e+04    0.883   0.2
+  pe_21_8 (FuseMax2DPE_63)             7.69e-02    0.796 1.16e+04    0.885   0.2
+  pe_21_7 (FuseMax2DPE_64)             7.65e-02    0.796 1.17e+04    0.884   0.2
+  pe_21_6 (FuseMax2DPE_65)             7.94e-02    0.796 1.13e+04    0.887   0.2
+  pe_21_5 (FuseMax2DPE_66)             7.70e-02    0.798 1.17e+04    0.886   0.2
+  pe_21_4 (FuseMax2DPE_67)             7.93e-02    0.799 1.15e+04    0.890   0.2
+  pe_21_3 (FuseMax2DPE_68)             8.48e-02    0.805 1.18e+04    0.901   0.2
+  pe_21_2 (FuseMax2DPE_69)             8.54e-02    0.810 1.17e+04    0.907   0.2
+  pe_21_1 (FuseMax2DPE_70)             8.57e-02    0.805 1.14e+04    0.902   0.2
+  pe_21_0 (FuseMax2DPE_71)             8.97e-02    0.814 1.18e+04    0.915   0.2
+  pe_20_23 (FuseMax2DPE_72)            6.88e-02    0.784 1.16e+04    0.865   0.2
+  pe_20_22 (FuseMax2DPE_73)            6.75e-02    0.779 1.16e+04    0.858   0.2
+  pe_20_21 (FuseMax2DPE_74)            7.07e-02    0.786 1.18e+04    0.869   0.2
+  pe_20_20 (FuseMax2DPE_75)            7.26e-02    0.787 1.17e+04    0.871   0.2
+  pe_20_19 (FuseMax2DPE_76)            6.81e-02    0.788 1.18e+04    0.868   0.2
+  pe_20_18 (FuseMax2DPE_77)            7.23e-02    0.790 1.16e+04    0.874   0.2
+  pe_20_17 (FuseMax2DPE_78)            6.87e-02    0.784 1.16e+04    0.864   0.2
+  pe_20_16 (FuseMax2DPE_79)            6.89e-02    0.779 1.16e+04    0.859   0.2
+  pe_20_15 (FuseMax2DPE_80)            7.23e-02    0.785 1.16e+04    0.868   0.2
+  pe_20_14 (FuseMax2DPE_81)            7.01e-02    0.784 1.16e+04    0.866   0.2
+  pe_20_13 (FuseMax2DPE_82)            7.01e-02    0.791 1.16e+04    0.873   0.2
+  pe_20_12 (FuseMax2DPE_83)            7.44e-02    0.793 1.18e+04    0.879   0.2
+  pe_20_11 (FuseMax2DPE_84)            7.62e-02    0.798 1.18e+04    0.886   0.2
+  pe_20_10 (FuseMax2DPE_85)            7.72e-02    0.795 1.18e+04    0.884   0.2
+  pe_20_9 (FuseMax2DPE_86)             7.38e-02    0.792 1.17e+04    0.877   0.2
+  pe_20_8 (FuseMax2DPE_87)             7.53e-02    0.794 1.17e+04    0.881   0.2
+  pe_20_7 (FuseMax2DPE_88)             7.38e-02    0.786 1.16e+04    0.872   0.2
+  pe_20_6 (FuseMax2DPE_89)             7.79e-02    0.794 1.16e+04    0.884   0.2
+  pe_20_5 (FuseMax2DPE_90)             7.85e-02    0.803 1.17e+04    0.893   0.2
+  pe_20_4 (FuseMax2DPE_91)             8.45e-02    0.806 1.19e+04    0.903   0.2
+  pe_20_3 (FuseMax2DPE_92)             8.44e-02    0.807 1.17e+04    0.903   0.2
+  pe_20_2 (FuseMax2DPE_93)             8.62e-02    0.806 1.18e+04    0.904   0.2
+  pe_20_1 (FuseMax2DPE_94)             8.91e-02    0.812 1.18e+04    0.913   0.2
+  pe_20_0 (FuseMax2DPE_95)             9.22e-02    0.813 1.15e+04    0.917   0.2
+  pe_19_23 (FuseMax2DPE_96)            6.75e-02    0.780 1.17e+04    0.859   0.2
+  pe_19_22 (FuseMax2DPE_97)            6.71e-02    0.783 1.17e+04    0.862   0.2
+  pe_19_21 (FuseMax2DPE_98)            6.63e-02    0.782 1.14e+04    0.860   0.2
+  pe_19_20 (FuseMax2DPE_99)            6.94e-02    0.788 1.15e+04    0.869   0.2
+  pe_19_19 (FuseMax2DPE_100)           6.80e-02    0.783 1.14e+04    0.863   0.2
+  pe_19_18 (FuseMax2DPE_101)           7.37e-02    0.790 1.18e+04    0.876   0.2
+  pe_19_17 (FuseMax2DPE_102)           6.86e-02    0.784 1.17e+04    0.865   0.2
+  pe_19_16 (FuseMax2DPE_103)           6.96e-02    0.788 1.16e+04    0.869   0.2
+  pe_19_15 (FuseMax2DPE_104)           6.85e-02    0.782 1.16e+04    0.863   0.2
+  pe_19_14 (FuseMax2DPE_105)           7.39e-02    0.793 1.16e+04    0.879   0.2
+  pe_19_13 (FuseMax2DPE_106)           7.03e-02    0.782 1.15e+04    0.864   0.2
+  pe_19_12 (FuseMax2DPE_107)           7.50e-02    0.796 1.18e+04    0.882   0.2
+  pe_19_11 (FuseMax2DPE_108)           7.60e-02    0.790 1.18e+04    0.878   0.2
+  pe_19_10 (FuseMax2DPE_109)           7.36e-02    0.785 1.15e+04    0.870   0.2
+  pe_19_9 (FuseMax2DPE_110)            7.27e-02    0.791 1.15e+04    0.875   0.2
+  pe_19_8 (FuseMax2DPE_111)            7.78e-02    0.796 1.17e+04    0.885   0.2
+  pe_19_7 (FuseMax2DPE_112)            7.94e-02    0.795 1.16e+04    0.886   0.2
+  pe_19_6 (FuseMax2DPE_113)            8.15e-02    0.799 1.17e+04    0.892   0.2
+  pe_19_5 (FuseMax2DPE_114)            8.21e-02    0.803 1.17e+04    0.897   0.2
+  pe_19_4 (FuseMax2DPE_115)            7.93e-02    0.796 1.15e+04    0.887   0.2
+  pe_19_3 (FuseMax2DPE_116)            8.30e-02    0.806 1.19e+04    0.901   0.2
+  pe_19_2 (FuseMax2DPE_117)            8.50e-02    0.808 1.16e+04    0.905   0.2
+  pe_19_1 (FuseMax2DPE_118)            8.66e-02    0.808 1.17e+04    0.906   0.2
+  pe_19_0 (FuseMax2DPE_119)            9.01e-02    0.819 1.20e+04    0.921   0.2
+  pe_18_23 (FuseMax2DPE_120)           6.90e-02    0.786 1.16e+04    0.866   0.2
+  pe_18_22 (FuseMax2DPE_121)           6.81e-02    0.783 1.15e+04    0.862   0.2
+  pe_18_21 (FuseMax2DPE_122)           6.97e-02    0.784 1.17e+04    0.866   0.2
+  pe_18_20 (FuseMax2DPE_123)           7.22e-02    0.788 1.18e+04    0.872   0.2
+  pe_18_19 (FuseMax2DPE_124)           7.00e-02    0.789 1.18e+04    0.871   0.2
+  pe_18_18 (FuseMax2DPE_125)           7.10e-02    0.787 1.16e+04    0.870   0.2
+  pe_18_17 (FuseMax2DPE_126)           6.91e-02    0.784 1.18e+04    0.865   0.2
+  pe_18_16 (FuseMax2DPE_127)           6.83e-02    0.786 1.15e+04    0.866   0.2
+  pe_18_15 (FuseMax2DPE_128)           7.17e-02    0.788 1.16e+04    0.872   0.2
+  pe_18_14 (FuseMax2DPE_129)           7.10e-02    0.790 1.16e+04    0.873   0.2
+  pe_18_13 (FuseMax2DPE_130)           7.10e-02    0.788 1.15e+04    0.871   0.2
+  pe_18_12 (FuseMax2DPE_131)           7.32e-02    0.791 1.16e+04    0.875   0.2
+  pe_18_11 (FuseMax2DPE_132)           7.48e-02    0.791 1.16e+04    0.877   0.2
+  pe_18_10 (FuseMax2DPE_133)           7.38e-02    0.792 1.16e+04    0.877   0.2
+  pe_18_9 (FuseMax2DPE_134)            7.46e-02    0.790 1.16e+04    0.877   0.2
+  pe_18_8 (FuseMax2DPE_135)            7.51e-02    0.797 1.16e+04    0.884   0.2
+  pe_18_7 (FuseMax2DPE_136)            7.97e-02    0.801 1.16e+04    0.892   0.2
+  pe_18_6 (FuseMax2DPE_137)            7.82e-02    0.800 1.18e+04    0.890   0.2
+  pe_18_5 (FuseMax2DPE_138)            7.85e-02    0.800 1.15e+04    0.890   0.2
+  pe_18_4 (FuseMax2DPE_139)            8.08e-02    0.803 1.17e+04    0.896   0.2
+  pe_18_3 (FuseMax2DPE_140)            8.59e-02    0.806 1.17e+04    0.904   0.2
+  pe_18_2 (FuseMax2DPE_141)            8.34e-02    0.802 1.17e+04    0.897   0.2
+  pe_18_1 (FuseMax2DPE_142)            8.65e-02    0.811 1.16e+04    0.909   0.2
+  pe_18_0 (FuseMax2DPE_143)            8.92e-02    0.810 1.16e+04    0.911   0.2
+  pe_17_23 (FuseMax2DPE_144)           6.58e-02    0.777 1.15e+04    0.855   0.2
+  pe_17_22 (FuseMax2DPE_145)           6.72e-02    0.785 1.18e+04    0.864   0.2
+  pe_17_21 (FuseMax2DPE_146)           7.06e-02    0.788 1.16e+04    0.870   0.2
+  pe_17_20 (FuseMax2DPE_147)           6.72e-02    0.783 1.15e+04    0.862   0.2
+  pe_17_19 (FuseMax2DPE_148)           6.66e-02    0.782 1.16e+04    0.860   0.2
+  pe_17_18 (FuseMax2DPE_149)           7.14e-02    0.791 1.17e+04    0.874   0.2
+  pe_17_17 (FuseMax2DPE_150)           7.29e-02    0.788 1.17e+04    0.873   0.2
+  pe_17_16 (FuseMax2DPE_151)           7.13e-02    0.788 1.16e+04    0.871   0.2
+  pe_17_15 (FuseMax2DPE_152)           7.32e-02    0.791 1.16e+04    0.876   0.2
+  pe_17_14 (FuseMax2DPE_153)           7.03e-02    0.788 1.16e+04    0.870   0.2
+  pe_17_13 (FuseMax2DPE_154)           7.16e-02    0.790 1.18e+04    0.873   0.2
+  pe_17_12 (FuseMax2DPE_155)           7.87e-02    0.799 1.18e+04    0.890   0.2
+  pe_17_11 (FuseMax2DPE_156)           7.53e-02    0.793 1.17e+04    0.880   0.2
+  pe_17_10 (FuseMax2DPE_157)           7.58e-02    0.793 1.15e+04    0.880   0.2
+  pe_17_9 (FuseMax2DPE_158)            7.51e-02    0.795 1.15e+04    0.882   0.2
+  pe_17_8 (FuseMax2DPE_159)            7.70e-02    0.795 1.16e+04    0.884   0.2
+  pe_17_7 (FuseMax2DPE_160)            7.63e-02    0.795 1.15e+04    0.882   0.2
+  pe_17_6 (FuseMax2DPE_161)            7.65e-02    0.794 1.16e+04    0.882   0.2
+  pe_17_5 (FuseMax2DPE_162)            7.94e-02    0.801 1.17e+04    0.892   0.2
+  pe_17_4 (FuseMax2DPE_163)            8.26e-02    0.806 1.19e+04    0.901   0.2
+  pe_17_3 (FuseMax2DPE_164)            8.44e-02    0.805 1.16e+04    0.901   0.2
+  pe_17_2 (FuseMax2DPE_165)            8.76e-02    0.810 1.17e+04    0.909   0.2
+  pe_17_1 (FuseMax2DPE_166)            8.80e-02    0.807 1.17e+04    0.907   0.2
+  pe_17_0 (FuseMax2DPE_167)            8.82e-02    0.810 1.14e+04    0.910   0.2
+  pe_16_23 (FuseMax2DPE_168)           6.86e-02    0.785 1.16e+04    0.865   0.2
+  pe_16_22 (FuseMax2DPE_169)           7.21e-02    0.787 1.17e+04    0.871   0.2
+  pe_16_21 (FuseMax2DPE_170)           7.00e-02    0.787 1.15e+04    0.869   0.2
+  pe_16_20 (FuseMax2DPE_171)           7.34e-02    0.789 1.17e+04    0.874   0.2
+  pe_16_19 (FuseMax2DPE_172)           6.94e-02    0.785 1.15e+04    0.866   0.2
+  pe_16_18 (FuseMax2DPE_173)           6.85e-02    0.778 1.15e+04    0.858   0.2
+  pe_16_17 (FuseMax2DPE_174)           7.35e-02    0.783 1.18e+04    0.868   0.2
+  pe_16_16 (FuseMax2DPE_175)           6.91e-02    0.791 1.16e+04    0.872   0.2
+  pe_16_15 (FuseMax2DPE_176)           7.15e-02    0.787 1.16e+04    0.870   0.2
+  pe_16_14 (FuseMax2DPE_177)           7.36e-02    0.789 1.16e+04    0.874   0.2
+  pe_16_13 (FuseMax2DPE_178)           7.28e-02    0.791 1.16e+04    0.876   0.2
+  pe_16_12 (FuseMax2DPE_179)           7.21e-02    0.793 1.17e+04    0.877   0.2
+  pe_16_11 (FuseMax2DPE_180)           7.33e-02    0.792 1.17e+04    0.877   0.2
+  pe_16_10 (FuseMax2DPE_181)           7.68e-02    0.795 1.16e+04    0.883   0.2
+  pe_16_9 (FuseMax2DPE_182)            7.59e-02    0.792 1.15e+04    0.879   0.2
+  pe_16_8 (FuseMax2DPE_183)            7.79e-02    0.796 1.17e+04    0.886   0.2
+  pe_16_7 (FuseMax2DPE_184)            7.26e-02    0.796 1.17e+04    0.880   0.2
+  pe_16_6 (FuseMax2DPE_185)            7.50e-02    0.796 1.14e+04    0.882   0.2
+  pe_16_5 (FuseMax2DPE_186)            7.94e-02    0.800 1.15e+04    0.891   0.2
+  pe_16_4 (FuseMax2DPE_187)            8.08e-02    0.800 1.17e+04    0.892   0.2
+  pe_16_3 (FuseMax2DPE_188)            8.35e-02    0.805 1.15e+04    0.900   0.2
+  pe_16_2 (FuseMax2DPE_189)            8.38e-02    0.802 1.18e+04    0.898   0.2
+  pe_16_1 (FuseMax2DPE_190)            8.82e-02    0.812 1.16e+04    0.912   0.2
+  pe_16_0 (FuseMax2DPE_191)            9.07e-02    0.814 1.17e+04    0.916   0.2
+  pe_15_23 (FuseMax2DPE_192)           6.71e-02    0.781 1.16e+04    0.860   0.2
+  pe_15_22 (FuseMax2DPE_193)           6.85e-02    0.788 1.18e+04    0.868   0.2
+  pe_15_21 (FuseMax2DPE_194)           7.15e-02    0.789 1.14e+04    0.872   0.2
+  pe_15_20 (FuseMax2DPE_195)           7.06e-02    0.781 1.15e+04    0.863   0.2
+  pe_15_19 (FuseMax2DPE_196)           6.94e-02    0.786 1.14e+04    0.867   0.2
+  pe_15_18 (FuseMax2DPE_197)           6.82e-02    0.787 1.16e+04    0.866   0.2
+  pe_15_17 (FuseMax2DPE_198)           7.09e-02    0.789 1.16e+04    0.871   0.2
+  pe_15_16 (FuseMax2DPE_199)           7.02e-02    0.788 1.16e+04    0.870   0.2
+  pe_15_15 (FuseMax2DPE_200)           7.21e-02    0.786 1.15e+04    0.870   0.2
+  pe_15_14 (FuseMax2DPE_201)           7.14e-02    0.791 1.15e+04    0.874   0.2
+  pe_15_13 (FuseMax2DPE_202)           7.36e-02    0.792 1.19e+04    0.877   0.2
+  pe_15_12 (FuseMax2DPE_203)           7.51e-02    0.795 1.16e+04    0.882   0.2
+  pe_15_11 (FuseMax2DPE_204)           7.41e-02    0.791 1.16e+04    0.876   0.2
+  pe_15_10 (FuseMax2DPE_205)           7.25e-02    0.791 1.17e+04    0.875   0.2
+  pe_15_9 (FuseMax2DPE_206)            7.62e-02    0.796 1.17e+04    0.884   0.2
+  pe_15_8 (FuseMax2DPE_207)            7.62e-02    0.798 1.15e+04    0.885   0.2
+  pe_15_7 (FuseMax2DPE_208)            8.02e-02    0.801 1.19e+04    0.893   0.2
+  pe_15_6 (FuseMax2DPE_209)            7.75e-02    0.792 1.15e+04    0.881   0.2
+  pe_15_5 (FuseMax2DPE_210)            7.99e-02    0.802 1.16e+04    0.893   0.2
+  pe_15_4 (FuseMax2DPE_211)            8.36e-02    0.805 1.16e+04    0.900   0.2
+  pe_15_3 (FuseMax2DPE_212)            8.37e-02    0.801 1.16e+04    0.897   0.2
+  pe_15_2 (FuseMax2DPE_213)            8.73e-02    0.807 1.16e+04    0.906   0.2
+  pe_15_1 (FuseMax2DPE_214)            8.65e-02    0.810 1.16e+04    0.909   0.2
+  pe_15_0 (FuseMax2DPE_215)            9.07e-02    0.818 1.19e+04    0.921   0.2
+  pe_14_23 (FuseMax2DPE_216)           6.89e-02    0.783 1.16e+04    0.863   0.2
+  pe_14_22 (FuseMax2DPE_217)           6.66e-02    0.783 1.18e+04    0.862   0.2
+  pe_14_21 (FuseMax2DPE_218)           6.90e-02    0.782 1.16e+04    0.862   0.2
+  pe_14_20 (FuseMax2DPE_219)           7.05e-02    0.785 1.18e+04    0.867   0.2
+  pe_14_19 (FuseMax2DPE_220)           7.06e-02    0.788 1.17e+04    0.870   0.2
+  pe_14_18 (FuseMax2DPE_221)           6.96e-02    0.789 1.19e+04    0.870   0.2
+  pe_14_17 (FuseMax2DPE_222)           7.11e-02    0.789 1.16e+04    0.871   0.2
+  pe_14_16 (FuseMax2DPE_223)           6.96e-02    0.787 1.17e+04    0.868   0.2
+  pe_14_15 (FuseMax2DPE_224)           7.08e-02    0.789 1.17e+04    0.872   0.2
+  pe_14_14 (FuseMax2DPE_225)           7.11e-02    0.787 1.18e+04    0.870   0.2
+  pe_14_13 (FuseMax2DPE_226)           7.11e-02    0.788 1.17e+04    0.871   0.2
+  pe_14_12 (FuseMax2DPE_227)           7.65e-02    0.785 1.18e+04    0.874   0.2
+  pe_14_11 (FuseMax2DPE_228)           7.51e-02    0.797 1.18e+04    0.884   0.2
+  pe_14_10 (FuseMax2DPE_229)           7.25e-02    0.789 1.15e+04    0.873   0.2
+  pe_14_9 (FuseMax2DPE_230)            7.33e-02    0.791 1.15e+04    0.875   0.2
+  pe_14_8 (FuseMax2DPE_231)            7.67e-02    0.794 1.16e+04    0.882   0.2
+  pe_14_7 (FuseMax2DPE_232)            7.56e-02    0.791 1.15e+04    0.878   0.2
+  pe_14_6 (FuseMax2DPE_233)            7.84e-02    0.796 1.15e+04    0.886   0.2
+  pe_14_5 (FuseMax2DPE_234)            8.11e-02    0.803 1.17e+04    0.895   0.2
+  pe_14_4 (FuseMax2DPE_235)            7.91e-02    0.802 1.17e+04    0.893   0.2
+  pe_14_3 (FuseMax2DPE_236)            8.29e-02    0.808 1.17e+04    0.902   0.2
+  pe_14_2 (FuseMax2DPE_237)            8.95e-02    0.810 1.16e+04    0.911   0.2
+  pe_14_1 (FuseMax2DPE_238)            9.06e-02    0.812 1.17e+04    0.915   0.2
+  pe_14_0 (FuseMax2DPE_239)            8.70e-02    0.805 1.15e+04    0.903   0.2
+  pe_13_23 (FuseMax2DPE_240)           6.56e-02    0.780 1.15e+04    0.858   0.2
+  pe_13_22 (FuseMax2DPE_241)           6.95e-02    0.783 1.16e+04    0.864   0.2
+  pe_13_21 (FuseMax2DPE_242)           7.19e-02    0.791 1.18e+04    0.874   0.2
+  pe_13_20 (FuseMax2DPE_243)           6.83e-02    0.775 1.14e+04    0.855   0.2
+  pe_13_19 (FuseMax2DPE_244)           6.68e-02    0.784 1.16e+04    0.863   0.2
+  pe_13_18 (FuseMax2DPE_245)           6.96e-02    0.786 1.16e+04    0.867   0.2
+  pe_13_17 (FuseMax2DPE_246)           7.14e-02    0.791 1.17e+04    0.874   0.2
+  pe_13_16 (FuseMax2DPE_247)           7.17e-02    0.780 1.14e+04    0.863   0.2
+  pe_13_15 (FuseMax2DPE_248)           7.18e-02    0.792 1.17e+04    0.875   0.2
+  pe_13_14 (FuseMax2DPE_249)           7.37e-02    0.789 1.16e+04    0.874   0.2
+  pe_13_13 (FuseMax2DPE_250)           7.20e-02    0.790 1.18e+04    0.873   0.2
+  pe_13_12 (FuseMax2DPE_251)           7.56e-02    0.795 1.17e+04    0.882   0.2
+  pe_13_11 (FuseMax2DPE_252)           7.19e-02    0.789 1.17e+04    0.873   0.2
+  pe_13_10 (FuseMax2DPE_253)           7.43e-02    0.793 1.17e+04    0.879   0.2
+  pe_13_9 (FuseMax2DPE_254)            7.47e-02    0.794 1.16e+04    0.881   0.2
+  pe_13_8 (FuseMax2DPE_255)            8.01e-02    0.800 1.18e+04    0.892   0.2
+  pe_13_7 (FuseMax2DPE_256)            7.99e-02    0.801 1.18e+04    0.893   0.2
+  pe_13_6 (FuseMax2DPE_257)            7.75e-02    0.797 1.16e+04    0.886   0.2
+  pe_13_5 (FuseMax2DPE_258)            8.40e-02    0.807 1.18e+04    0.902   0.2
+  pe_13_4 (FuseMax2DPE_259)            7.95e-02    0.802 1.16e+04    0.893   0.2
+  pe_13_3 (FuseMax2DPE_260)            8.25e-02    0.804 1.15e+04    0.898   0.2
+  pe_13_2 (FuseMax2DPE_261)            8.41e-02    0.807 1.16e+04    0.902   0.2
+  pe_13_1 (FuseMax2DPE_262)            8.66e-02    0.812 1.17e+04    0.910   0.2
+  pe_13_0 (FuseMax2DPE_263)            9.01e-02    0.814 1.16e+04    0.916   0.2
+  pe_12_23 (FuseMax2DPE_264)           6.84e-02    0.783 1.17e+04    0.863   0.2
+  pe_12_22 (FuseMax2DPE_265)           6.79e-02    0.782 1.16e+04    0.862   0.2
+  pe_12_21 (FuseMax2DPE_266)           6.90e-02    0.785 1.16e+04    0.866   0.2
+  pe_12_20 (FuseMax2DPE_267)           6.84e-02    0.784 1.15e+04    0.864   0.2
+  pe_12_19 (FuseMax2DPE_268)           7.16e-02    0.781 1.17e+04    0.864   0.2
+  pe_12_18 (FuseMax2DPE_269)           6.94e-02    0.787 1.15e+04    0.868   0.2
+  pe_12_17 (FuseMax2DPE_270)           6.99e-02    0.787 1.16e+04    0.869   0.2
+  pe_12_16 (FuseMax2DPE_271)           7.32e-02    0.791 1.17e+04    0.876   0.2
+  pe_12_15 (FuseMax2DPE_272)           7.16e-02    0.791 1.16e+04    0.874   0.2
+  pe_12_14 (FuseMax2DPE_273)           7.42e-02    0.792 1.17e+04    0.878   0.2
+  pe_12_13 (FuseMax2DPE_274)           7.37e-02    0.791 1.16e+04    0.877   0.2
+  pe_12_12 (FuseMax2DPE_275)           7.27e-02    0.787 1.17e+04    0.871   0.2
+  pe_12_11 (FuseMax2DPE_276)           7.47e-02    0.795 1.17e+04    0.881   0.2
+  pe_12_10 (FuseMax2DPE_277)           7.30e-02    0.794 1.16e+04    0.878   0.2
+  pe_12_9 (FuseMax2DPE_278)            7.56e-02    0.793 1.18e+04    0.880   0.2
+  pe_12_8 (FuseMax2DPE_279)            7.57e-02    0.793 1.17e+04    0.881   0.2
+  pe_12_7 (FuseMax2DPE_280)            7.78e-02    0.799 1.15e+04    0.888   0.2
+  pe_12_6 (FuseMax2DPE_281)            7.93e-02    0.796 1.18e+04    0.887   0.2
+  pe_12_5 (FuseMax2DPE_282)            8.00e-02    0.800 1.15e+04    0.891   0.2
+  pe_12_4 (FuseMax2DPE_283)            8.36e-02    0.803 1.17e+04    0.898   0.2
+  pe_12_3 (FuseMax2DPE_284)            8.29e-02    0.804 1.17e+04    0.898   0.2
+  pe_12_2 (FuseMax2DPE_285)            8.89e-02    0.808 1.18e+04    0.909   0.2
+  pe_12_1 (FuseMax2DPE_286)            8.50e-02    0.808 1.15e+04    0.904   0.2
+  pe_12_0 (FuseMax2DPE_287)            9.04e-02    0.814 1.17e+04    0.916   0.2
+  pe_11_23 (FuseMax2DPE_288)           6.99e-02    0.781 1.16e+04    0.862   0.2
+  pe_11_22 (FuseMax2DPE_289)           6.77e-02    0.775 1.16e+04    0.854   0.2
+  pe_11_21 (FuseMax2DPE_290)           7.05e-02    0.777 1.15e+04    0.859   0.2
+  pe_11_20 (FuseMax2DPE_291)           6.64e-02    0.778 1.16e+04    0.856   0.2
+  pe_11_19 (FuseMax2DPE_292)           7.00e-02    0.782 1.16e+04    0.864   0.2
+  pe_11_18 (FuseMax2DPE_293)           6.94e-02    0.789 1.17e+04    0.870   0.2
+  pe_11_17 (FuseMax2DPE_294)           7.17e-02    0.789 1.15e+04    0.872   0.2
+  pe_11_16 (FuseMax2DPE_295)           7.36e-02    0.782 1.15e+04    0.867   0.2
+  pe_11_15 (FuseMax2DPE_296)           6.94e-02    0.785 1.16e+04    0.866   0.2
+  pe_11_14 (FuseMax2DPE_297)           7.36e-02    0.794 1.18e+04    0.879   0.2
+  pe_11_13 (FuseMax2DPE_298)           6.95e-02    0.786 1.15e+04    0.867   0.2
+  pe_11_12 (FuseMax2DPE_299)           7.43e-02    0.793 1.17e+04    0.879   0.2
+  pe_11_11 (FuseMax2DPE_300)           7.35e-02    0.790 1.14e+04    0.875   0.2
+  pe_11_10 (FuseMax2DPE_301)           7.47e-02    0.798 1.17e+04    0.884   0.2
+  pe_11_9 (FuseMax2DPE_302)            7.63e-02    0.796 1.17e+04    0.884   0.2
+  pe_11_8 (FuseMax2DPE_303)            7.66e-02    0.798 1.16e+04    0.886   0.2
+  pe_11_7 (FuseMax2DPE_304)            8.34e-02    0.803 1.18e+04    0.898   0.2
+  pe_11_6 (FuseMax2DPE_305)            7.86e-02    0.793 1.14e+04    0.883   0.2
+  pe_11_5 (FuseMax2DPE_306)            7.96e-02    0.788 1.16e+04    0.879   0.2
+  pe_11_4 (FuseMax2DPE_307)            8.10e-02    0.806 1.16e+04    0.898   0.2
+  pe_11_3 (FuseMax2DPE_308)            8.35e-02    0.807 1.19e+04    0.903   0.2
+  pe_11_2 (FuseMax2DPE_309)            8.75e-02    0.797 1.14e+04    0.896   0.2
+  pe_11_1 (FuseMax2DPE_310)            8.82e-02    0.811 1.16e+04    0.911   0.2
+  pe_11_0 (FuseMax2DPE_311)            9.18e-02    0.810 1.17e+04    0.913   0.2
+  pe_10_23 (FuseMax2DPE_312)           6.91e-02    0.787 1.17e+04    0.867   0.2
+  pe_10_22 (FuseMax2DPE_313)           6.73e-02    0.786 1.16e+04    0.865   0.2
+  pe_10_21 (FuseMax2DPE_314)           7.14e-02    0.789 1.17e+04    0.872   0.2
+  pe_10_20 (FuseMax2DPE_315)           7.27e-02    0.788 1.17e+04    0.873   0.2
+  pe_10_19 (FuseMax2DPE_316)           7.12e-02    0.792 1.17e+04    0.875   0.2
+  pe_10_18 (FuseMax2DPE_317)           7.28e-02    0.787 1.16e+04    0.872   0.2
+  pe_10_17 (FuseMax2DPE_318)           6.96e-02    0.785 1.15e+04    0.866   0.2
+  pe_10_16 (FuseMax2DPE_319)           7.16e-02    0.790 1.16e+04    0.873   0.2
+  pe_10_15 (FuseMax2DPE_320)           6.96e-02    0.789 1.17e+04    0.871   0.2
+  pe_10_14 (FuseMax2DPE_321)           7.14e-02    0.789 1.15e+04    0.872   0.2
+  pe_10_13 (FuseMax2DPE_322)           7.47e-02    0.789 1.18e+04    0.876   0.2
+  pe_10_12 (FuseMax2DPE_323)           7.63e-02    0.795 1.17e+04    0.883   0.2
+  pe_10_11 (FuseMax2DPE_324)           7.55e-02    0.794 1.17e+04    0.882   0.2
+  pe_10_10 (FuseMax2DPE_325)           7.35e-02    0.789 1.17e+04    0.875   0.2
+  pe_10_9 (FuseMax2DPE_326)            7.60e-02    0.795 1.18e+04    0.883   0.2
+  pe_10_8 (FuseMax2DPE_327)            7.35e-02    0.795 1.15e+04    0.880   0.2
+  pe_10_7 (FuseMax2DPE_328)            7.94e-02    0.795 1.17e+04    0.887   0.2
+  pe_10_6 (FuseMax2DPE_329)            8.08e-02    0.800 1.15e+04    0.892   0.2
+  pe_10_5 (FuseMax2DPE_330)            7.77e-02    0.803 1.16e+04    0.892   0.2
+  pe_10_4 (FuseMax2DPE_331)            7.92e-02    0.800 1.16e+04    0.890   0.2
+  pe_10_3 (FuseMax2DPE_332)            8.19e-02    0.803 1.15e+04    0.896   0.2
+  pe_10_2 (FuseMax2DPE_333)            8.48e-02    0.809 1.15e+04    0.905   0.2
+  pe_10_1 (FuseMax2DPE_334)            8.82e-02    0.811 1.16e+04    0.911   0.2
+  pe_10_0 (FuseMax2DPE_335)            8.76e-02    0.814 1.15e+04    0.913   0.2
+  pe_9_23 (FuseMax2DPE_336)            7.01e-02    0.789 1.16e+04    0.871   0.2
+  pe_9_22 (FuseMax2DPE_337)            7.18e-02    0.790 1.18e+04    0.874   0.2
+  pe_9_21 (FuseMax2DPE_338)            7.04e-02    0.787 1.17e+04    0.869   0.2
+  pe_9_20 (FuseMax2DPE_339)            6.99e-02    0.785 1.15e+04    0.866   0.2
+  pe_9_19 (FuseMax2DPE_340)            7.02e-02    0.790 1.17e+04    0.872   0.2
+  pe_9_18 (FuseMax2DPE_341)            6.99e-02    0.788 1.16e+04    0.870   0.2
+  pe_9_17 (FuseMax2DPE_342)            7.22e-02    0.793 1.18e+04    0.877   0.2
+  pe_9_16 (FuseMax2DPE_343)            7.13e-02    0.791 1.17e+04    0.874   0.2
+  pe_9_15 (FuseMax2DPE_344)            7.45e-02    0.795 1.15e+04    0.881   0.2
+  pe_9_14 (FuseMax2DPE_345)            7.09e-02    0.789 1.16e+04    0.872   0.2
+  pe_9_13 (FuseMax2DPE_346)            7.22e-02    0.791 1.15e+04    0.875   0.2
+  pe_9_12 (FuseMax2DPE_347)            7.26e-02    0.785 1.15e+04    0.869   0.2
+  pe_9_11 (FuseMax2DPE_348)            7.30e-02    0.792 1.17e+04    0.877   0.2
+  pe_9_10 (FuseMax2DPE_349)            7.54e-02    0.794 1.18e+04    0.881   0.2
+  pe_9_9 (FuseMax2DPE_350)             7.75e-02    0.797 1.17e+04    0.887   0.2
+  pe_9_8 (FuseMax2DPE_351)             7.71e-02    0.797 1.16e+04    0.885   0.2
+  pe_9_7 (FuseMax2DPE_352)             7.78e-02    0.795 1.17e+04    0.885   0.2
+  pe_9_6 (FuseMax2DPE_353)             7.89e-02    0.798 1.16e+04    0.888   0.2
+  pe_9_5 (FuseMax2DPE_354)             7.94e-02    0.801 1.17e+04    0.892   0.2
+  pe_9_4 (FuseMax2DPE_355)             8.10e-02    0.803 1.17e+04    0.896   0.2
+  pe_9_3 (FuseMax2DPE_356)             8.25e-02    0.804 1.16e+04    0.898   0.2
+  pe_9_2 (FuseMax2DPE_357)             8.57e-02    0.808 1.17e+04    0.906   0.2
+  pe_9_1 (FuseMax2DPE_358)             8.38e-02    0.810 1.17e+04    0.906   0.2
+  pe_9_0 (FuseMax2DPE_359)             8.99e-02    0.817 1.18e+04    0.919   0.2
+  pe_8_23 (FuseMax2DPE_360)            7.17e-02    0.787 1.16e+04    0.870   0.2
+  pe_8_22 (FuseMax2DPE_361)            7.14e-02    0.790 1.19e+04    0.874   0.2
+  pe_8_21 (FuseMax2DPE_362)            7.11e-02    0.789 1.16e+04    0.872   0.2
+  pe_8_20 (FuseMax2DPE_363)            7.00e-02    0.783 1.14e+04    0.864   0.2
+  pe_8_19 (FuseMax2DPE_364)            7.33e-02    0.790 1.18e+04    0.875   0.2
+  pe_8_18 (FuseMax2DPE_365)            7.16e-02    0.791 1.16e+04    0.874   0.2
+  pe_8_17 (FuseMax2DPE_366)            7.07e-02    0.788 1.15e+04    0.870   0.2
+  pe_8_16 (FuseMax2DPE_367)            7.00e-02    0.785 1.14e+04    0.866   0.2
+  pe_8_15 (FuseMax2DPE_368)            7.24e-02    0.786 1.14e+04    0.870   0.2
+  pe_8_14 (FuseMax2DPE_369)            7.15e-02    0.791 1.17e+04    0.875   0.2
+  pe_8_13 (FuseMax2DPE_370)            7.32e-02    0.792 1.19e+04    0.877   0.2
+  pe_8_12 (FuseMax2DPE_371)            7.69e-02    0.790 1.18e+04    0.878   0.2
+  pe_8_11 (FuseMax2DPE_372)            7.51e-02    0.794 1.16e+04    0.880   0.2
+  pe_8_10 (FuseMax2DPE_373)            7.32e-02    0.788 1.16e+04    0.873   0.2
+  pe_8_9 (FuseMax2DPE_374)             7.94e-02    0.801 1.18e+04    0.892   0.2
+  pe_8_8 (FuseMax2DPE_375)             7.81e-02    0.802 1.18e+04    0.892   0.2
+  pe_8_7 (FuseMax2DPE_376)             7.95e-02    0.796 1.14e+04    0.887   0.2
+  pe_8_6 (FuseMax2DPE_377)             7.82e-02    0.801 1.16e+04    0.891   0.2
+  pe_8_5 (FuseMax2DPE_378)             8.26e-02    0.802 1.19e+04    0.897   0.2
+  pe_8_4 (FuseMax2DPE_379)             8.20e-02    0.798 1.16e+04    0.891   0.2
+  pe_8_3 (FuseMax2DPE_380)             8.48e-02    0.808 1.16e+04    0.905   0.2
+  pe_8_2 (FuseMax2DPE_381)             8.74e-02    0.807 1.18e+04    0.906   0.2
+  pe_8_1 (FuseMax2DPE_382)             8.79e-02    0.809 1.16e+04    0.908   0.2
+  pe_8_0 (FuseMax2DPE_383)             9.30e-02    0.815 1.15e+04    0.920   0.2
+  pe_7_23 (FuseMax2DPE_384)            7.14e-02    0.790 1.16e+04    0.873   0.2
+  pe_7_22 (FuseMax2DPE_385)            7.22e-02    0.782 1.16e+04    0.866   0.2
+  pe_7_21 (FuseMax2DPE_386)            7.10e-02    0.788 1.17e+04    0.871   0.2
+  pe_7_20 (FuseMax2DPE_387)            7.34e-02    0.792 1.17e+04    0.877   0.2
+  pe_7_19 (FuseMax2DPE_388)            6.84e-02    0.779 1.16e+04    0.859   0.2
+  pe_7_18 (FuseMax2DPE_389)            7.35e-02    0.789 1.16e+04    0.874   0.2
+  pe_7_17 (FuseMax2DPE_390)            7.49e-02    0.794 1.18e+04    0.881   0.2
+  pe_7_16 (FuseMax2DPE_391)            7.36e-02    0.797 1.18e+04    0.883   0.2
+  pe_7_15 (FuseMax2DPE_392)            7.51e-02    0.794 1.18e+04    0.881   0.2
+  pe_7_14 (FuseMax2DPE_393)            7.46e-02    0.795 1.16e+04    0.881   0.2
+  pe_7_13 (FuseMax2DPE_394)            7.22e-02    0.792 1.16e+04    0.876   0.2
+  pe_7_12 (FuseMax2DPE_395)            7.75e-02    0.796 1.17e+04    0.886   0.2
+  pe_7_11 (FuseMax2DPE_396)            7.39e-02    0.796 1.16e+04    0.881   0.2
+  pe_7_10 (FuseMax2DPE_397)            7.94e-02    0.799 1.14e+04    0.890   0.2
+  pe_7_9 (FuseMax2DPE_398)             7.56e-02    0.793 1.16e+04    0.880   0.2
+  pe_7_8 (FuseMax2DPE_399)             7.92e-02    0.800 1.16e+04    0.890   0.2
+  pe_7_7 (FuseMax2DPE_400)             8.29e-02    0.801 1.14e+04    0.895   0.2
+  pe_7_6 (FuseMax2DPE_401)             8.64e-02    0.805 1.16e+04    0.903   0.2
+  pe_7_5 (FuseMax2DPE_402)             7.81e-02    0.800 1.16e+04    0.890   0.2
+  pe_7_4 (FuseMax2DPE_403)             8.22e-02    0.806 1.17e+04    0.900   0.2
+  pe_7_3 (FuseMax2DPE_404)             8.95e-02    0.811 1.18e+04    0.912   0.2
+  pe_7_2 (FuseMax2DPE_405)             8.56e-02    0.813 1.16e+04    0.910   0.2
+  pe_7_1 (FuseMax2DPE_406)             9.08e-02    0.813 1.17e+04    0.916   0.2
+  pe_7_0 (FuseMax2DPE_407)             9.20e-02    0.818 1.16e+04    0.921   0.2
+  pe_6_23 (FuseMax2DPE_408)            7.15e-02    0.792 1.17e+04    0.875   0.2
+  pe_6_22 (FuseMax2DPE_409)            7.38e-02    0.791 1.19e+04    0.876   0.2
+  pe_6_21 (FuseMax2DPE_410)            7.24e-02    0.790 1.17e+04    0.875   0.2
+  pe_6_20 (FuseMax2DPE_411)            7.18e-02    0.792 1.17e+04    0.875   0.2
+  pe_6_19 (FuseMax2DPE_412)            7.11e-02    0.788 1.17e+04    0.871   0.2
+  pe_6_18 (FuseMax2DPE_413)            7.29e-02    0.789 1.15e+04    0.873   0.2
+  pe_6_17 (FuseMax2DPE_414)            7.05e-02    0.789 1.16e+04    0.871   0.2
+  pe_6_16 (FuseMax2DPE_415)            7.21e-02    0.791 1.18e+04    0.875   0.2
+  pe_6_15 (FuseMax2DPE_416)            7.30e-02    0.792 1.15e+04    0.876   0.2
+  pe_6_14 (FuseMax2DPE_417)            7.43e-02    0.794 1.18e+04    0.880   0.2
+  pe_6_13 (FuseMax2DPE_418)            7.40e-02    0.794 1.15e+04    0.880   0.2
+  pe_6_12 (FuseMax2DPE_419)            7.90e-02    0.795 1.17e+04    0.886   0.2
+  pe_6_11 (FuseMax2DPE_420)            7.73e-02    0.799 1.16e+04    0.888   0.2
+  pe_6_10 (FuseMax2DPE_421)            7.78e-02    0.800 1.17e+04    0.890   0.2
+  pe_6_9 (FuseMax2DPE_422)             8.08e-02    0.799 1.18e+04    0.892   0.2
+  pe_6_8 (FuseMax2DPE_423)             7.80e-02    0.799 1.17e+04    0.888   0.2
+  pe_6_7 (FuseMax2DPE_424)             7.81e-02    0.799 1.16e+04    0.889   0.2
+  pe_6_6 (FuseMax2DPE_425)             8.06e-02    0.803 1.15e+04    0.895   0.2
+  pe_6_5 (FuseMax2DPE_426)             8.64e-02    0.810 1.17e+04    0.909   0.2
+  pe_6_4 (FuseMax2DPE_427)             8.54e-02    0.809 1.16e+04    0.906   0.2
+  pe_6_3 (FuseMax2DPE_428)             8.76e-02    0.807 1.16e+04    0.906   0.2
+  pe_6_2 (FuseMax2DPE_429)             8.92e-02    0.811 1.16e+04    0.912   0.2
+  pe_6_1 (FuseMax2DPE_430)             8.96e-02    0.809 1.17e+04    0.911   0.2
+  pe_6_0 (FuseMax2DPE_431)             9.39e-02    0.818 1.18e+04    0.924   0.2
+  pe_5_23 (FuseMax2DPE_432)            7.16e-02    0.787 1.16e+04    0.870   0.2
+  pe_5_22 (FuseMax2DPE_433)            7.24e-02    0.793 1.16e+04    0.876   0.2
+  pe_5_21 (FuseMax2DPE_434)            7.30e-02    0.792 1.17e+04    0.877   0.2
+  pe_5_20 (FuseMax2DPE_435)            6.85e-02    0.786 1.15e+04    0.866   0.2
+  pe_5_19 (FuseMax2DPE_436)            7.53e-02    0.797 1.19e+04    0.884   0.2
+  pe_5_18 (FuseMax2DPE_437)            7.28e-02    0.793 1.17e+04    0.878   0.2
+  pe_5_17 (FuseMax2DPE_438)            7.78e-02    0.799 1.17e+04    0.889   0.2
+  pe_5_16 (FuseMax2DPE_439)            7.55e-02    0.797 1.17e+04    0.884   0.2
+  pe_5_15 (FuseMax2DPE_440)            7.44e-02    0.788 1.15e+04    0.874   0.2
+  pe_5_14 (FuseMax2DPE_441)            7.57e-02    0.790 1.16e+04    0.877   0.2
+  pe_5_13 (FuseMax2DPE_442)            7.73e-02    0.795 1.17e+04    0.884   0.2
+  pe_5_12 (FuseMax2DPE_443)            7.55e-02    0.791 1.13e+04    0.878   0.2
+  pe_5_11 (FuseMax2DPE_444)            7.56e-02    0.792 1.16e+04    0.879   0.2
+  pe_5_10 (FuseMax2DPE_445)            7.90e-02    0.801 1.16e+04    0.891   0.2
+  pe_5_9 (FuseMax2DPE_446)             7.49e-02    0.796 1.15e+04    0.883   0.2
+  pe_5_8 (FuseMax2DPE_447)             8.16e-02    0.798 1.15e+04    0.892   0.2
+  pe_5_7 (FuseMax2DPE_448)             8.13e-02    0.803 1.16e+04    0.896   0.2
+  pe_5_6 (FuseMax2DPE_449)             8.10e-02    0.801 1.16e+04    0.893   0.2
+  pe_5_5 (FuseMax2DPE_450)             8.58e-02    0.810 1.18e+04    0.907   0.2
+  pe_5_4 (FuseMax2DPE_451)             8.89e-02    0.810 1.17e+04    0.911   0.2
+  pe_5_3 (FuseMax2DPE_452)             8.70e-02    0.800 1.14e+04    0.898   0.2
+  pe_5_2 (FuseMax2DPE_453)             9.12e-02    0.818 1.18e+04    0.921   0.2
+  pe_5_1 (FuseMax2DPE_454)             8.95e-02    0.810 1.14e+04    0.911   0.2
+  pe_5_0 (FuseMax2DPE_455)             9.29e-02    0.814 1.16e+04    0.919   0.2
+  pe_4_23 (FuseMax2DPE_456)            7.42e-02    0.788 1.16e+04    0.874   0.2
+  pe_4_22 (FuseMax2DPE_457)            7.38e-02    0.788 1.17e+04    0.873   0.2
+  pe_4_21 (FuseMax2DPE_458)            7.56e-02    0.798 1.14e+04    0.885   0.2
+  pe_4_20 (FuseMax2DPE_459)            7.57e-02    0.794 1.18e+04    0.882   0.2
+  pe_4_19 (FuseMax2DPE_460)            7.57e-02    0.796 1.18e+04    0.883   0.2
+  pe_4_18 (FuseMax2DPE_461)            7.59e-02    0.795 1.16e+04    0.883   0.2
+  pe_4_17 (FuseMax2DPE_462)            7.32e-02    0.791 1.17e+04    0.876   0.2
+  pe_4_16 (FuseMax2DPE_463)            7.72e-02    0.791 1.16e+04    0.880   0.2
+  pe_4_15 (FuseMax2DPE_464)            7.69e-02    0.798 1.16e+04    0.886   0.2
+  pe_4_14 (FuseMax2DPE_465)            7.83e-02    0.800 1.16e+04    0.890   0.2
+  pe_4_13 (FuseMax2DPE_466)            7.79e-02    0.797 1.15e+04    0.887   0.2
+  pe_4_12 (FuseMax2DPE_467)            7.57e-02    0.792 1.16e+04    0.879   0.2
+  pe_4_11 (FuseMax2DPE_468)            7.75e-02    0.799 1.16e+04    0.888   0.2
+  pe_4_10 (FuseMax2DPE_469)            8.05e-02    0.802 1.16e+04    0.894   0.2
+  pe_4_9 (FuseMax2DPE_470)             8.17e-02    0.794 1.16e+04    0.887   0.2
+  pe_4_8 (FuseMax2DPE_471)             8.54e-02    0.803 1.18e+04    0.900   0.2
+  pe_4_7 (FuseMax2DPE_472)             8.33e-02    0.806 1.15e+04    0.901   0.2
+  pe_4_6 (FuseMax2DPE_473)             8.67e-02    0.808 1.17e+04    0.906   0.2
+  pe_4_5 (FuseMax2DPE_474)             9.01e-02    0.812 1.17e+04    0.914   0.2
+  pe_4_4 (FuseMax2DPE_475)             8.80e-02    0.811 1.17e+04    0.910   0.2
+  pe_4_3 (FuseMax2DPE_476)             8.68e-02    0.812 1.16e+04    0.910   0.2
+  pe_4_2 (FuseMax2DPE_477)             9.08e-02    0.809 1.17e+04    0.912   0.2
+  pe_4_1 (FuseMax2DPE_478)             9.29e-02    0.820 1.17e+04    0.924   0.2
+  pe_4_0 (FuseMax2DPE_479)             9.67e-02    0.823 1.15e+04    0.931   0.2
+  pe_3_23 (FuseMax2DPE_480)            7.65e-02    0.794 1.16e+04    0.882   0.2
+  pe_3_22 (FuseMax2DPE_481)            7.48e-02    0.790 1.14e+04    0.876   0.2
+  pe_3_21 (FuseMax2DPE_482)            7.64e-02    0.798 1.16e+04    0.886   0.2
+  pe_3_20 (FuseMax2DPE_483)            7.98e-02    0.802 1.17e+04    0.893   0.2
+  pe_3_19 (FuseMax2DPE_484)            7.51e-02    0.798 1.17e+04    0.884   0.2
+  pe_3_18 (FuseMax2DPE_485)            7.86e-02    0.800 1.18e+04    0.891   0.2
+  pe_3_17 (FuseMax2DPE_486)            7.85e-02    0.801 1.18e+04    0.892   0.2
+  pe_3_16 (FuseMax2DPE_487)            7.73e-02    0.797 1.15e+04    0.885   0.2
+  pe_3_15 (FuseMax2DPE_488)            8.07e-02    0.803 1.17e+04    0.895   0.2
+  pe_3_14 (FuseMax2DPE_489)            8.19e-02    0.803 1.16e+04    0.897   0.2
+  pe_3_13 (FuseMax2DPE_490)            8.10e-02    0.801 1.19e+04    0.894   0.2
+  pe_3_12 (FuseMax2DPE_491)            8.00e-02    0.802 1.18e+04    0.894   0.2
+  pe_3_11 (FuseMax2DPE_492)            8.33e-02    0.802 1.17e+04    0.897   0.2
+  pe_3_10 (FuseMax2DPE_493)            8.35e-02    0.804 1.17e+04    0.900   0.2
+  pe_3_9 (FuseMax2DPE_494)             8.22e-02    0.803 1.18e+04    0.897   0.2
+  pe_3_8 (FuseMax2DPE_495)             8.51e-02    0.801 1.19e+04    0.898   0.2
+  pe_3_7 (FuseMax2DPE_496)             8.30e-02    0.803 1.14e+04    0.898   0.2
+  pe_3_6 (FuseMax2DPE_497)             8.95e-02    0.814 1.18e+04    0.915   0.2
+  pe_3_5 (FuseMax2DPE_498)             8.77e-02    0.809 1.16e+04    0.908   0.2
+  pe_3_4 (FuseMax2DPE_499)             9.11e-02    0.814 1.16e+04    0.917   0.2
+  pe_3_3 (FuseMax2DPE_500)             9.50e-02    0.813 1.16e+04    0.920   0.2
+  pe_3_2 (FuseMax2DPE_501)             9.33e-02    0.819 1.17e+04    0.924   0.2
+  pe_3_1 (FuseMax2DPE_502)             9.78e-02    0.822 1.17e+04    0.932   0.2
+  pe_3_0 (FuseMax2DPE_503)             9.70e-02    0.824 1.16e+04    0.933   0.2
+  pe_2_23 (FuseMax2DPE_504)            8.11e-02    0.794 1.18e+04    0.886   0.2
+  pe_2_22 (FuseMax2DPE_505)            8.00e-02    0.802 1.17e+04    0.894   0.2
+  pe_2_21 (FuseMax2DPE_506)            8.21e-02    0.803 1.17e+04    0.897   0.2
+  pe_2_20 (FuseMax2DPE_507)            8.12e-02    0.795 1.15e+04    0.888   0.2
+  pe_2_19 (FuseMax2DPE_508)            8.11e-02    0.804 1.18e+04    0.897   0.2
+  pe_2_18 (FuseMax2DPE_509)            8.28e-02    0.803 1.17e+04    0.898   0.2
+  pe_2_17 (FuseMax2DPE_510)            8.35e-02    0.793 1.16e+04    0.888   0.2
+  pe_2_16 (FuseMax2DPE_511)            8.13e-02    0.803 1.16e+04    0.896   0.2
+  pe_2_15 (FuseMax2DPE_512)            8.27e-02    0.806 1.17e+04    0.901   0.2
+  pe_2_14 (FuseMax2DPE_513)            7.93e-02    0.804 1.17e+04    0.895   0.2
+  pe_2_13 (FuseMax2DPE_514)            8.92e-02    0.808 1.17e+04    0.909   0.2
+  pe_2_12 (FuseMax2DPE_515)            8.67e-02    0.808 1.16e+04    0.906   0.2
+  pe_2_11 (FuseMax2DPE_516)            8.33e-02    0.804 1.17e+04    0.899   0.2
+  pe_2_10 (FuseMax2DPE_517)            9.00e-02    0.807 1.18e+04    0.909   0.2
+  pe_2_9 (FuseMax2DPE_518)             8.73e-02    0.810 1.18e+04    0.909   0.2
+  pe_2_8 (FuseMax2DPE_519)             8.91e-02    0.815 1.19e+04    0.916   0.2
+  pe_2_7 (FuseMax2DPE_520)             8.94e-02    0.806 1.17e+04    0.907   0.2
+  pe_2_6 (FuseMax2DPE_521)             8.97e-02    0.805 1.15e+04    0.907   0.2
+  pe_2_5 (FuseMax2DPE_522)             9.25e-02    0.819 1.19e+04    0.923   0.2
+  pe_2_4 (FuseMax2DPE_523)             9.15e-02    0.815 1.16e+04    0.918   0.2
+  pe_2_3 (FuseMax2DPE_524)             9.31e-02    0.816 1.16e+04    0.921   0.2
+  pe_2_2 (FuseMax2DPE_525)             9.48e-02    0.822 1.18e+04    0.929   0.2
+  pe_2_1 (FuseMax2DPE_526)                0.100    0.827 1.18e+04    0.939   0.2
+  pe_2_0 (FuseMax2DPE_527)                0.103    0.829 1.16e+04    0.944   0.2
+  pe_1_23 (FuseMax2DPE_528)            8.51e-02    0.804 1.16e+04    0.901   0.2
+  pe_1_22 (FuseMax2DPE_529)            8.40e-02    0.805 1.17e+04    0.901   0.2
+  pe_1_21 (FuseMax2DPE_530)            8.37e-02    0.803 1.16e+04    0.898   0.2
+  pe_1_20 (FuseMax2DPE_531)            8.59e-02    0.809 1.16e+04    0.907   0.2
+  pe_1_19 (FuseMax2DPE_532)            8.38e-02    0.806 1.16e+04    0.901   0.2
+  pe_1_18 (FuseMax2DPE_533)            9.00e-02    0.813 1.16e+04    0.914   0.2
+  pe_1_17 (FuseMax2DPE_534)            8.65e-02    0.806 1.15e+04    0.904   0.2
+  pe_1_16 (FuseMax2DPE_535)            8.42e-02    0.807 1.17e+04    0.903   0.2
+  pe_1_15 (FuseMax2DPE_536)            8.57e-02    0.810 1.16e+04    0.907   0.2
+  pe_1_14 (FuseMax2DPE_537)            8.63e-02    0.811 1.17e+04    0.909   0.2
+  pe_1_13 (FuseMax2DPE_538)            8.83e-02    0.809 1.17e+04    0.909   0.2
+  pe_1_12 (FuseMax2DPE_539)            9.05e-02    0.815 1.16e+04    0.917   0.2
+  pe_1_11 (FuseMax2DPE_540)            9.12e-02    0.815 1.16e+04    0.918   0.2
+  pe_1_10 (FuseMax2DPE_541)            9.30e-02    0.818 1.16e+04    0.922   0.2
+  pe_1_9 (FuseMax2DPE_542)             9.25e-02    0.812 1.17e+04    0.916   0.2
+  pe_1_8 (FuseMax2DPE_543)             9.24e-02    0.821 1.19e+04    0.925   0.2
+  pe_1_7 (FuseMax2DPE_544)             9.46e-02    0.807 1.15e+04    0.913   0.2
+  pe_1_6 (FuseMax2DPE_545)             9.32e-02    0.817 1.17e+04    0.922   0.2
+  pe_1_5 (FuseMax2DPE_546)             9.46e-02    0.818 1.16e+04    0.925   0.2
+  pe_1_4 (FuseMax2DPE_547)                0.101    0.825 1.17e+04    0.937   0.2
+  pe_1_3 (FuseMax2DPE_548)                0.101    0.822 1.16e+04    0.935   0.2
+  pe_1_2 (FuseMax2DPE_549)                0.100    0.830 1.16e+04    0.942   0.2
+  pe_1_1 (FuseMax2DPE_550)                0.100    0.828 1.17e+04    0.940   0.2
+  pe_1_0 (FuseMax2DPE_551)                0.102    0.829 1.16e+04    0.943   0.2
+  pe_0_23 (FuseMax2DPE_552)            8.87e-02    0.814 1.18e+04    0.914   0.2
+  pe_0_22 (FuseMax2DPE_553)            9.25e-02    0.820 1.17e+04    0.924   0.2
+  pe_0_21 (FuseMax2DPE_554)            8.98e-02    0.817 1.18e+04    0.918   0.2
+  pe_0_20 (FuseMax2DPE_555)            8.84e-02    0.812 1.18e+04    0.912   0.2
+  pe_0_19 (FuseMax2DPE_556)            9.11e-02    0.820 1.18e+04    0.923   0.2
+  pe_0_18 (FuseMax2DPE_557)            9.02e-02    0.811 1.17e+04    0.913   0.2
+  pe_0_17 (FuseMax2DPE_558)            9.19e-02    0.818 1.17e+04    0.922   0.2
+  pe_0_16 (FuseMax2DPE_559)            8.91e-02    0.819 1.18e+04    0.920   0.2
+  pe_0_15 (FuseMax2DPE_560)            9.46e-02    0.823 1.16e+04    0.929   0.2
+  pe_0_14 (FuseMax2DPE_561)            9.46e-02    0.820 1.16e+04    0.926   0.2
+  pe_0_13 (FuseMax2DPE_562)            9.51e-02    0.821 1.18e+04    0.928   0.2
+  pe_0_12 (FuseMax2DPE_563)            9.00e-02    0.815 1.17e+04    0.917   0.2
+  pe_0_11 (FuseMax2DPE_564)            9.44e-02    0.820 1.17e+04    0.926   0.2
+  pe_0_10 (FuseMax2DPE_565)            9.16e-02    0.821 1.16e+04    0.924   0.2
+  pe_0_9 (FuseMax2DPE_566)                0.101    0.830 1.18e+04    0.943   0.2
+  pe_0_8 (FuseMax2DPE_567)             9.92e-02    0.825 1.16e+04    0.935   0.2
+  pe_0_7 (FuseMax2DPE_568)             9.44e-02    0.821 1.18e+04    0.927   0.2
+  pe_0_6 (FuseMax2DPE_569)             9.74e-02    0.828 1.18e+04    0.937   0.2
+  pe_0_5 (FuseMax2DPE_570)             9.92e-02    0.829 1.17e+04    0.940   0.2
+  pe_0_4 (FuseMax2DPE_571)             9.76e-02    0.828 1.17e+04    0.937   0.2
+  pe_0_3 (FuseMax2DPE_572)                0.104    0.832 1.17e+04    0.947   0.2
+  pe_0_2 (FuseMax2DPE_573)                0.105    0.833 1.17e+04    0.951   0.2
+  pe_0_1 (FuseMax2DPE_574)                0.109    0.841 1.18e+04    0.962   0.2
+  pe_0_0 (FuseMax2DPE_575)                0.113    0.846 1.18e+04    0.971   0.2
+1

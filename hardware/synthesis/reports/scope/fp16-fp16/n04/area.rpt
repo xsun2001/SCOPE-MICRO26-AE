@@ -1,0 +1,51 @@
+ 
+****************************************
+Report : area
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:06:32 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                         1146
+Number of nets:                         33786
+Number of cells:                        31718
+Number of combinational cells:          30814
+Number of sequential cells:               896
+Number of macros/black boxes:               0
+Number of buf/inv:                       5773
+Number of references:                      18
+
+Combinational area:              18793.908009
+Buf/Inv area:                     1590.372020
+Noncombinational area:            1730.231978
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 20524.139987
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------
+SystolicArray                     20524.1400    100.0     68.7960     0.0000  0.0000  SystolicArray
+pairs_0                            2444.9040     11.9   2220.3720   224.5320  0.0000  StripPair_7
+pairs_0_1                          2640.4560     12.9   2421.5940   218.8620  0.0000  StripPair_5
+pairs_0_2                          2605.5540     12.7   2390.0940   215.4600  0.0000  StripPair_3
+pairs_0_3                          2565.6120     12.5   2350.2780   215.3340  0.0000  StripPair_1
+pairs_1                            2352.4200     11.5   2138.5980   213.8220  0.0000  StripPair_6
+pairs_1_1                          2623.3200     12.8   2407.4820   215.8380  0.0000  StripPair_4
+pairs_1_2                          2588.5440     12.6   2374.9740   213.5700  0.0000  StripPair_2
+pairs_1_3                          2634.5340     12.8   2421.7200   212.8140  0.0000  StripPair_0
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------
+Total                                                  18793.9080  1730.2320  0.0000
+
+1
