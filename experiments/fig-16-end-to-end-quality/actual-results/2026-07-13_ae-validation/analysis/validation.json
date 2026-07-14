@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "comparisons": 80,
+  "passed": 80,
+  "missing_metrics": [],
+  "ppl_tolerance": 0.05,
+  "accuracy_tolerance": 0.005,
+  "validation_scope": "Figure 16 plotted values: perplexity and four-task mean zero-shot accuracy",
+  "source_task_diagnostics": {
+    "comparisons": 160,
+    "within_tolerance": 143,
+    "note": "Per-task source values are retained for diagnostics but are not individually plotted in Figure 16."
+  }
+}

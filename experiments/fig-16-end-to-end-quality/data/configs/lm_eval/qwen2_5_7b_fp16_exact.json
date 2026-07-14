@@ -1,0 +1,31 @@
+{
+  "approximation": {
+    "backend": "none",
+    "scope": "all"
+  },
+  "backbone_quant": {
+    "activation_bits": 8,
+    "activation_dtype": "int8",
+    "activation_scheme": "per_channel",
+    "calibration_mode": "static",
+    "calibration_samples": 128,
+    "calibration_seq_len": 2048,
+    "enabled": false,
+    "quantize_lm_head": false,
+    "smoothquant": false,
+    "smoothquant_alpha": 0.85,
+    "weight_bits": 8,
+    "weight_dtype": "int8",
+    "weight_scheme": "per_channel"
+  },
+  "evaluation": {
+    "limit": null,
+    "task_group": "group1"
+  },
+  "experiment_name": "qwen2_5_7b_fp16_exact_lm_eval",
+  "runtime": {
+    "job_name": "scope_ae",
+    "model": "models/Qwen2.5-7B",
+    "torch_dtype": "bfloat16"
+  }
+}

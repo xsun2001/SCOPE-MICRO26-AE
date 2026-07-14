@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "comparisons": 18,
+  "passed": 18,
+  "missing": [],
+  "relative_tolerance": 0.15,
+  "gain_min": 47.058065839634345,
+  "gain_max": 2264.252332624469
+}

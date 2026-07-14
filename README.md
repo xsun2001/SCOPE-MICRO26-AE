@@ -1,61 +1,84 @@
-# SCOPE Artifact-Evaluation Bundle
+# SCOPE Artifact Evaluation Bundle
 
-This is a standalone CPU artifact-evaluation bundle for `SCOPE-revision.pdf`. It contains the simulator snapshots, paper-matched experiment scripts, actual and expected outputs, plotting code, minimal Chisel RTL project, generated SystemVerilog, and archived Synopsys Design Compiler reports needed to audit the experiments executed on this host.
+This repository is the unified reviewer bundle for `paper/SCOPE-revision.pdf`. It combines the CPU-host performance, RTL, and synthesis evidence with the GPU-host accuracy and numerical-precision experiments. All paper experiment directories use the `fig-X-description` or `tbl-X-description` naming convention and contain a Makefile, README, scripts, bundled actual results, and expected paper results.
 
-The CPU scope is Figures 13, 14, 15, 18, 19, and 21 plus Table 3. Model accuracy, approximation precision, training, perplexity, and quantization experiments are intentionally excluded from execution because they were performed on GPU/model-evaluation hosts.
+Submission-facing result and dependency information is in `AE_SUBMISSION.md`.
 
-## Quick start
+## Quick start: no GPU or proprietary tools
 
 ```bash
 make setup
-make validate-packaged
-make all
+make evidence
+make validate
 ```
 
-`make validate-packaged` checks the included `2026-07-13_ae-validation` outputs without rerunning the simulators. `make all` creates a new human-readable timestamp under every experiment's `actual-results/` directory, regenerates the four N=8 RTL configurations, and validates the new run. Use `RUN_ID=name`, `JOBS=n`, or `PYTHON=/path/to/python` to override defaults.
+`make evidence` regenerates the compact GPU-side figures/tables from bundled results and audits the packaged CPU evidence. `make validate` checks both suites: the CPU validator currently reports 68/68 checks passing, and the GPU validator checks Figure 16 (80 comparisons), Table 5 (16), Figure 17 (36), Figure 20 (18), and the evidence-only Table 4 status.
 
-The default Figure 13 run recomputes the FlashAttention and SCOPE rows used by the paper. Set `FULL_BASELINE=1` to include the complete unfused baseline; its AWSv4 32K row can take more than 35 CPU-minutes and does not affect the reported SCOPE-over-FlashAttention claims.
+`make all` is the safe alias for evidence plus validation; it does not launch long CPU simulations or GPU jobs.
 
-## Make targets
+## Fresh reproduction
+
+CPU-only performance, hardware plots, and RTL:
 
 ```bash
-make help
-make performance
-make hardware
-make fig-13
-make fig-14
-make fig-15
-make tbl-3
-make fig-18
-make fig-19
-make fig-21
-make rtl
-make package
+make reproduce-cpu
 ```
 
-Each experiment can also be run directly, for example `make -C experiments/fig-18-pe-area-power run`. Figure 14 and Figure 21 consume the matching Figure 13 run; the top-level Makefile passes that dependency automatically.
+GPU accuracy and precision:
 
-## Bundle layout
+```bash
+cp config/local.env.example config/local.env
+# Set MODEL_ROOT and execution settings.
+make reproduce-gpu                 # Slurm by default
+make reproduce-gpu EXECUTOR=local WORKERS=1  # already allocated GPU
+```
 
-- `experiments/`: one `fig-X-description` or `tbl-X-description` directory per evaluated paper result. Every directory contains its scripts, Makefile, README, actual results, expected results, and execution logs.
-- `LLMCompass/` and `SCALE-Sim/`: source snapshots required by the CPU performance experiments. `LLMCompass/ae` is excluded because it belongs to the LLMCompass paper.
-- `hardware/rtl/`: minimal Chisel project, four freshly generated N=8 SCOPE/Pinnacle designs, and the 112 hash-indexed paper synthesis-input snapshots.
-- `hardware/synthesis/`: one filtered, human-named tree containing the native area, power, and timing reports used by Figures 18 and 19.
-- `validation/`: paper-value and all-row archive comparisons.
-- `PAPER_RESULTS.md`: rounded claims extracted from the paper.
-- `AE_SUBMISSION.md`: AE-form text covering reproducible results and hardware, software, and data dependencies.
-- `MANIFEST.sha256`: checksums for every bundled file.
+Run both suites with `make reproduce`. Table 4 remains evidence-only because the shared evaluation grid and raw common-protocol baseline outputs are unavailable.
 
-## Correct comparison semantics
+## Experiment index
 
-Figure 13 compares FlashAttention with INT8 softmax conversion against SCOPE without conversion because SCOPE fuses the scale conversion. Figure 21 reports the conversion-fusion ablation separately. Figure 14 reuses freshly generated Figure 13 rows through 32K and applies the fixed-tile model from 64K through 512K; B300 in Figure 15 is modeled directly as the doubled nonlinear/SFU-throughput sensitivity configuration.
+| Paper item | Directory | Fresh execution |
+| --- | --- | --- |
+| Table 3 | `experiments/tbl-3-integer-softmax` | CPU |
+| Figures 13, 14, 15, 21 | matching `experiments/fig-*` directories | CPU |
+| Figures 18 and 19 | matching `experiments/fig-*` directories | report extraction/calculation on CPU |
+| Figure 16 | `experiments/fig-16-end-to-end-quality` | NVIDIA GPU |
+| Figure 17 | `experiments/fig-17-neuron-scalability` | CUDA GPU |
+| Figure 20 | `experiments/fig-20-shape-constraints` | CUDA GPU |
+| Table 5 | `experiments/tbl-5-ostquant-quality` | NVIDIA H100-class GPU |
+| Table 4 | `experiments/tbl-4-function-approximation-accuracy` | evidence-only |
+
+Every experiment stores bundled measurements under `actual-results/<validated-run>/` and paper targets under `expected-results/`. Fresh CPU runs use the same timestamped experiment directories. Fresh GPU runs are written under the ignored `runs/<RUN_ID>/` tree because Table 5 intermediates can exceed 60 GB.
+
+## Shared source layout
+
+- `LLMCompass/` and `SCALE-Sim/`: CPU performance simulator snapshots.
+- `hardware/`: Chisel RTL, generated SystemVerilog, synthesis-time RTL snapshots, and filtered native reports.
+- `end2endacc/`: Figure 16 inference and evaluation harness.
+- `OSTQuant/`: Table 5 workflow and SCNA integration.
+- `train/`: shared Figure 17/20 function trainer and approximation baselines.
+- `config/` and `requirements/`: GPU execution configuration and pinned accuracy environment.
+- `validation/`: CPU paper-value and report validation.
+- `tools/`: unified GPU evidence validation and archive creation.
+- `PAPER_RESULTS.md`: paper-to-artifact result map.
+- `MANIFEST.sha256`: checksums for the portable bundle.
+
+## Correct experiment semantics
+
+Figure 13 compares FlashAttention with INT8 softmax conversion against SCOPE with fused scale conversion. Figure 21 reports that conversion-fusion ablation separately. Figure 14 reuses Figure 13 rows through 32K and applies the fixed-tile model through 512K. Figure 15 models the B300 doubled-SFU sensitivity configuration.
+
+Figure 18 extracts 112 filtered native Synopsys reports and fits constant per-PE area/power values across completed array sizes. Figure 19 is incremental overhead over a 32x32 baseline systolic array, calculated from the Figure 18 per-PE fit; it is not presented as completed full 32x32 synthesis for every design.
+
+The GPU workflows preserve their documented protocol limitations and provenance. In particular, Figure 16's full-precision-labeled run uses BF16, and Table 5 includes only the corrected causal-mask lineage.
 
 ## Hardware evidence without Synopsys
 
-Run `make rtl` to force a fresh elaboration of four current N=8 designs. The paper-matching synthesis evidence is stored once under `hardware/synthesis/reports/`: 112 filtered result sets containing native `area`, `power`, and `timing` reports. `make hardware` reparses the reports, reproduces the Figure 18 per-PE fit, calculates Figure 19 for a 32x32 baseline SA, verifies the clean CSVs, and redraws both figures.
+`make hardware` reparses the bundled Design Compiler V-2023.12 area, power, and timing reports, reproduces the Figure 18 fit, calculates Figure 19, verifies both CSVs, and redraws the figures. Synopsys and the TSMC 28 nm technology files are needed only to repeat synthesis; they are not required to inspect or reproduce the submitted plots. `make rtl` regenerates four current N=8 SCOPE/Pinnacle SystemVerilog configurations with Chisel.
 
-The reports record Synopsys DC V-2023.12, TSMC 28 nm libraries, and the 1 GHz target. Service-side console logs had already expired, so the bundle relies on native reports rather than claiming unavailable logs. Figure 18 fits completed N=4--N=28 samples as available; Figure 19's x16/x32 values are explicitly labeled as 32x32 incremental-overhead calculations rather than complete large-mesh syntheses. See `hardware/rtl/RTL_VERSION.md` for exact-versus-retained RTL provenance.
+## Archive
 
-## Included validation
+```bash
+make archive
+```
 
-The packaged validation covers paper claims, all reproduced Figure 13/21 latency rows, all 54 Figure 14 paper CSV rows, all 18 Figure 15 rows, rendered hardware plots, generated RTL, all selected native synthesis reports, report-derived paper cells, and RTL provenance classes.
+The archive excludes `.git/`, `.venv/`, `runs/`, caches, model weights, build targets, and machine-local `config/local.env`. It includes all compact CPU/GPU evidence, expected values, source snapshots, native synthesis reports, and the paper.

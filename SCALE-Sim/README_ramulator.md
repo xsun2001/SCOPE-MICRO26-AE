@@ -15,12 +15,6 @@ git checkout dev-ramulator-merge <br />
 python -m venv ./venv <br />
 source venv/bin/activate <br />
 pip install -r ./requirements.txt<br />
->>>>>>> 2401db77f7ea13df54c01df2d41263e1f62edf6c
-
-### * Step 1b: Create a virtual environment and install python dependencies*
-python -m venv ./venv <br />
-source venv/bin/activate <br />
-pip install -r ./requirements.txt<br />
 
 ### * Step 1c: Installing the ramulator package*
 

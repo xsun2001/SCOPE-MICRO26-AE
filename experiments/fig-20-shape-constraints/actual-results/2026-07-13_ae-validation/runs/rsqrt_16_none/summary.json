@@ -1,0 +1,21 @@
+{
+  "best_epoch": 1202,
+  "best_mse": 0.005627915728837252,
+  "early_stop": null,
+  "last_epoch": 30000,
+  "last_mse": 0.006818896625190973,
+  "last_rmse": 0.08257661064242691,
+  "lr_scheduler": {
+    "cooldown": 500,
+    "factor": 0.5,
+    "last_lr": 0.0001,
+    "metric": "mse",
+    "min_lr": 0.0001,
+    "name": "ReduceLROnPlateau",
+    "patience": 1000,
+    "threshold": 1e-06,
+    "threshold_mode": "rel"
+  },
+  "stop_reason": null,
+  "stopped_early": false
+}

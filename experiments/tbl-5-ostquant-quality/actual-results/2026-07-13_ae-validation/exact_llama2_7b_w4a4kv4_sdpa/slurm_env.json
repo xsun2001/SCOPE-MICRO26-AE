@@ -1,0 +1,10 @@
+{
+  "job_id": "348845",
+  "job_name": "ostq_exact_llama2_7b_w4a4kv4",
+  "model_key": "llama2_7b",
+  "quant_key": "w4a4kv4",
+  "mode": "exact_sdpa_train_eval",
+  "run_root": "/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol",
+  "node_list": "ACD1-6",
+  "started_at": "2026-06-12T14:02:57+08:00"
+}

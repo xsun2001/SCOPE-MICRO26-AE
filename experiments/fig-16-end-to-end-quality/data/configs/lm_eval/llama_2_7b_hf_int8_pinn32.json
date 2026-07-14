@@ -1,0 +1,37 @@
+{
+  "approximation": {
+    "activation_bits": 8,
+    "activation_per_tensor": true,
+    "backend": "pinn",
+    "dimension": 32,
+    "quant_activations": true,
+    "quant_weights": true,
+    "scope": "all",
+    "weight_bits": 8
+  },
+  "backbone_quant": {
+    "activation_bits": 8,
+    "activation_dtype": "int8",
+    "activation_scheme": "per_channel",
+    "calibration_mode": "static",
+    "calibration_samples": 128,
+    "calibration_seq_len": 2048,
+    "enabled": true,
+    "quantize_lm_head": false,
+    "smoothquant": true,
+    "smoothquant_alpha": 0.85,
+    "weight_bits": 8,
+    "weight_dtype": "int8",
+    "weight_scheme": "per_channel"
+  },
+  "evaluation": {
+    "limit": null,
+    "task_group": "group1"
+  },
+  "experiment_name": "llama_2_7b_hf_int8_pinn32_lm_eval",
+  "runtime": {
+    "job_name": "scope_ae",
+    "model": "models/Llama-2-7b-hf",
+    "torch_dtype": "bfloat16"
+  }
+}

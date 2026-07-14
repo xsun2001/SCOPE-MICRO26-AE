@@ -1,0 +1,21 @@
+{
+  "lm_eval": {},
+  "model": "/data/user/cxu930/projects/pinn-fullstack/models/Llama-2-7b-hf",
+  "ppl": 5.9417901039123535,
+  "quantization": {
+    "a_bits": 4,
+    "down_bits": 4,
+    "fully_quant": false,
+    "k_bits": 4,
+    "v_bits": 4,
+    "w_bits": 4
+  },
+  "scna": {
+    "artifact_root": null,
+    "dim": null,
+    "enabled": false
+  },
+  "wikitext": {
+    "dynamic_ppl": 5.9417901039123535
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "job_id": "410469",
+  "job_name": "scope_ae_table5",
+  "model_key": "llama3_8b",
+  "quant_key": "w4a4kv4",
+  "mode": "exact_eager",
+  "exact_suffix": "sdpa",
+  "qmodel_suffix": "sdpa",
+  "out_suffix": "maskfix_acc",
+  "run_root": "/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5",
+  "resume_path": "/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/exact_llama3_8b_w4a4kv4_sdpa/model.bin",
+  "load_qmodel_path": "/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/qmodel_llama3_8b_w4a4kv4_sdpa/qmodel.pt",
+  "node_list": "ACD1-36",
+  "started_at": "2026-07-14T00:11:09+08:00"
+}

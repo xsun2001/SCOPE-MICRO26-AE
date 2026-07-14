@@ -1,0 +1,70 @@
+{
+  "intattention": {
+    "enabled": false,
+    "exp_bits": null,
+    "output_bits": null,
+    "zero_thr": null
+  },
+  "lm_eval": {
+    "final": {
+      "acc_avg": 0.6509,
+      "acc_avg_stderr": 0.0108,
+      "metrics": {
+        "acc_avg": 0.6509,
+        "arc_challenge": 0.4497,
+        "arc_easy": 0.742,
+        "boolq": 0.7709,
+        "hellaswag": 0.7581,
+        "lambada_openai": 0.7374,
+        "openbookqa": 0.444,
+        "piqa": 0.7927,
+        "social_iqa": 0.4626,
+        "winogrande": 0.7009
+      },
+      "stderr": {
+        "arc_challenge": 0.0145,
+        "arc_easy": 0.009,
+        "boolq": 0.0073,
+        "hellaswag": 0.0043,
+        "lambada_openai": 0.0061,
+        "openbookqa": 0.0222,
+        "piqa": 0.0095,
+        "social_iqa": 0.0113,
+        "winogrande": 0.0129
+      },
+      "tasks": [
+        "arc_challenge",
+        "arc_easy",
+        "boolq",
+        "hellaswag",
+        "lambada_openai",
+        "openbookqa",
+        "piqa",
+        "social_iqa",
+        "winogrande"
+      ]
+    }
+  },
+  "model": "/data/user/cxu930/projects/pinn-fullstack/models/Llama-2-7b-hf",
+  "ppl": 5.50187873840332,
+  "quantization": {
+    "a_bits": 6,
+    "down_bits": 6,
+    "fully_quant": false,
+    "k_bits": 6,
+    "v_bits": 6,
+    "w_bits": 6
+  },
+  "scna": {
+    "artifact_root": null,
+    "dim": null,
+    "enabled": false,
+    "input_clip_min": null,
+    "input_quant_bits": 0,
+    "input_scale": 1.0,
+    "output_floor_log": null
+  },
+  "wikitext": {
+    "dynamic_ppl": 5.50187873840332
+  }
+}

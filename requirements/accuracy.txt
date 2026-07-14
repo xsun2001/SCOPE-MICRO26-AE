@@ -1,0 +1,12 @@
+torch==2.10.0
+transformers==4.51.0
+datasets==2.17.1
+lm-eval==0.4.4
+accelerate==0.33.0
+matplotlib==3.10.8
+numpy==1.26.4
+scipy==1.17.1
+geoopt==0.5.1
+loguru==0.7.3
+einops==0.8.2
+tqdm==4.67.3
