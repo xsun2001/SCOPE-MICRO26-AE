@@ -1,0 +1,131 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'OneSaArray' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : OneSaArray
+Version: V-2023.12
+Date   : Mon Apr  6 05:49:19 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+  Startpoint: mesh/pes_10_1/regPsum_reg[1]
+              (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Endpoint: mesh/pes_11_1/regPsum_reg[31]
+            (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Path Group: ideal_clock1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  OneSaArray         ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  OneSaMesh          ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                     Fanout     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------
+  clock ideal_clock1 (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                                     0.00       0.00
+  mesh/pes_10_1/regPsum_reg[1]/CP (DFQD1BWP30P140)      0.00      0.00 #     0.00 r
+  mesh/pes_10_1/regPsum_reg[1]/Q (DFQD1BWP30P140)       0.01      0.04       0.04 f
+  mesh/_pes_10_1_io_psumOut[1] (net)          3                   0.00       0.04 f
+  mesh/U14634/ZN (AOI21D1BWP30P140)                     0.01      0.01       0.05 r
+  mesh/n58354 (net)                           2                   0.00       0.05 r
+  mesh/U14637/ZN (OAI21D1BWP30P140)                     0.02      0.01       0.06 f
+  mesh/n7923 (net)                            2                   0.00       0.06 f
+  mesh/U4922/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.09 r
+  mesh/n8481 (net)                            2                   0.00       0.09 r
+  mesh/U4615/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.12 f
+  mesh/n9148 (net)                            2                   0.00       0.12 f
+  mesh/U4298/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.15 r
+  mesh/n9805 (net)                            2                   0.00       0.15 r
+  mesh/U4175/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.18 f
+  mesh/n10662 (net)                           2                   0.00       0.18 f
+  mesh/U3957/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.21 r
+  mesh/n13015 (net)                           2                   0.00       0.21 r
+  mesh/U3851/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.24 f
+  mesh/n13944 (net)                           2                   0.00       0.24 f
+  mesh/U3721/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.27 r
+  mesh/n16335 (net)                           2                   0.00       0.27 r
+  mesh/U3501/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.30 f
+  mesh/n18168 (net)                           2                   0.00       0.30 f
+  mesh/U3334/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.34 r
+  mesh/n19687 (net)                           2                   0.00       0.34 r
+  mesh/U3203/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.36 f
+  mesh/n20850 (net)                           2                   0.00       0.36 f
+  mesh/U32386/ZN (MAOI222D1BWP30P140)                   0.03      0.03       0.39 r
+  mesh/n21784 (net)                           2                   0.00       0.39 r
+  mesh/U2850/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.42 f
+  mesh/n23608 (net)                           2                   0.00       0.42 f
+  mesh/U35368/ZN (MAOI222D1BWP30P140)                   0.03      0.03       0.44 r
+  mesh/n24973 (net)                           2                   0.00       0.44 r
+  mesh/U2531/ZN (MAOI222D0BWP30P140)                    0.04      0.03       0.47 f
+  mesh/n26072 (net)                           2                   0.00       0.47 f
+  mesh/U38156/ZN (MAOI222D1BWP30P140)                   0.03      0.03       0.50 r
+  mesh/n28393 (net)                           2                   0.00       0.50 r
+  mesh/U40622/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.52 f
+  mesh/n30556 (net)                           2                   0.00       0.52 f
+  mesh/U43822/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.54 r
+  mesh/n32522 (net)                           2                   0.00       0.54 r
+  mesh/U47225/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.57 f
+  mesh/n33161 (net)                           2                   0.00       0.57 f
+  mesh/U48264/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.59 r
+  mesh/n45060 (net)                           2                   0.00       0.59 r
+  mesh/U65385/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.61 f
+  mesh/n46396 (net)                           2                   0.00       0.61 f
+  mesh/U67523/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.64 r
+  mesh/n46692 (net)                           2                   0.00       0.64 r
+  mesh/U68024/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.66 f
+  mesh/n47620 (net)                           2                   0.00       0.66 f
+  mesh/U69192/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.68 r
+  mesh/n48246 (net)                           2                   0.00       0.68 r
+  mesh/U69969/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.70 f
+  mesh/n48865 (net)                           2                   0.00       0.70 f
+  mesh/U70607/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.73 r
+  mesh/n49480 (net)                           2                   0.00       0.73 r
+  mesh/U71148/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.75 f
+  mesh/n50049 (net)                           2                   0.00       0.75 f
+  mesh/U71671/ZN (MAOI222D1BWP30P140)                   0.03      0.02       0.77 r
+  mesh/n50341 (net)                           2                   0.00       0.77 r
+  mesh/U1194/ZN (MAOI222D0BWP30P140)                    0.03      0.03       0.80 f
+  mesh/n51355 (net)                           2                   0.00       0.80 f
+  mesh/U1098/ZN (MAOI222D0BWP30P140)                    0.02      0.02       0.82 r
+  mesh/n51356 (net)                           1                   0.00       0.82 r
+  mesh/U563/ZN (XNR2UD0BWP30P140)                       0.02      0.02       0.84 r
+  mesh/n51357 (net)                           1                   0.00       0.84 r
+  mesh/U382/ZN (XNR2UD0BWP30P140)                       0.02      0.02       0.86 r
+  mesh/n51358 (net)                           1                   0.00       0.86 r
+  mesh/U72459/Z (AO22D0BWP30P140)                       0.01      0.02       0.88 r
+  mesh/pes_11_1/N292 (net)                    1                   0.00       0.88 r
+  mesh/pes_11_1/regPsum_reg[31]/D (DFQD1BWP30P140)      0.01      0.00       0.88 r
+  data arrival time                                                          0.88
+
+  clock ideal_clock1 (rise edge)                                  1.00       1.00
+  clock network delay (ideal)                                     0.00       1.00
+  mesh/pes_11_1/regPsum_reg[31]/CP (DFQD1BWP30P140)               0.00       1.00 r
+  library setup time                                             -0.01       0.99
+  data required time                                                         0.99
+  -------------------------------------------------------------------------------------------------------
+  data required time                                                         0.99
+  data arrival time                                                         -0.88
+  -------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                0.11
+
+
+1

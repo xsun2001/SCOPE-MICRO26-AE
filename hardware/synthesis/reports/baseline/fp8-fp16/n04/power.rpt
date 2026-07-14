@@ -1,0 +1,71 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:01:34 2026
+****************************************
+
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+SystolicArray          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_15                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_12                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_1                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_2                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_3                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_5                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_6                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_7                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_9                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_10                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_11                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_13                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_14                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_0                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_4                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_8                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+SystolicArray                             0.762    2.605 6.04e+04    3.427 100.0
+  pes_3_3 (PE_0)                       2.11e-02    0.110 3.64e+03    0.134   3.9
+  pes_2_3 (PE_1)                       2.79e-02    0.148 3.90e+03    0.180   5.3
+  pes_1_3 (PE_2)                       3.36e-02    0.156 3.89e+03    0.193   5.6
+  pes_0_3 (PE_3)                       4.32e-02    0.168 3.75e+03    0.215   6.3
+  pes_3_2 (PE_4)                       2.34e-02    0.112 3.59e+03    0.139   4.1
+  pes_2_2 (PE_5)                       3.01e-02    0.150 3.85e+03    0.184   5.4
+  pes_1_2 (PE_6)                       3.62e-02    0.158 3.85e+03    0.198   5.8
+  pes_0_2 (PE_7)                       4.59e-02    0.168 3.77e+03    0.218   6.4
+  pes_3_1 (PE_8)                       3.68e-02    0.127 3.60e+03    0.167   4.9
+  pes_2_1 (PE_9)                       4.31e-02    0.165 3.86e+03    0.212   6.2
+  pes_1_1 (PE_10)                      4.83e-02    0.171 3.88e+03    0.224   6.5
+  pes_0_1 (PE_11)                      5.83e-02    0.182 3.79e+03    0.244   7.1
+  pes_3 (PE_12)                        6.49e-02    0.159 3.57e+03    0.227   6.6
+  pes_2 (PE_13)                        7.46e-02    0.201 3.84e+03    0.280   8.2
+  pes_1 (PE_14)                        8.12e-02    0.206 3.83e+03    0.292   8.5
+  pes_0 (PE_15)                        9.35e-02    0.222 3.75e+03    0.319   9.3
+1

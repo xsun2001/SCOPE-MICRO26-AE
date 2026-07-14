@@ -1,0 +1,404 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'SystolicArray' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 16:07:37 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+  Startpoint: pairs_1_14/right/regW_bits_reg[2]
+              (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Endpoint: pairs_2_14/left/regS_bits_reg[13]
+            (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Path Group: ideal_clock1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  StripPair_170      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_160      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_150      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_140      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_130      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_120      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_110      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_100      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_90       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_80       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_70       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_60       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_50       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_40       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_30       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_20       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_10       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_0        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_198      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_197      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_196      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_195      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_194      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_193      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_192      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_191      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_188      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_187      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_186      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_185      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_184      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_183      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_182      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_181      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_179      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_178      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_177      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_176      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_175      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_174      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_173      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_172      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_171      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_169      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_168      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_167      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_166      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_165      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_164      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_163      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_162      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_161      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_159      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_158      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_157      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_156      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_155      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_154      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_153      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_152      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_151      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_149      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_148      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_147      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_146      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_145      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_144      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_143      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_142      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_141      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_139      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_138      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_137      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_136      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_135      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_134      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_133      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_132      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_131      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_129      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_128      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_127      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_126      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_125      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_124      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_123      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_122      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_121      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_119      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_118      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_117      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_116      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_115      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_114      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_113      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_112      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_111      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_109      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_108      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_107      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_106      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_105      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_104      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_103      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_102      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_101      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_99       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_98       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_97       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_96       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_95       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_94       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_93       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_92       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_91       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_89       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_88       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_87       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_86       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_85       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_84       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_83       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_82       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_81       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_79       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_78       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_77       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_76       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_75       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_74       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_73       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_72       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_71       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_69       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_68       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_67       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_66       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_65       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_64       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_63       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_62       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_61       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_59       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_58       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_57       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_56       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_55       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_54       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_53       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_52       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_51       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_49       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_48       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_47       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_46       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_45       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_44       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_43       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_42       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_41       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_39       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_38       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_37       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_36       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_35       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_34       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_33       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_32       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_31       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_29       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_28       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_27       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_26       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_25       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_24       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_23       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_22       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_21       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_19       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_18       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_17       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_16       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_15       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_14       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_13       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_12       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_11       ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_9        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_8        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_7        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_6        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_5        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_4        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_3        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_2        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_1        ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_180      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_189      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_190      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  SystolicArray      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  StripPair_199      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                                              Fanout     Trans      Incr       Path      Attributes
+  --------------------------------------------------------------------------------------------------------------------------------
+  clock ideal_clock1 (rise edge)                                                           0.00       0.00
+  clock network delay (ideal)                                                              0.00       0.00
+  pairs_1_14/right/regW_bits_reg[2]/CP (DFQD2BWP30P140)                          0.00      0.00 #     0.00 r
+  pairs_1_14/right/regW_bits_reg[2]/Q (DFQD2BWP30P140)                           0.01      0.04       0.04 f
+  pairs_1_14/right/regW_bits[2] (net)                                  4                   0.00       0.04 f
+  pairs_1_14/U2495/Z (CKMUX2D0BWP30P140)                                         0.02      0.02       0.06 f
+  pairs_1_14/io_eastOut_bits[2] (net)                                  3                   0.00       0.06 f
+  pairs_1_14/io_eastOut_bits[2] (StripPair_58)                                             0.00       0.06 f
+  _pairs_1_14_io_eastOut_bits[2] (net)                                                     0.00       0.06 f
+  pairs_2_14/io_westIn_bits[2] (StripPair_57)                                              0.00       0.06 f
+  pairs_2_14/io_westIn_bits[2] (net)                                                       0.00       0.06 f
+  pairs_2_14/U318/Z (MUX2D1BWP30P140)                                            0.01      0.02       0.08 f
+  pairs_2_14/n1346 (net)                                               3                   0.00       0.08 f
+  pairs_2_14/U200/ZN (NR3D1BWP30P140)                                            0.01      0.01       0.09 r
+  pairs_2_14/n61 (net)                                                 1                   0.00       0.09 r
+  pairs_2_14/U307/ZN (ND2OPTPAD2BWP30P140)                                       0.01      0.01       0.10 f
+  pairs_2_14/n310 (net)                                                4                   0.00       0.10 f
+  pairs_2_14/U403/Z (AN2D4BWP30P140)                                             0.01      0.01       0.11 f
+  pairs_2_14/n344 (net)                                               12                   0.00       0.11 f
+  pairs_2_14/U402/Z (CKAN2D1BWP30P140)                                           0.01      0.02       0.13 f
+  pairs_2_14/n330 (net)                                                3                   0.00       0.13 f
+  pairs_2_14/U649/CO (FA1D1BWP30P140)                                            0.01      0.02       0.15 f
+  pairs_2_14/n245 (net)                                                1                   0.00       0.15 f
+  pairs_2_14/U641/S (FA1D1BWP30P140)                                             0.01      0.04       0.20 r
+  pairs_2_14/n269 (net)                                                2                   0.00       0.20 r
+  pairs_2_14/U339/ZN (ND2D1BWP30P140)                                            0.01      0.01       0.20 f
+  pairs_2_14/n280 (net)                                                1                   0.00       0.20 f
+  pairs_2_14/U376/ZN (OAI21D1BWP30P140)                                          0.01      0.01       0.21 r
+  pairs_2_14/n47 (net)                                                 1                   0.00       0.21 r
+  pairs_2_14/U300/Z (AO21D2BWP30P140)                                            0.01      0.02       0.23 r
+  pairs_2_14/n46 (net)                                                 1                   0.00       0.23 r
+  pairs_2_14/U191/ZN (INVD6BWP30P140)                                            0.02      0.01       0.24 f
+  pairs_2_14/n1815 (net)                                              31                   0.00       0.24 f
+  pairs_2_14/U676/Z (CKMUX2D0BWP30P140)                                          0.01      0.02       0.27 r
+  pairs_2_14/n290 (net)                                                1                   0.00       0.27 r
+  pairs_2_14/U677/ZN (INVD1BWP30P140)                                            0.01      0.01       0.27 f
+  pairs_2_14/n328 (net)                                                1                   0.00       0.27 f
+  pairs_2_14/U443/S (FA1D1BWP30P140)                                             0.01      0.05       0.32 r
+  pairs_2_14/n293 (net)                                                2                   0.00       0.32 r
+  pairs_2_14/U682/Z (OR2D2BWP30P140)                                             0.01      0.02       0.34 r
+  pairs_2_14/n337 (net)                                                2                   0.00       0.34 r
+  pairs_2_14/U18/ZN (CKND2D3BWP30P140)                                           0.01      0.01       0.35 f
+  pairs_2_14/n298 (net)                                                1                   0.00       0.35 f
+  pairs_2_14/U444/ZN (XNR2OPTND4BWP30P140)                                       0.03      0.01       0.36 f
+  pairs_2_14/n463 (net)                                               11                   0.00       0.36 f
+  pairs_2_14/U685/ZN (INR2D2BWP30P140)                                           0.02      0.02       0.38 r
+  pairs_2_14/n475 (net)                                               11                   0.00       0.38 r
+  pairs_2_14/U825/ZN (AOI22D1BWP30P140)                                          0.02      0.01       0.39 f
+  pairs_2_14/n448 (net)                                                1                   0.00       0.39 f
+  pairs_2_14/U827/Z (CKAN2D1BWP30P140)                                           0.01      0.02       0.41 f
+  pairs_2_14/n493 (net)                                                2                   0.00       0.41 f
+  pairs_2_14/U858/ZN (INVD1BWP30P140)                                            0.00      0.00       0.41 r
+  pairs_2_14/n495 (net)                                                1                   0.00       0.41 r
+  pairs_2_14/U859/Z (CKMUX2D0BWP30P140)                                          0.01      0.02       0.43 r
+  pairs_2_14/n521 (net)                                                2                   0.00       0.43 r
+  pairs_2_14/U861/ZN (OAI22D1BWP30P140)                                          0.02      0.01       0.45 f
+  pairs_2_14/n498 (net)                                                1                   0.00       0.45 f
+  pairs_2_14/U862/Z (XOR2UD1BWP30P140)                                           0.03      0.01       0.46 r
+  pairs_2_14/n680 (net)                                                3                   0.00       0.46 r
+  pairs_2_14/U869/ZN (ND2D1BWP30P140)                                            0.01      0.01       0.47 f
+  pairs_2_14/n662 (net)                                                2                   0.00       0.47 f
+  pairs_2_14/U870/ZN (NR2D1BWP30P140)                                            0.01      0.01       0.48 r
+  pairs_2_14/n553 (net)                                                2                   0.00       0.48 r
+  pairs_2_14/U172/ZN (INVD1BWP30P140)                                            0.01      0.01       0.49 f
+  pairs_2_14/n55 (net)                                                 1                   0.00       0.49 f
+  pairs_2_14/U388/ZN (NR2OPTPAD2BWP30P140)                                       0.01      0.01       0.50 r
+  pairs_2_14/n54 (net)                                                 1                   0.00       0.50 r
+  pairs_2_14/U385/ZN (INVD2BWP30P140)                                            0.01      0.01       0.51 f
+  pairs_2_14/n672 (net)                                                3                   0.00       0.51 f
+  pairs_2_14/U387/ZN (INR2D4BWP30P140)                                           0.01      0.01       0.51 r
+  pairs_2_14/n557 (net)                                                2                   0.00       0.51 r
+  pairs_2_14/U12/ZN (CKND2D3BWP30P140)                                           0.01      0.01       0.52 f
+  pairs_2_14/n81 (net)                                                 1                   0.00       0.52 f
+  pairs_2_14/U467/Z (XOR2OPTND2BWP30P140)                                        0.02      0.01       0.53 f
+  pairs_2_14/n1337 (net)                                               2                   0.00       0.53 f
+  pairs_2_14/U412/ZN (NR2D1BWP30P140)                                            0.02      0.01       0.55 r
+  pairs_2_14/n1193 (net)                                               3                   0.00       0.55 r
+  pairs_2_14/U254/Z (AN2D2BWP30P140)                                             0.01      0.02       0.56 r
+  pairs_2_14/n1340 (net)                                               5                   0.00       0.56 r
+  pairs_2_14/U252/ZN (ND3D2BWP30P140)                                            0.01      0.01       0.57 f
+  pairs_2_14/n21 (net)                                                 1                   0.00       0.57 f
+  pairs_2_14/U328/ZN (INVD2BWP30P140)                                            0.01      0.01       0.58 r
+  pairs_2_14/n20 (net)                                                 1                   0.00       0.58 r
+  pairs_2_14/U11/ZN (CKND2D3BWP30P140)                                           0.01      0.01       0.59 f
+  pairs_2_14/n1327 (net)                                               6                   0.00       0.59 f
+  pairs_2_14/U1555/ZN (NR2D1BWP30P140)                                           0.01      0.01       0.60 r
+  pairs_2_14/n1254 (net)                                               1                   0.00       0.60 r
+  pairs_2_14/U1558/ZN (XNR2UD1BWP30P140)                                         0.02      0.01       0.61 f
+  pairs_2_14/n1255 (net)                                               1                   0.00       0.61 f
+  pairs_2_14/U1559/Z (MUX2OPTD2BWP30P140)                                        0.01      0.02       0.63 f
+  pairs_2_14/left/sharedMacOut_mac/l00OOO0l[25] (net)                  4                   0.00       0.63 f
+  pairs_2_14/U161/ZN (NR2D2BWP30P140)                                            0.01      0.01       0.64 r
+  pairs_2_14/left/sharedMacOut_mac/U9/U1/enc_tree[1][1][28] (net)      3                   0.00       0.64 r
+  pairs_2_14/U535/ZN (ND2D1BWP30P140)                                            0.02      0.01       0.65 f
+  pairs_2_14/left/sharedMacOut_mac/U9/U1/enc_tree[2][2][28] (net)      2                   0.00       0.65 f
+  pairs_2_14/left/sharedMacOut_mac/U9/U1/UORT0_3_3/ZN (NR2D2BWP30P140)           0.01      0.01       0.66 r    mo 
+  pairs_2_14/left/sharedMacOut_mac/U9/U1/enc_tree[3][3][24] (net)      2                   0.00       0.66 r
+  pairs_2_14/left/sharedMacOut_mac/U9/U1/UORT1_4_1/ZN (ND2OPTIBD2BWP30P140)      0.02      0.01       0.67 f    mo 
+  pairs_2_14/left/sharedMacOut_mac/U9/U1/enc_tree[4][4][16] (net)      3                   0.00       0.67 f
+  pairs_2_14/U453/S (HA1D1BWP30P140)                                             0.01      0.01       0.69 f
+  pairs_2_14/n1405 (net)                                               2                   0.00       0.69 f
+  pairs_2_14/U1662/ZN (NR2D1BWP30P140)                                           0.01      0.01       0.70 r
+  pairs_2_14/n1408 (net)                                               2                   0.00       0.70 r
+  pairs_2_14/U1668/ZN (OAI21D1BWP30P140)                                         0.01      0.01       0.71 f
+  pairs_2_14/n1409 (net)                                               1                   0.00       0.71 f
+  pairs_2_14/U532/ZN (NR2OPTPAD2BWP30P140)                                       0.01      0.01       0.72 r
+  pairs_2_14/n185 (net)                                                1                   0.00       0.72 r
+  pairs_2_14/U156/ZN (ND2D4BWP30P140)                                            0.01      0.01       0.73 f
+  pairs_2_14/n1462 (net)                                               7                   0.00       0.73 f
+  pairs_2_14/U86/ZN (INR2D4BWP30P140)                                            0.01      0.01       0.74 r
+  pairs_2_14/n1425 (net)                                               5                   0.00       0.74 r
+  pairs_2_14/U333/ZN (ND2D1BWP30P140)                                            0.01      0.01       0.75 f
+  pairs_2_14/n24 (net)                                                 1                   0.00       0.75 f
+  pairs_2_14/U149/ZN (ND2OPTPAD2BWP30P140)                                       0.02      0.01       0.76 r
+  pairs_2_14/n1589 (net)                                               8                   0.00       0.76 r
+  pairs_2_14/U331/Z (OR2D1BWP30P140)                                             0.02      0.02       0.78 r
+  pairs_2_14/n1726 (net)                                              10                   0.00       0.78 r
+  pairs_2_14/U1743/ZN (INVD2BWP30P140)                                           0.02      0.02       0.80 f
+  pairs_2_14/n1706 (net)                                              15                   0.00       0.80 f
+  pairs_2_14/U1745/ZN (OAI22D0BWP30P140)                                         0.02      0.02       0.82 r
+  pairs_2_14/n1488 (net)                                               1                   0.00       0.82 r
+  pairs_2_14/U1752/ZN (OAI211D1BWP30P140)                                        0.02      0.01       0.83 f
+  pairs_2_14/n1494 (net)                                               1                   0.00       0.83 f
+  pairs_2_14/U1758/ZN (NR2OPTPAD1BWP30P140)                                      0.01      0.01       0.84 r
+  pairs_2_14/n1787 (net)                                               3                   0.00       0.84 r
+  pairs_2_14/U78/ZN (ND2D1BWP30P140)                                             0.01      0.01       0.85 f
+  pairs_2_14/n1680 (net)                                               2                   0.00       0.85 f
+  pairs_2_14/U75/ZN (INVD0BWP30P140)                                             0.01      0.01       0.86 r
+  pairs_2_14/n1768 (net)                                               2                   0.00       0.86 r
+  pairs_2_14/U401/ZN (ND3D1BWP30P140)                                            0.02      0.02       0.88 f
+  pairs_2_14/n1757 (net)                                               3                   0.00       0.88 f
+  pairs_2_14/U400/ZN (INR2D1BWP30P140)                                           0.01      0.01       0.89 r
+  pairs_2_14/n1764 (net)                                               2                   0.00       0.89 r
+  pairs_2_14/U1974/Z (XOR2UD0BWP30P140)                                          0.02      0.02       0.91 r
+  pairs_2_14/n1767 (net)                                               1                   0.00       0.91 r
+  pairs_2_14/U1975/ZN (MOAI22D1BWP30P140)                                        0.02      0.01       0.92 f
+  pairs_2_14/n1864 (net)                                               2                   0.00       0.92 f
+  pairs_2_14/U1979/ZN (NR4D1BWP30P140)                                           0.02      0.02       0.94 r
+  pairs_2_14/n1791 (net)                                               1                   0.00       0.94 r
+  pairs_2_14/U462/ZN (ND3D2BWP30P140)                                            0.02      0.02       0.95 f
+  pairs_2_14/n1796 (net)                                               2                   0.00       0.95 f
+  pairs_2_14/U521/Z (CKAN2D1BWP30P140)                                           0.01      0.02       0.97 f
+  pairs_2_14/n1855 (net)                                               5                   0.00       0.97 f
+  pairs_2_14/U2006/ZN (ND3D1BWP30P140)                                           0.01      0.01       0.98 r
+  pairs_2_14/n1813 (net)                                               1                   0.00       0.98 r
+  pairs_2_14/U2007/ZN (OAI211D1BWP30P140)                                        0.02      0.02       1.00 f
+  pairs_2_14/n2421 (net)                                               1                   0.00       1.00 f
+  pairs_2_14/left/regS_bits_reg[13]/D (DFQD1BWP30P140)                           0.02      0.00       1.00 f
+  data arrival time                                                                                   1.00
+
+  clock ideal_clock1 (rise edge)                                                           1.00       1.00
+  clock network delay (ideal)                                                              0.00       1.00
+  pairs_2_14/left/regS_bits_reg[13]/CP (DFQD1BWP30P140)                                    0.00       1.00 r
+  library setup time                                                                       0.00       1.00
+  data required time                                                                                  1.00
+  --------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                  1.00
+  data arrival time                                                                                  -1.00
+  --------------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                         0.00
+
+
+1

@@ -1,0 +1,35 @@
+{
+  "outputs": {
+    "h100_int8": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/tbl-3-integer-softmax/actual-results/2026-07-13_ae-validation/h100_int8"
+  },
+  "lengths": [
+    2048,
+    4096,
+    8192,
+    16384
+  ],
+  "variants": [
+    {
+      "name": "baseline",
+      "label": "FlashAttention",
+      "attention_variant": "flashattention"
+    },
+    {
+      "name": "customsa",
+      "label": "FlashAttention-CustomSA",
+      "attention_variant": "flashattention_customsa"
+    },
+    {
+      "name": "illm",
+      "label": "FlashAttention + I-LLM",
+      "attention_variant": "flashattention_illm"
+    },
+    {
+      "name": "intattention",
+      "label": "FlashAttention + IntAttention",
+      "attention_variant": "flashattention_intattention"
+    }
+  ],
+  "use_source_rows": false,
+  "source_dir_overrides": {}
+}

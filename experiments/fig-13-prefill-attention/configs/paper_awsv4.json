@@ -1,0 +1,31 @@
+{
+  "experiment_name": "scope_paper_awsv4_attention",
+  "runtime": {
+    "compile_mode": "heuristic-TPU-new",
+    "batch_size": 1,
+    "adjust_global_buffer_to_memory_capacity": true,
+    "ignore_hbm_bottleneck": true
+  },
+  "model": {
+    "name": "llama2_7b_attention",
+    "hidden_size": 4096,
+    "num_heads": 32
+  },
+  "cases": [
+    {
+      "name": "awsv4_fp16",
+      "label": "AWSv4 FP16",
+      "system_config": "LLMCompass/configs/ours/AWSv4.json",
+      "data_type": "fp16"
+    },
+    {
+      "name": "awsv4_int8",
+      "label": "AWSv4 INT8",
+      "system_config": "LLMCompass/configs/ours/AWSv4.json",
+      "data_type": "int8"
+    }
+  ],
+  "sweep": {
+    "prefill_lengths": [2048, 4096, 8192, 16384, 32768]
+  }
+}

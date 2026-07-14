@@ -1,0 +1,26 @@
+{
+  "device": "b300",
+  "case_name": "b300_fp16",
+  "case_label": "B300 FP16",
+  "system_config": "LLMCompass/configs/ours/B300.json",
+  "system_name": "NVIDIA Blackwell B300 x4 single-card",
+  "source_attention_dir": "experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-09_18-25-37_b200_fp16_attention_repro",
+  "lengths": [
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072,
+    262144,
+    524288
+  ],
+  "q_tile_size": 32,
+  "kv_tile_size": 256,
+  "flashattention_is_double_buffering": true,
+  "adjust_global_buffer_to_memory_capacity": false,
+  "ignore_hbm_bottleneck": true,
+  "ignore_onchip_io_bottleneck": true,
+  "note": "Rows at source lengths reuse the supplied attention_latency.csv; longer rows use the fixed tile mapping from the source run."
+}

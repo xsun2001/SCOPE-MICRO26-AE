@@ -1,0 +1,10 @@
+case=tpuv6e_fp16 dtype=fp16 seq= 2048 variant=customsa       total_ms=     0.469 bottleneck=fused_core  component_ms=     0.169 req_hbm_tbps=   0.994
+case=tpuv6e_int8 dtype=int8 seq= 2048 variant=customsa       total_ms=     0.394 bottleneck=fused_core  component_ms=     0.094 req_hbm_tbps=   0.893
+case=tpuv6e_fp16 dtype=fp16 seq= 4096 variant=customsa       total_ms=     0.937 bottleneck=fused_core  component_ms=     0.637 req_hbm_tbps=   0.948
+case=tpuv6e_fp16 dtype=fp16 seq=32768 variant=customsa       total_ms=    41.082 bottleneck=fused_core  component_ms=    40.782 req_hbm_tbps=   0.856
+case=tpuv6e_fp16 dtype=fp16 seq= 8192 variant=customsa       total_ms=     2.849 bottleneck=fused_core  component_ms=     2.549 req_hbm_tbps=   0.895
+case=tpuv6e_fp16 dtype=fp16 seq=16384 variant=customsa       total_ms=    10.496 bottleneck=fused_core  component_ms=    10.196 req_hbm_tbps=   0.869
+case=tpuv6e_int8 dtype=int8 seq= 4096 variant=customsa       total_ms=     0.638 bottleneck=fused_core  component_ms=     0.338 req_hbm_tbps=   0.894
+case=tpuv6e_int8 dtype=int8 seq= 8192 variant=customsa       total_ms=     1.574 bottleneck=fused_core  component_ms=     1.274 req_hbm_tbps=   0.895
+case=tpuv6e_int8 dtype=int8 seq=32768 variant=customsa       total_ms=    20.691 bottleneck=fused_core  component_ms=    20.391 req_hbm_tbps=   0.856
+case=tpuv6e_int8 dtype=int8 seq=16384 variant=customsa       total_ms=     5.398 bottleneck=fused_core  component_ms=     5.098 req_hbm_tbps=   0.869

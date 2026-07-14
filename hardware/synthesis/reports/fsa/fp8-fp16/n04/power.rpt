@@ -1,0 +1,79 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : SystolicArray
+Version: V-2023.12
+Date   : Tue Apr  7 23:07:02 2026
+****************************************
+
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+SystolicArray          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+CMP_3                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_15                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_14                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_13                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_12                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_11                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_10                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_9                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_8                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_7                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_6                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_5                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_4                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_3                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_2                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_1                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_0                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+CMP_0                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+CMP_1                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+CMP_2                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+SystolicArray                             4.174    8.214 1.80e+05   12.568 100.0
+  mesh_3_3 (PE_0)                         0.252    0.325 1.02e+04    0.588   4.7
+  mesh_3_2 (PE_1)                         0.251    0.326 1.02e+04    0.587   4.7
+  mesh_3_1 (PE_2)                         0.251    0.323 1.02e+04    0.584   4.6
+  mesh_3_0 (PE_3)                         0.271    0.345 1.02e+04    0.626   5.0
+  mesh_2_3 (PE_4)                         0.245    0.321 1.02e+04    0.577   4.6
+  mesh_2_2 (PE_5)                         0.243    0.317 1.01e+04    0.571   4.5
+  mesh_2_1 (PE_6)                         0.247    0.321 1.03e+04    0.578   4.6
+  mesh_2_0 (PE_7)                         0.270    0.347 1.03e+04    0.627   5.0
+  mesh_1_3 (PE_8)                         0.237    0.310 1.03e+04    0.557   4.4
+  mesh_1_2 (PE_9)                         0.240    0.312 1.03e+04    0.562   4.5
+  mesh_1_1 (PE_10)                        0.239    0.309 1.02e+04    0.559   4.4
+  mesh_1_0 (PE_11)                        0.270    0.347 1.05e+04    0.627   5.0
+  mesh_0_3 (PE_12)                        0.259    0.335 1.11e+04    0.606   4.8
+  mesh_0_2 (PE_13)                        0.260    0.336 1.11e+04    0.607   4.8
+  mesh_0_1 (PE_14)                        0.264    0.339 1.09e+04    0.614   4.9
+  mesh_0_0 (PE_15)                        0.277    0.355 1.05e+04    0.642   5.1
+  cmpArray_3 (CMP_0)                   1.24e-02    0.129 1.66e+03    0.143   1.1
+  cmpArray_2 (CMP_1)                   1.26e-02    0.129 1.66e+03    0.144   1.1
+  cmpArray_1 (CMP_2)                   1.27e-02    0.130 1.66e+03    0.144   1.1
+  cmpArray_0 (CMP_3)                   1.29e-02    0.130 1.66e+03    0.144   1.1
+1

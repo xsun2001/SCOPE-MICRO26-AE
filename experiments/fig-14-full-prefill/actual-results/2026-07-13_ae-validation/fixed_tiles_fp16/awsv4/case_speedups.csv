@@ -1,0 +1,28 @@
+case_name,case_label,data_type,prefill_length,baseline_variant,baseline_label,variant,variant_label,baseline_total_ms,variant_total_ms,speedup_vs_baseline_x,tensor_vector_ratio,source
+awsv4_fp16,AWSv4 FP16,fp16,2048,baseline,Unfused Attention,baseline,Unfused Attention,0.971,0.971,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,2048,baseline,Unfused Attention,flashattention,FlashAttention,0.971,0.5103,1.9028022731726435,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,2048,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,0.971,0.45525,2.1328940142778694,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,4096,baseline,Unfused Attention,baseline,Unfused Attention,2.2966666666666664,2.2966666666666664,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,4096,baseline,Unfused Attention,flashattention,FlashAttention,2.2966666666666664,1.1286,2.0349695788292275,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,4096,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,2.2966666666666664,0.9177000000000001,2.502633395081907,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,8192,baseline,Unfused Attention,baseline,Unfused Attention,7.572,7.572,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,8192,baseline,Unfused Attention,flashattention,FlashAttention,7.572,3.6144,2.094953519256308,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,8192,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,7.572,2.7708,2.7327847553053273,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,16384,baseline,Unfused Attention,baseline,Unfused Attention,28.61866666666667,28.61866666666667,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,16384,baseline,Unfused Attention,flashattention,FlashAttention,28.61866666666667,13.557599999999999,2.110894750299955,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,16384,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,28.61866666666667,10.1832,2.810380495980308,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,32768,baseline,Unfused Attention,baseline,Unfused Attention,112.696,112.696,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,32768,baseline,Unfused Attention,flashattention,FlashAttention,112.696,53.3304,2.113166224142328,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,32768,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,112.696,39.8328,2.829226165371252,68.26666666666668,source_csv
+awsv4_fp16,AWSv4 FP16,fp16,65536,baseline,Unfused Attention,baseline,Unfused Attention,448.7866666666667,448.7866666666667,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,65536,baseline,Unfused Attention,flashattention,FlashAttention,448.7866666666667,212.42159999999998,2.1127167230953288,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,65536,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,448.7866666666667,158.4312,2.8326912039211134,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,131072,baseline,Unfused Attention,baseline,Unfused Attention,1792.7119999999998,1792.7119999999998,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,131072,baseline,Unfused Attention,flashattention,FlashAttention,1792.7119999999998,848.7864,2.1120885066018964,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,131072,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,1792.7119999999998,632.8248,2.8328725422897456,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,262144,baseline,Unfused Attention,baseline,Unfused Attention,7167.538666666667,7167.538666666667,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,262144,baseline,Unfused Attention,flashattention,FlashAttention,7167.538666666667,3394.2456,2.1116735532239232,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,262144,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,7167.538666666667,2530.3992000000003,2.8325722939948235,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,524288,baseline,Unfused Attention,baseline,Unfused Attention,28665.095999999998,28665.095999999998,1.0,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,524288,baseline,Unfused Attention,flashattention,FlashAttention,28665.095999999998,13576.0824,2.111440926433976,68.26666666666667,fixed_tile_model
+awsv4_fp16,AWSv4 FP16,fp16,524288,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,28665.095999999998,10120.6968,2.8323243514221272,68.26666666666667,fixed_tile_model

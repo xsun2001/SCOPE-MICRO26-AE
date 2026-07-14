@@ -1,0 +1,42 @@
+{
+  "outputs": {
+    "b200": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b200",
+    "awsv4": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/awsv4",
+    "tpuv6e": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/tpuv6e",
+    "b300": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b300"
+  },
+  "lengths": [
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072,
+    262144,
+    524288
+  ],
+  "variants": [
+    {
+      "name": "baseline",
+      "label": "Unfused Attention",
+      "attention_variant": "trivial"
+    },
+    {
+      "name": "flashattention",
+      "label": "FlashAttention",
+      "attention_variant": "flashattention"
+    },
+    {
+      "name": "customsa",
+      "label": "FlashAttention-CustomSA",
+      "attention_variant": "flashattention_customsa"
+    }
+  ],
+  "use_source_rows": true,
+  "source_dir_overrides": {
+    "b200": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/b200/gpu_conv",
+    "awsv4": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/awsv4/aws_conv",
+    "tpuv6e": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/tpuv6e/tpu_conv"
+  }
+}

@@ -1,0 +1,103 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:46:44 2026
+****************************************
+
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+SystolicArray          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_31           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_28           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_27           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_24           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_1            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_2            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_3            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_5            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_6            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_7            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_9            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_10           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_11           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_13           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_14           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_15           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_17           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_18           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_19           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_21           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_22           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_23           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_25           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_26           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_29           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_30           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_0            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_4            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_8            ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_12           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_16           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+StripPair_20           ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+SystolicArray                             2.721   11.658 2.87e+05   14.666 100.0
+  pairs_3_7 (StripPair_0)              4.62e-02    0.315 8.99e+03    0.370   2.5
+  pairs_2_7 (StripPair_1)              6.43e-02    0.339 9.23e+03    0.413   2.8
+  pairs_1_7 (StripPair_2)              8.29e-02    0.359 9.18e+03    0.451   3.1
+  pairs_0_7 (StripPair_3)                 0.110    0.393 8.96e+03    0.512   3.5
+  pairs_3_6 (StripPair_4)              5.11e-02    0.322 9.05e+03    0.382   2.6
+  pairs_2_6 (StripPair_5)              7.11e-02    0.344 9.31e+03    0.424   2.9
+  pairs_1_6 (StripPair_6)              8.87e-02    0.366 9.05e+03    0.464   3.2
+  pairs_0_6 (StripPair_7)                 0.125    0.408 9.23e+03    0.541   3.7
+  pairs_3_5 (StripPair_8)              5.56e-02    0.326 8.96e+03    0.391   2.7
+  pairs_2_5 (StripPair_9)              7.24e-02    0.353 9.15e+03    0.435   3.0
+  pairs_1_5 (StripPair_10)             9.49e-02    0.380 9.24e+03    0.484   3.3
+  pairs_0_5 (StripPair_11)                0.128    0.420 9.16e+03    0.557   3.8
+  pairs_3_4 (StripPair_12)             6.53e-02    0.340 8.64e+03    0.414   2.8
+  pairs_2_4 (StripPair_13)             8.10e-02    0.357 8.67e+03    0.447   3.0
+  pairs_1_4 (StripPair_14)                0.102    0.384 8.78e+03    0.495   3.4
+  pairs_0_4 (StripPair_15)                0.149    0.435 9.30e+03    0.593   4.0
+  pairs_3_3 (StripPair_16)             4.66e-02    0.319 9.01e+03    0.374   2.6
+  pairs_2_3 (StripPair_17)             6.26e-02    0.342 9.20e+03    0.414   2.8
+  pairs_1_3 (StripPair_18)             8.20e-02    0.362 9.10e+03    0.453   3.1
+  pairs_0_3 (StripPair_19)                0.113    0.395 9.15e+03    0.516   3.5
+  pairs_3_2 (StripPair_20)             5.20e-02    0.322 9.06e+03    0.383   2.6
+  pairs_2_2 (StripPair_21)             6.70e-02    0.347 9.28e+03    0.423   2.9
+  pairs_1_2 (StripPair_22)             8.94e-02    0.372 9.22e+03    0.471   3.2
+  pairs_0_2 (StripPair_23)                0.121    0.407 9.14e+03    0.537   3.7
+  pairs_3_1 (StripPair_24)             5.48e-02    0.328 9.02e+03    0.391   2.7
+  pairs_2_1 (StripPair_25)             7.13e-02    0.352 9.13e+03    0.433   2.9
+  pairs_1_1 (StripPair_26)             9.56e-02    0.374 9.11e+03    0.478   3.3
+  pairs_0_1 (StripPair_27)                0.127    0.415 9.17e+03    0.551   3.8
+  pairs_3 (StripPair_28)               5.81e-02    0.332 7.88e+03    0.398   2.7
+  pairs_2 (StripPair_29)               7.31e-02    0.351 8.02e+03    0.432   2.9
+  pairs_1 (StripPair_30)               9.14e-02    0.375 8.06e+03    0.474   3.2
+  pairs_0 (StripPair_31)                  0.119    0.409 8.14e+03    0.537   3.7
+1

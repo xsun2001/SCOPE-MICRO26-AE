@@ -1,0 +1,5 @@
+-Xms1G
+-Xmx300G
+-XX:+UseG1GC
+-Dhttps.proxyHost=10.4.8.29
+-Dhttps.proxyPort=21080

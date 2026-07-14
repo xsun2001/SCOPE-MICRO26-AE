@@ -1,0 +1,327 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 04:32:54 2026
+****************************************
+
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+SystolicArray          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_143                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_132                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_1                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_2                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_3                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_4                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_5                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_6                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_7                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_8                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_9                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_10                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_11                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_13                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_14                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_15                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_16                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_17                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_18                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_19                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_20                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_21                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_22                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_23                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_25                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_26                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_27                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_28                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_29                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_30                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_31                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_32                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_33                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_34                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_35                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_37                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_38                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_39                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_40                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_41                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_42                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_43                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_44                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_45                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_46                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_47                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_49                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_50                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_51                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_52                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_53                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_54                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_55                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_56                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_57                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_58                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_59                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_61                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_62                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_63                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_64                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_65                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_66                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_67                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_68                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_69                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_70                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_71                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_73                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_74                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_75                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_76                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_77                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_78                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_79                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_80                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_81                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_82                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_83                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_85                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_86                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_87                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_88                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_89                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_90                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_91                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_92                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_93                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_94                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_95                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_97                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_98                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_99                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_100                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_101                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_102                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_103                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_104                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_105                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_106                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_107                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_109                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_110                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_111                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_112                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_113                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_114                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_115                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_116                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_117                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_118                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_119                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_121                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_122                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_123                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_124                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_125                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_126                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_127                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_128                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_129                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_130                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_131                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_133                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_134                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_135                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_136                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_137                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_138                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_139                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_140                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_141                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_142                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_0                   ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_12                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_24                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_36                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_48                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_60                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_72                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_84                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_96                  ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_108                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+PE_120                 ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+SystolicArray                             1.510   26.550 2.05e+05   28.265 100.0
+  pes_11_11 (PE_0)                     3.40e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_11 (PE_1)                     4.71e-03    0.179 1.41e+03    0.185   0.7
+  pes_9_11 (PE_2)                      5.03e-03    0.179 1.41e+03    0.186   0.7
+  pes_8_11 (PE_3)                      5.42e-03    0.180 1.41e+03    0.187   0.7
+  pes_7_11 (PE_4)                      5.99e-03    0.181 1.42e+03    0.188   0.7
+  pes_6_11 (PE_5)                      6.71e-03    0.182 1.42e+03    0.190   0.7
+  pes_5_11 (PE_6)                      7.56e-03    0.183 1.42e+03    0.192   0.7
+  pes_4_11 (PE_7)                      8.62e-03    0.184 1.43e+03    0.194   0.7
+  pes_3_11 (PE_8)                      1.01e-02    0.186 1.44e+03    0.197   0.7
+  pes_2_11 (PE_9)                      1.18e-02    0.188 1.44e+03    0.201   0.7
+  pes_1_11 (PE_10)                     1.40e-02    0.191 1.45e+03    0.207   0.7
+  pes_0_11 (PE_11)                     1.77e-02    0.196 1.48e+03    0.215   0.8
+  pes_11_10 (PE_12)                    3.61e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_10 (PE_13)                    4.94e-03    0.179 1.41e+03    0.186   0.7
+  pes_9_10 (PE_14)                     5.26e-03    0.180 1.41e+03    0.186   0.7
+  pes_8_10 (PE_15)                     5.68e-03    0.180 1.42e+03    0.187   0.7
+  pes_7_10 (PE_16)                     6.27e-03    0.181 1.42e+03    0.189   0.7
+  pes_6_10 (PE_17)                     7.04e-03    0.182 1.42e+03    0.190   0.7
+  pes_5_10 (PE_18)                     7.94e-03    0.183 1.42e+03    0.192   0.7
+  pes_4_10 (PE_19)                     9.08e-03    0.185 1.43e+03    0.195   0.7
+  pes_3_10 (PE_20)                     1.05e-02    0.186 1.44e+03    0.198   0.7
+  pes_2_10 (PE_21)                     1.23e-02    0.189 1.44e+03    0.202   0.7
+  pes_1_10 (PE_22)                     1.46e-02    0.192 1.45e+03    0.208   0.7
+  pes_0_10 (PE_23)                     1.82e-02    0.196 1.48e+03    0.216   0.8
+  pes_11_9 (PE_24)                     3.67e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_9 (PE_25)                     5.08e-03    0.180 1.41e+03    0.186   0.7
+  pes_9_9 (PE_26)                      5.41e-03    0.180 1.41e+03    0.187   0.7
+  pes_8_9 (PE_27)                      5.89e-03    0.180 1.42e+03    0.188   0.7
+  pes_7_9 (PE_28)                      6.45e-03    0.181 1.42e+03    0.189   0.7
+  pes_6_9 (PE_29)                      7.11e-03    0.182 1.42e+03    0.191   0.7
+  pes_5_9 (PE_30)                      8.02e-03    0.183 1.42e+03    0.193   0.7
+  pes_4_9 (PE_31)                      9.15e-03    0.185 1.43e+03    0.195   0.7
+  pes_3_9 (PE_32)                      1.07e-02    0.187 1.44e+03    0.199   0.7
+  pes_2_9 (PE_33)                      1.25e-02    0.189 1.44e+03    0.203   0.7
+  pes_1_9 (PE_34)                      1.49e-02    0.192 1.45e+03    0.208   0.7
+  pes_0_9 (PE_35)                      1.87e-02    0.197 1.48e+03    0.217   0.8
+  pes_11_8 (PE_36)                     3.56e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_8 (PE_37)                     4.95e-03    0.179 1.41e+03    0.186   0.7
+  pes_9_8 (PE_38)                      5.32e-03    0.180 1.41e+03    0.187   0.7
+  pes_8_8 (PE_39)                      5.78e-03    0.180 1.41e+03    0.188   0.7
+  pes_7_8 (PE_40)                      6.39e-03    0.181 1.42e+03    0.189   0.7
+  pes_6_8 (PE_41)                      7.17e-03    0.182 1.42e+03    0.191   0.7
+  pes_5_8 (PE_42)                      8.07e-03    0.183 1.42e+03    0.193   0.7
+  pes_4_8 (PE_43)                      9.30e-03    0.185 1.43e+03    0.195   0.7
+  pes_3_8 (PE_44)                      1.09e-02    0.187 1.44e+03    0.199   0.7
+  pes_2_8 (PE_45)                      1.28e-02    0.189 1.45e+03    0.204   0.7
+  pes_1_8 (PE_46)                      1.51e-02    0.192 1.46e+03    0.209   0.7
+  pes_0_8 (PE_47)                      1.85e-02    0.197 1.49e+03    0.217   0.8
+  pes_11_7 (PE_48)                     3.65e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_7 (PE_49)                     4.97e-03    0.179 1.41e+03    0.186   0.7
+  pes_9_7 (PE_50)                      5.37e-03    0.180 1.41e+03    0.187   0.7
+  pes_8_7 (PE_51)                      5.77e-03    0.180 1.42e+03    0.188   0.7
+  pes_7_7 (PE_52)                      6.31e-03    0.181 1.42e+03    0.189   0.7
+  pes_6_7 (PE_53)                      7.02e-03    0.182 1.42e+03    0.190   0.7
+  pes_5_7 (PE_54)                      7.91e-03    0.183 1.43e+03    0.192   0.7
+  pes_4_7 (PE_55)                      9.02e-03    0.185 1.43e+03    0.195   0.7
+  pes_3_7 (PE_56)                      1.04e-02    0.186 1.44e+03    0.198   0.7
+  pes_2_7 (PE_57)                      1.22e-02    0.189 1.44e+03    0.202   0.7
+  pes_1_7 (PE_58)                      1.43e-02    0.191 1.45e+03    0.207   0.7
+  pes_0_7 (PE_59)                      1.80e-02    0.196 1.48e+03    0.216   0.8
+  pes_11_6 (PE_60)                     3.52e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_6 (PE_61)                     4.79e-03    0.179 1.41e+03    0.185   0.7
+  pes_9_6 (PE_62)                      5.17e-03    0.180 1.41e+03    0.186   0.7
+  pes_8_6 (PE_63)                      5.60e-03    0.180 1.41e+03    0.187   0.7
+  pes_7_6 (PE_64)                      6.14e-03    0.181 1.42e+03    0.188   0.7
+  pes_6_6 (PE_65)                      6.88e-03    0.182 1.42e+03    0.190   0.7
+  pes_5_6 (PE_66)                      7.79e-03    0.183 1.42e+03    0.192   0.7
+  pes_4_6 (PE_67)                      8.87e-03    0.184 1.43e+03    0.195   0.7
+  pes_3_6 (PE_68)                      1.03e-02    0.186 1.44e+03    0.198   0.7
+  pes_2_6 (PE_69)                      1.19e-02    0.188 1.44e+03    0.202   0.7
+  pes_1_6 (PE_70)                      1.43e-02    0.191 1.45e+03    0.207   0.7
+  pes_0_6 (PE_71)                      1.80e-02    0.196 1.48e+03    0.216   0.8
+  pes_11_5 (PE_72)                     3.64e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_5 (PE_73)                     4.94e-03    0.179 1.41e+03    0.186   0.7
+  pes_9_5 (PE_74)                      5.27e-03    0.180 1.41e+03    0.187   0.7
+  pes_8_5 (PE_75)                      5.76e-03    0.180 1.42e+03    0.188   0.7
+  pes_7_5 (PE_76)                      6.27e-03    0.181 1.42e+03    0.189   0.7
+  pes_6_5 (PE_77)                      7.00e-03    0.182 1.42e+03    0.190   0.7
+  pes_5_5 (PE_78)                      7.97e-03    0.183 1.42e+03    0.193   0.7
+  pes_4_5 (PE_79)                      9.09e-03    0.185 1.43e+03    0.195   0.7
+  pes_3_5 (PE_80)                      1.05e-02    0.186 1.44e+03    0.198   0.7
+  pes_2_5 (PE_81)                      1.23e-02    0.189 1.44e+03    0.202   0.7
+  pes_1_5 (PE_82)                      1.46e-02    0.192 1.45e+03    0.208   0.7
+  pes_0_5 (PE_83)                      1.84e-02    0.197 1.48e+03    0.217   0.8
+  pes_11_4 (PE_84)                     3.77e-03    0.149 1.27e+03    0.154   0.5
+  pes_10_4 (PE_85)                     5.10e-03    0.180 1.41e+03    0.186   0.7
+  pes_9_4 (PE_86)                      5.44e-03    0.180 1.41e+03    0.187   0.7
+  pes_8_4 (PE_87)                      5.85e-03    0.181 1.42e+03    0.188   0.7
+  pes_7_4 (PE_88)                      6.43e-03    0.181 1.42e+03    0.189   0.7
+  pes_6_4 (PE_89)                      7.12e-03    0.182 1.42e+03    0.191   0.7
+  pes_5_4 (PE_90)                      7.99e-03    0.183 1.43e+03    0.193   0.7
+  pes_4_4 (PE_91)                      9.15e-03    0.185 1.43e+03    0.195   0.7
+  pes_3_4 (PE_92)                      1.05e-02    0.187 1.44e+03    0.199   0.7
+  pes_2_4 (PE_93)                      1.23e-02    0.189 1.44e+03    0.203   0.7
+  pes_1_4 (PE_94)                      1.46e-02    0.192 1.45e+03    0.208   0.7
+  pes_0_4 (PE_95)                      1.83e-02    0.197 1.48e+03    0.216   0.8
+  pes_11_3 (PE_96)                     4.33e-03    0.150 1.27e+03    0.156   0.6
+  pes_10_3 (PE_97)                     5.68e-03    0.180 1.41e+03    0.188   0.7
+  pes_9_3 (PE_98)                      5.96e-03    0.181 1.41e+03    0.188   0.7
+  pes_8_3 (PE_99)                      6.34e-03    0.181 1.42e+03    0.189   0.7
+  pes_7_3 (PE_100)                     6.92e-03    0.182 1.42e+03    0.190   0.7
+  pes_6_3 (PE_101)                     7.59e-03    0.183 1.42e+03    0.192   0.7
+  pes_5_3 (PE_102)                     8.41e-03    0.184 1.43e+03    0.194   0.7
+  pes_4_3 (PE_103)                     9.45e-03    0.185 1.43e+03    0.196   0.7
+  pes_3_3 (PE_104)                     1.08e-02    0.187 1.44e+03    0.199   0.7
+  pes_2_3 (PE_105)                     1.27e-02    0.189 1.44e+03    0.204   0.7
+  pes_1_3 (PE_106)                     1.50e-02    0.192 1.45e+03    0.209   0.7
+  pes_0_3 (PE_107)                     1.87e-02    0.197 1.48e+03    0.218   0.8
+  pes_11_2 (PE_108)                    5.42e-03    0.152 1.27e+03    0.158   0.6
+  pes_10_2 (PE_109)                    6.82e-03    0.182 1.42e+03    0.190   0.7
+  pes_9_2 (PE_110)                     7.20e-03    0.183 1.42e+03    0.191   0.7
+  pes_8_2 (PE_111)                     7.70e-03    0.183 1.42e+03    0.192   0.7
+  pes_7_2 (PE_112)                     8.36e-03    0.184 1.42e+03    0.194   0.7
+  pes_6_2 (PE_113)                     9.14e-03    0.185 1.43e+03    0.195   0.7
+  pes_5_2 (PE_114)                     1.02e-02    0.186 1.43e+03    0.198   0.7
+  pes_4_2 (PE_115)                     1.13e-02    0.188 1.44e+03    0.200   0.7
+  pes_3_2 (PE_116)                     1.27e-02    0.189 1.44e+03    0.204   0.7
+  pes_2_2 (PE_117)                     1.46e-02    0.192 1.45e+03    0.208   0.7
+  pes_1_2 (PE_118)                     1.69e-02    0.195 1.46e+03    0.213   0.8
+  pes_0_2 (PE_119)                     2.03e-02    0.199 1.49e+03    0.221   0.8
+  pes_11_1 (PE_120)                    8.01e-03    0.156 1.28e+03    0.165   0.6
+  pes_10_1 (PE_121)                    9.32e-03    0.186 1.42e+03    0.197   0.7
+  pes_9_1 (PE_122)                     9.64e-03    0.186 1.42e+03    0.197   0.7
+  pes_8_1 (PE_123)                     9.96e-03    0.187 1.42e+03    0.198   0.7
+  pes_7_1 (PE_124)                     1.05e-02    0.187 1.43e+03    0.199   0.7
+  pes_6_1 (PE_125)                     1.11e-02    0.188 1.43e+03    0.201   0.7
+  pes_5_1 (PE_126)                     1.19e-02    0.189 1.43e+03    0.202   0.7
+  pes_4_1 (PE_127)                     1.30e-02    0.190 1.44e+03    0.205   0.7
+  pes_3_1 (PE_128)                     1.43e-02    0.192 1.44e+03    0.208   0.7
+  pes_2_1 (PE_129)                     1.59e-02    0.194 1.45e+03    0.211   0.7
+  pes_1_1 (PE_130)                     1.78e-02    0.196 1.46e+03    0.216   0.8
+  pes_0_1 (PE_131)                     2.10e-02    0.201 1.49e+03    0.223   0.8
+  pes_11 (PE_132)                      1.79e-02    0.170 1.30e+03    0.189   0.7
+  pes_10 (PE_133)                      1.92e-02    0.200 1.44e+03    0.221   0.8
+  pes_9 (PE_134)                       1.95e-02    0.201 1.44e+03    0.222   0.8
+  pes_8 (PE_135)                       1.99e-02    0.201 1.44e+03    0.223   0.8
+  pes_7 (PE_136)                       2.05e-02    0.202 1.44e+03    0.224   0.8
+  pes_6 (PE_137)                       2.12e-02    0.203 1.45e+03    0.225   0.8
+  pes_5 (PE_138)                       2.20e-02    0.204 1.45e+03    0.227   0.8
+  pes_4 (PE_139)                       2.30e-02    0.205 1.45e+03    0.229   0.8
+  pes_3 (PE_140)                       2.44e-02    0.207 1.46e+03    0.233   0.8
+  pes_2 (PE_141)                       2.60e-02    0.209 1.46e+03    0.236   0.8
+  pes_1 (PE_142)                       2.80e-02    0.211 1.47e+03    0.241   0.9
+  pes_0 (PE_143)                       3.13e-02    0.216 1.50e+03    0.249   0.9
+1

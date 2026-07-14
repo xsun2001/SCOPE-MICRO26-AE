@@ -1,0 +1,71 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : FuseMax2DArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:20:18 2026
+****************************************
+
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+FuseMax2DArray         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_15         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_12         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_0          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_4          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_8          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_1          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_2          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_3          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_5          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_6          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_7          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_9          ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_10         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_11         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_13         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+FuseMax2DPE_14         ZeroWireload      tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+
+Global Operating Voltage = 0.99 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+FuseMax2DArray                            1.676   13.220 1.89e+05   15.085 100.0
+  pe_3_3 (FuseMax2DPE_0)                  0.106    0.811 1.23e+04    0.930   6.2
+  pe_3_2 (FuseMax2DPE_1)               9.82e-02    0.823 1.20e+04    0.933   6.2
+  pe_3_1 (FuseMax2DPE_2)               9.70e-02    0.802 1.17e+04    0.911   6.0
+  pe_3_0 (FuseMax2DPE_3)                  0.105    0.819 1.21e+04    0.936   6.2
+  pe_2_3 (FuseMax2DPE_4)               9.79e-02    0.824 1.17e+04    0.933   6.2
+  pe_2_2 (FuseMax2DPE_5)                  0.101    0.826 1.18e+04    0.939   6.2
+  pe_2_1 (FuseMax2DPE_6)                  0.103    0.822 1.18e+04    0.936   6.2
+  pe_2_0 (FuseMax2DPE_7)                  0.105    0.830 1.19e+04    0.946   6.3
+  pe_1_3 (FuseMax2DPE_8)                  0.102    0.825 1.18e+04    0.939   6.2
+  pe_1_2 (FuseMax2DPE_9)                  0.103    0.823 1.16e+04    0.938   6.2
+  pe_1_1 (FuseMax2DPE_10)                 0.108    0.835 1.18e+04    0.955   6.3
+  pe_1_0 (FuseMax2DPE_11)                 0.108    0.834 1.16e+04    0.954   6.3
+  pe_0_3 (FuseMax2DPE_12)                 0.105    0.827 1.15e+04    0.944   6.3
+  pe_0_2 (FuseMax2DPE_13)                 0.111    0.838 1.18e+04    0.961   6.4
+  pe_0_1 (FuseMax2DPE_14)                 0.113    0.841 1.19e+04    0.965   6.4
+  pe_0_0 (FuseMax2DPE_15)                 0.112    0.840 1.16e+04    0.964   6.4
+1

@@ -1,0 +1,28 @@
+context= 2048 variant=baseline       model_ms=      21.999 tok_s=   93093.866 model_speedup=1.00000x attention_core_speedup=1.00000x
+context= 2048 variant=flashattention model_ms=      18.670 tok_s=  109696.619 model_speedup=1.17834x attention_core_speedup=2.44010x
+context= 2048 variant=customsa       model_ms=      17.714 tok_s=  115616.464 model_speedup=1.24193x attention_core_speedup=4.16011x
+context= 4096 variant=baseline       model_ms=      41.047 tok_s=   99787.529 model_speedup=1.00000x attention_core_speedup=1.00000x
+context= 4096 variant=flashattention model_ms=      30.857 tok_s=  132740.226 model_speedup=1.33023x attention_core_speedup=2.40895x
+context= 4096 variant=customsa       model_ms=      26.691 tok_s=  153457.323 model_speedup=1.53784x attention_core_speedup=5.68148x
+context= 8192 variant=baseline       model_ms=     103.617 tok_s=   79060.160 model_speedup=1.00000x attention_core_speedup=1.00000x
+context= 8192 variant=flashattention model_ms=      65.073 tok_s=  125889.589 model_speedup=1.59233x attention_core_speedup=2.43217x
+context= 8192 variant=customsa       model_ms=      48.410 tok_s=  169222.338 model_speedup=2.14042x attention_core_speedup=6.38611x
+context=16384 variant=baseline       model_ms=     331.826 tok_s=   49375.321 model_speedup=1.00000x attention_core_speedup=1.00000x
+context=16384 variant=flashattention model_ms=     172.866 tok_s=   94778.630 model_speedup=1.91955x attention_core_speedup=2.50478x
+context=16384 variant=customsa       model_ms=     106.213 tok_s=  154255.880 model_speedup=3.12415x attention_core_speedup=6.78731x
+context=32768 variant=baseline       model_ms=    1210.160 tok_s=   27077.415 model_speedup=1.00000x attention_core_speedup=1.00000x
+context=32768 variant=flashattention model_ms=     545.899 tok_s=   60025.715 model_speedup=2.21682x attention_core_speedup=2.57957x
+context=32768 variant=customsa       model_ms=     279.288 tok_s=  117326.913 model_speedup=4.33302x attention_core_speedup=7.04777x
+context=65536 variant=baseline       model_ms=    4196.375 tok_s=   15617.288 model_speedup=1.00000x attention_core_speedup=1.00000x
+context=65536 variant=flashattention model_ms=    1921.755 tok_s=   34102.159 model_speedup=2.18362x attention_core_speedup=2.35385x
+context=65536 variant=customsa       model_ms=     849.837 tok_s=   77116.003 model_speedup=4.93786x attention_core_speedup=6.50245x
+context=131072 variant=baseline       model_ms=   16287.935 tok_s=    8047.184 model_speedup=1.00000x attention_core_speedup=1.00000x
+context=131072 variant=flashattention model_ms=    7192.623 tok_s=   18223.116 model_speedup=2.26453x attention_core_speedup=2.35379x
+context=131072 variant=customsa       model_ms=    2904.948 tok_s=   45120.251 model_speedup=5.60696x attention_core_speedup=6.50571x
+context=262144 variant=baseline       model_ms=   64189.062 tok_s=    4083.936 model_speedup=1.00000x attention_core_speedup=1.00000x
+context=262144 variant=flashattention model_ms=   27810.982 tok_s=    9425.917 model_speedup=2.30805x attention_core_speedup=2.35377x
+context=262144 variant=customsa       model_ms=   10638.392 tok_s=   24641.319 model_speedup=6.03372x attention_core_speedup=6.52121x
+context=524288 variant=baseline       model_ms=  254863.347 tok_s=    2057.134 model_speedup=1.00000x attention_core_speedup=1.00000x
+context=524288 variant=flashattention model_ms=  109354.195 tok_s=    4794.402 model_speedup=2.33062x attention_core_speedup=2.35377x
+context=524288 variant=customsa       model_ms=   40663.835 tok_s=   12893.226 model_speedup=6.26757x attention_core_speedup=6.52142x
+[outputs] /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/full_model_int8/b200_int8

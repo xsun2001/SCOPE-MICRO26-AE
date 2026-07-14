@@ -1,0 +1,69 @@
+experiment,metric,actual,expected,tolerance,status,absolute_delta
+Figure 13,b200 fp16 32K speedup,1.3426240854406084,1.34,0.01,PASS,0.002624085440608326
+Figure 13,b200 int8 32K speedup,3.046233013758112,3.05,0.01,PASS,0.003766986241887871
+Figure 21,b200 2048 conversion-fusion speedup,1.0551234086076495,1.06,0.01,PASS,0.004876591392350527
+Figure 21,b200 32768 conversion-fusion speedup,1.1149611188781752,1.11,0.01,PASS,0.004961118878175075
+Figure 13/21 archive audit,b200 gpu_conv all reproduced latency rows,0.0,0.0,1e-12,PASS,0.0
+Figure 13/21 archive audit,b200 gpu_no_conv all reproduced latency rows,0.0,0.0,1e-12,PASS,0.0
+Figure 13,awsv4 fp16 32K speedup,1.33885641983491,1.34,0.01,PASS,0.0011435801650900856
+Figure 13,awsv4 int8 32K speedup,2.513912801999445,2.51,0.01,PASS,0.0039128019994452146
+Figure 21,awsv4 4096 conversion-fusion speedup,1.1199752883031302,1.12,0.01,PASS,2.4711696869905708e-05
+Figure 21,awsv4 8192 conversion-fusion speedup,1.7276760953965613,1.73,0.01,PASS,0.0023239046034386757
+Figure 21,awsv4 16384 conversion-fusion speedup,1.9079584775086507,1.91,0.01,PASS,0.002041522491349257
+Figure 21,awsv4 32768 conversion-fusion speedup,1.97158196797186,1.97,0.01,PASS,0.0015819679718600543
+Figure 13/21 archive audit,awsv4 aws_conv all reproduced latency rows,0.0,0.0,1e-12,PASS,0.0
+Figure 13/21 archive audit,awsv4 aws_no_conv all reproduced latency rows,0.0,0.0,1e-12,PASS,0.0
+Figure 13,tpuv6e fp16 32K speedup,1.6952984923408592,1.7,0.01,PASS,0.004701507659140791
+Figure 13,tpuv6e int8 32K speedup,2.8056206032077013,2.81,0.01,PASS,0.0043793967922987065
+Figure 21,tpuv6e 2048 conversion-fusion speedup,1.0950689923290278,1.1,0.01,PASS,0.0049310076709723205
+Figure 21,tpuv6e 32768 conversion-fusion speedup,1.4633393052711907,1.46,0.01,PASS,0.003339305271190751
+Figure 13/21 archive audit,tpuv6e tpu_conv all reproduced latency rows,0.0,0.0,1e-12,PASS,0.0
+Figure 13/21 archive audit,tpuv6e tpu_no_conv all reproduced latency rows,0.0,0.0,1e-12,PASS,0.0
+Figure 14,FP16 awsv4 32768 E2E speedup,1.2066514356157156,1.207,0.005,PASS,0.00034856438428443326
+Figure 14,FP16 b200 32768 E2E speedup,1.1834088193301031,1.183,0.005,PASS,0.0004088193301030607
+Figure 14,FP16 tpuv6e 32768 E2E speedup,1.472952496522924,1.473,0.005,PASS,4.750347707616065e-05
+Figure 14,FP16 awsv4 524288 E2E speedup,1.3287381790053394,1.329,0.005,PASS,0.0002618209946605443
+Figure 14,FP16 b200 524288 E2E speedup,1.3405582440801551,1.341,0.005,PASS,0.00044175591984485507
+Figure 14,FP16 tpuv6e 524288 E2E speedup,1.6813596501762116,1.681,0.005,PASS,0.0003596501762115345
+Figure 14,INT8 awsv4 524288 E2E speedup,1.2785860107297542,1.28,0.005,PASS,0.00141398927024583
+Figure 14,INT8 b200 524288 E2E speedup,2.689224839484181,2.69,0.005,PASS,0.0007751605158188291
+Figure 14,INT8 tpuv6e 524288 E2E speedup,1.9083500715498416,1.91,0.005,PASS,0.0016499284501583222
+Figure 15,B300 FP16 512K attention speedup,1.0861777011114726,1.09,0.01,PASS,0.0038222988885274756
+Figure 15,B300 FP16 512K E2E speedup,1.0818369741541174,1.08,0.01,PASS,0.0018369741541173212
+Figure 15,B300 INT8 512K attention speedup,1.942519428250401,1.94,0.01,PASS,0.002519428250401079
+Figure 15,B300 INT8 512K E2E speedup,1.8991867408875853,1.9,0.01,PASS,0.0008132591124145883
+Figure 14 archive audit,all 54 paper CSV rows,0.0,0.0,1e-12,PASS,0.0
+Figure 15 archive audit,all 18 paper CSV rows,1.3322676295501878e-15,0.0,1e-12,PASS,1.3322676295501878e-15
+Table 3,customsa 2048 throughput TFLOP/s,1130.8586427342543,1130.86,0.01,PASS,0.001357265745582481
+Table 3,customsa 4096 throughput TFLOP/s,1526.5051173070315,1526.51,0.01,PASS,0.004882692968521951
+Table 3,customsa 8192 throughput TFLOP/s,1672.8198878282694,1672.82,0.01,PASS,0.00011217173050681595
+Table 3,customsa 16384 throughput TFLOP/s,1713.8887375978245,1713.89,0.01,PASS,0.001262402175598254
+Table 3,illm 2048 throughput TFLOP/s,641.6501794761053,641.65,0.01,PASS,0.0001794761053588445
+Table 3,illm 4096 throughput TFLOP/s,746.3589009830017,746.36,0.01,PASS,0.0010990169982960651
+Table 3,illm 8192 throughput TFLOP/s,772.0363219155165,772.04,0.01,PASS,0.0036780844834538584
+Table 3,illm 16384 throughput TFLOP/s,782.083614574467,782.08,0.01,PASS,0.003614574466951126
+Table 3,intattention 2048 throughput TFLOP/s,888.7315937894768,888.73,0.01,PASS,0.0015937894768285332
+Table 3,intattention 4096 throughput TFLOP/s,1093.3021472974565,1093.3,0.01,PASS,0.002147297456531305
+Table 3,intattention 8192 throughput TFLOP/s,1170.4076112490839,1170.41,0.01,PASS,0.0023887509162250353
+Table 3,intattention 16384 throughput TFLOP/s,1104.6030486787604,1104.6,0.01,PASS,0.0030486787604786514
+Figure 18,SCOPE minimum per-PE area overhead,1.0855724492247973,1.09,0.01,PASS,0.004427550775202738
+Figure 18,SCOPE maximum per-PE area overhead,1.4359170935853958,1.44,0.01,PASS,0.004082906414604182
+Figure 18,SCOPE minimum per-PE power overhead,1.1785714285714286,1.18,0.01,PASS,0.0014285714285713347
+Figure 18,SCOPE maximum per-PE power overhead,1.3369565217391304,1.34,0.01,PASS,0.003043478260869703
+Figure 19,SCNA-8 area reduction geomean,12.78215231656528,12.8,0.1,PASS,0.017847683434720096
+Figure 19,SCNA-8 power reduction geomean,9.461967732597213,9.5,0.1,PASS,0.03803226740278731
+Figures 18/19,rendered hardware figures,True,present,n/a,PASS,n/a
+RTL,generated Pinnacle N=8 Verilog,72 Verilog files,present,n/a,PASS,n/a
+Synthesis evidence,paper-matching report sets extracted,112 rows,present,n/a,PASS,n/a
+Synthesis evidence,archived Design Compiler area reports,112 files,present,n/a,PASS,n/a
+Synthesis evidence,archived Design Compiler power reports,112 files,present,n/a,PASS,n/a
+Synthesis evidence,archived Design Compiler timing reports,112 files,present,n/a,PASS,n/a
+Synthesis evidence,Synopsys DC version recorded in reports,True,present,n/a,PASS,n/a
+Synthesis evidence,SCOPE INT8 synthesized array sizes,7 sizes,present,n/a,PASS,n/a
+Synthesis evidence,corrected FSA FP8 paper hierarchy source,"area=mesh_1_2, power=mesh_3_3",present,n/a,PASS,n/a
+Synthesis evidence,TSMC 28 nm library recorded in timing report,True,present,n/a,PASS,n/a
+RTL provenance,selected paper RTL directories indexed,112 directories,present,n/a,PASS,n/a
+RTL provenance,retained upload ZIP byte matches,108 exact matches,present,n/a,PASS,n/a
+RTL provenance,overwritten ZIP caveats explicitly indexed,4 caveats,present,n/a,PASS,n/a
+Figures 18/19,report-to-fit CSV,0.0,0.0,1e-12,PASS,0.0
+Figures 18/19,32x32 derived CSV,0.0,0.0,1e-12,PASS,0.0

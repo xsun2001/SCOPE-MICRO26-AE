@@ -1,0 +1,27 @@
+{
+  "experiment_name": "llama3_8b_full_model_attention_b200",
+  "system_config": "LLMCompass/configs/ours/B200.json",
+  "cache": {
+    "path": "experiments/fig-14-full-prefill/cache/operator_latency_cache.json"
+  },
+  "runtime": {
+    "compile_mode": "heuristic-GPU",
+    "batch_size": 1,
+    "ignore_hbm_bottleneck": true,
+    "ignore_onchip_io_bottleneck": true
+  },
+  "model": {
+    "name": "llama3_8b",
+    "architecture": "llama_like_decoder",
+    "hidden_size": 4096,
+    "num_heads": 32,
+    "num_layers": 32,
+    "intermediate_size": 14336,
+    "vocab_size": 128256,
+    "logit_positions": 1,
+    "data_type": "fp16"
+  },
+  "sweep": {
+    "prefill_lengths": [2048, 4096, 8192, 16384, 32768]
+  }
+}

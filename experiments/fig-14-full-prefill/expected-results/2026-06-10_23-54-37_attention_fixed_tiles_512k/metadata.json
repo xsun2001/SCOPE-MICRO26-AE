@@ -1,0 +1,18 @@
+{
+  "outputs": {
+    "b200": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-10_23-54-37_attention_fixed_tiles_512k/b200",
+    "awsv4": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-10_23-54-37_attention_fixed_tiles_512k/awsv4",
+    "tpuv6e": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-10_23-54-37_attention_fixed_tiles_512k/tpuv6e"
+  },
+  "lengths": [
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072,
+    262144,
+    524288
+  ]
+}

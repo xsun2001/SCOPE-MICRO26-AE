@@ -1,0 +1,30 @@
+case=b200_fp16  dtype=fp16 seq= 2048 variant=flashattention total_ms=     0.066 bottleneck=softmax     component_ms=     0.045 req_hbm_tbps=  48.404
+case=b200_fp16  dtype=fp16 seq= 8192 variant=customsa       total_ms=     0.558 bottleneck=fused_core  component_ms=     0.537 req_hbm_tbps=  64.279
+case=b200_fp16  dtype=fp16 seq= 2048 variant=customsa       total_ms=     0.059 bottleneck=fused_core  component_ms=     0.038 req_hbm_tbps=  56.900
+case=b200_fp16  dtype=fp16 seq=16384 variant=flashattention total_ms=     2.905 bottleneck=softmax     component_ms=     2.884 req_hbm_tbps=  47.752
+case=b200_fp16  dtype=fp16 seq=16384 variant=customsa       total_ms=     2.168 bottleneck=fused_core  component_ms=     2.147 req_hbm_tbps=  64.154
+case=b200_fp16  dtype=fp16 seq= 4096 variant=customsa       total_ms=     0.155 bottleneck=fused_core  component_ms=     0.134 req_hbm_tbps=  64.529
+case=b200_fp16  dtype=fp16 seq= 8192 variant=flashattention total_ms=     0.742 bottleneck=softmax     component_ms=     0.721 req_hbm_tbps=  47.846
+case=b200_fp16  dtype=fp16 seq=32768 variant=flashattention total_ms=    11.556 bottleneck=softmax     component_ms=    11.535 req_hbm_tbps=  47.706
+case=b200_fp16  dtype=fp16 seq= 4096 variant=flashattention total_ms=     0.201 bottleneck=softmax     component_ms=     0.180 req_hbm_tbps=  48.032
+case=b200_fp16  dtype=fp16 seq=32768 variant=customsa       total_ms=     8.607 bottleneck=fused_core  component_ms=     8.586 req_hbm_tbps=  64.091
+case=b200_int8  dtype=int8 seq= 2048 variant=flashattention total_ms=     0.072 bottleneck=softmax     component_ms=     0.051 req_hbm_tbps=  21.277
+case=b200_int8  dtype=int8 seq= 2048 variant=customsa       total_ms=     0.042 bottleneck=fused_core  component_ms=     0.021 req_hbm_tbps=  51.008
+case=b200_int8  dtype=int8 seq= 4096 variant=flashattention total_ms=     0.226 bottleneck=softmax     component_ms=     0.205 req_hbm_tbps=  21.114
+case=b200_int8  dtype=int8 seq= 4096 variant=customsa       total_ms=     0.096 bottleneck=fused_core  component_ms=     0.075 req_hbm_tbps=  57.846
+case=b200_fp16  dtype=fp16 seq= 2048 variant=baseline       total_ms=     0.194 bottleneck=softmax     component_ms=     0.118 req_hbm_tbps=   0.000
+case=b200_int8  dtype=int8 seq= 2048 variant=baseline       total_ms=     0.176 bottleneck=softmax     component_ms=     0.118 req_hbm_tbps=   0.000
+case=b200_int8  dtype=int8 seq= 8192 variant=flashattention total_ms=     0.841 bottleneck=softmax     component_ms=     0.820 req_hbm_tbps=  21.032
+case=b200_int8  dtype=int8 seq= 8192 variant=customsa       total_ms=     0.320 bottleneck=fused_core  component_ms=     0.299 req_hbm_tbps=  57.622
+case=b200_int8  dtype=int8 seq=16384 variant=flashattention total_ms=     3.301 bottleneck=softmax     component_ms=     3.280 req_hbm_tbps=  20.991
+case=b200_int8  dtype=int8 seq=16384 variant=customsa       total_ms=     1.218 bottleneck=fused_core  component_ms=     1.197 req_hbm_tbps=  57.510
+case=b200_fp16  dtype=fp16 seq= 4096 variant=baseline       total_ms=     0.614 bottleneck=softmax     component_ms=     0.438 req_hbm_tbps=   0.000
+case=b200_int8  dtype=int8 seq=32768 variant=flashattention total_ms=    13.142 bottleneck=softmax     component_ms=    13.121 req_hbm_tbps=  20.971
+case=b200_int8  dtype=int8 seq=32768 variant=customsa       total_ms=     4.810 bottleneck=fused_core  component_ms=     4.789 req_hbm_tbps=  57.454
+case=b200_int8  dtype=int8 seq= 4096 variant=baseline       total_ms=     0.544 bottleneck=softmax     component_ms=     0.438 req_hbm_tbps=   0.000
+case=b200_fp16  dtype=fp16 seq= 8192 variant=baseline       total_ms=     2.322 bottleneck=softmax     component_ms=     1.744 req_hbm_tbps=   0.000
+case=b200_int8  dtype=int8 seq= 8192 variant=baseline       total_ms=     2.046 bottleneck=softmax     component_ms=     1.744 req_hbm_tbps=   0.000
+case=b200_fp16  dtype=fp16 seq=16384 variant=baseline       total_ms=     9.373 bottleneck=softmax     component_ms=     7.189 req_hbm_tbps=   0.000
+case=b200_int8  dtype=int8 seq=16384 variant=baseline       total_ms=     8.269 bottleneck=softmax     component_ms=     7.189 req_hbm_tbps=   0.000
+case=b200_fp16  dtype=fp16 seq=32768 variant=baseline       total_ms=    38.318 bottleneck=softmax     component_ms=    29.706 req_hbm_tbps=   0.000
+case=b200_int8  dtype=int8 seq=32768 variant=baseline       total_ms=    33.900 bottleneck=softmax     component_ms=    29.706 req_hbm_tbps=   0.000

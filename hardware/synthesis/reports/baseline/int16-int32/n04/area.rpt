@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : area
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 02:56:40 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                         1930
+Number of nets:                         16426
+Number of cells:                        12464
+Number of combinational cells:          11488
+Number of sequential cells:               960
+Number of macros/black boxes:               0
+Number of buf/inv:                       2052
+Number of references:                      16
+
+Combinational area:               9846.647868
+Buf/Inv area:                      517.104008
+Noncombinational area:            1814.399986
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 11661.047855
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area           Local cell area
+                                  -------------------  ---------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-     Noncombi-  Black-
+                                  Total       Total    national   national   boxes   Design
+--------------------------------  ----------  -------  ---------  ---------  ------  ---------
+SystolicArray                     11661.0479    100.0     0.0000     0.0000  0.0000  SystolicArray
+pes_0                               742.2660      6.4   621.3060   120.9600  0.0000  PE_15
+pes_0_1                             742.2660      6.4   621.3060   120.9600  0.0000  PE_11
+pes_0_2                             742.2660      6.4   621.3060   120.9600  0.0000  PE_7
+pes_0_3                             742.2660      6.4   621.3060   120.9600  0.0000  PE_3
+pes_1                               742.2660      6.4   621.3060   120.9600  0.0000  PE_14
+pes_1_1                             742.2660      6.4   621.3060   120.9600  0.0000  PE_10
+pes_1_2                             742.2660      6.4   621.3060   120.9600  0.0000  PE_6
+pes_1_3                             742.2660      6.4   621.3060   120.9600  0.0000  PE_2
+pes_2                               742.2660      6.4   621.3060   120.9600  0.0000  PE_13
+pes_2_1                             742.2660      6.4   621.3060   120.9600  0.0000  PE_9
+pes_2_2                             742.2660      6.4   621.3060   120.9600  0.0000  PE_5
+pes_2_3                             742.2660      6.4   621.3060   120.9600  0.0000  PE_1
+pes_3                               688.4640      5.9   597.7440    90.7200  0.0000  PE_12
+pes_3_1                             688.4640      5.9   597.7440    90.7200  0.0000  PE_8
+pes_3_2                             688.4640      5.9   597.7440    90.7200  0.0000  PE_4
+pes_3_3                             688.4640      5.9   597.7440    90.7200  0.0000  PE_0
+--------------------------------  ----------  -------  ---------  ---------  ------  ---------
+Total                                                  9846.6479  1814.4000  0.0000
+
+1

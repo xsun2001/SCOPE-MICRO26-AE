@@ -1,0 +1,28 @@
+case_name,case_label,data_type,prefill_length,baseline_variant,baseline_label,variant,variant_label,baseline_total_ms,variant_total_ms,speedup_vs_baseline_x,tensor_vector_ratio,source
+b200_int8,B200 INT8,int8,2048,baseline,Unfused Attention,baseline,Unfused Attention,0.17630324324324326,0.17630324324324326,1.0,32.0,source_csv
+b200_int8,B200 INT8,int8,2048,baseline,Unfused Attention,flashattention,FlashAttention,0.17630324324324326,0.07225235938641343,2.440103613784492,32.0,source_csv
+b200_int8,B200 INT8,int8,2048,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,0.17630324324324326,0.04237945945945946,4.160110711461443,32.0,source_csv
+b200_int8,B200 INT8,int8,4096,baseline,Unfused Attention,baseline,Unfused Attention,0.5444454054054055,0.5444454054054055,1.0,32.0,source_csv
+b200_int8,B200 INT8,int8,4096,baseline,Unfused Attention,flashattention,FlashAttention,0.5444454054054055,0.22600943754565375,2.4089498709337214,32.0,source_csv
+b200_int8,B200 INT8,int8,4096,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,0.5444454054054055,0.09582810810810811,5.681479225189247,32.0,source_csv
+b200_int8,B200 INT8,int8,8192,baseline,Unfused Attention,baseline,Unfused Attention,2.04555027027027,2.04555027027027,1.0,32.0,source_csv
+b200_int8,B200 INT8,int8,8192,baseline,Unfused Attention,flashattention,FlashAttention,2.04555027027027,0.8410377501826151,2.43217414417619,32.0,source_csv
+b200_int8,B200 INT8,int8,8192,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,2.04555027027027,0.32031243243243246,6.386109507946633,32.0,source_csv
+b200_int8,B200 INT8,int8,16384,baseline,Unfused Attention,baseline,Unfused Attention,8.268642162162163,8.268642162162163,1.0,32.0,source_csv
+b200_int8,B200 INT8,int8,16384,baseline,Unfused Attention,flashattention,FlashAttention,8.268642162162163,3.3011510007304605,2.504775504159768,32.0,source_csv
+b200_int8,B200 INT8,int8,16384,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,8.268642162162163,1.21824972972973,6.787312946087474,32.0,source_csv
+b200_int8,B200 INT8,int8,32768,baseline,Unfused Attention,baseline,Unfused Attention,33.8997427027027,33.8997427027027,1.0,32.0,source_csv
+b200_int8,B200 INT8,int8,32768,baseline,Unfused Attention,flashattention,FlashAttention,33.8997427027027,13.141604002921841,2.5795742053379174,32.0,source_csv
+b200_int8,B200 INT8,int8,32768,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,33.8997427027027,4.80999891891892,7.047765139689865,32.0,source_csv
+b200_int8,B200 INT8,int8,65536,baseline,Unfused Attention,baseline,Unfused Attention,123.58529092768443,123.58529092768443,1.0,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,65536,baseline,Unfused Attention,flashattention,FlashAttention,123.58529092768443,52.503416011687364,2.353852383627269,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,65536,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,123.58529092768443,19.005959999999998,6.502449280524869,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,131072,baseline,Unfused Attention,baseline,Unfused Attention,494.1791637107378,494.1791637107378,1.0,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,131072,baseline,Unfused Attention,flashattention,FlashAttention,494.1791637107378,209.95066404674944,2.3537870954325704,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,131072,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,494.1791637107378,75.96083999999999,6.505709569703782,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,262144,baseline,Unfused Attention,baseline,Unfused Attention,1976.5546548429506,1976.5546548429506,1.0,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,262144,baseline,Unfused Attention,flashattention,FlashAttention,1976.5546548429506,839.7396561869979,2.353770767261229,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,262144,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,1976.5546548429506,303.0962172972973,6.5212118860071815,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,524288,baseline,Unfused Attention,baseline,Unfused Attention,7906.056619371803,7906.056619371803,1.0,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,524288,baseline,Unfused Attention,flashattention,FlashAttention,7906.056619371803,3358.895624747991,2.353766684835577,64.0,fixed_tile_model
+b200_int8,B200 INT8,int8,524288,baseline,Unfused Attention,customsa,FlashAttention-CustomSA,7906.056619371803,1212.3218691891893,6.52141714201645,64.0,fixed_tile_model

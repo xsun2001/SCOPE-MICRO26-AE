@@ -1,0 +1,144 @@
+<mxfile host="app.diagrams.net" modified="2026-03-20T03:15:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="cycle-level-pipeline" name="cycle-level-pipeline">
+    <mxGraphModel dx="2200" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Cycle-Level Pipeline View" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Current fused skewed controller. All ops stay on the skewed SA path; `PINN_DRAIN` is the strip-side hold/drain behavior inside `RunFused`." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#4B5563;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="1400" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Cycle formula (`waitDone` convention)&#xa;Active two-strip RTL: `T = 17N + 3H + 9`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#92400E;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1610" y="20" width="490" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#D1D5DB;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="2100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Wrapper / Scratchpad" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="60" y="154" width="170" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#D1D5DB;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="2100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="SA GEMM Path" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="60" y="264" width="150" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#D1D5DB;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="2100" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="SA Strip Rows" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="60" y="384" width="130" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#D1D5DB;" vertex="1" parent="1">
+          <mxGeometry x="40" y="470" width="2100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="State Update / Buffers" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="60" y="504" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAF9;strokeColor=#D1D5DB;" vertex="1" parent="1">
+          <mxGeometry x="40" y="610" width="2100" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Key Reuse Rules" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="60" y="634" width="140" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="InitIssue / InitWait&#xa;read coeff, Q, K^T, V, O, m, l&#xa;`2(H + 4N + 2)`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E5E7EB;strokeColor=#6B7280;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="240" y="140" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="PreloadKt&#xa;classical `LOAD_WEIGHT` preload of K^T&#xa;`N`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BFDBFE;strokeColor=#2563EB;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="550" y="250" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="RunFused (GEMM side)&#xa;launch Q, drain QK tail, capture aligned S rows&#xa;contributes `4N + H + 3` in the active two-strip RTL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#93C5FD;strokeColor=#1D4ED8;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="780" y="240" width="420" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="RunFused (strip coeff phase)&#xa;diagonal `LOAD_PINN` wave&#xa;deeper strip rows use shorter load windows" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBF7D0;strokeColor=#16A34A;fontColor=#166534;" vertex="1" parent="1">
+          <mxGeometry x="780" y="360" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="RunFused (strip compute phase)&#xa;stream `P = exp(S - m_new)` rows, overlap `V` preload, then issue `alpha = exp(m - m_new)`&#xa;active two-strip RTL: `N` P launches + `1` alpha launch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#86EFAC;strokeColor=#15803D;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="350" width="520" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="RunPV&#xa;stream ready P rows through resident V weights&#xa;`3N - 1`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#93C5FD;strokeColor=#1D4ED8;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="250" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Two-strip-only RTL: both strips stay resident, so nonlinear throughput remains full-width and there is no extra fallback tail." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#166534;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="350" width="420" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="Writeback + Done&#xa;write O, m, l&#xa;`N + 3`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E5E7EB;strokeColor=#6B7280;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="1860" y="140" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="Capture aligned S rows, compute `rowmax(S)`, update `m_new`, buffer `sRows`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FECACA;strokeColor=#DC2626;fontColor=#7F1D1D;" vertex="1" parent="1">
+          <mxGeometry x="820" y="490" width="360" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="Deskew `out_s_raw`, assemble `pRows` / `alphaRows`, accumulate `rowsum(P)` into `l_new`" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCA5A5;strokeColor=#DC2626;fontColor=#7F1D1D;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="490" width="430" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="`O_new = alpha * O + PV`&#xa;updated from aligned PV output stream" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FECACA;strokeColor=#B91C1C;fontColor=#7F1D1D;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="490" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="No dedicated strip-op bypass. `LOAD_PINN`, `PINN`, and `PINN_DRAIN` still use the skewed SA op pipeline." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="240" y="645" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="`PEStandard` treats all PINN-family ops as hold, so nonstrip rows stay quiescent during strip windows." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="580" y="645" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="The wrapper deskews `out_s_raw` into aligned strip rows. Wrapper-visible strip latency is `N + 1` cycles." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="920" y="645" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="Two-strip-only RTL: each launch drives `N` strip lanes through the two resident strips." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="645" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="`PINN_DRAIN` is not a standalone controller phase anymore. It is the in-state strip hold / drain behavior inside `RunFused`." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#92400E;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="645" width="340" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4B5563;endArrow=block;endFill=1;" edge="1" parent="1" source="20" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;endArrow=block;endFill=1;" edge="1" parent="1" source="21" target="22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#16A34A;endArrow=block;endFill=1;" edge="1" parent="1" source="22" target="23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16A34A;endArrow=block;endFill=1;" edge="1" parent="1" source="23" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1D4ED8;endArrow=block;endFill=1;" edge="1" parent="1" source="24" target="25">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1660" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4B5563;endArrow=block;endFill=1;" edge="1" parent="1" source="25" target="27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#DC2626;endArrow=block;endFill=1;" edge="1" parent="1" source="22" target="30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#DC2626;endArrow=block;endFill=1;" edge="1" parent="1" source="24" target="31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="445" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#B91C1C;endArrow=block;endFill=1;" edge="1" parent="1" source="25" target="32">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1590" y="445" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

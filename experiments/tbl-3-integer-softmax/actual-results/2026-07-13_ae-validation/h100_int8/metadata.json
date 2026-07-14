@@ -1,0 +1,44 @@
+{
+  "device": "h100_int8",
+  "case_name": "h100_int8",
+  "case_label": "H100 INT8",
+  "system_config": "LLMCompass/configs/ours/H100.json",
+  "system_name": "NVIDIA H100 SXM x4 single-card",
+  "data_type": "int8",
+  "source_attention_dir": "experiments/llmcompass_prefill_attention_hopper_blackwell/results/2026-04-02_21-50-20",
+  "lengths": [
+    2048,
+    4096,
+    8192,
+    16384
+  ],
+  "variants": [
+    {
+      "name": "baseline",
+      "label": "FlashAttention",
+      "attention_variant": "flashattention"
+    },
+    {
+      "name": "customsa",
+      "label": "FlashAttention-CustomSA",
+      "attention_variant": "flashattention_customsa"
+    },
+    {
+      "name": "illm",
+      "label": "FlashAttention + I-LLM",
+      "attention_variant": "flashattention_illm"
+    },
+    {
+      "name": "intattention",
+      "label": "FlashAttention + IntAttention",
+      "attention_variant": "flashattention_intattention"
+    }
+  ],
+  "q_tile_size": 128,
+  "kv_tile_size": 512,
+  "flashattention_is_double_buffering": true,
+  "adjust_global_buffer_to_memory_capacity": false,
+  "ignore_hbm_bottleneck": true,
+  "ignore_onchip_io_bottleneck": true,
+  "note": "Rows at source lengths reuse the supplied attention_latency.csv; longer rows use the fixed tile mapping from the source run."
+}

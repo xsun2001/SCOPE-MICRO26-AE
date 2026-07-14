@@ -1,0 +1,266 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'SystolicArray' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:47:33 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ffg0p99v0c   Library: tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+Wire Load Model Mode: segmented
+
+  Startpoint: pes_5_6/regW_bits_reg[13]
+              (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Endpoint: pes_5_6/regS_bits_reg[10]
+            (rising edge-triggered flip-flop clocked by ideal_clock1)
+  Path Group: ideal_clock1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  PE_48              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_40              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_32              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_24              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_16              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_8               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_0               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_62              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_61              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_60              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_59              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_58              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_57              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_55              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_54              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_53              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_52              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_51              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_50              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_49              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_47              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_46              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_45              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_44              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_43              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_42              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_41              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_39              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_38              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_37              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_36              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_35              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_34              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_33              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_31              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_30              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_29              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_28              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_27              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_26              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_25              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_23              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_22              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_21              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_20              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_19              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_18              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_17              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_15              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_14              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_13              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_12              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_11              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_10              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_9               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_7               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_6               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_5               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_4               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_3               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_2               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_1               ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_56              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  SystolicArray      ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+  PE_63              ZeroWireload          tcbn28hpcplusbwp30p140ffg0p99v0c_ccs
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                              Fanout     Trans      Incr       Path      Attributes
+  ----------------------------------------------------------------------------------------------------------------
+  clock ideal_clock1 (rise edge)                                           0.00       0.00
+  clock network delay (ideal)                                              0.00       0.00
+  pes_5_6/regW_bits_reg[13]/CP (DFQD4BWP30P140)                  0.00      0.00 #     0.00 r
+  pes_5_6/regW_bits_reg[13]/Q (DFQD4BWP30P140)                   0.01      0.03       0.03 f
+  pes_5_6/regW_bits[13] (net)                          5                   0.00       0.03 f
+  pes_5_6/U53/ZN (NR2D1P5BWP30P140)                              0.02      0.01       0.05 r
+  pes_5_6/n79 (net)                                    1                   0.00       0.05 r
+  pes_5_6/U248/ZN (ND2D6BWP30P140)                               0.02      0.01       0.06 f
+  pes_5_6/n1772 (net)                                 13                   0.00       0.06 f
+  pes_5_6/U273/Z (AN2D2BWP30P140)                                0.01      0.01       0.08 f
+  pes_5_6/n187 (net)                                   2                   0.00       0.08 f
+  pes_5_6/U50/ZN (XNR2OPTND2BWP30P140)                           0.03      0.02       0.10 r
+  pes_5_6/n524 (net)                                  15                   0.00       0.10 r
+  pes_5_6/U281/ZN (ND2D2BWP30P140)                               0.03      0.02       0.12 f
+  pes_5_6/n525 (net)                                  13                   0.00       0.12 f
+  pes_5_6/U602/ZN (OAI22D1BWP30P140)                             0.02      0.02       0.14 r
+  pes_5_6/n281 (net)                                   1                   0.00       0.14 r
+  pes_5_6/U325/CO (FA1D1BWP30P140)                               0.01      0.02       0.17 r
+  pes_5_6/n218 (net)                                   1                   0.00       0.17 r
+  pes_5_6/U605/S (FA1D1BWP30P140)                                0.01      0.03       0.20 f
+  pes_5_6/n292 (net)                                   1                   0.00       0.20 f
+  pes_5_6/U675/CO (FA1D1BWP30P140)                               0.01      0.02       0.22 f
+  pes_5_6/n322 (net)                                   1                   0.00       0.22 f
+  pes_5_6/U696/S (FA1D1BWP30P140)                                0.01      0.04       0.26 r
+  pes_5_6/n222 (net)                                   2                   0.00       0.26 r
+  pes_5_6/U323/ZN (ND2OPTIBD2BWP30P140)                          0.01      0.01       0.27 f
+  pes_5_6/n379 (net)                                   3                   0.00       0.27 f
+  pes_5_6/U346/ZN (OAI21D1BWP30P140)                             0.01      0.01       0.28 r
+  pes_5_6/n327 (net)                                   1                   0.00       0.28 r
+  pes_5_6/U426/ZN (AOI21D2BWP30P140)                             0.01      0.01       0.29 f
+  pes_5_6/n469 (net)                                   2                   0.00       0.29 f
+  pes_5_6/U699/ZN (INVD2BWP30P140)                               0.01      0.01       0.30 r
+  pes_5_6/n509 (net)                                   5                   0.00       0.30 r
+  pes_5_6/U818/ZN (AOI21D1BWP30P140)                             0.01      0.01       0.31 f
+  pes_5_6/n513 (net)                                   1                   0.00       0.31 f
+  pes_5_6/U820/Z (XOR2UD1BWP30P140)                              0.02      0.01       0.33 f
+  pes_5_6/n917 (net)                                   2                   0.00       0.33 f
+  pes_5_6/U821/ZN (ND2D1BWP30P140)                               0.01      0.01       0.33 r
+  pes_5_6/n515 (net)                                   1                   0.00       0.33 r
+  pes_5_6/U296/ZN (ND2D1BWP30P140)                               0.02      0.01       0.35 f
+  pes_5_6/n785 (net)                                   5                   0.00       0.35 f
+  pes_5_6/U823/ZN (INVD0BWP30P140)                               0.01      0.01       0.36 r
+  pes_5_6/n687 (net)                                   2                   0.00       0.36 r
+  pes_5_6/U117/ZN (OAI22D0BWP30P140)                             0.02      0.01       0.37 f
+  pes_5_6/n689 (net)                                   1                   0.00       0.37 f
+  pes_5_6/U980/ZN (NR3D0P7BWP30P140)                             0.03      0.02       0.39 r
+  pes_5_6/n915 (net)                                   4                   0.00       0.39 r
+  pes_5_6/U1078/ZN (MUX2NUD1BWP30P140)                           0.02      0.01       0.40 f
+  pes_5_6/n906 (net)                                   2                   0.00       0.40 f
+  pes_5_6/U1107/ZN (AOI22D1BWP30P140)                            0.01      0.01       0.42 r
+  pes_5_6/n908 (net)                                   1                   0.00       0.42 r
+  pes_5_6/U157/ZN (OAI21OPTREPBD1BWP30P140)                      0.01      0.01       0.43 f
+  pes_5_6/n910 (net)                                   1                   0.00       0.43 f
+  pes_5_6/U1108/Z (XOR2UD1BWP30P140)                             0.02      0.02       0.44 f
+  pes_5_6/n933 (net)                                   2                   0.00       0.44 f
+  pes_5_6/U1136/ZN (ND2D1BWP30P140)                              0.01      0.01       0.46 r
+  pes_5_6/n1096 (net)                                  3                   0.00       0.46 r
+  pes_5_6/U322/ZN (OAI21D1BWP30P140)                             0.02      0.02       0.47 f
+  pes_5_6/n1066 (net)                                  3                   0.00       0.47 f
+  pes_5_6/U359/ZN (AOI21D2BWP30P140)                             0.02      0.01       0.49 r
+  pes_5_6/n1164 (net)                                  4                   0.00       0.49 r
+  pes_5_6/U1155/ZN (OAI21D1BWP30P140)                            0.02      0.01       0.50 f
+  pes_5_6/n964 (net)                                   1                   0.00       0.50 f
+  pes_5_6/U1156/ZN (AOI21D2BWP30P140)                            0.02      0.02       0.52 r
+  pes_5_6/n1010 (net)                                  4                   0.00       0.52 r
+  pes_5_6/U1182/ZN (OAI21D2BWP30P140)                            0.01      0.01       0.53 f
+  pes_5_6/n1005 (net)                                  1                   0.00       0.53 f
+  pes_5_6/U32/ZN (XNR2UD1BWP30P140)                              0.02      0.02       0.54 f
+  pes_5_6/n1279 (net)                                  3                   0.00       0.54 f
+  pes_5_6/U1184/ZN (INVD1BWP30P140)                              0.01      0.01       0.55 r
+  pes_5_6/n1012 (net)                                  1                   0.00       0.55 r
+  pes_5_6/U1189/ZN (ND2OPTIBD2BWP30P140)                         0.01      0.01       0.56 f
+  pes_5_6/n1269 (net)                                  3                   0.00       0.56 f
+  pes_5_6/U292/ZN (INVD1BWP30P140)                               0.01      0.01       0.56 r
+  pes_5_6/n1264 (net)                                  1                   0.00       0.56 r
+  pes_5_6/U1340/ZN (ND2D1BWP30P140)                              0.01      0.01       0.57 f
+  pes_5_6/n1265 (net)                                  1                   0.00       0.57 f
+  pes_5_6/U194/ZN (IND3D2BWP30P140)                              0.02      0.02       0.59 f
+  pes_5_6/n1266 (net)                                  1                   0.00       0.59 f
+  pes_5_6/U1341/Z (XOR2UD1BWP30P140)                             0.02      0.01       0.60 f
+  pes_5_6/n1268 (net)                                  1                   0.00       0.60 f
+  pes_5_6/U425/Z (MUX2OPTD2BWP30P140)                            0.01      0.02       0.63 f
+  pes_5_6/macOut_mac/l00OOO0l[24] (net)                6                   0.00       0.63 f
+  pes_5_6/macOut_mac/U9/U1/UOR20_0_1_7/ZN (NR2D1BWP30P140)       0.01      0.01       0.64 r    mo 
+  pes_5_6/macOut_mac/U9/U1/or2_tree[0][1][28] (net)     2                  0.00       0.64 r
+  pes_5_6/macOut_mac/U9/U1/UOR21_0_2_3/ZN (ND2D1BWP30P140)       0.01      0.01       0.65 f    mo 
+  pes_5_6/macOut_mac/U9/U1/or2_tree[0][2][24] (net)     2                  0.00       0.65 f
+  pes_5_6/U1770/ZN (INVD1BWP30P140)                              0.01      0.01       0.65 r
+  pes_5_6/macOut_mac/U9/U1/or2_inv[0][24] (net)        1                   0.00       0.65 r
+  pes_5_6/macOut_mac/U9/U1/UEN0_0_3_1/ZN (AOI21D1BWP30P140)      0.01      0.01       0.66 f    mo 
+  pes_5_6/macOut_mac/U9/U1/enc_tree[0][3][24] (net)     1                  0.00       0.66 f
+  pes_5_6/U1352/Z (OA21D2BWP30P140)                              0.01      0.01       0.68 f
+  pes_5_6/n1638 (net)                                  3                   0.00       0.68 f
+  pes_5_6/U353/ZN (INVD1BWP30P140)                               0.01      0.01       0.68 r
+  pes_5_6/n1289 (net)                                  1                   0.00       0.68 r
+  pes_5_6/U1353/Z (OR2D1BWP30P140)                               0.01      0.01       0.69 r
+  pes_5_6/n1294 (net)                                  1                   0.00       0.69 r
+  pes_5_6/U249/ZN (AOI21D2BWP30P140)                             0.01      0.01       0.70 f
+  pes_5_6/n1304 (net)                                  1                   0.00       0.70 f
+  pes_5_6/U377/ZN (OAI21D2BWP30P140)                             0.01      0.01       0.71 r
+  pes_5_6/n78 (net)                                    1                   0.00       0.71 r
+  pes_5_6/U143/ZN (ND2D2BWP30P140)                               0.01      0.01       0.72 f
+  pes_5_6/n77 (net)                                    1                   0.00       0.72 f
+  pes_5_6/U400/ZN (ND2OPTIBD4BWP30P140)                          0.02      0.01       0.73 r
+  pes_5_6/n1344 (net)                                  8                   0.00       0.73 r
+  pes_5_6/U142/ZN (IOA22D4BWP30P140)                             0.01      0.02       0.74 r
+  pes_5_6/n1332 (net)                                  1                   0.00       0.74 r
+  pes_5_6/U189/Z (BUFFD12BWP30P140)                              0.01      0.01       0.76 r
+  pes_5_6/n6 (net)                                    17                   0.00       0.76 r
+  pes_5_6/U1375/ZN (MUX2ND0BWP30P140)                            0.01      0.02       0.77 r
+  pes_5_6/n1322 (net)                                  1                   0.00       0.77 r
+  pes_5_6/U1380/ZN (MUX2NUD1BWP30P140)                           0.02      0.02       0.79 f
+  pes_5_6/n1496 (net)                                  3                   0.00       0.79 f
+  pes_5_6/U1390/ZN (MUX2NUD1BWP30P140)                           0.03      0.02       0.81 r
+  pes_5_6/n1425 (net)                                  2                   0.00       0.81 r
+  pes_5_6/U6/ZN (NR2D1BWP30P140)                                 0.01      0.01       0.82 f
+  pes_5_6/n1337 (net)                                  1                   0.00       0.82 f
+  pes_5_6/U1399/ZN (MUX2NUD1BWP30P140)                           0.02      0.01       0.83 r
+  pes_5_6/n1350 (net)                                  1                   0.00       0.83 r
+  pes_5_6/U329/ZN (ND2OPTIBD2BWP30P140)                          0.01      0.01       0.84 f
+  pes_5_6/n1594 (net)                                  3                   0.00       0.84 f
+  pes_5_6/U1435/ZN (NR2D1BWP30P140)                              0.02      0.01       0.85 r
+  pes_5_6/n1604 (net)                                  3                   0.00       0.85 r
+  pes_5_6/U1587/ZN (ND2D1BWP30P140)                              0.02      0.01       0.87 f
+  pes_5_6/n1552 (net)                                  3                   0.00       0.87 f
+  pes_5_6/U254/ZN (INR2D1BWP30P140)                              0.01      0.01       0.88 r
+  pes_5_6/n1557 (net)                                  2                   0.00       0.88 r
+  pes_5_6/U1601/ZN (ND2D1BWP30P140)                              0.01      0.01       0.89 f
+  pes_5_6/n1586 (net)                                  2                   0.00       0.89 f
+  pes_5_6/U178/Z (XOR2UD1BWP30P140)                              0.01      0.02       0.91 f
+  pes_5_6/n1589 (net)                                  1                   0.00       0.91 f
+  pes_5_6/U1614/ZN (OAI22D1BWP30P140)                            0.02      0.01       0.92 r
+  pes_5_6/n1726 (net)                                  2                   0.00       0.92 r
+  pes_5_6/U261/ZN (NR3D1P5BWP30P140)                             0.01      0.01       0.93 f
+  pes_5_6/n1610 (net)                                  1                   0.00       0.93 f
+  pes_5_6/U174/ZN (ND2D2BWP30P140)                               0.01      0.01       0.94 r
+  pes_5_6/n1712 (net)                                  2                   0.00       0.94 r
+  pes_5_6/U172/ZN (OAI211D4BWP30P140)                            0.02      0.01       0.95 f
+  pes_5_6/n1790 (net)                                  4                   0.00       0.95 f
+  pes_5_6/U171/ZN (INR2D2BWP30P140)                              0.01      0.01       0.96 r
+  pes_5_6/n1743 (net)                                  4                   0.00       0.96 r
+  pes_5_6/U1778/ZN (OAI211D1BWP30P140)                           0.02      0.02       0.98 f
+  pes_5_6/n1740 (net)                                  1                   0.00       0.98 f
+  pes_5_6/U1779/ZN (OAI211D1BWP30P140)                           0.01      0.01       0.99 r
+  pes_5_6/n1833 (net)                                  1                   0.00       0.99 r
+  pes_5_6/regS_bits_reg[10]/D (DFQD1BWP30P140)                   0.01      0.00       0.99 r
+  data arrival time                                                                   0.99
+
+  clock ideal_clock1 (rise edge)                                           1.00       1.00
+  clock network delay (ideal)                                              0.00       1.00
+  pes_5_6/regS_bits_reg[10]/CP (DFQD1BWP30P140)                            0.00       1.00 r
+  library setup time                                                      -0.01       0.99
+  data required time                                                                  0.99
+  ----------------------------------------------------------------------------------------------------------------
+  data required time                                                                  0.99
+  data arrival time                                                                  -0.99
+  ----------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                         0.00
+
+
+1

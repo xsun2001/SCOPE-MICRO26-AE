@@ -1,0 +1,398 @@
+<mxfile host="app.diagrams.net" modified="2026-03-19T00:00:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="pe-architecture" name="pe-architecture">
+    <mxGraphModel dx="1920" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1840" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Internal PE Architecture in pinn.pinnacle.sa" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="760" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="The hybrid systolic array keeps the classical weight-stationary GEMM datapath and repurposes strip rows into PELeft/PERight pairs for affine + ReLU accumulation." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="1180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CBD5E1;strokeColor=#CBD5E1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="96" width="1680" height="2" as="geometry" />
+        </mxCell>
+
+        <mxCell id="10" value="" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="520" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Normal PE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1D4ED8;strokeColor=none;fontColor=#FFFFFF;fontSize=20;fontStyle=1;align=left;spacingLeft=22;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="520" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="PEStandard in classical GEMM rows" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="68" y="210" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="COMPUTE: reg_s &lt;- in_n + reg_weight * in_w" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#93C5FD;strokeWidth=1.5;fontSize=12;fontColor=#1D4ED8;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="68" y="238" width="464" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="north in_n" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="227" y="320" width="146" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="west in_w" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="56" y="540" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="east out_e" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="450" y="400" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="south out_s" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="210" y="865" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="reg_weight&#xa;resident GEMM weight" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="98" y="390" width="140" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="reg_e&#xa;east pipe" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="340" y="390" width="100" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Shared MAC&#xa;A/B/C from datapath" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#1E3A8A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="205" y="520" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="reg_s&#xa;south accumulator" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="228" y="650" width="120" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="LOAD_WEIGHT stores the resident multiplier.&#xa;reg_e/out_e and reg_s/out_s preserve the classical east/south systolic pipeline." style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1.5;fontSize=12;fontColor=#334155;align=left;spacing=10;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="68" y="790" width="464" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="30" value="LOAD_WEIGHT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#D97706;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#B45309;fontFamily=Helvetica;" edge="1" parent="1" source="15" target="18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="555" />
+              <mxPoint x="170" y="418" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="in_w" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="15" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="east pipe" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#475569;fontFamily=Helvetica;" edge="1" parent="1" source="15" target="19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="555" />
+              <mxPoint x="170" y="418" />
+              <mxPoint x="340" y="418" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" value="acc in" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="14" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="weight" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="18" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="COMPUTE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="20" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;" edge="1" parent="1" source="19" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Helvetica;" edge="1" parent="1" source="21" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="50" value="" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="140" width="520" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="PELeft" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#047857;strokeColor=none;fontColor=#FFFFFF;fontSize=20;fontStyle=1;align=left;spacingLeft=22;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="620" y="140" width="520" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="Affine stage and x-forwarder inside strip rows" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="648" y="210" width="310" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="COMPUTE: reg_s &lt;- in_n + reg_weight * in_w" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#93C5FD;strokeWidth=1.5;fontSize=12;fontColor=#1D4ED8;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="648" y="236" width="444" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="PINN: reg_s &lt;- in_right_b + reg_pinn_weight * x" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#86EFAC;strokeWidth=1.5;fontSize=12;fontColor=#047857;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="648" y="274" width="444" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="north in_n / x" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="807" y="320" width="146" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="56" value="west in_w" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="636" y="540" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="east out_e" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="400" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="south out_s / x" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#10B981;strokeWidth=1.5;fontSize=12;fontColor=#065F46;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="798" y="865" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="in_right_b" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=1.5;fontSize=12;fontColor=#9A3412;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1042" y="430" width="90" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="60" value="out_right_p" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#10B981;strokeWidth=1.5;fontSize=12;fontColor=#065F46;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1042" y="560" width="90" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="reg_weight&#xa;GEMM weight" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="380" width="132" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="reg_pinn_weight&#xa;strip coefficient w_i" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="460" width="132" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="63" value="reg_e&#xa;x latch / east pipe" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="940" y="380" width="100" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="64" value="Reused MAC&#xa;mode-selected operands" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10B981;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#065F46;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="820" y="520" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="65" value="reg_s&#xa;affine / south state" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="840" y="650" width="120" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="66" value="mode&#xa;select" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#065F46;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="862" y="736" width="76" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="67" value="LOAD_PINN captures w_i from the north stream.&#xa;During PINN, reg_s drives out_right_p while reg_e is repurposed to forward x vertically." style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1.5;fontSize=12;fontColor=#334155;align=left;spacing=10;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="648" y="790" width="444" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="70" value="LOAD_WEIGHT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#D97706;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#B45309;fontFamily=Helvetica;" edge="1" parent="1" source="56" target="61">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="555" />
+              <mxPoint x="750" y="408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="71" value="LOAD_PINN" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#D97706;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#B45309;fontFamily=Helvetica;" edge="1" parent="1" source="55" target="62">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="350" />
+              <mxPoint x="880" y="488" />
+              <mxPoint x="736" y="488" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72" value="east pipe" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#475569;fontFamily=Helvetica;" edge="1" parent="1" source="56" target="63">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="555" />
+              <mxPoint x="760" y="408" />
+              <mxPoint x="940" y="408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="73" value="COMPUTE in_w" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="56" target="64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="74" value="COMPUTE acc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="55" target="64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="75" value="GEMM weight" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="61" target="64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="76" value="PINN weight w_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#047857;fontFamily=Helvetica;" edge="1" parent="1" source="62" target="64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="77" value="bias b_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#C2410C;fontFamily=Helvetica;" edge="1" parent="1" source="59" target="64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="78" value="affine_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#047857;fontFamily=Helvetica;" edge="1" parent="1" source="64" target="65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Helvetica;" edge="1" parent="1" source="65" target="60">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="678" />
+              <mxPoint x="980" y="574" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="80" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;" edge="1" parent="1" source="63" target="57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="81" value="PINN: x latch" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#047857;fontFamily=Helvetica;" edge="1" parent="1" source="55" target="63">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="335" />
+              <mxPoint x="990" y="408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="82" value="GEMM south" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#2563EB;strokeWidth=2.2;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="65" target="66">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="708" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="83" value="PINN x" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#047857;fontFamily=Helvetica;" edge="1" parent="1" source="63" target="66">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="708" />
+              <mxPoint x="1030" y="769" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="84" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Helvetica;" edge="1" parent="1" source="66" target="58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="100" value="" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="140" width="520" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="101" value="PERight" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C2410C;strokeColor=none;fontColor=#FFFFFF;fontSize=20;fontStyle=1;align=left;spacingLeft=22;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="140" width="520" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="102" value="Bias holder and ReLU reduction inside strip rows" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#475569;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1228" y="210" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="103" value="COMPUTE: reg_s &lt;- in_n + reg_weight * in_w" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#93C5FD;strokeWidth=1.5;fontSize=12;fontColor=#1D4ED8;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1228" y="236" width="444" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="104" value="PINN: reg_s &lt;- in_n + relu(in_left_p)" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#FDBA74;strokeWidth=1.5;fontSize=12;fontColor=#C2410C;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1228" y="274" width="444" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="105" value="north in_n / sum" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1387" y="320" width="146" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="106" value="west in_w" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1216" y="610" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="107" value="east out_e" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=1.5;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1635" y="400" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="108" value="south out_s" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=1.5;fontSize=12;fontColor=#9A3412;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1378" y="865" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="109" value="in_left_p" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#10B981;strokeWidth=1.5;fontSize=12;fontColor=#065F46;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1218" y="430" width="90" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="110" value="out_left_b" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;strokeWidth=1.5;fontSize=12;fontColor=#9A3412;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1218" y="560" width="90" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="111" value="reg_weight&#xa;GEMM weight" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1265" y="380" width="132" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="112" value="reg_e&#xa;strip bias b_i" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1265" y="460" width="132" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="113" value="reg_e&#xa;east pipe in classical mode" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#64748B;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1530" y="380" width="100" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="114" value="ReLU&#xa;positive affine" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#991B1B;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1395" y="520" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="115" value="MAC / ADD&#xa;A = 1 in PINN" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#9A3412;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1515" y="520" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="116" value="reg_s&#xa;strip sum" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EA580C;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1515" y="650" width="120" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="117" value="LOAD_PINN captures b_i into reg_e and exposes it on out_left_b.&#xa;During PINN, reg_e is held while ReLU(in_left_p) is accumulated with the incoming north sum in reg_s." style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=1.5;fontSize=12;fontColor=#334155;align=left;spacing=10;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1228" y="790" width="444" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="120" value="LOAD_WEIGHT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#D97706;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#B45309;fontFamily=Helvetica;" edge="1" parent="1" source="106" target="111">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="625" />
+              <mxPoint x="1330" y="408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="121" value="LOAD_PINN" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#D97706;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#B45309;fontFamily=Helvetica;" edge="1" parent="1" source="105" target="112">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1460" y="350" />
+              <mxPoint x="1460" y="488" />
+              <mxPoint x="1332" y="488" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="122" value="east pipe" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#475569;fontFamily=Helvetica;" edge="1" parent="1" source="106" target="113">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="625" />
+              <mxPoint x="1330" y="408" />
+              <mxPoint x="1530" y="408" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="123" value="COMPUTE in_w" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="106" target="115">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1450" y="625" />
+              <mxPoint x="1450" y="575" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="124" value="north acc / sum" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#C2410C;fontFamily=Helvetica;" edge="1" parent="1" source="105" target="115">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="125" value="GEMM weight" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563EB;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#1D4ED8;fontFamily=Helvetica;" edge="1" parent="1" source="111" target="115">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1460" y="408" />
+              <mxPoint x="1460" y="534" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="126" value="bias b_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#C2410C;fontFamily=Helvetica;" edge="1" parent="1" source="112" target="110">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="127" value="affine_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#047857;fontFamily=Helvetica;" edge="1" parent="1" source="109" target="114">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="128" value="relu(affine_i)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#C2410C;fontFamily=Helvetica;" edge="1" parent="1" source="114" target="115">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="129" value="sum_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontSize=11;fontColor=#C2410C;fontFamily=Helvetica;" edge="1" parent="1" source="115" target="116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="130" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EA580C;strokeWidth=2.5;endArrow=block;endFill=1;fontFamily=Helvetica;" edge="1" parent="1" source="116" target="108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="131" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#64748B;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;" edge="1" parent="1" source="113" target="107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="150" value="Strip-pair local side channels" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="360" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="151" value="affine_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#10B981;strokeWidth=3;endArrow=block;endFill=1;fontSize=12;fontColor=#047857;fontFamily=Helvetica;" edge="1" parent="1" source="60" target="109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="152" value="b_i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#EA580C;strokeWidth=3;endArrow=block;endFill=1;fontSize=12;fontColor=#C2410C;fontFamily=Helvetica;" edge="1" parent="1" source="110" target="59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="160" value="" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#E5E7EB;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="960" width="1680" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="161" value="Legend and Strip Notes" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#0F172A;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="68" y="984" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="162" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#F59E0B;strokeColor=#D97706;" vertex="1" parent="1">
+          <mxGeometry x="68" y="1028" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="163" value="dashed amber edges preload resident state for LOAD_WEIGHT / LOAD_PINN" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="102" y="1027" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="164" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#2563EB;strokeColor=#1D4ED8;" vertex="1" parent="1">
+          <mxGeometry x="68" y="1060" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="165" value="blue paths show the classical GEMM datapath reused by all PE variants" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="102" y="1059" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="166" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#047857;" vertex="1" parent="1">
+          <mxGeometry x="68" y="1092" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="167" value="green paths are strip-mode affine evaluation and x forwarding in PELeft" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="102" y="1091" width="470" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="168" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#EA580C;strokeColor=#C2410C;" vertex="1" parent="1">
+          <mxGeometry x="610" y="1028" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="169" value="orange paths cover bias return, ReLU, and strip reduction in PERight" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="644" y="1027" width="360" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="170" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CBD5E1;strokeColor=#CBD5E1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="992" width="2" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="171" value="Strip-row entry: the top row injects x into PELeft.in_n and drives PERight.in_n to zero.&#xa;Strip-row exit: the visible strip output is taken from the bottom PERight reg_s of each strip.&#xa;This is why PELeft forwards x on out_s while PELeft.out_right_p / PERight.out_left_b stay local to the pair." style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E5E7EB;strokeWidth=1.5;fontSize=12;fontColor=#334155;align=left;spacing=10;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="1004" width="622" height="84" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

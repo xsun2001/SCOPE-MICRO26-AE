@@ -1,0 +1,26 @@
+{
+  "device": "tpuv6e",
+  "case_name": "tpuv6e_fp16",
+  "case_label": "TPUv6e FP16",
+  "system_config": "LLMCompass/configs/ours/TPUv6e.json",
+  "system_name": "Google TPU v6e (official per-chip model) single-card",
+  "source_attention_dir": "experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv",
+  "lengths": [
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536,
+    131072,
+    262144,
+    524288
+  ],
+  "q_tile_size": 512,
+  "kv_tile_size": 4096,
+  "flashattention_is_double_buffering": true,
+  "adjust_global_buffer_to_memory_capacity": true,
+  "ignore_hbm_bottleneck": true,
+  "ignore_onchip_io_bottleneck": false,
+  "note": "Rows at source lengths reuse the supplied attention_latency.csv; longer rows use the fixed tile mapping from the source run."
+}

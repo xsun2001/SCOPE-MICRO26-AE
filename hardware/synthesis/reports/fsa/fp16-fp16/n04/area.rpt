@@ -1,0 +1,63 @@
+ 
+****************************************
+Report : area
+Design : SystolicArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:15:35 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                         2530
+Number of nets:                         58759
+Number of cells:                        53976
+Number of combinational cells:          52868
+Number of sequential cells:              1088
+Number of macros/black boxes:               0
+Number of buf/inv:                       9804
+Number of references:                      24
+
+Combinational area:              32008.661960
+Buf/Inv area:                     2595.096035
+Noncombinational area:            2081.897978
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 34090.559938
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+SystolicArray                     34090.5599    100.0      0.0000  1341.2700  0.0000  SystolicArray
+cmpArray_0                          362.8800      1.1    302.4000    60.4800  0.0000  CMP_3
+cmpArray_1                          362.8800      1.1    302.4000    60.4800  0.0000  CMP_2
+cmpArray_2                          362.8800      1.1    302.4000    60.4800  0.0000  CMP_1
+cmpArray_3                          362.8800      1.1    302.4000    60.4800  0.0000  CMP_0
+mesh_0_0                           1892.1420      5.6   1860.3900    31.7520  0.0000  PE_15
+mesh_0_1                           2021.7960      5.9   1991.1780    30.6180  0.0000  PE_14
+mesh_0_2                           1986.0120      5.8   1955.0160    30.9960  0.0000  PE_13
+mesh_0_3                           1950.6060      5.7   1919.9880    30.6180  0.0000  PE_12
+mesh_1_0                           1896.0480      5.6   1864.6740    31.3740  0.0000  PE_11
+mesh_1_1                           1992.4380      5.8   1961.4420    30.9960  0.0000  PE_10
+mesh_1_2                           1991.6820      5.8   1961.0640    30.6180  0.0000  PE_9
+mesh_1_3                           1925.0280      5.6   1893.6540    31.3740  0.0000  PE_8
+mesh_2_0                           1888.7400      5.5   1857.3660    31.3740  0.0000  PE_7
+mesh_2_1                           1998.9900      5.9   1968.3720    30.6180  0.0000  PE_6
+mesh_2_2                           2012.7240      5.9   1981.7280    30.9960  0.0000  PE_5
+mesh_2_3                           1934.1000      5.7   1902.7260    31.3740  0.0000  PE_4
+mesh_3_0                           1887.6060      5.5   1855.8540    31.7520  0.0000  PE_3
+mesh_3_1                           1992.3120      5.8   1961.3160    30.9960  0.0000  PE_2
+mesh_3_2                           2001.1320      5.9   1970.1360    30.9960  0.0000  PE_1
+mesh_3_3                           1926.4140      5.7   1894.1580    32.2560  0.0000  PE_0
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+Total                                                  32008.6620  2081.8980  0.0000
+
+1

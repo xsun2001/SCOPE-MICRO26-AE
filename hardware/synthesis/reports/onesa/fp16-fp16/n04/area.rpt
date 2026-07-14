@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : OneSaArray
+Version: V-2023.12
+Date   : Mon Apr  6 03:14:01 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                         1052
+Number of nets:                         51286
+Number of cells:                        48305
+Number of combinational cells:          46704
+Number of sequential cells:              1600
+Number of macros/black boxes:               0
+Number of buf/inv:                       8438
+Number of references:                       1
+
+Combinational area:              28630.854023
+Buf/Inv area:                     2180.052032
+Noncombinational area:            3056.381980
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 31687.236003
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+OneSaArray                        31687.2360    100.0      0.0000     0.0000  0.0000  OneSaArray
+mesh                              31687.2360    100.0  28630.8540  3056.3820  0.0000  OneSaMesh
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------
+Total                                                  28630.8540  3056.3820  0.0000
+
+1

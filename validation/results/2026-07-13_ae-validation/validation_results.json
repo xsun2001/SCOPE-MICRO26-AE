@@ -1,0 +1,614 @@
+[
+  {
+    "experiment": "Figure 13",
+    "metric": "b200 fp16 32K speedup",
+    "actual": 1.3426240854406084,
+    "expected": 1.34,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.002624085440608326
+  },
+  {
+    "experiment": "Figure 13",
+    "metric": "b200 int8 32K speedup",
+    "actual": 3.046233013758112,
+    "expected": 3.05,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.003766986241887871
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "b200 2048 conversion-fusion speedup",
+    "actual": 1.0551234086076495,
+    "expected": 1.06,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.004876591392350527
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "b200 32768 conversion-fusion speedup",
+    "actual": 1.1149611188781752,
+    "expected": 1.11,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.004961118878175075
+  },
+  {
+    "experiment": "Figure 13/21 archive audit",
+    "metric": "b200 gpu_conv all reproduced latency rows",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figure 13/21 archive audit",
+    "metric": "b200 gpu_no_conv all reproduced latency rows",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figure 13",
+    "metric": "awsv4 fp16 32K speedup",
+    "actual": 1.33885641983491,
+    "expected": 1.34,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0011435801650900856
+  },
+  {
+    "experiment": "Figure 13",
+    "metric": "awsv4 int8 32K speedup",
+    "actual": 2.513912801999445,
+    "expected": 2.51,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0039128019994452146
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "awsv4 4096 conversion-fusion speedup",
+    "actual": 1.1199752883031302,
+    "expected": 1.12,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 2.4711696869905708e-05
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "awsv4 8192 conversion-fusion speedup",
+    "actual": 1.7276760953965613,
+    "expected": 1.73,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0023239046034386757
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "awsv4 16384 conversion-fusion speedup",
+    "actual": 1.9079584775086507,
+    "expected": 1.91,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.002041522491349257
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "awsv4 32768 conversion-fusion speedup",
+    "actual": 1.97158196797186,
+    "expected": 1.97,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0015819679718600543
+  },
+  {
+    "experiment": "Figure 13/21 archive audit",
+    "metric": "awsv4 aws_conv all reproduced latency rows",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figure 13/21 archive audit",
+    "metric": "awsv4 aws_no_conv all reproduced latency rows",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figure 13",
+    "metric": "tpuv6e fp16 32K speedup",
+    "actual": 1.6952984923408592,
+    "expected": 1.7,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.004701507659140791
+  },
+  {
+    "experiment": "Figure 13",
+    "metric": "tpuv6e int8 32K speedup",
+    "actual": 2.8056206032077013,
+    "expected": 2.81,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0043793967922987065
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "tpuv6e 2048 conversion-fusion speedup",
+    "actual": 1.0950689923290278,
+    "expected": 1.1,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0049310076709723205
+  },
+  {
+    "experiment": "Figure 21",
+    "metric": "tpuv6e 32768 conversion-fusion speedup",
+    "actual": 1.4633393052711907,
+    "expected": 1.46,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.003339305271190751
+  },
+  {
+    "experiment": "Figure 13/21 archive audit",
+    "metric": "tpuv6e tpu_conv all reproduced latency rows",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figure 13/21 archive audit",
+    "metric": "tpuv6e tpu_no_conv all reproduced latency rows",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "FP16 awsv4 32768 E2E speedup",
+    "actual": 1.2066514356157156,
+    "expected": 1.207,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.00034856438428443326
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "FP16 b200 32768 E2E speedup",
+    "actual": 1.1834088193301031,
+    "expected": 1.183,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.0004088193301030607
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "FP16 tpuv6e 32768 E2E speedup",
+    "actual": 1.472952496522924,
+    "expected": 1.473,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 4.750347707616065e-05
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "FP16 awsv4 524288 E2E speedup",
+    "actual": 1.3287381790053394,
+    "expected": 1.329,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.0002618209946605443
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "FP16 b200 524288 E2E speedup",
+    "actual": 1.3405582440801551,
+    "expected": 1.341,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.00044175591984485507
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "FP16 tpuv6e 524288 E2E speedup",
+    "actual": 1.6813596501762116,
+    "expected": 1.681,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.0003596501762115345
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "INT8 awsv4 524288 E2E speedup",
+    "actual": 1.2785860107297542,
+    "expected": 1.28,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.00141398927024583
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "INT8 b200 524288 E2E speedup",
+    "actual": 2.689224839484181,
+    "expected": 2.69,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.0007751605158188291
+  },
+  {
+    "experiment": "Figure 14",
+    "metric": "INT8 tpuv6e 524288 E2E speedup",
+    "actual": 1.9083500715498416,
+    "expected": 1.91,
+    "tolerance": 0.005,
+    "status": "PASS",
+    "absolute_delta": 0.0016499284501583222
+  },
+  {
+    "experiment": "Figure 15",
+    "metric": "B300 FP16 512K attention speedup",
+    "actual": 1.0861777011114726,
+    "expected": 1.09,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0038222988885274756
+  },
+  {
+    "experiment": "Figure 15",
+    "metric": "B300 FP16 512K E2E speedup",
+    "actual": 1.0818369741541174,
+    "expected": 1.08,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0018369741541173212
+  },
+  {
+    "experiment": "Figure 15",
+    "metric": "B300 INT8 512K attention speedup",
+    "actual": 1.942519428250401,
+    "expected": 1.94,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.002519428250401079
+  },
+  {
+    "experiment": "Figure 15",
+    "metric": "B300 INT8 512K E2E speedup",
+    "actual": 1.8991867408875853,
+    "expected": 1.9,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0008132591124145883
+  },
+  {
+    "experiment": "Figure 14 archive audit",
+    "metric": "all 54 paper CSV rows",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figure 15 archive audit",
+    "metric": "all 18 paper CSV rows",
+    "actual": 1.3322676295501878e-15,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 1.3322676295501878e-15
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "customsa 2048 throughput TFLOP/s",
+    "actual": 1130.8586427342543,
+    "expected": 1130.86,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.001357265745582481
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "customsa 4096 throughput TFLOP/s",
+    "actual": 1526.5051173070315,
+    "expected": 1526.51,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.004882692968521951
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "customsa 8192 throughput TFLOP/s",
+    "actual": 1672.8198878282694,
+    "expected": 1672.82,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.00011217173050681595
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "customsa 16384 throughput TFLOP/s",
+    "actual": 1713.8887375978245,
+    "expected": 1713.89,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.001262402175598254
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "illm 2048 throughput TFLOP/s",
+    "actual": 641.6501794761053,
+    "expected": 641.65,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0001794761053588445
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "illm 4096 throughput TFLOP/s",
+    "actual": 746.3589009830017,
+    "expected": 746.36,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0010990169982960651
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "illm 8192 throughput TFLOP/s",
+    "actual": 772.0363219155165,
+    "expected": 772.04,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0036780844834538584
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "illm 16384 throughput TFLOP/s",
+    "actual": 782.083614574467,
+    "expected": 782.08,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.003614574466951126
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "intattention 2048 throughput TFLOP/s",
+    "actual": 888.7315937894768,
+    "expected": 888.73,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0015937894768285332
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "intattention 4096 throughput TFLOP/s",
+    "actual": 1093.3021472974565,
+    "expected": 1093.3,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.002147297456531305
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "intattention 8192 throughput TFLOP/s",
+    "actual": 1170.4076112490839,
+    "expected": 1170.41,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0023887509162250353
+  },
+  {
+    "experiment": "Table 3",
+    "metric": "intattention 16384 throughput TFLOP/s",
+    "actual": 1104.6030486787604,
+    "expected": 1104.6,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0030486787604786514
+  },
+  {
+    "experiment": "Figure 18",
+    "metric": "SCOPE minimum per-PE area overhead",
+    "actual": 1.0855724492247973,
+    "expected": 1.09,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.004427550775202738
+  },
+  {
+    "experiment": "Figure 18",
+    "metric": "SCOPE maximum per-PE area overhead",
+    "actual": 1.4359170935853958,
+    "expected": 1.44,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.004082906414604182
+  },
+  {
+    "experiment": "Figure 18",
+    "metric": "SCOPE minimum per-PE power overhead",
+    "actual": 1.1785714285714286,
+    "expected": 1.18,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.0014285714285713347
+  },
+  {
+    "experiment": "Figure 18",
+    "metric": "SCOPE maximum per-PE power overhead",
+    "actual": 1.3369565217391304,
+    "expected": 1.34,
+    "tolerance": 0.01,
+    "status": "PASS",
+    "absolute_delta": 0.003043478260869703
+  },
+  {
+    "experiment": "Figure 19",
+    "metric": "SCNA-8 area reduction geomean",
+    "actual": 12.78215231656528,
+    "expected": 12.8,
+    "tolerance": 0.1,
+    "status": "PASS",
+    "absolute_delta": 0.017847683434720096
+  },
+  {
+    "experiment": "Figure 19",
+    "metric": "SCNA-8 power reduction geomean",
+    "actual": 9.461967732597213,
+    "expected": 9.5,
+    "tolerance": 0.1,
+    "status": "PASS",
+    "absolute_delta": 0.03803226740278731
+  },
+  {
+    "experiment": "Figures 18/19",
+    "metric": "rendered hardware figures",
+    "actual": "True",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "RTL",
+    "metric": "generated Pinnacle N=8 Verilog",
+    "actual": "72 Verilog files",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "paper-matching report sets extracted",
+    "actual": "112 rows",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "archived Design Compiler area reports",
+    "actual": "112 files",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "archived Design Compiler power reports",
+    "actual": "112 files",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "archived Design Compiler timing reports",
+    "actual": "112 files",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "Synopsys DC version recorded in reports",
+    "actual": "True",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "SCOPE INT8 synthesized array sizes",
+    "actual": "7 sizes",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "corrected FSA FP8 paper hierarchy source",
+    "actual": "area=mesh_1_2, power=mesh_3_3",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Synthesis evidence",
+    "metric": "TSMC 28 nm library recorded in timing report",
+    "actual": "True",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "RTL provenance",
+    "metric": "selected paper RTL directories indexed",
+    "actual": "112 directories",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "RTL provenance",
+    "metric": "retained upload ZIP byte matches",
+    "actual": "108 exact matches",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "RTL provenance",
+    "metric": "overwritten ZIP caveats explicitly indexed",
+    "actual": "4 caveats",
+    "expected": "present",
+    "tolerance": "n/a",
+    "status": "PASS",
+    "absolute_delta": "n/a"
+  },
+  {
+    "experiment": "Figures 18/19",
+    "metric": "report-to-fit CSV",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  },
+  {
+    "experiment": "Figures 18/19",
+    "metric": "32x32 derived CSV",
+    "actual": 0.0,
+    "expected": 0.0,
+    "tolerance": 1e-12,
+    "status": "PASS",
+    "absolute_delta": 0.0
+  }
+]

@@ -1,0 +1,15 @@
+[info] welcome to sbt 1.12.5 (Eclipse Adoptium Java 21.0.10)
+[info] loading project definition from /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/hardware/rtl/project
+[info] loading settings for project root from build.sbt...
+[info] set current project to pinn-sa-rtl (in build file:/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/hardware/rtl/)
+[info] running pinn.common.GenerateMeshes --filter pinnacle/n8_ --force --verbose
+[GenerateMeshes] Selected 4 / 144 targets
+[Deleted] generated/meshes/pinnacle/n8_s8_s32_h4_c2
+[Emitted] generated/meshes/pinnacle/n8_s8_s32_h4_c2
+[Deleted] generated/meshes/pinnacle/n8_s16_s32_h4_c2
+[Emitted] generated/meshes/pinnacle/n8_s16_s32_h4_c2
+[Deleted] generated/meshes/pinnacle/n8_dwfp8e4m3_dwfp16_h4_c2
+[Emitted] generated/meshes/pinnacle/n8_dwfp8e4m3_dwfp16_h4_c2
+[Deleted] generated/meshes/pinnacle/n8_dwfp16_dwfp16_h4_c2
+[Emitted] generated/meshes/pinnacle/n8_dwfp16_dwfp16_h4_c2
+[success] Total time: 4 s, completed Jul 14, 2026, 12:46:59 PM

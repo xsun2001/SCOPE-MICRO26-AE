@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : OneSaArray
+Version: V-2023.12
+Date   : Mon Apr  6 04:35:53 2026
+****************************************
+
+Library(s) Used:
+
+    tcbn28hpcplusbwp30p140ffg0p99v0c_ccs (File: /hpc/Tech/TSMC/digital/N28/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp30p140_180a/tcbn28hpcplusbwp30p140ffg0p99v0c_ccs.db)
+
+Number of ports:                         2100
+Number of nets:                        206342
+Number of cells:                       196184
+Number of combinational cells:         189399
+Number of sequential cells:              6784
+Number of macros/black boxes:               0
+Number of buf/inv:                      34846
+Number of references:                       1
+
+Combinational area:             116558.946058
+Buf/Inv area:                     9149.112122
+Noncombinational area:           13158.431898
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                129717.377956
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  ------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-   Black-
+                                  Total        Total    national     national    boxes   Design
+--------------------------------  -----------  -------  -----------  ----------  ------  ---------
+OneSaArray                        129717.3780    100.0       0.0000      0.0000  0.0000  OneSaArray
+mesh                              129717.3780    100.0  116558.9461  13158.4319  0.0000  OneSaMesh
+--------------------------------  -----------  -------  -----------  ----------  ------  ---------
+Total                                                   116558.9461  13158.4319  0.0000
+
+1
