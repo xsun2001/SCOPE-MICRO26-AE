@@ -6,25 +6,17 @@ import json
 from pathlib import Path
 from typing import Any
 
+from table5_metrics import FOUR_TASKS, PROTOCOL_DESCRIPTION, four_task_average
+
 
 MODELS = ("llama2_7b", "llama3_8b")
 QUANTS = ("w4a4kv4", "w6a6kv6")
 EVAL_MODES = ("exact_eager", "scna_d8", "scna_d16", "scna_d32")
 QMODEL_MODE = "qmodel_sdpa"
-TASKS = (
-    "arc_challenge",
-    "arc_easy",
-    "boolq",
-    "hellaswag",
-    "lambada_openai",
-    "openbookqa",
-    "piqa",
-    "social_iqa",
-    "winogrande",
-)
+TASKS = FOUR_TASKS
 README_TARGETS = {
-    ("llama2_7b", "w4a4kv4"): {"ppl": 5.91, "acc_avg": 0.6318},
-    ("llama3_8b", "w4a4kv4"): {"ppl": 7.29, "acc_avg": 0.6537},
+    ("llama2_7b", "w4a4kv4"): {"ppl": 5.91, "acc_avg": 0.7240},
+    ("llama3_8b", "w4a4kv4"): {"ppl": 7.29, "acc_avg": 0.7420},
 }
 
 
@@ -61,6 +53,10 @@ def row_from_dir(run_root: Path, model: str, quant: str, mode: str, result_dir: 
     slurm_env = read_json(result_dir / "slurm_env.json") or {}
     lm_eval = metrics.get("lm_eval", {}).get("final", {})
     task_metrics = lm_eval.get("metrics", {})
+    try:
+        acc_avg = four_task_average(lm_eval)
+    except ValueError:
+        acc_avg = None
     scna = metrics.get("scna", {})
     use_sdpa = slurm_env.get("use_sdpa")
     if isinstance(use_sdpa, str):
@@ -80,7 +76,7 @@ def row_from_dir(run_root: Path, model: str, quant: str, mode: str, result_dir: 
         "scna_input_scale": scna.get("input_scale"),
         "scna_output_floor_log": scna.get("output_floor_log"),
         "ppl": metrics.get("ppl"),
-        "acc_avg": lm_eval.get("acc_avg"),
+        "acc_avg": acc_avg,
         "returncode": status.get("returncode"),
         "result_dir": str(result_dir.relative_to(run_root)),
     }
@@ -176,7 +172,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     ]
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -380,7 +376,7 @@ def write_maskfix_report(run_root: Path, rows: list[dict[str, Any]]) -> bool:
             "returncode",
             "result_dir",
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(maskfix_csv_rows)
 
@@ -389,11 +385,27 @@ def write_maskfix_report(run_root: Path, rows: list[dict[str, Any]]) -> bool:
     noaq_diag = read_json(diagnostics_dir / "attention_path_compare_llama2_7b_w4a4kv4_seq256_nomask_noaq_after_maskfix.json") or {}
     aq_diff = aq_diag.get("diffs", {}).get("explicit_eager_mask_policy_vs_sdpa", {})
     noaq_diff = noaq_diag.get("diffs", {}).get("explicit_eager_mask_policy_vs_sdpa", {})
+    diagnostic_lines = [
+        f"- Prefix LLaMA2 W4 exact eager was 9.4410 PPL; fixed eager is {fmt((find_row(rows, 'llama2_7b', 'w4a4kv4', 'exact_eager_maskfix_acc') or {}).get('ppl'))} PPL.",
+        f"- Prefix LLaMA3 W4 exact eager was 10.2964 PPL; fixed eager is {fmt((find_row(rows, 'llama3_8b', 'w4a4kv4', 'exact_eager_maskfix_acc') or {}).get('ppl'))} PPL.",
+    ]
+    if all(aq_diff.get(key) is not None and noaq_diff.get(key) is not None for key in ("mean", "max")):
+        diagnostic_lines.extend(
+            [
+                f"- LLaMA2 W4 direct full-forward logits after the mask fix, qmodel loaded, no user mask: activation quant on gives mean diff {fmt(aq_diff['mean'])}, max diff {fmt(aq_diff['max'])} versus SDPA.",
+                f"- Disabling activation quant for that diagnostic reduces the mean diff to {fmt(noaq_diff['mean'])}, max diff {fmt(noaq_diff['max'])}; dynamic activation quant amplifies small SDPA/manual arithmetic differences.",
+            ]
+        )
+    diagnostic_lines.append(
+        "- The metric path is now the decisive signal: fixed eager matches SDPA PPL closely, and SCNA-16/32 stay close to fixed eager across both models and bit-widths."
+    )
 
     report_parts = [
         "# OSTQuant SCNA Mask-Fix Final Report",
         "",
-        f"Run root: `{run_root}`",
+        f"Run root: `{run_root.name}` (selected with `--run-root`)",
+        "",
+        f"Accuracy protocol: {PROTOCOL_DESCRIPTION}",
         "",
         "## Root Cause",
         "",
@@ -445,11 +457,7 @@ def write_maskfix_report(run_root: Path, rows: list[dict[str, Any]]) -> bool:
         "",
         "## Diagnostics",
         "",
-        f"- Prefix LLaMA2 W4 exact eager was 9.4410 PPL; fixed eager is {fmt((find_row(rows, 'llama2_7b', 'w4a4kv4', 'exact_eager_maskfix_acc') or {}).get('ppl'))} PPL.",
-        f"- Prefix LLaMA3 W4 exact eager was 10.2964 PPL; fixed eager is {fmt((find_row(rows, 'llama3_8b', 'w4a4kv4', 'exact_eager_maskfix_acc') or {}).get('ppl'))} PPL.",
-        f"- LLaMA2 W4 direct full-forward logits after the mask fix, qmodel loaded, no user mask: activation quant on gives mean diff {fmt(aq_diff.get('mean'))}, max diff {fmt(aq_diff.get('max'))} versus SDPA.",
-        f"- Disabling activation quant for that diagnostic reduces the mean diff to {fmt(noaq_diff.get('mean'))}, max diff {fmt(noaq_diff.get('max'))}; dynamic activation quant amplifies small SDPA/manual arithmetic differences.",
-        "- The metric path is now the decisive signal: fixed eager matches SDPA PPL closely, and SCNA-16/32 stay close to fixed eager across both models and bit-widths.",
+        *diagnostic_lines,
     ]
 
     report = "\n".join(report_parts) + "\n"
@@ -557,7 +565,9 @@ def write_reports(run_root: Path, rows: list[dict[str, Any]]) -> None:
     summary_parts = [
         "# OSTQuant SCNA Corrected Protocol Results",
         "",
-        f"Run root: `{run_root}`",
+        f"Run root: `{run_root.name}` (selected with `--run-root`)",
+        "",
+        f"Accuracy protocol: {PROTOCOL_DESCRIPTION}",
         "",
         "## README W4A4KV4 Check",
         "",
@@ -637,6 +647,7 @@ def write_reports(run_root: Path, rows: list[dict[str, Any]]) -> None:
             "- `exact_eager` and all SCNA rows load both the `exact_sdpa` learned OST transform and the SDPA-generated `qmodel.pt`, then use explicit attention for nonlinear calculation.",
             "- Additional suffixed rows such as `exact_eager20` or `*_eager20` are investigation probes and are compared against their matching qmodel suffix when present.",
             "- Rows with blank accuracy were intentionally run as PPL-only probes.",
+            f"- Official Table 5 accuracy uses: {PROTOCOL_DESCRIPTION}",
             "- Deltas against `exact_sdpa` are the requested README-aligned baseline deltas; deltas against `exact_eager` isolate SCNA from the explicit-attention fallback.",
         ]
     )

@@ -69,8 +69,8 @@ So "has block X somewhere" and "has a directly equivalent module boundary for X"
 
 Relevant files:
 
-- [`classical/wrapper.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/classical/wrapper.scala)
-- [`classical/sa.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/classical/sa.scala)
+- [`classical/wrapper.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/classical/wrapper.scala)
+- [`classical/sa.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/classical/sa.scala)
 
 Structure:
 
@@ -93,9 +93,9 @@ Assessment:
 
 Relevant files:
 
-- [`onesa/wrapper.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/onesa/wrapper.scala)
-- [`onesa/sa.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/onesa/sa.scala)
-- [`onesa/design.md`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/onesa/design.md)
+- [`onesa/wrapper.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/onesa/wrapper.scala)
+- [`onesa/sa.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/onesa/sa.scala)
+- [`onesa/design.md`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/onesa/design.md)
 
 Structure:
 
@@ -134,9 +134,9 @@ Fair comparison:
 
 Relevant files:
 
-- [`fusemax/wrapper.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/fusemax/wrapper.scala)
-- [`fusemax/sa.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/fusemax/sa.scala)
-- [`fusemax/design.md`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/fusemax/design.md)
+- [`fusemax/wrapper.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/fusemax/wrapper.scala)
+- [`fusemax/sa.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/fusemax/sa.scala)
+- [`fusemax/design.md`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/fusemax/design.md)
 
 Structure:
 
@@ -179,9 +179,9 @@ Fair comparison:
 
 Relevant files:
 
-- [`pinnacle/wrapper.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/pinnacle/wrapper.scala)
-- [`pinnacle/sa.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/pinnacle/sa.scala)
-- [`pinnacle/design.md`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/pinnacle/design.md)
+- [`pinnacle/wrapper.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/pinnacle/wrapper.scala)
+- [`pinnacle/sa.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/pinnacle/sa.scala)
+- [`pinnacle/design.md`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/pinnacle/design.md)
 
 Structure:
 
@@ -220,9 +220,9 @@ Fair comparison:
 
 Relevant files:
 
-- [`systolicattention/wrapper.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/systolicattention/wrapper.scala)
-- [`systolicattention/core.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/systolicattention/core.scala)
-- [`systolicattention/design.md`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/systolicattention/design.md)
+- [`systolicattention/wrapper.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/systolicattention/wrapper.scala)
+- [`systolicattention/core.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/systolicattention/core.scala)
+- [`systolicattention/design.md`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/systolicattention/design.md)
 
 The public top-level in this subsystem is `SystolicAttentionSystem`.
 

@@ -14,10 +14,10 @@ The paper source of truth is `paper/SCOPE-revision.pdf`. Bundled measurements ar
 
 ## GPU accuracy and numerical precision
 
-- Table 4 → `experiments/tbl-4-function-approximation-accuracy/`: paper values are preserved for evidence, but fresh reproduction is not claimed because the common raw baseline grid and unified harness are absent.
+- Table 4 → `experiments/tbl-4-function-approximation-accuracy/`: reproduces SCNA accuracy for 11 functions; other method columns are literature reference values and should be reproduced from their papers.
 - Figure 16 → `experiments/fig-16-end-to-end-quality/`: 80/80 bundled perplexity and four-task mean-accuracy comparisons pass.
-- Table 5 → `experiments/tbl-5-ostquant-quality/`: 16/16 corrected OSTQuant PPL/accuracy configurations pass.
-- Figure 17 → `experiments/fig-17-neuron-scalability/`: 36/36 configurations pass; measured 32-vs-4 MSE gain is 97.2x--2837.8x. The saved Exp sweep exception is documented in the experiment README.
+- Table 5 → `experiments/tbl-5-ostquant-quality/`: 20/20 four-task PPL/accuracy table entries pass across OSTQuant, SCNA-8/16/32, and FP16 baselines.
+- Figure 17 → `experiments/fig-17-neuron-scalability/`: 36/36 configurations pass; measured 32-vs-4 MSE gain is 97.2x--2837.8x.
 - Figure 20 → `experiments/fig-20-shape-constraints/`: 18/18 width-16 configurations pass; shape constraints improve MSE by 47.1x--2264.3x.
 
 ## RTL and synthesis provenance

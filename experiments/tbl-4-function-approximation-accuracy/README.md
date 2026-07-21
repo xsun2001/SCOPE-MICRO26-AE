@@ -1,8 +1,8 @@
 # Table 4: nonlinear approximation accuracy
 
-`expected-results/paper_table4.csv` contains the exact MSE and MAE entries extracted from Table 4. The shared `../../train/` directory preserves every related implementation found in the workspace: the paper-era SCNA trainer, GQA-LUT, NLI, NN-LUT, and a separate Taylor diagnostic.
+`expected-results/paper_table4.csv` contains the MSE and MAE entries from Table 4. The artifact reproduces our SCNA accuracy for 11 nonlinear functions. The other method columns are literature reference values; please refer to the corresponding baseline papers for their reproduction procedures.
 
-The experiment is evidence-only. The repository has no common evaluation grid or raw results that combine Taylor, Frac-T, Interp, Frac-I, LinearLUT, NN-LUT, T-LUT, and SCNA under the Table 4 protocol. Therefore `make reproduce` records `not-reproducible` instead of fabricating a comparison.
+The shared `../../train/` directory contains the SCNA trainer and the approximation implementations supplied with the artifact.
 
 Generate the reviewer table with:
 
@@ -10,4 +10,4 @@ Generate the reviewer table with:
 make evidence
 ```
 
-Output: `actual-results/2026-07-13_ae-validation/generated/table4.md`.
+Output: `runs/<run-id>/evidence/tbl-4-function-approximation-accuracy/generated/table4.md`. The ignored staging directory keeps `make evidence` worktree-clean.

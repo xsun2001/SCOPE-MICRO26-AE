@@ -53,7 +53,7 @@ def read_expected(path: Path) -> dict[tuple[str, str], dict[str, float]]:
 def main() -> int:
     args = parse_args()
     manifest = args.experiment_root / "data" / "manifest.tsv"
-    expected_path = args.experiment_root / "expected" / "paper_figure16.csv"
+    expected_path = args.experiment_root / "expected-results" / "paper_figure16.csv"
     rows: list[dict[str, str | float]] = []
     missing: list[str] = []
     with manifest.open() as handle:
@@ -66,7 +66,7 @@ def main() -> int:
                 / "metrics.json"
             )
             if not metrics_path.is_file():
-                missing.append(str(metrics_path))
+                missing.append(str(metrics_path.relative_to(args.result_dir)))
                 continue
             for metric, value in load_metric(metrics_path, spec["kind"]).items():
                 rows.append(
@@ -76,7 +76,7 @@ def main() -> int:
                         "variant": spec["variant"],
                         "metric": metric,
                         "value": value,
-                        "metrics_path": str(metrics_path),
+                        "metrics_path": str(metrics_path.relative_to(args.result_dir)),
                     }
                 )
 
