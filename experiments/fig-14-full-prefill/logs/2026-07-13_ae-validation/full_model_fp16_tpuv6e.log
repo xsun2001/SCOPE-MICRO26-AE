@@ -25,4 +25,4 @@ context=262144 variant=customsa       model_ms=   88216.314 tok_s=    2971.605 m
 context=524288 variant=baseline       model_ms= 1416896.149 tok_s=     370.026 model_speedup=1.00000x attention_core_speedup=1.00000x
 context=524288 variant=flashattention model_ms=  577428.548 tok_s=     907.970 model_speedup=2.45380x attention_core_speedup=2.47769x
 context=524288 variant=customsa       model_ms=  343429.526 tok_s=    1526.625 model_speedup=4.12573x attention_core_speedup=4.21304x
-[outputs] /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/tpuv6e
+[outputs] ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/tpuv6e

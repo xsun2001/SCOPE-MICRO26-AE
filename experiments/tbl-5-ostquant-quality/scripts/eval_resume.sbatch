@@ -127,6 +127,7 @@ fi
 mkdir -p "$OUT_DIR"
 cd "$CODE_ROOT"
 LM_EVAL=${LM_EVAL:-True}
+TABLE5_TASKS=(arc_easy hellaswag piqa winogrande)
 
 export OPENBLAS_NUM_THREADS=1
 export OMP_NUM_THREADS=1
@@ -149,6 +150,7 @@ COMMON_ARGS=(
   --smooth_norm_linear=True
   --bf16=True
   --lm_eval="$LM_EVAL"
+  --tasks "${TABLE5_TASKS[@]}"
   --use_sdpa=False
   --per_device_train_batch_size=4
   --max_steps=100

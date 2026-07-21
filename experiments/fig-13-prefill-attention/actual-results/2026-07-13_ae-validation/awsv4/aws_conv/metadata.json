@@ -1,6 +1,6 @@
 {
   "experiment_name": "scope_paper_awsv4_attention",
-  "experiment_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/llmcompass_all_in_one/configs/paper_awsv4.json",
+  "experiment_config_path": "${BUNDLE_ROOT}/experiments/llmcompass_all_in_one/configs/paper_awsv4.json",
   "compile_mode": "heuristic-TPU-new",
   "batch_size": 1,
   "jobs": 8,
@@ -40,13 +40,13 @@
     {
       "name": "awsv4_fp16",
       "label": "AWSv4 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/LLMCompass/configs/ours/AWSv4.json",
+      "system_config_path": "${BUNDLE_ROOT}/LLMCompass/configs/ours/AWSv4.json",
       "data_type_name": "fp16"
     },
     {
       "name": "awsv4_int8",
       "label": "AWSv4 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/LLMCompass/configs/ours/AWSv4.json",
+      "system_config_path": "${BUNDLE_ROOT}/LLMCompass/configs/ours/AWSv4.json",
       "data_type_name": "int8"
     }
   ],

@@ -1,5 +1,5 @@
-# Table 5 reproduction
+# Table 5 four-task reproduction
 
 Status: **pass**
 
-Passed 16/16 paper-value comparisons.
+Passed 20/20 values using ARC-Easy, HellaSwag, PIQA, and WinoGrande.

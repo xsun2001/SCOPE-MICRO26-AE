@@ -346,17 +346,12 @@ class TrainingArguments(transformers.TrainingArguments):
     lm_eval: bool = field(default=False, metadata=dict(help="Evaluate the model on LM Eval tasks"))
     tasks: List[str] = field(
         default_factory=lambda: [
-            "arc_challenge",
             "arc_easy",
-            "boolq",
             "hellaswag",
-            "lambada_openai",
-            "openbookqa",
             "piqa",
-            "social_iqa",
             "winogrande",
         ],
-        metadata=dict(help="List of LM Eval tasks"),
+        metadata=dict(help="Table 5 LM Eval tasks: ARC-Easy, HellaSwag, PIQA, and WinoGrande"),
     )
     lm_eval_batch_size: int = field(default=16, metadata=dict(help="Batch size for evaluating with LM Eval harness"))
     distribute: bool = field(default=False, metadata=dict(help="Distribute the model on multiple GPUs for evaluation"))

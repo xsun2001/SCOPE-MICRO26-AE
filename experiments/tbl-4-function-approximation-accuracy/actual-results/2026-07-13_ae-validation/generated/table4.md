@@ -1,6 +1,6 @@
 # Table 4 — nonlinear approximation accuracy
 
-| Function | TAYLOR MSE | FRAC_T MSE | INTERP MSE | FRAC_I MSE | LINEARLUT MSE | NNLUT MSE | TLUT MSE | OURS MSE | TAYLOR MAE | FRAC_T MAE | INTERP MAE | FRAC_I MAE | LINEARLUT MAE | NNLUT MAE | TLUT MAE | OURS MAE |
+| Function | Taylor MSE | Frac-T MSE | Interp MSE | Frac-I MSE | LinearLUT MSE | NN-LUT MSE | T-LUT MSE | SCNA MSE | Taylor MAE | Frac-T MAE | Interp MAE | Frac-I MAE | LinearLUT MAE | NN-LUT MAE | T-LUT MAE | SCNA MAE |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Exp | INF | 1.23e-8 | 3.60e-2 | 1.07e-9 | 4.41e-6 | 1.24e-6 | 1.24e-6 | 1.91e-8 | INF | 2.47e-6 | 5.85e-2 | 2.47e-6 | 1.40e-4 | 2.25e-4 | 1.95e-3 | 1.91e-5 |
 | Exp2 | INF | 1.75e-8 | 3.37e-2 | 1.55e-9 | 2.73e-6 | 1.28e-6 | 1.24e-6 | 1.01e-8 | INF | 8.48e-6 | 5.69e-2 | 3.57e-6 | 1.35e-4 | 2.00e-4 | 1.95e-3 | 1.82e-5 |
@@ -13,3 +13,5 @@
 | Sin | 5.23e-4 | N/A | 9.74e-5 | N/A | 1.30e-7 | 2.99e-3 | N/A | 3.00e-7 | 1.27e-2 | N/A | 8.15e-3 | N/A | 2.46e-4 | 5.47e-2 | N/A | 4.50e-4 |
 | Rsqrt | N/A | N/A | 3.79e-1 | N/A | 8.05e-5 | 2.10e-2 | N/A | 8.96e-7 | N/A | N/A | 1.90e-1 | N/A | 5.40e-4 | 1.10e-1 | N/A | 5.57e-4 |
 | GeLU | 1.65e-1 | N/A | 3.27e-5 | N/A | 6.10e-9 | 6.67e-6 | 1.19e-6 | 9.95e-8 | 2.41e-1 | N/A | 3.41e-3 | N/A | 3.63e-5 | 2.08e-3 | 1.95e-3 | 2.56e-4 |
+
+SCNA values are reproduced by this artifact. Other method columns are literature reference values; please refer to their papers for baseline reproduction.

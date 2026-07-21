@@ -1,1 +1,1 @@
-h100_int8: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/tbl-3-integer-softmax/actual-results/2026-07-13_ae-validation/h100_int8
+h100_int8: ${BUNDLE_ROOT}/experiments/tbl-3-integer-softmax/actual-results/2026-07-13_ae-validation/h100_int8

@@ -165,6 +165,10 @@ def eval_tasks(lm,args):
         "stderr": std_vals,
         "acc_avg": mean_acc_val,
         "acc_avg_stderr": mean_std_val,
+        "accuracy_protocol": {
+            "tasks": list(tasks),
+            "aggregation": "Unweighted arithmetic mean over the configured LM Eval tasks.",
+        },
     }
 
 

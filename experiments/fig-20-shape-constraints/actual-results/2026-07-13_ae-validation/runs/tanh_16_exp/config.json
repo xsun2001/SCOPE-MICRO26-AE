@@ -23,7 +23,7 @@
   "num_units": 16,
   "num_workers": 0,
   "optim": "Adam",
-  "output_dir": "/data/user/cxu930/projects/pinn-fullstack/train/runs/20260402-gpu-corrected-shape-fix/tanh_16_exp",
+  "output_dir": "${SOURCE_ROOT}/train/runs/20260402-gpu-corrected-shape-fix/tanh_16_exp",
   "pin_memory": true,
   "r_range": 0.0,
   "reparam": "exp",

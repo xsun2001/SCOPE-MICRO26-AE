@@ -1,4 +1,4 @@
-b200: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b200
-awsv4: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/awsv4
-tpuv6e: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/tpuv6e
-b300: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b300
+b200: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b200
+awsv4: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/awsv4
+tpuv6e: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/tpuv6e
+b300: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b300

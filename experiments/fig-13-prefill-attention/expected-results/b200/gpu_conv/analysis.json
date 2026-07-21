@@ -634,8 +634,8 @@
     }
   ],
   "files": {
-    "analysis_summary_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/analysis_summary.csv",
-    "bottleneck_summary_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/bottleneck_summary.csv",
-    "analysis_md": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/analysis.md"
+    "analysis_summary_csv": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/analysis_summary.csv",
+    "bottleneck_summary_csv": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/bottleneck_summary.csv",
+    "analysis_md": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/analysis.md"
   }
 }

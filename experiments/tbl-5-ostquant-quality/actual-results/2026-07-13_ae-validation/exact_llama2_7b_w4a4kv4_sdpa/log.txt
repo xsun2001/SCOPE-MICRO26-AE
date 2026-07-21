@@ -136,7 +136,7 @@ Device: cuda
  'log_level': 'passive',
  'log_level_replica': 'warning',
  'log_on_each_node': False,
- 'logging_dir': '/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/exact_llama2_7b_w4a4kv4_sdpa/runs/Jun12_14-03-14_ACD1-6',
+ 'logging_dir': '${SOURCE_ROOT}/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/exact_llama2_7b_w4a4kv4_sdpa/runs/Jun12_14-03-14_ACD1-6',
  'logging_first_step': False,
  'logging_nan_inf_filter': True,
  'logging_steps': 1,
@@ -147,7 +147,7 @@ Device: cuda
  'max_grad_norm': 1.0,
  'max_steps': 100,
  'metric_for_best_model': None,
- 'model': '/data/user/cxu930/projects/pinn-fullstack/models/Llama-2-7b-hf',
+ 'model': '${SOURCE_ROOT}/models/Llama-2-7b-hf',
  'mp_parameters': '',
  'mul_quant_params': {'bits': 4,
                       'clip_ratio': 1.0,
@@ -177,7 +177,7 @@ Device: cuda
  'optim': <OptimizerNames.ADAMW_TORCH: 'adamw_torch'>,
  'optim_args': None,
  'optim_target_modules': None,
- 'output_dir': '/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/exact_llama2_7b_w4a4kv4_sdpa',
+ 'output_dir': '${SOURCE_ROOT}/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/exact_llama2_7b_w4a4kv4_sdpa',
  'overwrite_output_dir': False,
  'past_index': -1,
  'per_device_eval_batch_size': 8,
@@ -251,7 +251,7 @@ Device: cuda
  'rotate_post_rope': False,
  'rotate_pre_rope': False,
  'rotate_rope_perlayer': True,
- 'run_name': '/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/exact_llama2_7b_w4a4kv4_sdpa',
+ 'run_name': '${SOURCE_ROOT}/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol/exact_llama2_7b_w4a4kv4_sdpa',
  'save_on_each_node': False,
  'save_only_model': False,
  'save_qmodel_path': None,
@@ -351,11 +351,11 @@ Device: cuda
 2026-06-12 14:09:23.287 | INFO     | quant.ost_train:rotate_smooth_train:35 - train smooth ov
 2026-06-12 14:09:23.287 | INFO     | quant.ost_train:rotate_smooth_train:37 - smooth norm linear
 2026-06-12 14:09:24.379 | INFO     | utils.memory_utils:cleanup_memory:62 - GPU memory (from rotate_smooth_train): 0.21 -> 0.21 GB (0.00 GB)
-2026-06-12 15:39:14.632 | INFO     | utils.eval_utils:evaluator:163 - 
+2026-06-12 15:39:14.632 | INFO     | utils.eval_utils:evaluator:163 -
 WIKITEXT2 PPL: 5.942
 2026-06-12 15:39:14.637 | INFO     | __main__:main:108 - After Dynamic Act&Weight Quant PPL:5.9417901039123535
 2026-06-12 15:39:14.792 | INFO     | utils.memory_utils:cleanup_memory:62 - GPU memory (from eval_tasks): 7.58 -> 0.40 GB (-7.18 GB)
-2026-06-12 15:52:43.817 | INFO     | __main__:eval_tasks:145 - 
+2026-06-12 15:52:43.817 | INFO     | __main__:eval_tasks:145 -
 |    Tasks     |Version|Filter|n-shot|  Metric  |   |Value |   |Stderr|
 |--------------|-------|------|-----:|----------|---|-----:|---|-----:|
 |arc_challenge |      1|none  |     0|acc       |↑  |0.4138|±  |0.0144|

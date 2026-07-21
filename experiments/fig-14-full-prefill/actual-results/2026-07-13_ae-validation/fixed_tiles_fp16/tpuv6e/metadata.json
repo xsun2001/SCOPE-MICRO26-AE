@@ -5,7 +5,7 @@
   "system_config": "LLMCompass/configs/ours/TPUv6e.json",
   "system_name": "Google TPU v6e (official per-chip model) single-card",
   "data_type": "fp16",
-  "source_attention_dir": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/tpuv6e/tpu_conv",
+  "source_attention_dir": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/tpuv6e/tpu_conv",
   "lengths": [
     2048,
     4096,

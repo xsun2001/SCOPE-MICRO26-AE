@@ -3,14 +3,15 @@ EXP_ROOT := $(CURDIR)
 EXP_SLUG := fig-20-shape-constraints
 RESULT_DIR := $(RUN_ROOT)/$(EXP_SLUG)
 PACKAGED_DIR := actual-results/$(PACKAGED_GPU_RUN_ID)
+EVIDENCE_DIR := $(RUN_ROOT)/evidence/$(EXP_SLUG)
 TASKS := $(shell expr $$(wc -l < data/manifest.tsv) - 1)
 SLOTS := $(shell n=$(WORKERS); t=$(TASKS); [[ $$n -gt $$t ]] && n=$$t; echo $$n)
 ARRAY_MAX := $(shell expr $(SLOTS) - 1)
 
 .PHONY: evidence run collect generate reproduce
 evidence:
-	@$(PYTHON) scripts/collect.py --runs-dir $(PACKAGED_DIR)/runs --analysis-dir $(PACKAGED_DIR)/analysis --expected expected-results/paired_summary.csv --relative-tolerance $(FUNCTION_RELATIVE_TOLERANCE)
-	@$(PYTHON) scripts/generate_figure.py --runs-dir $(PACKAGED_DIR)/runs --output-dir $(PACKAGED_DIR)/generated
+	@$(PYTHON) scripts/collect.py --runs-dir $(PACKAGED_DIR)/runs --analysis-dir $(EVIDENCE_DIR)/analysis --expected expected-results/paired_summary.csv --relative-tolerance $(FUNCTION_RELATIVE_TOLERANCE)
+	@$(PYTHON) scripts/generate_figure.py --runs-dir $(PACKAGED_DIR)/runs --output-dir $(EVIDENCE_DIR)/generated
 run:
 	$(check-executor)
 	@mkdir -p "$(RESULT_DIR)" "$(RUN_ROOT)/slurm"

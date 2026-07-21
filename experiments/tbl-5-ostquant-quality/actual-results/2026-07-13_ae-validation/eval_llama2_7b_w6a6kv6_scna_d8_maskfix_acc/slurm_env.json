@@ -7,9 +7,9 @@
   "exact_suffix": "sdpa",
   "qmodel_suffix": "sdpa",
   "out_suffix": "maskfix_acc",
-  "run_root": "/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5",
-  "resume_path": "/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/exact_llama2_7b_w6a6kv6_sdpa/model.bin",
-  "load_qmodel_path": "/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/qmodel_llama2_7b_w6a6kv6_sdpa/qmodel.pt",
+  "run_root": "${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5",
+  "resume_path": "${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/exact_llama2_7b_w6a6kv6_sdpa/model.bin",
+  "load_qmodel_path": "${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/qmodel_llama2_7b_w6a6kv6_sdpa/qmodel.pt",
   "node_list": "ACD1-9",
   "started_at": "2026-07-14T00:11:08+08:00"
 }

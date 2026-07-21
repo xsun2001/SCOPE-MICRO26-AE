@@ -4,7 +4,7 @@
   "model_key": "llama2_7b",
   "quant_key": "w6a6kv6",
   "mode": "exact_sdpa_train_eval",
-  "run_root": "/data/user/cxu930/projects/pinn-fullstack/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol",
+  "run_root": "${SOURCE_ROOT}/experiments/ostquant_scna_investigation/results/2026-06-12_140246_corrected_protocol",
   "node_list": "ACD1-14",
   "started_at": "2026-06-12T14:02:56+08:00"
 }

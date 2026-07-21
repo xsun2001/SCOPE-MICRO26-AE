@@ -17,7 +17,7 @@ TBL4 := experiments/tbl-4-function-approximation-accuracy
 TBL5 := experiments/tbl-5-ostquant-quality
 VALIDATION_OUT ?= validation/results/$(RUN_ID)
 
-.PHONY: help setup all evidence evidence-cpu evidence-gpu validate validate-cpu validate-cpu-run validate-gpu validate-packaged reproduce reproduce-cpu reproduce-gpu performance hardware fig-13 fig-14 fig-15 fig-16 fig-17 fig-18 fig-19 fig-20 fig-21 tbl-3 tbl-4 tbl-5 rtl archive package
+.PHONY: help setup all evidence evidence-cpu evidence-gpu validate validate-provenance validate-cpu validate-cpu-run validate-gpu validate-packaged reproduce reproduce-cpu reproduce-gpu performance hardware fig-13 fig-14 fig-15 fig-16 fig-17 fig-18 fig-19 fig-20 fig-21 tbl-3 tbl-4 tbl-5 rtl archive package
 
 help:
 	@echo "SCOPE unified artifact-evaluation bundle"
@@ -30,7 +30,7 @@ help:
 	@echo ""
 	@echo "Fresh reproduction:"
 	@echo "  make reproduce-cpu      Figures 13/14/15/18/19/21, Table 3, and RTL"
-	@echo "  make reproduce-gpu      Figures 16/17/20 and Table 5 (Table 4 is evidence-only)"
+	@echo "  make reproduce-gpu      Figures 16/17/20 and Tables 4/5"
 	@echo "  make reproduce          run both suites"
 	@echo "  make hardware           extract reports, fit, and draw Figures 18/19"
 	@echo ""
@@ -64,10 +64,14 @@ evidence-gpu:
 	$(MAKE) -C $(FIG17) evidence
 	$(MAKE) -C $(FIG20) evidence
 
-validate: validate-cpu validate-gpu
+validate: validate-provenance validate-cpu validate-gpu
+
+validate-provenance:
+	$(PYTHON) tools/check_provenance_paths.py --bundle-root "$(BUNDLE_ROOT)"
 
 validate-cpu:
 	$(PYTHON) validation/validate_results.py --run-id "$(PACKAGED_RUN_ID)" --output-dir "validation/results/$(PACKAGED_RUN_ID)"
+	$(MAKE) -C $(TBL3) validate-microbenchmark
 
 validate-cpu-run:
 	$(PYTHON) validation/validate_results.py --run-id "$(RUN_ID)" --output-dir "$(VALIDATION_OUT)"

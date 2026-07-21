@@ -7,45 +7,77 @@
   },
   "lm_eval": {
     "final": {
-      "acc_avg": 0.6444,
-      "acc_avg_stderr": 0.0108,
+      "acc_avg": 0.7408,
+      "acc_avg_stderr": 0.009,
       "metrics": {
-        "acc_avg": 0.6444,
-        "arc_challenge": 0.4863,
+        "acc_avg": 0.7408,
         "arc_easy": 0.7487,
-        "boolq": 0.7798,
         "hellaswag": 0.75,
-        "lambada_openai": 0.699,
-        "openbookqa": 0.432,
         "piqa": 0.7769,
-        "social_iqa": 0.4391,
         "winogrande": 0.6875
       },
       "stderr": {
-        "arc_challenge": 0.0146,
         "arc_easy": 0.0089,
-        "boolq": 0.0072,
         "hellaswag": 0.0043,
-        "lambada_openai": 0.0064,
-        "openbookqa": 0.0222,
         "piqa": 0.0097,
-        "social_iqa": 0.0112,
         "winogrande": 0.013
       },
       "tasks": [
-        "arc_challenge",
         "arc_easy",
-        "boolq",
         "hellaswag",
-        "lambada_openai",
-        "openbookqa",
         "piqa",
-        "social_iqa",
         "winogrande"
-      ]
+      ],
+      "accuracy_protocol": {
+        "tasks": [
+          "arc_easy",
+          "hellaswag",
+          "piqa",
+          "winogrande"
+        ],
+        "aggregation": "Unweighted arithmetic mean over ARC-Easy, HellaSwag, PIQA, and WinoGrande."
+      },
+      "all_task_diagnostics": {
+        "tasks": [
+          "arc_challenge",
+          "arc_easy",
+          "boolq",
+          "hellaswag",
+          "lambada_openai",
+          "openbookqa",
+          "piqa",
+          "social_iqa",
+          "winogrande"
+        ],
+        "metrics": {
+          "acc_avg": 0.6444,
+          "arc_challenge": 0.4863,
+          "arc_easy": 0.7487,
+          "boolq": 0.7798,
+          "hellaswag": 0.75,
+          "lambada_openai": 0.699,
+          "openbookqa": 0.432,
+          "piqa": 0.7769,
+          "social_iqa": 0.4391,
+          "winogrande": 0.6875
+        },
+        "stderr": {
+          "arc_challenge": 0.0146,
+          "arc_easy": 0.0089,
+          "boolq": 0.0072,
+          "hellaswag": 0.0043,
+          "lambada_openai": 0.0064,
+          "openbookqa": 0.0222,
+          "piqa": 0.0097,
+          "social_iqa": 0.0112,
+          "winogrande": 0.013
+        },
+        "acc_avg": 0.6444,
+        "acc_avg_stderr": 0.0108
+      }
     }
   },
-  "model": "/data/user/cxu930/projects/pinn-fullstack/models/Llama-3-8b",
+  "model": "${SOURCE_ROOT}/models/Llama-3-8b",
   "ppl": 7.444907188415527,
   "quantization": {
     "a_bits": 4,

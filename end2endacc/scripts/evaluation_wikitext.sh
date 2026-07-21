@@ -31,7 +31,7 @@ max_chunks="${MAX_CHUNKS:-}"
 max_tokens="${MAX_TOKENS:-}"
 
 cmd=(
-    python evaluation/wikitext/evaluate_hf.py
+    "${PYTHON_BIN:-python3}" evaluation/wikitext/evaluate_hf.py
     --model "${model}"
     --dtype "${torch_dtype}"
     --dataset_name "${dataset_name}"
@@ -152,7 +152,7 @@ fi
 set -e
 
 if [[ -f "${result_dir}/metrics.json" && -f "${result_dir}/config.json" ]]; then
-    python evaluation/write_run_summary.py --result_dir "${result_dir}"
+    "${PYTHON_BIN:-python3}" evaluation/write_run_summary.py --result_dir "${result_dir}"
 fi
 
 exit "${run_status}"

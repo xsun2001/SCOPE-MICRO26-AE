@@ -1,7 +1,7 @@
 [info] welcome to sbt 1.12.5 (Eclipse Adoptium Java 21.0.10)
-[info] loading project definition from /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/hardware/rtl/project
+[info] loading project definition from ${BUNDLE_ROOT}/hardware/rtl/project
 [info] loading settings for project root from build.sbt...
-[info] set current project to pinn-sa-rtl (in build file:/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/hardware/rtl/)
+[info] set current project to pinn-sa-rtl (in build file:${BUNDLE_ROOT}/hardware/rtl/)
 [info] running pinn.common.GenerateMeshes --filter pinnacle/n8_ --force --verbose
 [GenerateMeshes] Selected 4 / 144 targets
 [Deleted] generated/meshes/pinnacle/n8_s8_s32_h4_c2

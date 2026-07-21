@@ -135,12 +135,12 @@ Device: cuda
  'lm_eval': True,
  'lm_eval_batch_size': 16,
  'load_best_model_at_end': False,
- 'load_qmodel_path': '/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/qmodel_llama2_7b_w4a4kv4_sdpa/qmodel.pt',
+ 'load_qmodel_path': '${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/qmodel_llama2_7b_w4a4kv4_sdpa/qmodel.pt',
  'local_rank': 0,
  'log_level': 'passive',
  'log_level_replica': 'warning',
  'log_on_each_node': False,
- 'logging_dir': '/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/eval_llama2_7b_w4a4kv4_exact_eager_maskfix_acc/runs/Jul14_00-11-53_ACD1-26',
+ 'logging_dir': '${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/eval_llama2_7b_w4a4kv4_exact_eager_maskfix_acc/runs/Jul14_00-11-53_ACD1-26',
  'logging_first_step': False,
  'logging_nan_inf_filter': True,
  'logging_steps': 1,
@@ -151,7 +151,7 @@ Device: cuda
  'max_grad_norm': 1.0,
  'max_steps': 100,
  'metric_for_best_model': None,
- 'model': '/data/user/cxu930/projects/pinn-fullstack/models/Llama-2-7b-hf',
+ 'model': '${SOURCE_ROOT}/models/Llama-2-7b-hf',
  'mp_parameters': '',
  'mul_quant_params': {'bits': 4,
                       'clip_ratio': 1.0,
@@ -181,7 +181,7 @@ Device: cuda
  'optim': <OptimizerNames.ADAMW_TORCH: 'adamw_torch'>,
  'optim_args': None,
  'optim_target_modules': None,
- 'output_dir': '/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/eval_llama2_7b_w4a4kv4_exact_eager_maskfix_acc',
+ 'output_dir': '${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/eval_llama2_7b_w4a4kv4_exact_eager_maskfix_acc',
  'overwrite_output_dir': False,
  'past_index': -1,
  'per_device_eval_batch_size': 8,
@@ -233,7 +233,7 @@ Device: cuda
  'residual_bits': 16,
  'restore_callback_states_from_checkpoint': False,
  'resume_from_checkpoint': None,
- 'resume_path': '/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/exact_llama2_7b_w4a4kv4_sdpa/model.bin',
+ 'resume_path': '${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/exact_llama2_7b_w4a4kv4_sdpa/model.bin',
  'ropek_quant_params': {'bits': 4,
                         'clip_ratio': 1.0,
                         'dynamic': True,
@@ -255,7 +255,7 @@ Device: cuda
  'rotate_post_rope': False,
  'rotate_pre_rope': False,
  'rotate_rope_perlayer': True,
- 'run_name': '/data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/eval_llama2_7b_w4a4kv4_exact_eager_maskfix_acc',
+ 'run_name': '${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/eval_llama2_7b_w4a4kv4_exact_eager_maskfix_acc',
  'save_on_each_node': False,
  'save_only_model': False,
  'save_qmodel_path': None,
@@ -354,12 +354,12 @@ Device: cuda
                          'mse': True,
                          'sym': True}}
 2026-07-14 00:11:53.914 | DEBUG    | quant._get_args:parse_args:190 - ------------------------------------------------------------
-2026-07-14 00:12:37.222 | INFO     | __main__:main:79 - resume from /data/user/cxu930/projects/pinn-fullstack/ae-exp/results/2026-07-13_214407_scope_ae/table5/exact_llama2_7b_w4a4kv4_sdpa/model.bin
-2026-07-14 00:13:50.083 | INFO     | utils.eval_utils:evaluator:165 - 
+2026-07-14 00:12:37.222 | INFO     | __main__:main:79 - resume from ${BUNDLE_ROOT}/results/2026-07-13_214407_scope_ae/table5/exact_llama2_7b_w4a4kv4_sdpa/model.bin
+2026-07-14 00:13:50.083 | INFO     | utils.eval_utils:evaluator:165 -
 WIKITEXT2 PPL: 5.946
 2026-07-14 00:13:50.084 | INFO     | __main__:main:124 - After Dynamic Act&Weight Quant PPL:5.946303844451904
 2026-07-14 00:13:50.239 | INFO     | utils.memory_utils:cleanup_memory:62 - GPU memory (from eval_tasks): 7.95 -> 2.91 GB (-5.04 GB)
-2026-07-14 00:27:41.181 | INFO     | __main__:eval_tasks:161 - 
+2026-07-14 00:27:41.181 | INFO     | __main__:eval_tasks:161 -
 |    Tasks     |Version|Filter|n-shot|  Metric  |   |Value |   |Stderr|
 |--------------|-------|------|-----:|----------|---|-----:|---|-----:|
 |arc_challenge |      1|none  |     0|acc       |↑  |0.4078|±  |0.0144|

@@ -1,6 +1,6 @@
 {
   "experiment_name": "scope_paper_tpuv6e_attention",
-  "experiment_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/llmcompass_all_in_one/configs/paper_tpuv6e.json",
+  "experiment_config_path": "${BUNDLE_ROOT}/experiments/llmcompass_all_in_one/configs/paper_tpuv6e.json",
   "compile_mode": "heuristic-TPU",
   "batch_size": 1,
   "jobs": 8,
@@ -40,13 +40,13 @@
     {
       "name": "tpuv6e_fp16",
       "label": "TPUv6e FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/LLMCompass/configs/ours/TPUv6e.json",
+      "system_config_path": "${BUNDLE_ROOT}/LLMCompass/configs/ours/TPUv6e.json",
       "data_type_name": "fp16"
     },
     {
       "name": "tpuv6e_int8",
       "label": "TPUv6e INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/LLMCompass/configs/ours/TPUv6e.json",
+      "system_config_path": "${BUNDLE_ROOT}/LLMCompass/configs/ours/TPUv6e.json",
       "data_type_name": "int8"
     }
   ],

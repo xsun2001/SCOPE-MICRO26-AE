@@ -5,7 +5,7 @@
   "system_config": "LLMCompass/configs/ours/B200.json",
   "system_name": "NVIDIA Blackwell B200 x4 single-card",
   "data_type": "int8",
-  "source_attention_dir": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/b200/gpu_conv",
+  "source_attention_dir": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/b200/gpu_conv",
   "lengths": [
     2048,
     4096,

@@ -21,7 +21,7 @@ torch_dtype="${TORCH_DTYPE:-bfloat16}"
 task_group="${TASK_GROUP:-group1}"
 
 cmd=(
-    python evaluation/lmeval/lmeval.py
+    "${PYTHON_BIN:-python3}" evaluation/lmeval/lmeval.py
     --model "${model}"
     --dtype "${torch_dtype}"
     --task_group "${task_group}"
@@ -127,7 +127,7 @@ fi
 set -e
 
 if [[ -f "${result_dir}/metrics.json" && -f "${result_dir}/config.json" ]]; then
-    python evaluation/write_run_summary.py --result_dir "${result_dir}"
+    "${PYTHON_BIN:-python3}" evaluation/write_run_summary.py --result_dir "${result_dir}"
 fi
 
 exit "${run_status}"

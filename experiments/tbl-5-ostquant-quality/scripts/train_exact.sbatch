@@ -22,6 +22,7 @@ QUANT_KEY=${QUANT_KEY:?QUANT_KEY must be set}
 ATTN_SUFFIX=${ATTN_SUFFIX:-sdpa}
 USE_SDPA=${USE_SDPA:-True}
 LM_EVAL=${LM_EVAL:-True}
+TABLE5_TASKS=(arc_easy hellaswag piqa winogrande)
 MAX_STEPS=${MAX_STEPS:-100}
 
 case "$MODEL_KEY" in
@@ -61,6 +62,7 @@ COMMON_ARGS=(
   --smooth_norm_linear=True
   --bf16=True
   --lm_eval="$LM_EVAL"
+  --tasks "${TABLE5_TASKS[@]}"
   --use_sdpa="$USE_SDPA"
   --per_device_train_batch_size=4
   --gradient_accumulation_steps=8

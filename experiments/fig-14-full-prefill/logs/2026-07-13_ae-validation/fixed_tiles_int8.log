@@ -1,4 +1,4 @@
-b200_int8: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/b200_int8
-awsv4_int8: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/awsv4_int8
-tpuv6e_int8: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/tpuv6e_int8
-b300_int8: /home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/b300_int8
+b200_int8: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/b200_int8
+awsv4_int8: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/awsv4_int8
+tpuv6e_int8: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/tpuv6e_int8
+b300_int8: ${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_int8/b300_int8

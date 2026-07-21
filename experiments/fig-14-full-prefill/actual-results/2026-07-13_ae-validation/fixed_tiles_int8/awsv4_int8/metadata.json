@@ -5,7 +5,7 @@
   "system_config": "LLMCompass/configs/ours/AWSv4.json",
   "system_name": "AWS NeuronCore v4 (official per-chip model) single-card",
   "data_type": "int8",
-  "source_attention_dir": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/awsv4/aws_conv",
+  "source_attention_dir": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/awsv4/aws_conv",
   "lengths": [
     2048,
     4096,

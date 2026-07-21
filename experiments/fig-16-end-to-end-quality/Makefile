@@ -3,6 +3,7 @@ EXP_ROOT := $(CURDIR)
 EXP_SLUG := fig-16-end-to-end-quality
 RESULT_DIR := $(RUN_ROOT)/$(EXP_SLUG)
 PACKAGED_DIR := actual-results/$(PACKAGED_GPU_RUN_ID)
+EVIDENCE_DIR := $(RUN_ROOT)/evidence/$(EXP_SLUG)
 TASKS := $(shell expr $$(wc -l < data/manifest.tsv) - 1)
 SLOTS := $(shell n=$(WORKERS); t=$(TASKS); [[ $$n -gt $$t ]] && n=$$t; echo $$n)
 ARRAY_MAX := $(shell expr $(SLOTS) - 1)
@@ -10,8 +11,8 @@ ARRAY_MAX := $(shell expr $(SLOTS) - 1)
 .PHONY: evidence run collect generate reproduce
 evidence:
 	@$(PYTHON) scripts/validate_actual.py --actual $(PACKAGED_DIR)/analysis
-	@$(PYTHON) scripts/comparison_to_plot.py --comparison $(PACKAGED_DIR)/analysis/comparison.csv --template expected-results/paper_figure16.csv --output $(PACKAGED_DIR)/generated/actual_plot.csv
-	@FIG16_INPUT="$(EXP_ROOT)/$(PACKAGED_DIR)/generated/actual_plot.csv" FIG16_OUTPUT_DIR="$(EXP_ROOT)/$(PACKAGED_DIR)/generated" $(PYTHON) scripts/generate_figure.py --merged-triptych-only --variants exact,pinn8,pinn16,pinn32 --stem figure16
+	@$(PYTHON) scripts/comparison_to_plot.py --comparison $(PACKAGED_DIR)/analysis/comparison.csv --template expected-results/paper_figure16.csv --output $(EVIDENCE_DIR)/generated/actual_plot.csv
+	@FIG16_INPUT="$(EVIDENCE_DIR)/generated/actual_plot.csv" FIG16_OUTPUT_DIR="$(EVIDENCE_DIR)/generated" $(PYTHON) scripts/generate_figure.py --merged-triptych-only --variants exact,pinn8,pinn16,pinn32 --stem figure16
 run:
 	$(check-executor)
 	@mkdir -p "$(RESULT_DIR)" "$(RUN_ROOT)/slurm"

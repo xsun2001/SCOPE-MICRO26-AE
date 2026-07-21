@@ -1,9 +1,9 @@
 {
   "outputs": {
-    "b200": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b200",
-    "awsv4": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/awsv4",
-    "tpuv6e": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/tpuv6e",
-    "b300": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b300"
+    "b200": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b200",
+    "awsv4": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/awsv4",
+    "tpuv6e": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/tpuv6e",
+    "b300": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/fixed_tiles_fp16/b300"
   },
   "lengths": [
     2048,
@@ -35,8 +35,8 @@
   ],
   "use_source_rows": true,
   "source_dir_overrides": {
-    "b200": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/b200/gpu_conv",
-    "awsv4": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/awsv4/aws_conv",
-    "tpuv6e": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/tpuv6e/tpu_conv"
+    "b200": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/b200/gpu_conv",
+    "awsv4": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/awsv4/aws_conv",
+    "tpuv6e": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/figure13-21/tpuv6e/tpu_conv"
   }
 }

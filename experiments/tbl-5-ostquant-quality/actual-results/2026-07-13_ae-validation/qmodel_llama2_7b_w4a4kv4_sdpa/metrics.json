@@ -1,6 +1,6 @@
 {
   "lm_eval": {},
-  "model": "/data/user/cxu930/projects/pinn-fullstack/models/Llama-2-7b-hf",
+  "model": "${SOURCE_ROOT}/models/Llama-2-7b-hf",
   "ppl": 5.9417901039123535,
   "quantization": {
     "a_bits": 4,

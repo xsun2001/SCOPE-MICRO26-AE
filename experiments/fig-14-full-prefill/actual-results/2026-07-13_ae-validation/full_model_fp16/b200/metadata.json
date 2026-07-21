@@ -40,9 +40,9 @@
   "scope": "32 * one_decoder_layer + final_norm + lm_head_for_last_token",
   "common_model": "Projection/MLP/final costs use the selected system tensor/vector roofline with LLMCompass operator overheads; attention core uses the supplied attention_latency.csv.",
   "outputs": {
-    "latency_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/b200/full_model_latency.csv",
-    "speedup_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/b200/full_model_speedup.csv",
-    "summary_md": "/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/b200/summary.md"
+    "latency_csv": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/b200/full_model_latency.csv",
+    "speedup_csv": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/b200/full_model_speedup.csv",
+    "summary_md": "${BUNDLE_ROOT}/reproduced-results/2026-07-13_ae-validation/performance/full_model_fp16/b200/summary.md"
   },
   "latency_rows": [
     {

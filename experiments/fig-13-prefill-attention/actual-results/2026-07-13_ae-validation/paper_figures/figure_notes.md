@@ -1,9 +1,9 @@
 # Paper Figure Notes
 
-- GPU source suite: `/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/b200`
-- AWS source suite: `/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/awsv4`
-- TPU source suite: `/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/tpuv6e`
-- Unique source suites: `/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/b200`, `/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/tpuv6e`, `/home/CONNECT/cxu930/Documents/pinn-fullstack/ae-exp/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/awsv4`
+- GPU source suite: `${BUNDLE_ROOT}/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/b200`
+- AWS source suite: `${BUNDLE_ROOT}/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/awsv4`
+- TPU source suite: `${BUNDLE_ROOT}/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/tpuv6e`
+- Unique source suites: `${BUNDLE_ROOT}/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/b200`, `${BUNDLE_ROOT}/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/tpuv6e`, `${BUNDLE_ROOT}/experiments/fig-13-prefill-attention/actual-results/2026-07-13_ae-validation/awsv4`
 - Requested-only generation: `1`
 - Selected devices: `b200, awsv4, tpuv6e`
 - `figure_paper_requested_e2e_latency_lineary`: requested all-device 2x3 grid using baseline, FlashAttention with conversion, and CustomSA without conversion, with linear y-axis.

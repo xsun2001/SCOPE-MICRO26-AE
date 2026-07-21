@@ -1,7 +1,14 @@
 {
   "status": "pass",
-  "comparisons": 16,
-  "passed": 16,
+  "comparisons": 20,
+  "passed": 20,
+  "accuracy_tasks": [
+    "arc_easy",
+    "hellaswag",
+    "piqa",
+    "winogrande"
+  ],
+  "aggregation": "Unweighted arithmetic mean over ARC-Easy, HellaSwag, PIQA, and WinoGrande.",
   "ppl_tolerance": 0.03,
   "accuracy_tolerance_percent": 0.25
 }

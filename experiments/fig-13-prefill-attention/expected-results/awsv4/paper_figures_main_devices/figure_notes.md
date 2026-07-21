@@ -1,9 +1,9 @@
 # Paper Figure Notes
 
-- GPU source suite: `/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25`
-- AWS source suite: `/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_21-33-48`
-- TPU source suite: `/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_21-33-48`
-- Unique source suites: `/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25`, `/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_21-33-48`
+- GPU source suite: `${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25`
+- AWS source suite: `${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_21-33-48`
+- TPU source suite: `${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_21-33-48`
+- Unique source suites: `${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25`, `${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_21-33-48`
 - Requested-only generation: `1`
 - Selected devices: `b200, awsv4, tpuv6e`
 - `figure_paper_requested_e2e_latency_lineary`: requested all-device 2x3 grid using baseline, FlashAttention with conversion, and CustomSA without conversion, with linear y-axis.
