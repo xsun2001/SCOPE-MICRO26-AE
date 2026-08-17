@@ -13,7 +13,19 @@ def main() -> int:
     rows = list(csv.DictReader(args.expected.open()))
     methods = ["taylor", "frac_t", "interp", "frac_i", "linearlut", "nnlut", "tlut", "ours"]
     fields = [f"mse_{method}" for method in methods] + [f"mae_{method}" for method in methods]
-    labels = [method.upper() + " MSE" for method in methods] + [method.upper() + " MAE" for method in methods]
+    method_labels = {
+        "taylor": "Taylor",
+        "frac_t": "Frac-T",
+        "interp": "Interp",
+        "frac_i": "Frac-I",
+        "linearlut": "LinearLUT",
+        "nnlut": "NN-LUT",
+        "tlut": "T-LUT",
+        "ours": "SCNA",
+    }
+    labels = [method_labels[method] + " MSE" for method in methods] + [
+        method_labels[method] + " MAE" for method in methods
+    ]
     lines = [
         "# Table 4 — nonlinear approximation accuracy",
         "",
@@ -22,6 +34,12 @@ def main() -> int:
     ]
     for row in rows:
         lines.append("| " + row["function"] + " | " + " | ".join(row[field] for field in fields) + " |")
+    lines.extend(
+        [
+            "",
+            "SCNA values are reproduced by this artifact. Other method columns are literature reference values; please refer to their papers for baseline reproduction.",
+        ]
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("\n".join(lines) + "\n")
     print(args.output)

@@ -12,7 +12,7 @@ make evidence
 make validate
 ```
 
-`make evidence` regenerates the compact GPU-side figures/tables from bundled results and audits the packaged CPU evidence. `make validate` checks both suites: the CPU validator currently reports 68/68 checks passing, and the GPU validator checks Figure 16 (80 comparisons), Table 5 (16), Figure 17 (36), Figure 20 (18), and the evidence-only Table 4 status.
+`make evidence` regenerates compact GPU-side figures/tables under ignored staging directories and audits the packaged CPU evidence without modifying tracked files. `make validate` checks both suites: the CPU validator currently reports 68/68 checks passing, Table 3 additionally recomputes 36 statistics from 720 raw H100 samples, and the GPU validator recomputes Figure 16 (80 comparisons), Table 5 (20), Figure 17 (36), Figure 20 (18), and all 11 Table 4 SCNA rows.
 
 `make all` is the safe alias for evidence plus validation; it does not launch long CPU simulations or GPU jobs.
 
@@ -35,7 +35,7 @@ make reproduce-gpu EXECUTOR=local WORKERS=1  # already allocated GPU
 
 Fresh GPU runs require an NVIDIA CUDA GPU from the Ampere generation or newer. The validated reference is an 80 GB H100 (Hopper), but H100 is not an architectural requirement: A100 80 GB (Ampere), H100/H200 (Hopper), and B100/B200 (Blackwell) are suitable when the installed PyTorch/CUDA stack supports the device. Figure 16 and Table 5 should be given at least 80 GB of device memory; Figures 17 and 20 need at least 16 GB. The memory thresholds, rather than the H100 model name, are the relevant limits.
 
-Run both suites with `make reproduce`. Table 4 remains evidence-only because the shared evaluation grid and raw common-protocol baseline outputs are unavailable.
+Run both suites with `make reproduce`.
 
 ## Experiment index
 
@@ -48,25 +48,50 @@ Run both suites with `make reproduce`. Table 4 remains evidence-only because the
 | Figure 17 | `experiments/fig-17-neuron-scalability` | NVIDIA CUDA GPU (Ampere or newer), 16 GB or more |
 | Figure 20 | `experiments/fig-20-shape-constraints` | NVIDIA CUDA GPU (Ampere or newer), 16 GB or more |
 | Table 5 | `experiments/tbl-5-ostquant-quality` | NVIDIA CUDA GPU (Ampere or newer), 80 GB or more |
-| Table 4 | `experiments/tbl-4-function-approximation-accuracy` | evidence-only |
+| Table 4 | `experiments/tbl-4-function-approximation-accuracy` | SCNA accuracy reproduction on CPU; other methods are literature references |
 
 Every experiment stores bundled measurements under `actual-results/<validated-run>/` and paper targets under `expected-results/`. Fresh CPU runs use the same timestamped experiment directories. Fresh GPU runs are written under the ignored `runs/<RUN_ID>/` tree because Table 5 intermediates can exceed 60 GB.
 
 ## Expected runtimes
 
-These reference times exclude initial dependency, model, and dataset downloads and any Slurm queue delay. The CPU reference host is a dual-socket AMD EPYC 9654 machine, but `JOBS=8` restricts the artifact to eight workers. GPU-hours are measured H100 allocation or task times; wall times are shown only where directly available. Figure 16 used 16 one-GPU workers, while the documented Table 5 workflow uses up to 15.
+Expected execution time on our hardware is:
 
-| Scope | Reference time |
-| --- | ---: |
-| `make evidence && make validate` | about 15 seconds on the reference CPU |
-| `make reproduce-cpu` | 37 minutes measured with `JOBS=8` |
-| Figure 16 | 18.80 GPU-hours measured (2:26:32 wall time with 16 H100 GPUs) |
-| Figure 17 | 25.74 GPU-hours measured for its 36 required tasks |
-| Figure 20 | 12.51 GPU-hours measured for its 18 required tasks |
-| Table 5 | 14.6 GPU-hours measured (about 3 hours with 15 H100 GPUs) |
-| Complete GPU suite | 71.66 GPU-hours when targets run separately; 65.37 with Figure 17/20 overlap reused |
+- About 15 seconds for `make evidence && make validate` on the reference CPU.
+- 37 minutes for `make reproduce-cpu` on a dual-socket AMD EPYC 9654 host with `JOBS=8`.
+- 2 hours 27 minutes for Figure 16 with 16 H100 GPUs.
+- About 2 hours for Figure 17 with 16 H100 GPUs and about 1 hour for Figure 20 with 16 H100 GPUs, estimated from measured task GPU-hours.
+- About 3 hours for Table 5 with 15 H100 GPUs.
+- About 5 hours for the complete GPU suite when up to 16 H100 GPUs are shared across concurrent experiments.
 
-The CPU measurement came from a clean extracted bundle with the Python and sbt dependency caches already populated; Figure 13 accounts for about 33 of the 37 minutes. Allow additional time for `make setup` and a cold sbt cache. Figure 16 comes from Slurm accounting for job `410219`. Figures 17 and 20 are required-task sums extracted from timestamped worker logs and Slurm allocation boundaries for shared job `410238`; their task sets overlap by nine runs totaling 6.29 GPU-hours. The original 72-task shared sweep consumed 51.33 GPU-hours and 3:51:36 wall time with 16 H100 GPUs, but included 27 runs outside both artifact targets. Because the two required subsets were not scheduled separately, they have no directly measured standalone wall times. Table 5 comes from the included job timestamps. On another CPU or GPU generation, use these measurements as planning baselines rather than assuming exact linear scaling from core count or peak FLOP/s.
+These times exclude initial setup, downloads, and scheduler queue delay.
+
+## Concurrent CPU/GPU execution
+
+The Make dependency graph supports concurrent independent experiments. On a CPU host, `-j` controls concurrent experiment targets and `JOBS` controls workers inside each target:
+
+```bash
+make -j2 reproduce-cpu JOBS=4
+```
+
+Choose `-j × JOBS` conservatively for the available CPU and memory. The command above uses at most roughly eight CPU workers while preserving dependencies such as Figure 13 before Figures 14 and 21.
+
+With Slurm and up to 16 GPUs, run four independent GPU targets concurrently with four one-GPU array workers each:
+
+```bash
+make -j4 reproduce-gpu EXECUTOR=slurm WORKERS=4
+```
+
+The maximum simultaneous GPU allocation is approximately the number of concurrent GPU targets times `WORKERS`; keep that product within the allocation. To give one target all 16 GPUs, use `make fig-16 WORKERS=16` (and similarly for the other GPU targets).
+
+On an already allocated multi-GPU host, bind each local target to a different GPU because local mode uses one GPU per target:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 make fig-16 EXECUTOR=local WORKERS=1 &
+CUDA_VISIBLE_DEVICES=1 make tbl-5 EXECUTOR=local WORKERS=1 &
+CUDA_VISIBLE_DEVICES=2 make fig-17 EXECUTOR=local WORKERS=1 &
+CUDA_VISIBLE_DEVICES=3 make fig-20 EXECUTOR=local WORKERS=1 &
+wait
+```
 
 ## Shared source layout
 
@@ -86,7 +111,7 @@ Figure 13 compares FlashAttention with INT8 softmax conversion against SCOPE wit
 
 Figure 18 extracts 112 filtered native Synopsys reports and fits constant per-PE area/power values across completed array sizes. Figure 19 is incremental overhead over a 32x32 baseline systolic array, calculated from the Figure 18 per-PE fit; it is not presented as completed full 32x32 synthesis for every design.
 
-The GPU workflows preserve their documented protocol limitations and provenance. In particular, Figure 16's full-precision-labeled run uses BF16, and Table 5 includes only the corrected causal-mask lineage.
+Figure 16 and Table 5 use the same model-level quality protocol: WikiText-2 perplexity plus the unweighted mean accuracy of ARC-Easy, HellaSwag, PIQA, and WinoGrande. Table 5 retains any additional raw task outputs only as diagnostics; they are not included in its reported accuracy.
 
 ## Hardware evidence without Synopsys
 

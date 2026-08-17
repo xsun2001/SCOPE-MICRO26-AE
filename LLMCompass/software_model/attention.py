@@ -9,7 +9,9 @@ import os
 
 
 INT_SOFTMAX_MICROBENCHMARK = {
-    # H100 Triton/CUDA measurements from other-int-softmax.md.
+    # Paper-era H100 Triton/CUDA medians archived in Table 3's
+    # expected-results/other-int-softmax.md. The runnable kernels, fresh raw
+    # repetitions, and a statistics validator are packaged with that experiment.
     # Ratios are relative to the fused Triton online FP softmax latency.
     2048: {
         "rows": 32768,

@@ -1,6 +1,6 @@
 {
   "outputs": {
-    "h100_int8": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-18_05-01-54_attention_int_softmax_h100_int8_512k/h100_int8"
+    "h100_int8": "${SOURCE_ROOT}/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-18_05-01-54_attention_int_softmax_h100_int8_512k/h100_int8"
   },
   "lengths": [
     2048,

@@ -1,6 +1,6 @@
 {
   "experiment_name": "prefill_attention_a100_h100_b200_sweep",
-  "experiment_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_prefill_attention_a100_h100_b200/configs/default.json",
+  "experiment_config_path": "${SOURCE_ROOT}/experiments/llmcompass_prefill_attention_a100_h100_b200/configs/default.json",
   "compile_mode": "heuristic-GPU",
   "batch_size": 1,
   "jobs": 6,
@@ -47,7 +47,7 @@
     {
       "name": "a100_fp16",
       "label": "A100 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/GA100.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/GA100.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "NVIDIA A100(80GB)x4 single-card",
@@ -129,7 +129,7 @@
     {
       "name": "a100_int8",
       "label": "A100 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/GA100.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/GA100.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "NVIDIA A100(80GB)x4 single-card",
@@ -211,7 +211,7 @@
     {
       "name": "h100_fp16",
       "label": "H100 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/H100_fp16.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/H100_fp16.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "NVIDIA H100 SXM x4 single-card",
@@ -292,7 +292,7 @@
     {
       "name": "h100_int8",
       "label": "H100 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/H100_fp16.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/H100_fp16.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "NVIDIA H100 SXM x4 single-card",
@@ -373,7 +373,7 @@
     {
       "name": "b200_fp16",
       "label": "B200 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/B200_fp16.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/B200_fp16.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "NVIDIA Blackwell B200 x4 single-card",
@@ -455,7 +455,7 @@
     {
       "name": "b200_int8",
       "label": "B200 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/B200_fp16.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/B200_fp16.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "NVIDIA Blackwell B200 x4 single-card",
@@ -536,11 +536,11 @@
     }
   ],
   "outputs": {
-    "output_dir": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv",
-    "attention_latency_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/attention_latency.csv",
-    "case_speedups_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/case_speedups.csv",
-    "summary_md": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/summary.md",
-    "cache_stats_json": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/cache_stats.json"
+    "output_dir": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv",
+    "attention_latency_csv": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/attention_latency.csv",
+    "case_speedups_csv": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/case_speedups.csv",
+    "summary_md": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/summary.md",
+    "cache_stats_json": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-05_14-34-25/gpu_conv/cache_stats.json"
   },
   "cache_stats": {
     "aggregated": {

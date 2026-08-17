@@ -1,6 +1,6 @@
 {
   "experiment_name": "prefill_attention_aws_v2_v4_sweep",
-  "experiment_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/configs/aws_default.json",
+  "experiment_config_path": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/configs/aws_default.json",
   "compile_mode": "heuristic-TPU-new",
   "batch_size": 1,
   "jobs": 24,
@@ -45,37 +45,37 @@
     {
       "name": "awsv2_fp16",
       "label": "AWSv2 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/AWSv2.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/AWSv2.json",
       "data_type_name": "fp16"
     },
     {
       "name": "awsv2_int8",
       "label": "AWSv2 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/AWSv2.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/AWSv2.json",
       "data_type_name": "int8"
     },
     {
       "name": "awsv3_fp16",
       "label": "AWSv3 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/AWSv3.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/AWSv3.json",
       "data_type_name": "fp16"
     },
     {
       "name": "awsv3_int8",
       "label": "AWSv3 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/AWSv3.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/AWSv3.json",
       "data_type_name": "int8"
     },
     {
       "name": "awsv4_fp16",
       "label": "AWSv4 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/AWSv4.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/AWSv4.json",
       "data_type_name": "fp16"
     },
     {
       "name": "awsv4_int8",
       "label": "AWSv4 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/AWSv4.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/AWSv4.json",
       "data_type_name": "int8"
     }
   ],

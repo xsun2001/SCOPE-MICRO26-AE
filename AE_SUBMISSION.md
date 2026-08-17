@@ -9,15 +9,14 @@ This unified artifact contains the paper's CPU performance and hardware experime
 3. **Figure 14 — Llama 3 8B full-prefill performance.** Reproduces modeled full-prefill results through 512K context. At 512K, the FP16 speedups on AWSv4, B200, and TPUv6e are 1.329x, 1.341x, and 1.681x; the INT8 speedups are 1.28x, 2.69x, and 1.91x.
 4. **Figure 15 — B300 sensitivity.** Reproduces the doubled-SFU-throughput study. At 512K, the attention/full-prefill speedups are 1.09x/1.08x for FP16 and 1.94x/1.90x for INT8.
 5. **Figure 16 — End-to-end model quality.** Reproduces WikiText-2 perplexity and four-task zero-shot mean accuracy for OPT-6.7B, Llama-2-7B, Llama-3-8B, Qwen2.5-7B, and Qwen3-8B. It covers exact and SCNA-8/16/32 variants under full-precision and INT8 conditions. The bundled validation contains 80/80 matching comparisons.
-6. **Figure 17 — Neuron-count scalability.** Reproduces best MSE for 4, 8, 16, and 32 neurons on nine nonlinear functions. The bundled validation contains 36/36 matching configurations and a 97.2x--2837.8x gain from 4 to 32 neurons. The measured Exp exception is disclosed in the experiment README.
+6. **Figure 17 — Neuron-count scalability.** Reproduces MSE for 4, 8, 16, and 32 neurons on nine nonlinear functions. The bundled validation contains 36/36 matching configurations and a 97.2x--2837.8x gain from 4 to 32 neurons.
 7. **Figure 18 — Per-PE area and power.** Extracts 112 filtered native synthesis report sets, computes `whole_array / N^2`, fits per-PE values across completed array sizes, checks the paper-rounded CSV, and redraws the figure. SCOPE requires 1.09--1.44x baseline area and 1.18--1.34x baseline power per PE.
 8. **Figure 19 — 32x32 hardware comparison.** Reproduces throughput-normalized incremental overhead over a 32x32 baseline array from the verified Figure 18 fit and bundled literature values. SCNA-8 provides geometric-mean reductions of 12.8x in area and 9.5x in power relative to the plotted competitors. Large-array values are explicitly calculated from fitted per-PE results rather than presented as completed full 32x32 synthesis runs.
 9. **Figure 20 — Effect of shape constraints.** Reproduces the width-16 constrained-versus-unconstrained ablation on nine functions. The bundled validation contains 18/18 matching configurations and a 47.1x--2264.3x MSE improvement.
 10. **Figure 21 — Scale-conversion fusion.** Reproduces the INT8 scale-fusion ablation. The speedup reaches 1.11x on B200, 1.97x on AWSv4, and 1.46x on TPUv6e at the longest reported context for each device.
-11. **Table 5 — OSTQuant low-bit model quality.** Reproduces perplexity and nine-task mean accuracy for Llama-2-7B and Llama-3-8B under W6A6 and W4A4, comparing OSTQuant with SCNA-8/16/32. The bundled validation contains 16/16 matching configurations.
-12. **RTL generation and synthesis-report audit.** Regenerates four current N=8 SCOPE/Pinnacle SystemVerilog configurations from Chisel and audits the archived Design Compiler area, power, and timing reports without requiring a Synopsys license.
-
-**Table 4 is included as an evidence audit and is not claimed as freshly reproducible.** The original workspace does not contain the shared evaluation grid, all raw baseline outputs, and a unified common-protocol harness needed to rerun every method.
+11. **Table 4 — Nonlinear approximation accuracy.** Reproduces our SCNA accuracy for 11 nonlinear functions. The other method columns are literature reference values; please refer to their papers for baseline reproduction.
+12. **Table 5 — OSTQuant low-bit model quality.** Reproduces perplexity and four-task mean accuracy for Llama-2-7B and Llama-3-8B under W6A6 and W4A4, comparing OSTQuant, SCNA-8/16/32, and the FP16 baseline. The bundled validation contains 20/20 matching table entries.
+13. **RTL generation and synthesis-report audit.** Regenerates four current N=8 SCOPE/Pinnacle SystemVerilog configurations from Chisel and audits the archived Design Compiler area, power, and timing reports without requiring a Synopsys license.
 
 Review the bundled evidence without a GPU or proprietary tools with:
 
@@ -31,19 +30,24 @@ Fresh CPU and GPU execution is separated into `make reproduce-cpu` and `make rep
 
 ## Hardware Dependencies
 
-| Evaluation scope | Accelerator | CPU | Host memory | Free storage |
-| --- | --- | ---: | ---: | ---: |
-| Bundled evidence and result validation | None | 2 cores | 8 GB | 5 GB plus dependency caches |
-| Fresh CPU performance, report analysis, and RTL | None | 8 cores | 16 GB | 20 GB |
-| Fresh Figure 16 | 1 NVIDIA CUDA GPU (Ampere or newer) with at least 80 GB | 8 cores | 96 GB | Model and dataset caches |
-| Fresh Table 5 | 1 NVIDIA CUDA GPU (Ampere or newer) with at least 80 GB | 8 cores | 192 GB | About 200 GB including models and approximately 60 GB of generated intermediates |
-| Fresh Figures 17 and 20 | 1 NVIDIA CUDA GPU (Ampere or newer) with at least 16 GB | 8 cores | 16 GB | Less than 10 GB beyond the environment |
+- **Bundled evidence and validation:** no accelerator, 2 CPU cores, 8 GB host memory, and 5 GB free storage plus dependency caches.
+- **Fresh CPU suite:** no accelerator, 8 CPU cores, 16 GB host memory, and 20 GB free storage. The modeled B200/B300/H100/AWSv4/TPUv6e results do not require those physical devices.
+- **Fresh Figure 16:** NVIDIA CUDA GPU (Ampere or newer) with at least 80 GB device memory, 8 CPU cores, and 96 GB host memory.
+- **Fresh Table 5:** NVIDIA CUDA GPU (Ampere or newer) with at least 80 GB device memory, 8 CPU cores, 192 GB host memory, and about 200 GB free storage including generated intermediates.
+- **Fresh Figures 17 and 20:** NVIDIA CUDA GPU (Ampere or newer) with at least 16 GB device memory, 8 CPU cores, 16 GB host memory, and less than 10 GB additional storage.
 
-A 32-core CPU host with 64 GB memory is recommended for faster CPU reproduction. CPU Makefiles use at most eight workers by default and accept `JOBS=<n>`. A clean extracted-bundle run of `make reproduce-cpu` took 2,219 seconds (37 minutes) with `JOBS=8` on the dual-socket AMD EPYC 9654 reference host; Figure 13 accounted for about 33 minutes. The Python and sbt dependency caches were already populated, so first-time setup is additional. The B200, B300, H100, AWSv4, and TPUv6e performance results are obtained from bundled analytical/cycle-level models; those physical accelerators are not required.
+Expected execution time on our hardware is:
 
-The validated full GPU configuration is one NVIDIA H100 80 GB (Hopper), 8 CPU cores, 192 GB host memory, and about 200 GB of free storage. H100 is the reference platform rather than a device restriction. A100 80 GB (Ampere), H100/H200 (Hopper), and B100/B200 (Blackwell) are suitable when the installed PyTorch/CUDA stack supports the device and the stated memory capacity is available. Slurm is optional: `EXECUTOR=local WORKERS=1` runs on an already allocated GPU. No FPGA board, microcontroller, or custom accelerator is required.
+- About 15 seconds for evidence validation.
+- 37 minutes for the CPU suite on a dual-socket AMD EPYC 9654 host with `JOBS=8`.
+- 2 hours 27 minutes for Figure 16 with 16 H100 GPUs.
+- About 2 hours for Figure 17 and 1 hour for Figure 20 with 16 H100 GPUs.
+- About 3 hours for Table 5 with 15 H100 GPUs.
+- About 5 hours for the complete GPU suite with up to 16 H100 GPUs shared across concurrent experiments.
 
-Slurm accounting and timestamped worker logs measure 18.80 H100 GPU-hours for Figure 16 (job `410219`; 2:26:32 wall time with 16 one-GPU workers), 25.74 H100 GPU-hours for Figure 17's 36 required tasks, and 12.51 H100 GPU-hours for Figure 20's 18 required tasks. The Figure 17 and Figure 20 values are subsets extracted from shared sweep job `410238`; the subsets overlap by nine width-16 constrained runs totaling 6.29 H100 GPU-hours. Running the current figure targets separately and adding Table 5's measured 14.6 H100 GPU-hours totals 71.66 H100 GPU-hours; reusing the overlapping runs reduces that total to 65.37 H100 GPU-hours. The original 72-task shared sweep consumed 51.33 H100 GPU-hours and 3:51:36 wall time with 16 one-GPU workers, but included 27 runs not required by either artifact target. These measurements exclude model/dataset downloads and queue delay. Because the required Figure 17 and Figure 20 subsets were not scheduled as separate jobs, no standalone wall time is reported for either subset.
+Setup, downloads, and scheduler queue time are additional.
+
+Other setups can use `JOBS=<n>` and `WORKERS=<n>` to match available CPU/GPU resources. Detailed local and concurrent execution instructions are in `README.md`. Slurm is optional, and no FPGA board, microcontroller, or custom accelerator is required.
 
 ## Software Dependencies
 
@@ -79,7 +83,6 @@ The weights are not redistributed. Reviewers must obtain them and accept applica
 
 - WikiText-2 raw (`wikitext-2-raw-v1`) for perplexity, OSTQuant training, calibration, and evaluation.
 - `mit-han-lab/pile-val-backup` for Figure 16 activation calibration.
-- ARC-Easy, HellaSwag, PIQA, and WinoGrande for Figure 16.
-- ARC-Challenge, ARC-Easy, BoolQ, HellaSwag, LAMBADA OpenAI, OpenBookQA, PIQA, Social IQA, and WinoGrande for Table 5.
+- ARC-Easy, HellaSwag, PIQA, and WinoGrande for Figures 16 and Table 5.
 
 Figures 17 and 20 generate samples synthetically and require no external dataset. Table 5's large `model.bin` and `qmodel.pt` intermediates are omitted; they can be regenerated or supplied through `TABLE5_CHECKPOINT_SOURCE`. Compact actual results, expected paper values, synthesis evidence, and `paper/SCOPE-revision.pdf` are included.

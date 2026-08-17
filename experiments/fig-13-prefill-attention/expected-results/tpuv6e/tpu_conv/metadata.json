@@ -1,6 +1,6 @@
 {
   "experiment_name": "prefill_attention_tpu_v3_v6_sweep",
-  "experiment_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_prefill_attention_tpu_v3_v6/configs/default.json",
+  "experiment_config_path": "${SOURCE_ROOT}/experiments/llmcompass_prefill_attention_tpu_v3_v6/configs/default.json",
   "compile_mode": "heuristic-TPU",
   "batch_size": 1,
   "jobs": 10,
@@ -47,7 +47,7 @@
     {
       "name": "tpuv3_fp16",
       "label": "TPUv3 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv3.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv3.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "Google TPU v3 (official per-chip model) single-card",
@@ -128,7 +128,7 @@
     {
       "name": "tpuv3_int8",
       "label": "TPUv3 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv3.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv3.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "Google TPU v3 (official per-chip model) single-card",
@@ -209,7 +209,7 @@
     {
       "name": "tpuv4_fp16",
       "label": "TPUv4 FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv4.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv4.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "Google TPU v4 (official per-chip model) single-card",
@@ -290,7 +290,7 @@
     {
       "name": "tpuv4_int8",
       "label": "TPUv4 INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv4.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv4.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "Google TPU v4 (official per-chip model) single-card",
@@ -371,7 +371,7 @@
     {
       "name": "tpuv5e_fp16",
       "label": "TPUv5e FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv5e.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv5e.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "Google TPU v5e (official per-chip model) single-card",
@@ -452,7 +452,7 @@
     {
       "name": "tpuv5e_int8",
       "label": "TPUv5e INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv5e.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv5e.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "Google TPU v5e (official per-chip model) single-card",
@@ -533,7 +533,7 @@
     {
       "name": "tpuv5p_fp16",
       "label": "TPUv5p FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv5p.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv5p.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "Google TPU v5p (official per-chip model) single-card",
@@ -614,7 +614,7 @@
     {
       "name": "tpuv5p_int8",
       "label": "TPUv5p INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv5p.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv5p.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "Google TPU v5p (official per-chip model) single-card",
@@ -695,7 +695,7 @@
     {
       "name": "tpuv6e_fp16",
       "label": "TPUv6e FP16",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv6e.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv6e.json",
       "data_type": "fp16",
       "resolved_specs": {
         "name": "Google TPU v6e (official per-chip model) single-card",
@@ -776,7 +776,7 @@
     {
       "name": "tpuv6e_int8",
       "label": "TPUv6e INT8",
-      "system_config_path": "/home/CONNECT/cxu930/Documents/pinn-fullstack/LLMCompass/configs/ours/TPUv6e.json",
+      "system_config_path": "${SOURCE_ROOT}/LLMCompass/configs/ours/TPUv6e.json",
       "data_type": "int8",
       "resolved_specs": {
         "name": "Google TPU v6e (official per-chip model) single-card",
@@ -856,11 +856,11 @@
     }
   ],
   "outputs": {
-    "output_dir": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv",
-    "attention_latency_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/attention_latency.csv",
-    "case_speedups_csv": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/case_speedups.csv",
-    "summary_md": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/summary.md",
-    "cache_stats_json": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/cache_stats.json"
+    "output_dir": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv",
+    "attention_latency_csv": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/attention_latency.csv",
+    "case_speedups_csv": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/case_speedups.csv",
+    "summary_md": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/summary.md",
+    "cache_stats_json": "${SOURCE_ROOT}/experiments/llmcompass_all_in_one/results/2026-04-06_19-51-10/tpu_conv/cache_stats.json"
   },
   "cache_stats": {
     "aggregated": {

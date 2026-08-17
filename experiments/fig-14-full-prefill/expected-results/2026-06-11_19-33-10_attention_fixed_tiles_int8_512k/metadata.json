@@ -1,9 +1,9 @@
 {
   "outputs": {
-    "b300_int8": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/b300_int8",
-    "b200_int8": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/b200_int8",
-    "awsv4_int8": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/awsv4_int8",
-    "tpuv6e_int8": "/home/CONNECT/cxu930/Documents/pinn-fullstack/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/tpuv6e_int8"
+    "b300_int8": "${SOURCE_ROOT}/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/b300_int8",
+    "b200_int8": "${SOURCE_ROOT}/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/b200_int8",
+    "awsv4_int8": "${SOURCE_ROOT}/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/awsv4_int8",
+    "tpuv6e_int8": "${SOURCE_ROOT}/experiments/llmcompass_llama3_8b_full_model_attention/results/2026-06-11_19-33-10_attention_fixed_tiles_int8_512k/tpuv6e_int8"
   },
   "lengths": [
     2048,

@@ -8,6 +8,7 @@
 .vscode/
 .DS_Store
 /cache/
+/OSTQuant/cache/
 /runs/
 /models/
 config/local.env

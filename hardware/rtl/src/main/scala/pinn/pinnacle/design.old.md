@@ -1,6 +1,6 @@
 # PINNACLE Systolic Array Design
 
-This note documents the current implementation in [`sa.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/pinnacle/sa.scala), following [`design.template.md`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/design.template.md).
+This note documents the current implementation in [`sa.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/pinnacle/sa.scala), following [`design.template.md`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/design.template.md).
 
 The file contains three layers:
 
@@ -10,7 +10,7 @@ The file contains three layers:
 
 ## What the difference vs classical SA
 
-Compared with [`rtl/src/main/scala/pinn/classical/sa.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/main/scala/pinn/classical/sa.scala), the PINNACLE design keeps the original weight-stationary GEMM path but adds a second datapath for evaluating
+Compared with [`rtl/src/main/scala/pinn/classical/sa.scala`](${SOURCE_ROOT}/rtl/src/main/scala/pinn/classical/sa.scala), the PINNACLE design keeps the original weight-stationary GEMM path but adds a second datapath for evaluating
 
 $$
 f(x) = \sum_{i=0}^{H-1} \mathrm{ReLU}(w_i x + b_i)
@@ -503,7 +503,7 @@ The main pipeline overlaps are:
 
 ### Tile latency
 
-The directed testbench [`PinnacleAttentionTileTest.scala`](/data/user/cxu930/projects/pinn-fullstack/rtl/src/test/scala/pinn/PinnacleAttentionTileTest.scala) checks the exact `done` latency:
+The directed testbench [`PinnacleAttentionTileTest.scala`](${SOURCE_ROOT}/rtl/src/test/scala/pinn/PinnacleAttentionTileTest.scala) checks the exact `done` latency:
 
 $$
 T_{\text{tile}} = 16N + 3 \cdot \text{stripHeight} + 8 + \delta_{\text{full}} + (2 - \text{stripCount})(N + 1)
