@@ -1,0 +1,172 @@
+% Artifact appendix for SCOPE, based on ae-template.tex (V20240722).
+\documentclass{sigplanconf}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\begin{document}
+
+\special{papersize=8.5in,11in}
+
+\appendix
+\section{Artifact Appendix}
+\small
+
+\subsection{Abstract}
+
+The SCOPE artifact contains the software models, accuracy experiments, RTL,
+synthesis reports, plotting scripts, and compact measurements needed to
+evaluate the paper.  It reproduces Tables~3--5 and Figures~13--21, including
+CPU-modeled accelerator performance, GPU model quality and nonlinear
+approximation accuracy, and area/power results extracted from native synthesis
+reports.  A hardware-free reviewer path regenerates the submitted evidence and
+independently validates it.  Fresh CPU, GPU, RTL, and synthesis workflows are
+also included.
+
+\subsection{Artifact check-list (meta-information)}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Algorithms/programs:} The artifact includes SCOPE/SCNA
+    approximation, LLMCompass, SCALE-Sim, OSTQuant, PyTorch, Chisel RTL, and
+    evidence validators.
+  \item \textbf{Compilation/transformations:} The Python and Cython programs
+    run directly after installation.  The optional RTL workflow uses sbt,
+    Scala, and Chisel to elaborate SystemVerilog.
+  \item \textbf{Models/data:} The model set comprises OPT-6.7B, Llama-2-7B,
+    Llama-3-8B, Qwen2.5-7B, and Qwen3-8B.  The data sets are WikiText-2, Pile
+    validation, ARC-Easy, HellaSwag, PIQA, WinoGrande, and synthetic function
+    samples.
+  \item \textbf{Run-time environment:} The validated environment is 64-bit
+    GNU/Linux with Python~3.12.  Fresh GPU execution additionally uses a CUDA
+    12.8-compatible runtime and may use Slurm.
+  \item \textbf{Hardware:} Bundled evidence and modeled performance run on a
+    CPU.  Fresh quality experiments use NVIDIA GPUs.  Repeating synthesis
+    requires the synthesis environment described below.
+  \item \textbf{Execution/metrics:} Automated Make workflows report latency,
+    throughput, speedup, perplexity, zero-shot accuracy, MSE, area, and power.
+  \item \textbf{Output:} Outputs include CSV, JSON, and Markdown validation
+    reports, PDF and PNG plots, tables, and generated SystemVerilog.
+  \item \textbf{Experiments:} The artifact covers Tables~3--5,
+    Figures~13--21, RTL regeneration, and the synthesis-report audit.
+  \item \textbf{Resources:} Bundled review requires 2 CPU cores, 8~GB RAM,
+    5~GB plus dependency caches, and about 15 seconds.  The fresh CPU suite
+    requires 8 cores, 16~GB RAM, 20~GB, and about 37 minutes on dual
+    EPYC~9654.  The fresh GPU suite takes about 5 hours with up to 16 H100 GPUs,
+    excluding setup, downloads, and scheduler queue time.
+  \item \textbf{Preparation:} Preparing the workflow takes about 10--30
+    minutes with network access, excluding model approval and downloads.
+  \item \textbf{Availability:} The source is available at
+    \url{https://github.com/xsun2001/SCOPE-MICRO26-AE}.  The archived artifact
+    is available at \url{https://doi.org/10.5281/zenodo.21472477}.
+  \item \textbf{Licenses:} Component licenses are included.  LLMCompass uses
+    BSD-3-Clause, OSTQuant uses Apache-2.0, and SCALE-Sim uses MIT.  External
+    model and data licenses apply to downloads.
+  \item \textbf{Automation:} The workflow uses GNU Make, Python, and optional
+    Slurm job arrays.
+\end{itemize}
+
+\subsection{Description}
+
+\subsubsection{How to access}
+
+Clone or unpack the artifact above and enter its root directory.  The top-level
+\texttt{README.md} is the reviewer entry point.  The file
+\texttt{AE\_SUBMISSION.md} lists claims and resources, and every
+\texttt{experiments/fig-*} or
+\texttt{experiments/tbl-*} directory contains its own commands and expected
+outputs.  Packaged measurements are in
+\texttt{actual-results/2026-07-13\_ae-validation}.  Reproduction targets are
+in \texttt{expected-results}.
+
+\subsubsection{Hardware dependencies}
+
+Bundled evidence needs no accelerator or proprietary software.  Fresh CPU
+experiments need roughly 8 cores and 16~GB RAM.  Fresh Figure~16 and Table~5
+need a CUDA GPU with at least 80~GB device memory.  Figures~17 and~20 need at
+least 16~GB.  Table~5 additionally needs about 192~GB host memory and 200~GB
+free storage.  Independent experiments may share up to 16 GPUs.
+
+\subsubsection{Software dependencies}
+
+Required tools are GNU Make, Bash, Python~3.10 or newer (3.12 validated), and
+\texttt{uv} or \texttt{venv}/\texttt{pip}.  Fresh GPU runs use the pinned
+\texttt{requirements/accuracy.txt} environment (PyTorch~2.10.0+cu128,
+Transformers~4.51.0, and LM Evaluation Harness~0.4.4).  RTL regeneration uses
+OpenJDK~21 and sbt.  Slurm is optional.
+
+\subsubsection{Data sets and models}
+
+CPU inputs and compact GPU evidence are included.  Fresh GPU runs download the
+datasets listed above and require Hugging Face-format checkpoints under
+\texttt{MODEL\_ROOT}.  Model weights and large Table~5 intermediates are not
+redistributed.  Reviewers must obtain weights under the applicable terms.
+
+\subsection{Installation}
+
+From the artifact root, run:
+\begin{verbatim}
+make setup
+make evidence
+make validate
+\end{verbatim}
+The first command creates \texttt{.venv} and installs dependencies.  An
+existing environment can instead be selected with
+\texttt{PYTHON=/path/to/python}.
+Network access is normally needed for initial package, model, and data fetches.
+
+\subsection{Experiment workflow}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Fast review:} \texttt{make evidence \&\& make validate}
+    regenerates compact tables/plots in ignored run directories and validates
+    all packaged CPU/GPU results without changing tracked evidence.
+  \item \textbf{Fresh CPU/RTL:} \texttt{make reproduce-cpu JOBS=8} runs the
+    modeled performance suite, hardware extraction, and Chisel elaboration.
+  \item \textbf{Fresh GPU:} copy \texttt{config/local.env.example} to
+    \texttt{config/local.env}, set \texttt{MODEL\_ROOT}, then run
+    \texttt{make reproduce-gpu}.  Use \texttt{EXECUTOR=local WORKERS=1} on an
+    allocated GPU or \texttt{EXECUTOR=slurm WORKERS=N} for job arrays.
+\end{itemize}
+
+\subsection{Evaluation and expected results}
+
+A successful packaged review prints \texttt{status: pass} for the following
+checks:
+\begin{itemize}[leftmargin=*]
+  \item 68/68 CPU checks and 36 Table~3 groups recomputed from 720 raw H100
+    samples.
+  \item 80/80 Figure~16, 20/20 Table~5, 36/36 Figure~17, and 18/18 Figure~20
+    comparisons.
+  \item All 11 SCNA rows in Table~4 and zero absolute author paths.
+\end{itemize}
+Figures~13--15 and~21 match the reported performance and speedup targets.
+Figures~18--19 are regenerated from 112 filtered native synthesis report sets.
+Figure~16 and Table~5 both use WikiText-2 perplexity and the unweighted mean
+accuracy over ARC-Easy, HellaSwag, PIQA, and WinoGrande.  Table~4 reproduces
+SCOPE/SCNA accuracy.  Its other columns are literature reference values.
+
+\subsection{Experiment customization}
+
+Use \texttt{JOBS=N} for CPU workers and \texttt{WORKERS=N} for GPU job-array
+width.  Make's \texttt{-j} runs independent experiment targets concurrently.
+The product of concurrent targets and \texttt{WORKERS} must remain within the
+GPU allocation.
+Individual targets (for example, \texttt{make fig-16} or \texttt{make tbl-5})
+permit partial reproduction.  Table~5 checkpoints may be reused through
+\texttt{TABLE5\_CHECKPOINT\_SOURCE}.
+
+\subsection{Notes}
+
+The B200/B300/H100/AWSv4/TPUv6e performance claims are software-model results
+and do not require those devices.  Archived synthesis used Design Compiler
+V-2023.12 and TSMC 28~nm libraries at 1~GHz.  These proprietary inputs are
+needed only to repeat synthesis, not to audit the bundled native reports.
+Provenance placeholders are documented in \texttt{PROVENANCE.md}.
+
+\subsection{Methodology}
+
+Artifact reviewing and badging follow
+\url{https://www.acm.org/publications/policies/artifact-review-and-badging-current}
+and \url{https://cTuning.org/ae}.
+
+\end{document}
