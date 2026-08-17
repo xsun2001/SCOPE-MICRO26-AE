@@ -10,4 +10,4 @@ make run FIG13_RUN_DIR=../fig-13-prefill-attention/actual-results/2026-07-13_ae-
 
 `extend_attention_fixed_tiles.py` uses fresh Figure 13 rows through 32K and models 64K--512K. `derive_full_model_from_attention.py` adds the remaining Llama 3 8B prefill operations. The two plotting scripts generate the intermediate speedup CSV and paper panel.
 
-Actual results, expected paper-matched results, and logs are under `actual-results/`, `expected-results/`, and `logs/`. The final comparison file is `paper_figures/paper_main_e2e_speedups.csv` inside each run.
+Actual results and expected paper-matched results are under `actual-results/` and `expected-results/`; new console logs go under the ignored root `runs/` directory. The final comparison file is `paper_figures/paper_main_e2e_speedups.csv` inside each run.

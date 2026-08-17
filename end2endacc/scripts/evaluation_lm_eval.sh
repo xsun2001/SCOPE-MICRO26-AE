@@ -107,10 +107,10 @@ fi
 
 printf '%q ' "${cmd[@]}" > "${result_dir}/command.txt"
 printf '\n' >> "${result_dir}/command.txt"
-if command -v git >/dev/null 2>&1; then
+if command -v git >/dev/null 2>&1 && git -C "${project_root}" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     git -C "${project_root}" rev-parse HEAD > "${result_dir}/git_commit.txt"
 else
-    printf 'unknown (git not found in PATH)\n' > "${result_dir}/git_commit.txt"
+    printf 'unknown (source archive is not a Git worktree)\n' > "${result_dir}/git_commit.txt"
 fi
 printf -v quoted_cmd '%q ' "${cmd[@]}"
 

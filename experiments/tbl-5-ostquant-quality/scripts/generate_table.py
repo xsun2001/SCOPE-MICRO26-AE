@@ -5,7 +5,7 @@ import csv
 from pathlib import Path
 
 
-METHOD_ORDER = ("OSTQuant", "SCNA-8", "SCNA-16", "SCNA-32", "FP16 Baseline")
+METHOD_ORDER = ("OSTQuant", "SCNA-8", "SCNA-16", "SCNA-32", "BF16 Baseline")
 COLUMNS = (
     ("W6A6", "llama2_7b", "W6A6 Llama-2-7B"),
     ("W6A6", "llama3_8b", "W6A6 Llama-3-8B"),
@@ -21,6 +21,9 @@ def main() -> int:
     args = parser.parse_args()
     with args.comparison.open() as handle:
         rows = list(csv.DictReader(handle))
+    for row in rows:
+        if row["method"] == "FP16 Baseline":
+            row["method"] = "BF16 Baseline"
     indexed = {
         (row["method"], row["quantization"], row["model"]): row for row in rows
     }
@@ -40,7 +43,7 @@ def main() -> int:
             cells.append(
                 f"{float(row['reproduced_ppl']):.2f} / {float(row['reproduced_accuracy_percent']):.2f}"
             )
-        label = method if method in {"OSTQuant", "FP16 Baseline"} else f"w/ {method}"
+        label = method if method in {"OSTQuant", "BF16 Baseline"} else f"w/ {method}"
         lines.append("| " + " | ".join([label, *cells]) + " |")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("\n".join(lines) + "\n")

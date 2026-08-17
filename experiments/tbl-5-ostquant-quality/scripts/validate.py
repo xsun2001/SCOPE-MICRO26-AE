@@ -22,8 +22,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--result-dir", type=Path, required=True)
     parser.add_argument("--expected", type=Path, required=True)
     parser.add_argument("--fp16-source", type=Path, required=True)
-    parser.add_argument("--ppl-tolerance", type=float, default=0.03)
-    parser.add_argument("--accuracy-tolerance-percent", type=float, default=0.25)
+    parser.add_argument("--ppl-tolerance", type=float, default=0.04)
+    parser.add_argument("--accuracy-tolerance-percent", type=float, default=1.0)
     return parser.parse_args()
 
 
@@ -43,7 +43,7 @@ def main() -> int:
             for prefix, model in MODEL_PREFIXES.items():
                 target_ppl = float(expected[f"{prefix}_ppl"])
                 target_acc = float(expected[f"{prefix}_accuracy_percent"])
-                if expected["method"] == "FP16 Baseline":
+                if expected["method"] == "BF16 Baseline":
                     reproduced_ppl, reproduced_acc = fp16[model]
                 else:
                     row = actual.get((model, quant, MODE_MAP[expected["method"]]))

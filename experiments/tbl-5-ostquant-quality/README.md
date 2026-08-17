@@ -2,12 +2,12 @@
 
 This directory is the complete corrected Table 5 workflow for Llama-2-7B and Llama-3-8B under W6A6 and W4A4. It trains or reuses four exact SDPA OST transforms, generates four GPTQ `qmodel.pt` files, and evaluates exact eager attention plus SCNA-8/16/32 with the corrected causal mask.
 
-Table 5 reports WikiText-2 perplexity and the unweighted mean accuracy over ARC-Easy, HellaSwag, PIQA, and WinoGrande, matching Figure 16. The replacement table includes OSTQuant, SCNA-8/16/32, and the FP16 baseline for both models and bit-widths. Additional task outputs retained from the original sweep are diagnostics only and do not enter the reported average.
+Table 5 reports WikiText-2 perplexity and the unweighted mean accuracy over ARC-Easy, HellaSwag, PIQA, and WinoGrande, matching Figure 16. This four-task replacement is authoritative and will replace the current paper table, whose correct experimental outputs were aggregated over all evaluated benchmarks. It includes OSTQuant, SCNA-8/16/32, and the BF16 baseline for both models and bit-widths; additional task outputs remain diagnostics only.
 
 - `../../OSTQuant/`: shared OSTQuant source with the SCNA integration and causal-mask fix.
 - `data/`: four checkpoint-generation cases and sixteen paper evaluation cases.
 - `expected-results/four_task_table5.csv`: replacement Table 5 targets under the unified four-task protocol.
-- `actual-results/2026-07-13_ae-validation/`: 16 fresh OSTQuant/SCNA evaluations, four FP16 baseline entries, 20/20 validated table entries, reports, logs, compact metric JSONs, and the generated table. Large `model.bin` and `qmodel.pt` intermediates are intentionally outside the portable archive.
+- `actual-results/2026-07-13_ae-validation/`: 16 fresh OSTQuant/SCNA evaluations, four BF16 baseline entries, 20/20 validated table entries, reports, logs, compact metric JSONs, and the generated table. Large `model.bin` and `qmodel.pt` intermediates are intentionally outside the portable archive.
 - `scripts/`: exact training, GPTQ generation, evaluation, collection, validation, and table generation.
 
 Use `make evidence` to verify the bundled result and regenerate the table under `runs/<run-id>/evidence/tbl-5-ostquant-quality/generated/table5.md` without a GPU. The ignored staging directory keeps the packaged evidence and worktree unchanged.

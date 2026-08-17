@@ -495,7 +495,7 @@ def _fmt_metric(metric: str, value: float) -> str:
 def _write_summary_tables(
     plot_rows: dict[tuple[str, str], dict[str, float]],
 ) -> tuple[Path, Path, Path, Path]:
-    summary_headers = ["Model", "Metric", "FP16 Baseline", "INT8 Baseline", "INT8 SCNA 8", "INT8 SCNA 16", "INT8 SCNA 32"]
+    summary_headers = ["Model", "Metric", "BF16 Baseline", "INT8 Baseline", "INT8 SCNA 8", "INT8 SCNA 16", "INT8 SCNA 32"]
     summary_rows: list[list[str]] = []
     for model in MODEL_ORDER:
         for metric, metric_label in [("ppl", "WikiText-2 PPL"), ("group1_mean", "Group1 Avg (%)")]:
@@ -517,7 +517,7 @@ def _write_summary_tables(
     _write_table(summary_md, summary_headers, summary_rows)
     _write_csv(summary_csv, summary_headers, summary_rows)
 
-    lmeval_headers = ["Model", "Task", "FP16 Baseline (%)", "INT8 Baseline (%)", "INT8 SCNA 16 (%)", "Delta vs INT8 Baseline (pp)"]
+    lmeval_headers = ["Model", "Task", "BF16 Baseline (%)", "INT8 Baseline (%)", "INT8 SCNA 16 (%)", "Delta vs INT8 Baseline (pp)"]
     lmeval_rows: list[list[str]] = []
     for model in MODEL_ORDER:
         for metric, task_label in TASK_METRICS:
@@ -588,7 +588,7 @@ def _write_evaluation_draft(
         "",
         "### Evaluation Setup",
         "",
-        f"We evaluate five decoder-only LLM families: {model_family_text}. For each model, we compare the FP16 baseline, the INT8 SmoothQuant baseline, and INT8 SmoothQuant augmented with SCNA at three sizes (SCNA-8, SCNA-16, and SCNA-32). Following the all-in-one experiment plan, the INT8 figures in the main paper use the `static_sq` setting with quantized PINN activations and weights (`pinn_w8a8`). WikiText-2 perplexity is reported as a language-modeling diagnostic, while downstream quality is measured by the average accuracy over ARC-Easy, HellaSwag, PIQA, and Winogrande (`group1 mean`). For the static INT8 runs, backbone calibration uses the same configuration across all models: validation split, 128 samples, and sequence length 2048.",
+        f"We evaluate five decoder-only LLM families: {model_family_text}. For each model, we compare the BF16 baseline, the INT8 SmoothQuant baseline, and INT8 SmoothQuant augmented with SCNA at three sizes (SCNA-8, SCNA-16, and SCNA-32). Following the all-in-one experiment plan, the INT8 figures in the main paper use the `static_sq` setting with quantized PINN activations and weights (`pinn_w8a8`). WikiText-2 perplexity is reported as a language-modeling diagnostic, while downstream quality is measured by the average accuracy over ARC-Easy, HellaSwag, PIQA, and Winogrande (`group1 mean`). For the static INT8 runs, backbone calibration uses the same configuration across all models: validation split, 128 samples, and sequence length 2048.",
         "",
         "### Overall Accuracy Retention",
         "",
@@ -604,7 +604,7 @@ def _write_evaluation_draft(
         "",
         "Figure A highlights a model-family-dependent perplexity trend. The INT8 SCNA-minus-baseline PPL deltas are "
         f"{ppl_delta_text}. "
-        "Table A makes these trends explicit in a compact form. Importantly, the same comparison is available in the FP16 runs, which helps separate approximation effects from INT8 quantization and static SmoothQuant calibration.",
+        "Table A makes these trends explicit in a compact form. Importantly, the same comparison is available in the BF16 runs, which helps separate approximation effects from INT8 quantization and static SmoothQuant calibration.",
         "",
         "### Interpreting Model-Family Differences",
         "",

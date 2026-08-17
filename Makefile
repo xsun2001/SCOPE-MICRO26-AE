@@ -43,12 +43,14 @@ setup:
 		uv venv .venv; \
 		uv pip install --python .venv/bin/python -r requirements/accuracy.txt -r SCALE-Sim/requirements.txt; \
 		uv pip install --python .venv/bin/python -e SCALE-Sim; \
-		uv pip install --python .venv/bin/python -r LLMCompass/requirements.txt; \
+		uv pip install --python .venv/bin/python -r requirements/llmcompass.txt; \
+		uv pip check --python .venv/bin/python; \
 	else \
 		python3 -m venv .venv; \
 		.venv/bin/pip install -r requirements/accuracy.txt -r SCALE-Sim/requirements.txt; \
 		.venv/bin/pip install -e SCALE-Sim; \
-		.venv/bin/pip install -r LLMCompass/requirements.txt; \
+		.venv/bin/pip install -r requirements/llmcompass.txt; \
+		.venv/bin/pip check; \
 	fi
 
 all: evidence validate

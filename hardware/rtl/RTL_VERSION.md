@@ -1,6 +1,6 @@
 # RTL provenance for the paper mesh sweep
 
-The retained synthesis inputs are the emitted SystemVerilog under `paper-mesh-snapshot/`. Their file hashes are recorded in `RTL_SNAPSHOT.sha256`, and `RTL_MANIFEST.csv` maps each of the 112 selected synthesis jobs to one snapshot directory.
+The retained synthesis inputs are the emitted SystemVerilog under `paper-mesh-snapshot/`. `RTL_MANIFEST.csv` maps each of the 112 selected synthesis jobs to one snapshot directory and records its provenance status.
 
 The main mesh upload archives were created on 2026-04-06 at approximately 02:53 Asia/Shanghai, and the selected synth-site projects were created immediately afterward at 2026-04-05 18:53 UTC. The corrected FSA FP8 archive and job were created on April 7. `RTL_MANIFEST.csv` records whether each directory can still be checked byte-for-byte against its retained upload ZIP. Most can; four FSA FP16 ZIPs were overwritten by the later FP8 retry, so their pre-upload emitted directories are retained but cannot be re-proven against the original ZIP.
 

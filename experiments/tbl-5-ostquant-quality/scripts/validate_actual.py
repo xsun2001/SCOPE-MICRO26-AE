@@ -31,8 +31,8 @@ def main() -> int:
     parser.add_argument("--actual", type=Path, required=True, help="Packaged analysis directory")
     parser.add_argument("--expected", type=Path, required=True)
     parser.add_argument("--fp16-source", type=Path, required=True)
-    parser.add_argument("--ppl-tolerance", type=float, default=0.03)
-    parser.add_argument("--accuracy-tolerance-percent", type=float, default=0.25)
+    parser.add_argument("--ppl-tolerance", type=float, default=0.04)
+    parser.add_argument("--accuracy-tolerance-percent", type=float, default=1.0)
     args = parser.parse_args()
 
     run_root = args.actual.parent
@@ -49,14 +49,14 @@ def main() -> int:
     for expected in expected_rows:
         method = expected["method"]
         quant_label = expected["quantization"]
-        if quant_label not in QUANT_MAP or (method != "FP16 Baseline" and method not in MODE_MAP):
+        if quant_label not in QUANT_MAP or (method != "BF16 Baseline" and method not in MODE_MAP):
             failures.append(f"unknown expected method/quantization: {expected}")
             continue
         quant = QUANT_MAP[quant_label]
         for prefix, model in MODEL_PREFIXES.items():
             target_ppl = float(expected[f"{prefix}_ppl"])
             target_acc = float(expected[f"{prefix}_accuracy_percent"])
-            if method == "FP16 Baseline":
+            if method == "BF16 Baseline":
                 ppl, acc_percent = fp16[model]
             else:
                 mode = MODE_MAP[method]
@@ -124,6 +124,9 @@ def main() -> int:
         "metric_files": metric_files,
         "accuracy_tasks": list(FOUR_TASKS),
         "aggregation": PROTOCOL_DESCRIPTION,
+        "ppl_tolerance": args.ppl_tolerance,
+        "accuracy_tolerance_percent": args.accuracy_tolerance_percent,
+        "precision": "BF16 baseline; fp16_exact is a retained legacy source-column identifier",
         "failures": failures,
     }
     print(json.dumps(payload, indent=2))

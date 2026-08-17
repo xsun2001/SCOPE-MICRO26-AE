@@ -12,4 +12,4 @@ make run FULL_BASELINE=1
 
 `run_condition_parallel.py` and `simulate_prefill_attention.py` execute the simulator; the JSON files in `configs/` select only paper devices; `generate_paper_figures.py` creates PNG/PDF panels. By default the expensive unfused baseline is omitted because it is not used in the reported SCOPE/FlashAttention speedups.
 
-The fresh validated outputs are in `actual-results/2026-07-13_ae-validation/`, exact archived paper inputs are in `expected-results/`, and console logs are in `logs/2026-07-13_ae-validation/`.
+The fresh validated outputs are in `actual-results/2026-07-13_ae-validation/`, and exact archived paper inputs are in `expected-results/`. New console logs are written under the ignored root `runs/` directory.

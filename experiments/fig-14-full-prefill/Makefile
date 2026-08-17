@@ -3,7 +3,7 @@
 include ../../mk/common.mk
 
 OUT_DIR ?= $(CURDIR)/actual-results/$(RUN_ID)
-LOG_DIR ?= $(CURDIR)/logs/$(RUN_ID)
+LOG_DIR ?= $(BUNDLE_ROOT)/runs/$(RUN_ID)/fig-14-full-prefill/logs
 FIG13_RUN_DIR ?= $(BUNDLE_ROOT)/experiments/fig-13-prefill-attention/actual-results/$(PACKAGED_RUN_ID)
 
 .PHONY: help run inputs fixed-tiles full-model figures

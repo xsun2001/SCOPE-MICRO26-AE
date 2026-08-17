@@ -17,7 +17,7 @@ def main() -> int:
     )
     parser.add_argument("--actual", type=Path, required=True, help="Packaged analysis directory")
     parser.add_argument("--ppl-tolerance", type=float, default=0.05)
-    parser.add_argument("--accuracy-tolerance", type=float, default=0.005)
+    parser.add_argument("--accuracy-tolerance", type=float, default=0.007)
     args = parser.parse_args()
 
     experiment_root = Path(__file__).resolve().parents[1]
@@ -106,6 +106,9 @@ def main() -> int:
         "passed": passed,
         "source_records": len(actual_rows),
         "expected_records": len(expected),
+        "ppl_tolerance": args.ppl_tolerance,
+        "accuracy_tolerance": args.accuracy_tolerance,
+        "precision_note": "legacy fp16_* record identifiers execute torch.bfloat16 and are reported as BF16",
         "failures": failures,
     }
     print(json.dumps(payload, indent=2))

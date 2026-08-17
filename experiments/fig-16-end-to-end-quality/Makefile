@@ -8,11 +8,13 @@ TASKS := $(shell expr $$(wc -l < data/manifest.tsv) - 1)
 SLOTS := $(shell n=$(WORKERS); t=$(TASKS); [[ $$n -gt $$t ]] && n=$$t; echo $$n)
 ARRAY_MAX := $(shell expr $(SLOTS) - 1)
 
-.PHONY: evidence run collect generate reproduce
+.PHONY: evidence smoke run collect generate reproduce
 evidence:
 	@$(PYTHON) scripts/validate_actual.py --actual $(PACKAGED_DIR)/analysis
 	@$(PYTHON) scripts/comparison_to_plot.py --comparison $(PACKAGED_DIR)/analysis/comparison.csv --template expected-results/paper_figure16.csv --output $(EVIDENCE_DIR)/generated/actual_plot.csv
 	@FIG16_INPUT="$(EVIDENCE_DIR)/generated/actual_plot.csv" FIG16_OUTPUT_DIR="$(EVIDENCE_DIR)/generated" $(PYTHON) scripts/generate_figure.py --merged-triptych-only --variants exact,pinn8,pinn16,pinn32 --stem figure16
+smoke:
+	@$(PYTHON) scripts/smoke_source.py
 run:
 	$(check-executor)
 	@mkdir -p "$(RESULT_DIR)" "$(RUN_ROOT)/slurm"

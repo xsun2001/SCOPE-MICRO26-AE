@@ -3,7 +3,7 @@
 include ../../mk/common.mk
 
 OUT_DIR ?= $(CURDIR)/actual-results/$(RUN_ID)
-LOG_DIR ?= $(CURDIR)/logs/$(RUN_ID)
+LOG_DIR ?= $(BUNDLE_ROOT)/runs/$(RUN_ID)/fig-13-prefill-attention/logs
 
 ifeq ($(FULL_BASELINE),1)
 CONV_VARIANTS := baseline,flashattention,customsa

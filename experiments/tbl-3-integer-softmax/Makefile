@@ -3,7 +3,7 @@
 include ../../mk/common.mk
 
 OUT_DIR ?= $(CURDIR)/actual-results/$(RUN_ID)
-LOG_DIR ?= $(CURDIR)/logs/$(RUN_ID)
+LOG_DIR ?= $(BUNDLE_ROOT)/runs/$(RUN_ID)/tbl-3-integer-softmax/logs
 PACKAGED_MICROBENCHMARK ?= $(CURDIR)/actual-results/2026-07-15_reviewer-fix/softmax-microbenchmark
 
 .PHONY: help run microbenchmark validate-microbenchmark

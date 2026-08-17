@@ -3,6 +3,8 @@
 This repository is the unified reviewer bundle for `paper/SCOPE-revision.pdf`. It combines the CPU-host performance, RTL, and synthesis evidence with the GPU-host accuracy and numerical-precision experiments. All paper experiment directories use the `fig-X-description` or `tbl-X-description` naming convention and contain a Makefile, README, scripts, bundled actual results, and expected paper results.
 
 Submission-facing result and dependency information is in `AE_SUBMISSION.md`.
+The Review A1 corrections, authoritative protocol choices, and rerun commands
+are documented below.
 
 ## Quick start: no GPU or proprietary tools
 
@@ -15,6 +17,117 @@ make validate
 `make evidence` regenerates compact GPU-side figures/tables under ignored staging directories and audits the packaged CPU evidence without modifying tracked files. `make validate` checks both suites: the CPU validator currently reports 68/68 checks passing, Table 3 additionally recomputes 36 statistics from 720 raw H100 samples, and the GPU validator recomputes Figure 16 (80 comparisons), Table 5 (20), Figure 17 (36), Figure 20 (18), and all 11 Table 4 SCNA rows.
 
 `make all` is the safe alias for evidence plus validation; it does not launch long CPU simulations or GPU jobs.
+
+## Review A1 corrections and authoritative protocols
+
+### Table 4 executable SCNA reproduction
+
+Table 4 no longer renders the expected CSV as a reproduction. The executable
+path in `experiments/tbl-4-function-approximation-accuracy/` evaluates all 11
+archived 32-unit SCNA configurations without reading paper values, writes
+point-level predictions and independently calculated MSE/MAE values under the
+ignored `runs/<RUN_ID>/` tree, and only then invokes a separate validator
+against `expected-results/paper_table4.csv`:
+
+```bash
+make tbl-4
+```
+
+The command writes `raw_predictions.csv` and `scna_metrics.csv` under `runs/`
+and then validates them against the separate paper reference. The validator
+reconstructs MSE and MAE from the point-level records, checks all 22 metrics,
+and recomputes the paper geomeans. The corrected run produces 434.85x
+versus NN-LUT (the nine general nonlinearities, excluding Exp/Exp2) and 15.07x
+versus T-LUT (the nine rows with numeric T-LUT results), consistent with the
+reported 431x and 14.9x comparisons. Literature baseline values remain
+references only and are not reimplemented.
+
+### Figure 16 archive completeness and provenance
+
+The complete `end2endacc/quant/core` implementation is now included. It
+contains the symmetric round-to-nearest scale helpers, calibration observer,
+and SmoothQuant rescaling imported by the Figure 16 source snapshot. Both
+evaluation wrappers now call `git rev-parse` only after confirming the bundle
+root is a Git worktree. An extracted source archive therefore records
+`unknown (source archive is not a Git worktree)` instead of terminating with
+return code 128.
+
+Use the source-only smoke check:
+
+```bash
+make -C experiments/fig-16-end-to-end-quality smoke
+```
+
+It imports the restored quantization modules, executes a small INT8
+quantization calculation, and exercises one Figure 16 configuration and
+wrapper row without downloading model weights.
+
+### Dependency and environment correction
+
+`requirements/accuracy.txt` now pins `sentencepiece==0.2.0` and
+`protobuf==5.29.5`. `requirements/llmcompass.txt` is a first-party lock for the
+bundled LLMCompass dependencies and deliberately omits torchvision because no
+artifact path imports it. PyTorch is installed once from the accuracy lock;
+the LLMCompass setup no longer replaces it with an incompatible transitive
+version. `make setup` finishes with `pip check`.
+
+The reference GPU environment used an NVIDIA H100 80 GB host, Python 3.12,
+CUDA 12.8, and the versions in `requirements/accuracy.txt`. Figures 16 and
+Table 5 require 80 GB device memory; Figures 17 and 20 require 16 GB. Model
+files remain excluded from the archive.
+
+### BF16 naming and Table 5 protocol
+
+BF16 is the intended and executed full-precision protocol: Figure 16 sets
+`torch_dtype` to `bfloat16`, and Table 5 launches with `--bf16=True`. Generated
+tables and prose now say BF16. Historical `fp16_*` filenames, result-directory
+slugs, and CSV keys are retained only as compatibility identifiers for the
+packaged July results.
+
+The authoritative replacement Table 5 is
+`experiments/tbl-5-ostquant-quality/expected-results/four_task_table5.csv`.
+Accuracy is the unweighted arithmetic mean of ARC-Easy, HellaSwag, PIQA, and
+WinoGrande, matching Figure 16. The current paper table instead averages all
+evaluated benchmarks; its experimental runs are correct, but the displayed
+aggregation will be replaced with the uniform four-task results in the final
+paper. The wider per-task raw values are retained under
+`all_task_diagnostics` for traceability, while the four official task values,
+task list, and aggregation metadata remain in each packaged metric JSON.
+
+### Numerical variability and validation rules
+
+Seeds are fixed, but stochastic training/calibration effects and low-level GPU
+or library variation prevent bit-for-bit agreement. The reviewer ran the
+experiments correctly, and the observed differences are negligible and do not
+affect the paper's conclusions. They are within the following portability
+envelopes, which are now enforced by the validators:
+
+- Figure 16: absolute PPL 0.05 and absolute accuracy 0.007. The validator also
+  reconstructs every four-task mean from raw task records.
+- Table 5: absolute PPL 0.04 and absolute accuracy 1.0 percentage point. This
+  covers the observed 0.03195 PPL and 0.79-point maximum accuracy deviations.
+- Table 4: 10% relative error for every independently generated MSE and MAE.
+- Figure 17: 20% relative best-MSE error. Width-scaling gains are reported
+  separately rather than being inferred from the tolerance.
+- Figure 20: 20% relative error or an absolute MSE error of 2e-4 for near-zero
+  trajectories. Independently, SCNA must improve over the unconstrained result
+  for all nine functions.
+
+These thresholds are numerical reproduction envelopes, not statistical
+confidence intervals. Structural checks, task lists, raw-record consistency,
+and qualitative invariants remain mandatory.
+
+### Licensing and compact output policy
+
+The top-level `LICENSE` applies CC BY 4.0 to the first-party artifact, matching
+the archival record. `LLMCompass`, `SCALE-Sim`, and `OSTQuant` retain their own
+license files, which take precedence inside those trees.
+
+Fresh and regenerated logs, point-level predictions, figures, and large model
+intermediates are written to the ignored `runs/<RUN_ID>/` tree. Experiment
+directories contain only source, compact configuration files,
+paper references, and the already-submitted evidence required by their normal
+validators. This avoids duplicating transient reviewer runs in the archive.
 
 ## Fresh reproduction
 
@@ -111,7 +224,7 @@ Figure 13 compares FlashAttention with INT8 softmax conversion against SCOPE wit
 
 Figure 18 extracts 112 filtered native Synopsys reports and fits constant per-PE area/power values across completed array sizes. Figure 19 is incremental overhead over a 32x32 baseline systolic array, calculated from the Figure 18 per-PE fit; it is not presented as completed full 32x32 synthesis for every design.
 
-Figure 16 and Table 5 use the same model-level quality protocol: WikiText-2 perplexity plus the unweighted mean accuracy of ARC-Easy, HellaSwag, PIQA, and WinoGrande. Table 5 retains any additional raw task outputs only as diagnostics; they are not included in its reported accuracy.
+Figure 16 and Table 5 use BF16 and the same model-level quality protocol: WikiText-2 perplexity plus the unweighted mean accuracy of ARC-Easy, HellaSwag, PIQA, and WinoGrande. Legacy `fp16_*` identifiers are compatibility slugs only. Table 5 retains any additional raw task outputs only as diagnostics; they are not included in its reported accuracy.
 
 ## Hardware evidence without Synopsys
 
@@ -123,4 +236,4 @@ Figure 16 and Table 5 use the same model-level quality protocol: WikiText-2 perp
 make archive
 ```
 
-The archive excludes `.git/`, `.venv/`, `runs/`, caches, model weights, build targets, and machine-local `config/local.env`. It includes all compact CPU/GPU evidence, expected values, source snapshots, native synthesis reports, and the paper.
+The archive excludes `.git/`, `.venv/`, `runs/`, run logs, caches, model weights, build targets, and machine-local `config/local.env`. It includes all compact CPU/GPU evidence, expected values, source snapshots, native synthesis reports, and the paper.

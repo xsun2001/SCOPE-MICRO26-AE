@@ -3,7 +3,7 @@
 include ../../mk/common.mk
 
 OUT_DIR ?= $(CURDIR)/actual-results/$(RUN_ID)
-LOG_DIR ?= $(CURDIR)/logs/$(RUN_ID)
+LOG_DIR ?= $(BUNDLE_ROOT)/runs/$(RUN_ID)/fig-15-b300-sensitivity/logs
 
 .PHONY: help run fixed-tiles full-model figure
 

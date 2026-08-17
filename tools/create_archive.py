@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import tarfile
 from pathlib import Path
 
 
 EXCLUDED_TOP_LEVEL = {".git", ".venv", "cache", "runs", "models", "figure16", "table5"}
-EXCLUDED_ANYWHERE = {"__pycache__", "target", ".pytest_cache", ".mypy_cache"}
+EXCLUDED_ANYWHERE = {"__pycache__", "target", ".pytest_cache", ".mypy_cache", "logs"}
 
 
 def excluded(relative: Path) -> bool:
@@ -32,12 +31,7 @@ def main() -> int:
             if excluded(relative):
                 continue
             archive.add(path, arcname=Path(root.name) / relative, recursive=False)
-    digest = hashlib.sha256(output.read_bytes()).hexdigest()
-    sidecar = output.with_suffix(output.suffix + ".sha256")
-    sidecar.write_text(f"{digest}  {output.name}\n")
     print(f"archive={output}")
-    print(f"sha256={digest}")
-    print(f"sidecar={sidecar}")
     return 0
 
 
