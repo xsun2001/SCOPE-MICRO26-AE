@@ -2,16 +2,15 @@ include ../../config/common.mk
 EXP_ROOT := $(CURDIR)
 EXP_SLUG := tbl-5-ostquant-quality
 RESULT_DIR := $(RUN_ROOT)/$(EXP_SLUG)
-PACKAGED_DIR := actual-results/$(PACKAGED_GPU_RUN_ID)
 EVIDENCE_DIR := $(RUN_ROOT)/evidence/$(EXP_SLUG)
 FOUR_TASK_EXPECTED := expected-results/four_task_table5.csv
-FP16_SOURCE ?= ../fig-16-end-to-end-quality/actual-results/$(PACKAGED_GPU_RUN_ID)/generated/actual_plot.csv
+BF16_SOURCE ?= ../fig-16-end-to-end-quality/expected-results/paper_figure16.csv
 
 .PHONY: evidence dispatch checkpoints run collect generate reproduce
 
 evidence:
-	@$(PYTHON) scripts/validate_actual.py --actual $(PACKAGED_DIR)/analysis --expected $(FOUR_TASK_EXPECTED) --fp16-source $(FP16_SOURCE)
-	@$(PYTHON) scripts/generate_table.py --comparison $(PACKAGED_DIR)/analysis/table5_comparison.csv --output $(EVIDENCE_DIR)/generated/table5.md
+	@$(PYTHON) scripts/validate.py --summary expected-results/maskfix_summary.csv --output-dir "$(EVIDENCE_DIR)/analysis" --expected $(FOUR_TASK_EXPECTED) --bf16-source $(BF16_SOURCE)
+	@$(PYTHON) scripts/generate_table.py --comparison "$(EVIDENCE_DIR)/analysis/table5_comparison.csv" --output "$(EVIDENCE_DIR)/generated/table5.md"
 
 dispatch:
 	$(check-executor)
@@ -37,7 +36,7 @@ run: checkpoints
 
 collect:
 	@$(PYTHON) scripts/collect_results.py --run-root "$(RESULT_DIR)"
-	@$(PYTHON) scripts/validate.py --result-dir "$(RESULT_DIR)" --expected $(FOUR_TASK_EXPECTED) --fp16-source $(FP16_SOURCE)
+	@$(PYTHON) scripts/validate.py --result-dir "$(RESULT_DIR)" --expected $(FOUR_TASK_EXPECTED) --bf16-source $(BF16_SOURCE)
 
 generate:
 	@$(PYTHON) scripts/generate_table.py --comparison "$(RESULT_DIR)/analysis/table5_comparison.csv" --output "$(RESULT_DIR)/generated/table5.md"

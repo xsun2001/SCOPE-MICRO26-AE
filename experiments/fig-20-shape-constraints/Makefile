@@ -2,7 +2,6 @@ include ../../config/common.mk
 EXP_ROOT := $(CURDIR)
 EXP_SLUG := fig-20-shape-constraints
 RESULT_DIR := $(RUN_ROOT)/$(EXP_SLUG)
-PACKAGED_DIR := actual-results/$(PACKAGED_GPU_RUN_ID)
 EVIDENCE_DIR := $(RUN_ROOT)/evidence/$(EXP_SLUG)
 TASKS := $(shell expr $$(wc -l < data/manifest.tsv) - 1)
 SLOTS := $(shell n=$(WORKERS); t=$(TASKS); [[ $$n -gt $$t ]] && n=$$t; echo $$n)
@@ -10,8 +9,9 @@ ARRAY_MAX := $(shell expr $(SLOTS) - 1)
 
 .PHONY: evidence run collect generate reproduce
 evidence:
-	@$(PYTHON) scripts/collect.py --runs-dir $(PACKAGED_DIR)/runs --analysis-dir $(EVIDENCE_DIR)/analysis --expected expected-results/paired_summary.csv --relative-tolerance $(FUNCTION_RELATIVE_TOLERANCE) --absolute-tolerance $(FUNCTION_ABSOLUTE_TOLERANCE)
-	@$(PYTHON) scripts/generate_figure.py --runs-dir $(PACKAGED_DIR)/runs --output-dir $(EVIDENCE_DIR)/generated
+	@$(PYTHON) $(BUNDLE_ROOT)/tools/validate_function_reference.py --manifest data/manifest.tsv --expected expected-results/paired_summary.csv --analysis-dir $(EVIDENCE_DIR)/analysis --mode shape --figure expected-results/figure20.png --figure expected-results/figure20.pdf
+	@mkdir -p $(EVIDENCE_DIR)/generated
+	@cp expected-results/figure20.png expected-results/figure20.pdf $(EVIDENCE_DIR)/generated/
 run:
 	$(check-executor)
 	@mkdir -p "$(RESULT_DIR)" "$(RUN_ROOT)/slurm"

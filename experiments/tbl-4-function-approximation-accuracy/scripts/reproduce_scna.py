@@ -9,6 +9,9 @@ import numpy as np
 from scipy.special import erf
 
 
+DEFAULT_PARAMETERS = Path(__file__).resolve().parents[1] / "data" / "scna_parameters.json"
+
+
 def target(name: str, x: np.ndarray) -> np.ndarray:
     if name == "exp":
         return np.exp(x)
@@ -28,8 +31,8 @@ def target(name: str, x: np.ndarray) -> np.ndarray:
         return erf(x) + 1.0
     if name == "sin_shift":
         return np.sin(x) + 1.0
-    if name == "reflected_reciprocal":
-        return 1.0 / (-x)
+    if name == "reflected_rsqrt":
+        return 1.0 / np.sqrt(-x)
     if name == "gelu_erf_branch":
         # SCNA approximates the nonlinear erf branch; x/2 is an exact outer
         # multiply in the canonical GeLU decomposition.
@@ -37,47 +40,44 @@ def target(name: str, x: np.ndarray) -> np.ndarray:
     raise ValueError(f"unknown target {name!r}")
 
 
-def curvature_spline(row: dict[str, object], grid_points: int, units: int) -> tuple[np.ndarray, np.ndarray]:
-    """Resolve the archived curvature-density recipe to SCNA ReLU coefficients."""
-    lo, hi = float(row["l_range"]), float(row["r_range"])
-    grid = np.linspace(lo, hi, grid_points, dtype=np.float64)
-    values = target(str(row["target"]), grid)
-    dx = grid[1] - grid[0]
-    second = np.gradient(np.gradient(values, dx), dx)
-    density = np.maximum(np.abs(second), 1.0e-30) ** 0.4
-    cumulative = np.empty_like(grid)
-    cumulative[0] = 0.0
-    cumulative[1:] = np.cumsum((density[:-1] + density[1:]) * (0.5 * dx))
-    knot_mass = np.linspace(0.0, cumulative[-1], units + 1, dtype=np.float64)
-    knots = np.interp(knot_mass, cumulative, grid)
-    knot_values = target(str(row["target"]), knots)
-    slopes = np.diff(knot_values) / np.diff(knots)
-    increments = np.empty(units, dtype=np.float64)
-    increments[0] = slopes[0]
-    increments[1:] = np.diff(slopes)
-    thresholds = np.empty(units, dtype=np.float64)
-    thresholds[0] = knots[0] - knot_values[0] / slopes[0]
-    thresholds[1:] = knots[1:-1]
-    wk = increments * float(row["scale"])
-    bk = -wk * thresholds
-
-    # The archived recipe includes a tiny affine calibration. The first unit is
-    # active over the complete evaluation interval, so it carries this term.
-    affine_slope = float(row["affine_slope"])
-    affine_offset = float(row["affine_offset"])
-    wk[0] += affine_slope
-    bk[0] += affine_offset - affine_slope * lo
-    return wk, bk
+def embedded_parameters(
+    row: dict[str, object], units: int
+) -> tuple[np.ndarray, np.ndarray, int, str]:
+    """Read fused SCNA weights and biases directly from the data manifest."""
+    wk = np.asarray(row["weights"], dtype=np.float64)
+    bk = np.asarray(row["biases"], dtype=np.float64)
+    if wk.shape != (units,) or bk.shape != (units,):
+        raise ValueError(
+            f"{row['display_name']}: expected {units} weights and biases, "
+            f"got {wk.shape} and {bk.shape}"
+        )
+    if not np.all(np.isfinite(wk)) or not np.all(np.isfinite(bk)):
+        raise ValueError(f"{row['display_name']}: parameters must be finite")
+    return wk, bk, int(row["training_seed"]), str(row["source_checkpoint"])
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Evaluate all 11 archived SCNA checkpoints independently of paper values.")
-    parser.add_argument("--checkpoints", type=Path, required=True)
+    parser = argparse.ArgumentParser(
+        description="Evaluate embedded trained SCNA parameters independently of paper values."
+    )
+    parser.add_argument(
+        "--parameters",
+        type=Path,
+        default=DEFAULT_PARAMETERS,
+        help="combined SCNA parameter manifest (defaults to data/scna_parameters.json)",
+    )
+    parser.add_argument(
+        "--variant",
+        choices=("scna16", "scna32"),
+        help="parameter variant; defaults to the manifest's SCNA-16 variant",
+    )
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
 
-    specification = json.loads(args.checkpoints.read_text())
-    np.random.seed(int(specification["seed"]))
+    specification = json.loads(args.parameters.read_text())
+    variant_name = args.variant or str(specification["default_variant"])
+    variant = specification["variants"][variant_name]
+    units = int(variant["num_units"])
     args.output_dir.mkdir(parents=True, exist_ok=True)
     metrics_path = args.output_dir / "scna_metrics.csv"
     raw_path = args.output_dir / "raw_predictions.csv"
@@ -89,17 +89,11 @@ def main() -> int:
             fieldnames=("function", "point", "x", "target", "prediction", "error"),
         )
         raw_writer.writeheader()
-        for row in specification["rows"].values():
+        for row in variant["rows"].values():
             lo, hi = float(row["l_range"]), float(row["r_range"])
-            if row["kind"] == "fused_checkpoint":
-                wk = np.asarray(row["wk"], dtype=np.float64)
-                bk = np.asarray(row["bk"], dtype=np.float64)
-            else:
-                wk, bk = curvature_spline(
-                    row,
-                    int(specification["curvature_grid_points"]),
-                    int(specification["num_units"]),
-                )
+            if row["kind"] != "embedded_trained_parameters":
+                raise ValueError(f"unknown parameter kind {row['kind']!r}")
+            wk, bk, training_seed, parameter_source = embedded_parameters(row, units)
             x = np.linspace(lo, hi, int(specification["eval_points"]), dtype=np.float64)
             expected = target(str(row["target"]), x)
             prediction = np.maximum(x[:, None] * wk[None, :] + bk[None, :], 0.0).sum(axis=1)
@@ -124,14 +118,28 @@ def main() -> int:
                     "r_range": format(hi, ".17g"),
                     "eval_points": x.size,
                     "num_units": wk.size,
-                    "seed": specification["seed"],
+                    "variant": variant_name,
+                    "parameter_kind": row["kind"],
+                    "parameter_source": parameter_source,
+                    "training_seed": training_seed,
                 }
             )
     with metrics_path.open("w", newline="") as metric_file:
         writer = csv.DictWriter(metric_file, fieldnames=metric_rows[0].keys())
         writer.writeheader()
         writer.writerows(metric_rows)
-    print(json.dumps({"status": "complete", "rows": len(metric_rows), "output_dir": str(args.output_dir)}, indent=2))
+    print(
+        json.dumps(
+            {
+                "status": "complete",
+                "variant": variant_name,
+                "num_units": units,
+                "rows": len(metric_rows),
+                "output_dir": str(args.output_dir),
+            },
+            indent=2,
+        )
+    )
     return 0
 
 

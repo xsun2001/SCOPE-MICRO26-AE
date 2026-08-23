@@ -9,7 +9,8 @@ from pathlib import Path
 
 ABSOLUTE_AUTHOR_PATH = re.compile(r"(?:/home/[^/\s\"'`,;)]+|/data/user/[^/\s\"'`,;)]+|/Users/[^/\s\"'`,;)]+|[A-Za-z]:\\\\Users\\\\[^\\\s\"'`,;)]+)")
 TEXT_SUFFIXES = {".csv", ".env", ".json", ".log", ".md", ".mk", ".py", ".scala", ".sh", ".tsv", ".txt"}
-SKIP_PARTS = {".git", ".venv", "models", "runs", "target", "__pycache__"}
+SKIP_PARTS = {".git", ".venv", "target", "__pycache__", "actual-results"}
+SKIP_ROOT_DIRECTORIES = {"models", "runs"}
 
 
 def main() -> int:
@@ -21,7 +22,13 @@ def main() -> int:
     scanned = 0
 
     for directory, directory_names, file_names in os.walk(root):
-        directory_names[:] = [name for name in directory_names if name not in SKIP_PARTS]
+        current = Path(directory)
+        directory_names[:] = [
+            name
+            for name in directory_names
+            if name not in SKIP_PARTS
+            and not (current == root and name in SKIP_ROOT_DIRECTORIES)
+        ]
         for file_name in file_names:
             path = Path(directory) / file_name
             if not path.is_file() or path.resolve() == Path(__file__).resolve():

@@ -11,7 +11,7 @@ from table5_metrics import (
     MODEL_PREFIXES,
     PROTOCOL_DESCRIPTION,
     four_task_average,
-    load_fp16_baselines,
+    load_bf16_baselines,
 )
 
 
@@ -30,14 +30,19 @@ def main() -> int:
     )
     parser.add_argument("--actual", type=Path, required=True, help="Packaged analysis directory")
     parser.add_argument("--expected", type=Path, required=True)
-    parser.add_argument("--fp16-source", type=Path, required=True)
+    parser.add_argument(
+        "--bf16-source",
+        type=Path,
+        required=True,
+        help="Figure 16 BF16 baseline CSV (legacy source columns are named fp16_exact)",
+    )
     parser.add_argument("--ppl-tolerance", type=float, default=0.04)
     parser.add_argument("--accuracy-tolerance-percent", type=float, default=1.0)
     args = parser.parse_args()
 
     run_root = args.actual.parent
     failures: list[str] = []
-    fp16 = load_fp16_baselines(args.fp16_source)
+    bf16 = load_bf16_baselines(args.bf16_source)
 
     with args.expected.open() as handle:
         expected_rows = list(csv.DictReader(handle))
@@ -57,7 +62,7 @@ def main() -> int:
             target_ppl = float(expected[f"{prefix}_ppl"])
             target_acc = float(expected[f"{prefix}_accuracy_percent"])
             if method == "BF16 Baseline":
-                ppl, acc_percent = fp16[model]
+                ppl, acc_percent = bf16[model]
             else:
                 mode = MODE_MAP[method]
                 result_dir = run_root / f"eval_{model}_{quant}_{mode}"

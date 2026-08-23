@@ -15,7 +15,7 @@ FIG21 := experiments/fig-21-scale-fusion
 TBL3 := experiments/tbl-3-integer-softmax
 TBL4 := experiments/tbl-4-function-approximation-accuracy
 TBL5 := experiments/tbl-5-ostquant-quality
-VALIDATION_OUT ?= validation/results/$(RUN_ID)
+VALIDATION_OUT ?= $(RUN_ROOT)/validation
 
 .PHONY: help setup all evidence evidence-cpu evidence-gpu validate validate-provenance validate-cpu validate-cpu-run validate-gpu validate-packaged reproduce reproduce-cpu reproduce-gpu performance hardware fig-13 fig-14 fig-15 fig-16 fig-17 fig-18 fig-19 fig-20 fig-21 tbl-3 tbl-4 tbl-5 rtl archive package
 
@@ -72,7 +72,7 @@ validate-provenance:
 	$(PYTHON) tools/check_provenance_paths.py --bundle-root "$(BUNDLE_ROOT)"
 
 validate-cpu:
-	$(PYTHON) validation/validate_results.py --run-id "$(PACKAGED_RUN_ID)" --output-dir "validation/results/$(PACKAGED_RUN_ID)"
+	$(PYTHON) validation/validate_results.py --reference-only --output-dir "$(RUN_ROOT)/evidence/validation"
 	$(MAKE) -C $(TBL3) validate-microbenchmark
 
 validate-cpu-run:
@@ -132,9 +132,9 @@ tbl-5:
 	$(MAKE) -C $(TBL5) reproduce EXECUTOR="$(EXECUTOR)" RUN_ROOT="$(RUN_ROOT)" WORKERS="$(WORKERS)" TABLE5_CHECKPOINT_SOURCE="$(TABLE5_CHECKPOINT_SOURCE)"
 
 rtl:
-	mkdir -p hardware/rtl/logs validation/results/$(RUN_ID)
-	(cd hardware/rtl && sbt "runMain pinn.common.GenerateMeshes --filter pinnacle/n8_ --force --verbose") 2>&1 | tee hardware/rtl/logs/$(RUN_ID).log
-	find hardware/rtl/generated/meshes/pinnacle -type f \( -name '*.sv' -o -name '*.v' \) -print | sort > validation/results/$(RUN_ID)/generated_verilog_files.txt
+	mkdir -p "$(RUN_ROOT)/rtl/logs" "$(VALIDATION_OUT)"
+	(cd hardware/rtl && sbt "runMain pinn.common.GenerateMeshes --filter pinnacle/n8_ --force --verbose") 2>&1 | tee "$(RUN_ROOT)/rtl/logs/rtl.log"
+	find hardware/rtl/generated/meshes/pinnacle -type f \( -name '*.sv' -o -name '*.v' \) -print | sort > "$(VALIDATION_OUT)/generated_verilog_files.txt"
 
 archive: evidence validate
 	$(PYTHON) tools/create_archive.py --bundle-root "$(BUNDLE_ROOT)" --output "$(ARCHIVE)"

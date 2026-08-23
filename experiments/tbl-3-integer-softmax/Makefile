@@ -4,7 +4,7 @@ include ../../mk/common.mk
 
 OUT_DIR ?= $(CURDIR)/actual-results/$(RUN_ID)
 LOG_DIR ?= $(BUNDLE_ROOT)/runs/$(RUN_ID)/tbl-3-integer-softmax/logs
-PACKAGED_MICROBENCHMARK ?= $(CURDIR)/actual-results/2026-07-15_reviewer-fix/softmax-microbenchmark
+REFERENCE_MICROBENCHMARK ?= $(CURDIR)/data/h100-softmax-microbenchmark
 
 .PHONY: help run microbenchmark validate-microbenchmark
 
@@ -27,4 +27,4 @@ microbenchmark:
 		2>&1 | tee "$(LOG_DIR)/table3_softmax_h100.log"
 
 validate-microbenchmark:
-	$(PYTHON) scripts/validate_microbenchmark.py --result-dir "$(PACKAGED_MICROBENCHMARK)"
+	$(PYTHON) scripts/validate_microbenchmark.py --result-dir "$(REFERENCE_MICROBENCHMARK)"

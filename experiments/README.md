@@ -1,6 +1,6 @@
 # Experiment Index
 
-All experiment directories use `fig-X-description` or `tbl-X-description`, include a Makefile and README, store bundled measurements under `actual-results/<validated-run>/`, and store paper targets under `expected-results/`.
+All experiment directories use `fig-X-description` or `tbl-X-description` and include a Makefile, README, scripts, compact reference inputs, and expected paper targets. Their `actual-results/` directories are ignored runtime destinations for fresh user runs and contain no committed results.
 
 ## Hardware groups
 

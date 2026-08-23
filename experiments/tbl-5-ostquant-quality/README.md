@@ -7,10 +7,10 @@ Table 5 reports WikiText-2 perplexity and the unweighted mean accuracy over ARC-
 - `../../OSTQuant/`: shared OSTQuant source with the SCNA integration and causal-mask fix.
 - `data/`: four checkpoint-generation cases and sixteen paper evaluation cases.
 - `expected-results/four_task_table5.csv`: replacement Table 5 targets under the unified four-task protocol.
-- `actual-results/2026-07-13_ae-validation/`: 16 fresh OSTQuant/SCNA evaluations, four BF16 baseline entries, 20/20 validated table entries, reports, logs, compact metric JSONs, and the generated table. Large `model.bin` and `qmodel.pt` intermediates are intentionally outside the portable archive.
+- `actual-results/`: ignored runtime destination for fresh user executions. Large `model.bin` and `qmodel.pt` intermediates also remain outside the portable archive.
 - `scripts/`: exact training, GPTQ generation, evaluation, collection, validation, and table generation.
 
-Use `make evidence` to verify the bundled result and regenerate the table under `runs/<run-id>/evidence/tbl-5-ostquant-quality/generated/table5.md` without a GPU. The ignored staging directory keeps the packaged evidence and worktree unchanged.
+Use `make evidence` to verify the compact four-task summary and regenerate the table under `runs/<run-id>/evidence/tbl-5-ostquant-quality/generated/table5.md` without a GPU. The ignored staging directory keeps the reference evidence and worktree unchanged.
 
 For a full fresh run:
 
@@ -30,4 +30,4 @@ To reuse expensive intermediates, set `TABLE5_CHECKPOINT_SOURCE` to a directory 
 
 Only results from the corrected `2026-06-12_140246_corrected_protocol` lineage and the fresh 2026-07-13/14 rerun are included. Older eager-attention runs had a causal-mask alignment bug and are deliberately excluded. The paper-aligned rows use full-precision SCNA inputs (`scna_input_quant_bits=0`) on top of the W6A6/W4A4 OSTQuant backbone.
 
-Fresh evaluation commands pass the four task names explicitly. For the packaged rerun, `scripts/derive_four_task_metrics.py` promotes the retained four-task subset to the official result and preserves the wider raw sweep under `all_task_diagnostics` for provenance.
+Fresh evaluation commands pass the four task names explicitly. `scripts/derive_four_task_metrics.py` promotes the four-task subset to the official result and preserves a wider raw sweep under `all_task_diagnostics` when present in a user run.

@@ -55,17 +55,30 @@ def max_csv_delta(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--run-id", required=True)
+    parser.add_argument("--run-id", default="reference")
+    parser.add_argument(
+        "--reference-only",
+        action="store_true",
+        help="Audit the compact expected-results inputs instead of a fresh actual-results run",
+    )
     parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
     run_id = args.run_id
     experiments = ROOT / "experiments"
-    figure13_root = experiments / "fig-13-prefill-attention" / "actual-results" / run_id
-    figure14_root = experiments / "fig-14-full-prefill" / "actual-results" / run_id
-    figure15_root = experiments / "fig-15-b300-sensitivity" / "actual-results" / run_id
-    table3_root = experiments / "tbl-3-integer-softmax" / "actual-results" / run_id
-    figure18_root = experiments / "fig-18-pe-area-power" / "actual-results" / run_id
-    figure19_root = experiments / "fig-19-hardware-comparison" / "actual-results" / run_id
+    if args.reference_only:
+        figure13_root = experiments / "fig-13-prefill-attention" / "expected-results"
+        figure14_root = experiments / "fig-14-full-prefill" / "expected-results"
+        figure15_root = experiments / "fig-15-b300-sensitivity" / "expected-results"
+        table3_root = experiments / "tbl-3-integer-softmax" / "expected-results" / "attention"
+        figure18_root = experiments / "fig-18-pe-area-power" / "expected-results"
+        figure19_root = experiments / "fig-19-hardware-comparison" / "expected-results"
+    else:
+        figure13_root = experiments / "fig-13-prefill-attention" / "actual-results" / run_id
+        figure14_root = experiments / "fig-14-full-prefill" / "actual-results" / run_id
+        figure15_root = experiments / "fig-15-b300-sensitivity" / "actual-results" / run_id
+        table3_root = experiments / "tbl-3-integer-softmax" / "actual-results" / run_id
+        figure18_root = experiments / "fig-18-pe-area-power" / "actual-results" / run_id
+        figure19_root = experiments / "fig-19-hardware-comparison" / "actual-results" / run_id
     records: list[dict[str, object]] = []
 
     def check(

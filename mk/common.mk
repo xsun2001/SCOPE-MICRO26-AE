@@ -2,7 +2,6 @@ SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 
 BUNDLE_ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))/..)
-PACKAGED_RUN_ID := 2026-07-13_ae-validation
 RUN_ID ?= $(shell date +%Y-%m-%d_%H-%M-%S)
 
 ifeq ($(wildcard $(BUNDLE_ROOT)/.venv/bin/python),)

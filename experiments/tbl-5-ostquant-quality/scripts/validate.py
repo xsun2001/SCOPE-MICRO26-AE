@@ -5,7 +5,7 @@ import csv
 import json
 from pathlib import Path
 
-from table5_metrics import MODEL_PREFIXES, PROTOCOL_DESCRIPTION, load_fp16_baselines
+from table5_metrics import MODEL_PREFIXES, PROTOCOL_DESCRIPTION, load_bf16_baselines
 
 
 MODE_MAP = {
@@ -19,9 +19,21 @@ QUANT_MAP = {"W6A6": "w6a6kv6", "W4A4": "w4a4kv4"}
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Validate the unified four-task Table 5.")
-    parser.add_argument("--result-dir", type=Path, required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--result-dir", type=Path)
+    source.add_argument("--summary", type=Path)
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        help="Analysis output directory; defaults to RESULT_DIR/analysis",
+    )
     parser.add_argument("--expected", type=Path, required=True)
-    parser.add_argument("--fp16-source", type=Path, required=True)
+    parser.add_argument(
+        "--bf16-source",
+        type=Path,
+        required=True,
+        help="Figure 16 BF16 baseline CSV (legacy source columns are named fp16_exact)",
+    )
     parser.add_argument("--ppl-tolerance", type=float, default=0.04)
     parser.add_argument("--accuracy-tolerance-percent", type=float, default=1.0)
     return parser.parse_args()
@@ -29,12 +41,23 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    with (args.result_dir / "analysis" / "maskfix_summary.csv").open() as handle:
+    summary_path = (
+        args.summary
+        if args.summary is not None
+        else args.result_dir / "analysis" / "maskfix_summary.csv"
+    )
+    analysis_dir = (
+        args.output_dir
+        if args.output_dir is not None
+        else args.result_dir / "analysis"
+    )
+    analysis_dir.mkdir(parents=True, exist_ok=True)
+    with summary_path.open() as handle:
         actual = {
             (row["model_key"], row["quant_key"], row["mode"]): row
             for row in csv.DictReader(handle)
         }
-    fp16 = load_fp16_baselines(args.fp16_source)
+    bf16 = load_bf16_baselines(args.bf16_source)
 
     comparisons: list[dict[str, object]] = []
     with args.expected.open() as handle:
@@ -44,7 +67,7 @@ def main() -> int:
                 target_ppl = float(expected[f"{prefix}_ppl"])
                 target_acc = float(expected[f"{prefix}_accuracy_percent"])
                 if expected["method"] == "BF16 Baseline":
-                    reproduced_ppl, reproduced_acc = fp16[model]
+                    reproduced_ppl, reproduced_acc = bf16[model]
                 else:
                     row = actual.get((model, quant, MODE_MAP[expected["method"]]))
                     reproduced_ppl = None if row is None else float(row["ppl"])
@@ -68,7 +91,6 @@ def main() -> int:
                     }
                 )
 
-    analysis_dir = args.result_dir / "analysis"
     comparison_path = analysis_dir / "table5_comparison.csv"
     with comparison_path.open("w", newline="") as handle:
         writer = csv.DictWriter(

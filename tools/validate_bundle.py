@@ -18,51 +18,52 @@ VALIDATED_EXPERIMENTS = {
 EXPERIMENTS = ("tbl-4-function-approximation-accuracy", *VALIDATED_EXPERIMENTS)
 REQUIRED = ("README.md", "Makefile", "data", "expected-results", "actual-results", "scripts")
 REPOSITORIES = ("end2endacc", "OSTQuant", "train")
-PACKAGED_RUN = "2026-07-13_ae-validation"
 
 
 def validator_command(directory: Path, temporary_root: Path) -> list[str]:
-    packaged = directory / "actual-results" / PACKAGED_RUN
     if directory.name == "fig-16-end-to-end-quality":
         return [
             sys.executable,
-            str(directory / "scripts" / "validate_actual.py"),
-            "--actual",
-            str(packaged / "analysis"),
+            str(directory / "scripts" / "validate_reference.py"),
+            "--expected",
+            str(directory / "expected-results" / "paper_figure16.csv"),
         ]
     if directory.name == "tbl-5-ostquant-quality":
         return [
             sys.executable,
-            str(directory / "scripts" / "validate_actual.py"),
-            "--actual",
-            str(packaged / "analysis"),
+            str(directory / "scripts" / "validate.py"),
+            "--summary",
+            str(directory / "expected-results" / "maskfix_summary.csv"),
+            "--output-dir",
+            str(temporary_root / directory.name),
             "--expected",
             str(directory / "expected-results" / "four_task_table5.csv"),
-            "--fp16-source",
+            "--bf16-source",
             str(
                 directory.parent
                 / "fig-16-end-to-end-quality"
-                / "actual-results"
-                / PACKAGED_RUN
-                / "generated"
-                / "actual_plot.csv"
+                / "expected-results"
+                / "paper_figure16.csv"
             ),
         ]
-    command = [
+    figure_number = "17" if directory.name == "fig-17-neuron-scalability" else "20"
+    mode = "width" if figure_number == "17" else "shape"
+    return [
         sys.executable,
-        str(directory / "scripts" / "collect.py"),
-        "--runs-dir",
-        str(packaged / "runs"),
-        "--analysis-dir",
-        str(temporary_root / directory.name),
+        str(directory.parents[1] / "tools" / "validate_function_reference.py"),
+        "--manifest",
+        str(directory / "data" / "manifest.tsv"),
         "--expected",
         str(directory / "expected-results" / "paired_summary.csv"),
-        "--relative-tolerance",
-        "0.20",
+        "--analysis-dir",
+        str(temporary_root / directory.name),
+        "--mode",
+        mode,
+        "--figure",
+        str(directory / "expected-results" / f"figure{figure_number}.png"),
+        "--figure",
+        str(directory / "expected-results" / f"figure{figure_number}.pdf"),
     ]
-    if directory.name == "fig-20-shape-constraints":
-        command.extend(["--absolute-tolerance", "0.0002"])
-    return command
 
 
 def main() -> int:
@@ -99,61 +100,96 @@ def main() -> int:
     with tempfile.TemporaryDirectory(prefix="scope-ae-validation-") as temporary:
         temporary_root = Path(temporary)
         table4_dir = exp_root / "tbl-4-function-approximation-accuracy"
-        table4_output = temporary_root / "table4"
-        reproduce = subprocess.run(
-            [
+        table4_parameters = table4_dir / "data" / "scna_parameters.json"
+        table4_variants = (
+            ("scna16", "paper_table4.csv", "361", "14.9"),
+            ("scna32", "scna32_reference_table4.csv", "836", "31.5"),
+        )
+        table4_results: dict[str, dict[str, object]] = {}
+        for variant, expected_name, nnlut_geomean, tlut_geomean in table4_variants:
+            table4_output = temporary_root / "table4" / variant
+            reproduce_command = [
                 sys.executable,
                 str(table4_dir / "scripts" / "reproduce_scna.py"),
-                "--checkpoints",
-                str(table4_dir / "data" / "scna_checkpoints.json"),
+                "--parameters",
+                str(table4_parameters),
                 "--output-dir",
                 str(table4_output),
-            ],
-            cwd=table4_dir,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            check=False,
-        )
-        table4_validation = table4_output / "validation.json"
-        audit = subprocess.run(
-            [
-                sys.executable,
-                str(table4_dir / "scripts" / "audit.py"),
-                "--generated",
-                str(table4_output),
-                "--expected",
-                str(table4_dir / "expected-results" / "paper_table4.csv"),
-                "--checkpoints",
-                str(table4_dir / "data" / "scna_checkpoints.json"),
-                "--output",
-                str(table4_validation),
-            ],
-            cwd=table4_dir,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            check=False,
-        )
-        try:
-            table4 = json.loads(audit.stdout)
-        except json.JSONDecodeError:
-            table4 = {"status": "invalid-output", "published_rows": None}
+            ]
+            if variant != "scna16":
+                reproduce_command.extend(["--variant", variant])
+            reproduce = subprocess.run(
+                reproduce_command,
+                cwd=table4_dir,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                check=False,
+            )
+            table4_validation = table4_output / "validation.json"
+            audit = subprocess.run(
+                [
+                    sys.executable,
+                    str(table4_dir / "scripts" / "audit.py"),
+                    "--generated",
+                    str(table4_output),
+                    "--expected",
+                    str(table4_dir / "expected-results" / expected_name),
+                    "--parameters",
+                    str(table4_parameters),
+                    "--variant",
+                    variant,
+                    "--expected-nnlut-geomean",
+                    nnlut_geomean,
+                    "--expected-tlut-geomean",
+                    tlut_geomean,
+                    "--output",
+                    str(table4_validation),
+                ],
+                cwd=table4_dir,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                check=False,
+            )
+            try:
+                table4 = json.loads(audit.stdout)
+            except json.JSONDecodeError:
+                table4 = {"status": "invalid-output", "published_rows": None}
+            table4_results[variant] = table4
+            if reproduce.returncode != 0 or audit.returncode != 0:
+                failures.append(
+                    f"tbl-4-function-approximation-accuracy ({variant}): "
+                    "independent execution/validation failed: "
+                    + str(table4.get("failures", []))
+                )
+            if (
+                table4.get("status") != "pass"
+                or table4.get("published_rows") != 11
+                or table4.get("comparisons") != 22
+            ):
+                failures.append(
+                    f"tbl-4-function-approximation-accuracy ({variant}): "
+                    f"unexpected validation status {table4}"
+                )
         reports.append(
             {
                 "experiment": "tbl-4-function-approximation-accuracy",
-                "status": table4.get("status"),
-                "published_rows": table4.get("published_rows"),
-                "comparisons": table4.get("comparisons"),
+                "status": (
+                    "pass"
+                    if all(result.get("status") == "pass" for result in table4_results.values())
+                    else "fail"
+                ),
+                "variants": {
+                    variant: {
+                        "status": result.get("status"),
+                        "published_rows": result.get("published_rows"),
+                        "comparisons": result.get("comparisons"),
+                    }
+                    for variant, result in table4_results.items()
+                },
             }
         )
-        if reproduce.returncode != 0 or audit.returncode != 0:
-            failures.append(
-                "tbl-4-function-approximation-accuracy: independent execution/validation failed: "
-                + str(table4.get("failures", []))
-            )
-        if table4.get("status") != "pass" or table4.get("published_rows") != 11 or table4.get("comparisons") != 22:
-            failures.append(f"tbl-4-function-approximation-accuracy: unexpected validation status {table4}")
 
         for name, expected_count in VALIDATED_EXPERIMENTS.items():
             directory = exp_root / name
@@ -181,7 +217,7 @@ def main() -> int:
                 }
             )
             if completed.returncode != 0:
-                failures.append(f"{name}: raw-evidence validator failed: {payload.get('failures', [])}")
+                failures.append(f"{name}: evidence validator failed: {payload.get('failures', [])}")
             if payload.get("status") != "pass" or payload.get("comparisons") != expected_count:
                 failures.append(f"{name}: unexpected recomputed validation {payload}")
 

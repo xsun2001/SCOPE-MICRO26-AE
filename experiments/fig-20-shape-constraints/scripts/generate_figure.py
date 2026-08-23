@@ -1,51 +1,70 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import json
+import sys
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+
+BUNDLE_ROOT = Path(__file__).resolve().parents[3]
+TRAIN_DIR = BUNDLE_ROOT / "train"
+if str(TRAIN_DIR) not in sys.path:
+    sys.path.insert(0, str(TRAIN_DIR))
+
+from merge_shape_fix_results import (  # noqa: E402
+    PAPER_PANEL_ORDER,
+    plot_convergence_grid,
+    register_libertinus_sans,
+)
 
 
-FUNCTIONS = ["exp", "rsqrt", "sigmoid", "erf", "tanh", "sin", "softsign", "arctan"]
+WIDTH = 16
 
 
-def history(path: Path, limit: int) -> tuple[list[int], list[float], list[float]]:
-    rows = [row for row in csv.DictReader(path.open()) if int(row["epoch"]) <= limit]
-    step = max(1, len(rows) // 1000)
-    rows = rows[::step]
-    return [int(r["epoch"]) for r in rows], [float(r["mse"]) for r in rows], [float(r["avg_loss"]) for r in rows]
+def build_rows(runs_dir: Path) -> list[dict[str, object]]:
+    rows: list[dict[str, object]] = []
+    for func in PAPER_PANEL_ORDER:
+        exp = json.loads((runs_dir / f"{func}_{WIDTH}_exp" / "summary.json").read_text())
+        none = json.loads((runs_dir / f"{func}_{WIDTH}_none" / "summary.json").read_text())
+        exp_best_mse = float(exp["best_mse"])
+        none_best_mse = float(none["best_mse"])
+        rows.append(
+            {
+                "func": func,
+                "num_units": WIDTH,
+                "none_over_exp_best_mse": none_best_mse / exp_best_mse,
+            }
+        )
+    return rows
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description="Render the paper-style Figure 20 shape-constraint comparison."
+    )
     parser.add_argument("--runs-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--max-epochs", type=int, default=5000)
+    parser.add_argument("--max-epochs", type=int, default=5_000)
+    parser.add_argument("--subplot-box-aspect", type=float, default=1.0)
     args = parser.parse_args()
-    fig, axes = plt.subplots(2, 4, figsize=(12, 5.8), sharex=True)
-    for ax, func in zip(axes.flat, FUNCTIONS):
-        gain = None
-        for mode, color, label in (("exp", "#2563eb", "SCNA"), ("none", "#94a3b8", "Unconstrained NN")):
-            run = args.runs_dir / f"{func}_16_{mode}"
-            epoch, mse, loss = history(run / "history.csv", args.max_epochs)
-            ax.plot(epoch, mse, color=color, linewidth=1.3, label=label)
-            ax.plot(epoch, loss, color=color, linewidth=0.8, linestyle="--", alpha=0.75)
-            value = float(json.loads((run / "summary.json").read_text())["best_mse"])
-            gain = value if mode == "exp" else value / gain
-        ax.set_yscale("log"); ax.set_title(f"{func.capitalize()} — {gain:.1f}x"); ax.grid(True, which="major", linestyle=":", alpha=0.4)
-    axes[0, 0].set_ylabel("Loss / MSE"); axes[1, 0].set_ylabel("Loss / MSE")
-    for ax in axes[1]: ax.set_xlabel("Epoch")
-    handles, labels = axes[0, 0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center", ncol=2)
-    fig.tight_layout(rect=(0, 0, 1, 0.93))
+
+    if args.max_epochs <= 0:
+        raise ValueError("--max-epochs must be positive")
+    if args.subplot_box_aspect <= 0.0:
+        raise ValueError("--subplot-box-aspect must be positive")
+
+    register_libertinus_sans()
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    for suffix in ("png", "pdf"): fig.savefig(args.output_dir / f"figure20.{suffix}", dpi=300, bbox_inches="tight")
-    plt.close(fig)
+    plot_convergence_grid(
+        args.runs_dir,
+        build_rows(args.runs_dir),
+        args.output_dir / "figure20.png",
+        "",
+        args.max_epochs,
+        box_aspect=args.subplot_box_aspect,
+    )
     return 0
 
 
-if __name__ == "__main__": raise SystemExit(main())
+if __name__ == "__main__":
+    raise SystemExit(main())

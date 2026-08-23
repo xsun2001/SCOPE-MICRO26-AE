@@ -12,6 +12,8 @@ EXCLUDED_ANYWHERE = {"__pycache__", "target", ".pytest_cache", ".mypy_cache", "l
 def excluded(relative: Path) -> bool:
     if relative.parts and relative.parts[0] in EXCLUDED_TOP_LEVEL:
         return True
+    if "actual-results" in relative.parts and relative.name != ".gitignore":
+        return True
     if relative == Path("config/local.env"):
         return True
     return any(part in EXCLUDED_ANYWHERE for part in relative.parts) or relative.suffix == ".pyc"

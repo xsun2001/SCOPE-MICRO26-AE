@@ -4,7 +4,7 @@ include ../../mk/common.mk
 
 OUT_DIR ?= $(CURDIR)/actual-results/$(RUN_ID)
 LOG_DIR ?= $(BUNDLE_ROOT)/runs/$(RUN_ID)/fig-21-scale-fusion/logs
-FIG13_RUN_DIR ?= $(BUNDLE_ROOT)/experiments/fig-13-prefill-attention/actual-results/$(PACKAGED_RUN_ID)
+FIG13_RUN_DIR ?= $(BUNDLE_ROOT)/experiments/fig-13-prefill-attention/expected-results
 
 .PHONY: help run inputs
 

@@ -1,6 +1,6 @@
 # SCOPE Artifact Evaluation Bundle
 
-This repository is the unified reviewer bundle for `paper/SCOPE-revision.pdf`. It combines the CPU-host performance, RTL, and synthesis evidence with the GPU-host accuracy and numerical-precision experiments. All paper experiment directories use the `fig-X-description` or `tbl-X-description` naming convention and contain a Makefile, README, scripts, bundled actual results, and expected paper results.
+This repository is the unified reviewer bundle for `paper/SCOPE-revision.pdf`. It combines the CPU-host performance, RTL, and synthesis evidence with the GPU-host accuracy and numerical-precision experiments. All paper experiment directories use the `fig-X-description` or `tbl-X-description` naming convention and contain a Makefile, README, scripts, compact reference data, and expected paper results.
 
 Submission-facing result and dependency information is in `AE_SUBMISSION.md`.
 The Review A1 corrections, authoritative protocol choices, and rerun commands
@@ -14,7 +14,7 @@ make evidence
 make validate
 ```
 
-`make evidence` regenerates compact GPU-side figures/tables under ignored staging directories and audits the packaged CPU evidence without modifying tracked files. `make validate` checks both suites: the CPU validator currently reports 68/68 checks passing, Table 3 additionally recomputes 36 statistics from 720 raw H100 samples, and the GPU validator recomputes Figure 16 (80 comparisons), Table 5 (20), Figure 17 (36), Figure 20 (18), and all 11 Table 4 SCNA rows.
+`make evidence` regenerates compact GPU-side figures/tables under ignored staging directories and audits the CPU reference evidence without modifying tracked files. `make validate` checks both suites: the CPU validator currently reports 68/68 checks passing, Table 3 additionally recomputes 36 statistics from the compact 720-sample H100 calibration dataset, and the GPU validator audits Figure 16 (80 comparisons), Table 5 (20), and both 11-row Table 4 variants. For Figures 17 and 20 it audits the 36- and 18-entry reference matrices and canonical figure outcomes without bundling rerun histories. The primary SCNA-16 and reference SCNA-32 Table 4 paths each pass all 22 MSE/MAE checks.
 
 `make all` is the safe alias for evidence plus validation; it does not launch long CPU simulations or GPU jobs.
 
@@ -23,8 +23,10 @@ make validate
 ### Table 4 executable SCNA reproduction
 
 Table 4 no longer renders the expected CSV as a reproduction. The executable
-path in `experiments/tbl-4-function-approximation-accuracy/` evaluates all 11
-archived 32-unit SCNA configurations without reading paper values, writes
+path in `experiments/tbl-4-function-approximation-accuracy/` evaluates 11
+selected SCNA-16 parameter sets by default and all 11 SCNA-32 reference sets
+in the same target without
+reading paper values, writes
 point-level predictions and independently calculated MSE/MAE values under the
 ignored `runs/<RUN_ID>/` tree, and only then invokes a separate validator
 against `expected-results/paper_table4.csv`:
@@ -35,12 +37,13 @@ make tbl-4
 
 The command writes `raw_predictions.csv` and `scna_metrics.csv` under `runs/`
 and then validates them against the separate paper reference. The validator
-reconstructs MSE and MAE from the point-level records, checks all 22 metrics,
-and recomputes the paper geomeans. The corrected run produces 434.85x
-versus NN-LUT (the nine general nonlinearities, excluding Exp/Exp2) and 15.07x
-versus T-LUT (the nine rows with numeric T-LUT results), consistent with the
-reported 431x and 14.9x comparisons. Literature baseline values remain
-references only and are not reimplemented.
+reconstructs MSE and MAE from the point-level records, checks 22 metrics per
+width, and recomputes the revised paper geomeans. The primary SCNA-16 result
+produces 360.83x versus NN-LUT across all 11 functions and 14.87x versus T-LUT
+across the nine rows with numeric T-LUT results. The SCNA-32 reference produces
+835.53x and 31.48x. All fused weights and biases are embedded directly in the
+Table 4 data manifest; original checkpoint paths are provenance metadata only.
+Literature baseline values remain references and are not reimplemented.
 
 ### Figure 16 archive completeness and provenance
 
@@ -163,7 +166,7 @@ Run both suites with `make reproduce`.
 | Table 5 | `experiments/tbl-5-ostquant-quality` | NVIDIA CUDA GPU (Ampere or newer), 80 GB or more |
 | Table 4 | `experiments/tbl-4-function-approximation-accuracy` | SCNA accuracy reproduction on CPU; other methods are literature references |
 
-Every experiment stores bundled measurements under `actual-results/<validated-run>/` and paper targets under `expected-results/`. Fresh CPU runs use the same timestamped experiment directories. Fresh GPU runs are written under the ignored `runs/<RUN_ID>/` tree because Table 5 intermediates can exceed 60 GB.
+Every `actual-results/` directory is an ignored, runtime-only destination for user executions; no run output is committed there. Compact inputs needed for hardware-free evidence checks live under `data/` or `expected-results/`. Fresh CPU runs use timestamped `actual-results/<RUN_ID>/` directories. Fresh GPU runs are written under the ignored `runs/<RUN_ID>/` tree because Table 5 intermediates can exceed 60 GB.
 
 ## Expected runtimes
 

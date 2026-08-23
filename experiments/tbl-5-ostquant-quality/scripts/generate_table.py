@@ -21,9 +21,6 @@ def main() -> int:
     args = parser.parse_args()
     with args.comparison.open() as handle:
         rows = list(csv.DictReader(handle))
-    for row in rows:
-        if row["method"] == "FP16 Baseline":
-            row["method"] = "BF16 Baseline"
     indexed = {
         (row["method"], row["quantization"], row["model"]): row for row in rows
     }

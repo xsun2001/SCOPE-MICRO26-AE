@@ -1,6 +1,6 @@
 # Paper-to-Artifact Result Map
 
-The paper source of truth is `paper/SCOPE-revision.pdf`. Bundled measurements are under each experiment's `actual-results/2026-07-13_ae-validation/` directory; paper targets are under `expected-results/`.
+The currently bundled paper is `paper/SCOPE-revision.pdf`, including the revised primary SCNA-16 Table 4. The old table, primary SCNA-16 revision, and SCNA-32 reference are recorded together in `experiments/tbl-4-function-approximation-accuracy/data/REVISED_TABLE4_DATA.md`. Compact audit inputs and paper targets are under `data/` and `expected-results/`; each ignored `actual-results/` directory is reserved for fresh user runs.
 
 ## CPU performance and hardware
 
@@ -14,11 +14,11 @@ The paper source of truth is `paper/SCOPE-revision.pdf`. Bundled measurements ar
 
 ## GPU accuracy and numerical precision
 
-- Table 4 → `experiments/tbl-4-function-approximation-accuracy/`: reproduces SCNA accuracy for 11 functions; other method columns are literature reference values and should be reproduced from their papers.
+- Table 4 → `experiments/tbl-4-function-approximation-accuracy/`: evaluates embedded trained SCNA-16 parameters for the primary 11-function table and embedded SCNA-32 parameters as a reference; both sets of 22 metrics pass the strict audit.
 - Figure 16 → `experiments/fig-16-end-to-end-quality/`: 80/80 bundled perplexity and four-task mean-accuracy comparisons pass.
-- Table 5 → `experiments/tbl-5-ostquant-quality/`: 20/20 four-task PPL/accuracy table entries pass across OSTQuant, SCNA-8/16/32, and FP16 baselines.
+- Table 5 → `experiments/tbl-5-ostquant-quality/`: 20/20 four-task PPL/accuracy table entries pass across OSTQuant, SCNA-8/16/32, and BF16 baselines.
 - Figure 17 → `experiments/fig-17-neuron-scalability/`: 36/36 configurations pass; measured 32-vs-4 MSE gain is 97.2x--2837.8x.
-- Figure 20 → `experiments/fig-20-shape-constraints/`: 18/18 width-16 configurations pass; shape constraints improve MSE by 47.1x--2264.3x.
+- Figure 20 → `experiments/fig-20-shape-constraints/`: 18/18 width-16 configurations pass; after correcting Rsqrt semantics, shape constraints improve MSE by 47.1x--976.3x.
 
 ## RTL and synthesis provenance
 

@@ -49,7 +49,12 @@ def target_erf(x: torch.Tensor) -> torch.Tensor:
 
 
 def target_rsqrt(x: torch.Tensor) -> torch.Tensor:
-    # functions.md defines the trainable remapping for "Rsqrt" as -(1 / x).
+    # Rsqrt is trained on a negative-domain parameterization, so the real-valued
+    # remap is 1 / sqrt(-x), corresponding to reciprocal square root on -x.
+    return torch.rsqrt(-x)
+
+
+def target_recip(x: torch.Tensor) -> torch.Tensor:
     return -torch.reciprocal(x)
 
 
@@ -67,6 +72,14 @@ def target_softsign(x: torch.Tensor) -> torch.Tensor:
 
 def target_arctan(x: torch.Tensor) -> torch.Tensor:
     return torch.atan(x) + x.new_tensor(math.pi / 2)
+
+
+def target_softplus(x: torch.Tensor) -> torch.Tensor:
+    return F.softplus(x)
+
+
+def target_gelu(x: torch.Tensor) -> torch.Tensor:
+    return torch.erf(x / math.sqrt(2.0)) + 1
 
 
 FUNCTION_SPECS: dict[str, FunctionSpec] = {
@@ -101,9 +114,16 @@ FUNCTION_SPECS: dict[str, FunctionSpec] = {
     "rsqrt": FunctionSpec(
         name="rsqrt",
         target_fn=target_rsqrt,
-        default_l_range=-1024.0,
-        default_r_range=-0.1,
-        description="-(1 / x) remapping from functions.md",
+        default_l_range=-256.0,
+        default_r_range=-1.0,
+        description="1 / sqrt(-x) remapping from the negative-domain rsqrt parameterization",
+    ),
+    "recip": FunctionSpec(
+        name="recip",
+        target_fn=target_recip,
+        default_l_range=-16.0,
+        default_r_range=-1.0,
+        description="-(1 / x) remapping from the negative-domain reciprocal parameterization",
     ),
     "sin": FunctionSpec(
         name="sin",
@@ -133,11 +153,42 @@ FUNCTION_SPECS: dict[str, FunctionSpec] = {
         default_r_range=0.0,
         description="arctan(x) + pi/2 remapping from functions.md",
     ),
+    "softplus": FunctionSpec(
+        name="softplus",
+        target_fn=target_softplus,
+        default_l_range=-16.0,
+        default_r_range=0.0,
+        description="softplus(x)",
+    ),
+    "gelu": FunctionSpec(
+        name="gelu",
+        target_fn=target_gelu,
+        default_l_range=-8.0,
+        default_r_range=0.0,
+        description="erf(x / sqrt(2)) + 1 branch used by GeLU",
+    ),
 }
 
 
 def tensor_to_list(tensor: torch.Tensor) -> list[float]:
     return tensor.detach().cpu().tolist()
+
+
+def inverse_softplus(x: torch.Tensor) -> torch.Tensor:
+    return torch.where(x > 20.0, x, torch.log(torch.expm1(x)))
+
+
+def geomspace(
+    start: float,
+    stop: float,
+    steps: int,
+    *,
+    dtype: torch.dtype,
+    device: torch.device | None = None,
+) -> torch.Tensor:
+    return torch.exp(
+        torch.linspace(math.log(start), math.log(stop), steps, dtype=dtype, device=device)
+    )
 
 
 class Approx(nn.Module):
@@ -205,6 +256,74 @@ class Approx(nn.Module):
         return (torch.relu(x[..., None] * w + b) * k).sum(dim=-1)
 
 
+def maybe_initialize_model_from_function(
+    model: Approx,
+    *,
+    func_name: str,
+    reparam: str | None,
+    l_range: float,
+    r_range: float,
+) -> dict[str, Any] | None:
+    # This only seeds positive parameter scales and hinge locations from the
+    # input domain; it does not solve coefficients from target samples.
+    if reparam not in {"exp", "softplus"}:
+        return None
+    if func_name not in {"rsqrt", "recip"}:
+        return None
+    if not (l_range < r_range < 0.0):
+        return None
+
+    raw_seed_w = torch.empty_like(model.w).uniform_(-5.0, 0.0)
+    raw_seed_k = torch.empty_like(model.k).uniform_(-5.0, 0.0)
+    raw_seed_b = torch.empty_like(model.b).uniform_(-5.0, 0.0)
+
+    effective_w = torch.exp(raw_seed_w)
+    effective_k = torch.exp(raw_seed_k)
+    effective_b = torch.exp(raw_seed_b)
+    metadata: dict[str, Any] = {
+        "strategy": "bounded effective-parameter init",
+        "raw_init_range": [-5.0, 0.0],
+    }
+
+    if func_name == "recip":
+        left_magnitude = abs(l_range) * 2.0
+        right_magnitude = max(abs(r_range) * 0.5, 1e-6)
+        magnitudes = geomspace(
+            right_magnitude,
+            left_magnitude,
+            model.num_units,
+            dtype=model.w.dtype,
+            device=model.w.device,
+        )
+        breakpoints = -torch.flip(magnitudes, dims=[0])
+        effective_b = (-breakpoints * effective_w).clamp_min(1e-12)
+        metadata.update(
+            {
+                "strategy": "bounded effective-parameter init + geometric breakpoint seeding",
+                "breakpoints": tensor_to_list(breakpoints),
+                "expanded_domain": [float(-left_magnitude), float(-right_magnitude)],
+            }
+        )
+
+    if reparam == "exp":
+        raw_w = torch.log(effective_w)
+        raw_k = torch.log(effective_k)
+        raw_b = torch.log(effective_b)
+    elif reparam == "softplus":
+        raw_w = inverse_softplus(effective_w)
+        raw_k = inverse_softplus(effective_k)
+        raw_b = inverse_softplus(effective_b)
+    else:
+        return None
+
+    with torch.no_grad():
+        model.w.copy_(raw_w.to(device=model.w.device, dtype=model.w.dtype))
+        model.k.copy_(raw_k.to(device=model.k.device, dtype=model.k.dtype))
+        model.b.copy_(raw_b.to(device=model.b.device, dtype=model.b.dtype))
+
+    return metadata
+
+
 class Loss(nn.Module):
     def __init__(self, y_min: float, y_max: float, l_bound: float):
         super().__init__()
@@ -253,10 +372,13 @@ def parse_args() -> argparse.Namespace:
             "sigmoid",
             "erf",
             "rsqrt",
+            "recip",
             "sin",
             "tanh",
             "softsign",
             "arctan",
+            "softplus",
+            "gelu",
         ],
         default="exp",
         help="Target function to approximate.",
@@ -897,6 +1019,13 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
     reparam = None if args.reparam == "none" else args.reparam
 
     model = Approx(args.num_units, reparam).to(device)
+    init_metadata = maybe_initialize_model_from_function(
+        model,
+        func_name=args.func,
+        reparam=reparam,
+        l_range=args.l_range,
+        r_range=args.r_range,
+    )
     loss_fn = Loss(output_bounds[0], output_bounds[1], args.l_bound).to(device)
     optimizer = build_optimizer(args.optim, model, args.lr)
     lr_scheduler = build_lr_scheduler(args, optimizer)
@@ -927,6 +1056,7 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
             "y_min": output_bounds[0],
             "y_max": output_bounds[1],
         },
+        "initialization": init_metadata,
         "function_description": function_spec.description,
         "model": str(model),
     }
@@ -951,6 +1081,38 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
         args.l_range, args.r_range, args.eval_points, device=device
     ).unsqueeze(1)
     eval_y = target_fn(eval_x)
+    with torch.inference_mode():
+        initial_predictions = model(eval_x)
+        initial_loss = loss_fn(initial_predictions, eval_y).item()
+        initial_mse = F.mse_loss(initial_predictions, eval_y).item()
+        initial_rmse = math.sqrt(initial_mse)
+    initial_metrics = {
+        "epoch": 0,
+        "avg_loss": initial_loss,
+        "max_loss": initial_loss,
+        "mse": initial_mse,
+        "rmse": initial_rmse,
+        "lr": get_current_lr(optimizer),
+    }
+    if early_stopper is not None:
+        initial_metrics["early_stop_stale_epochs"] = 0
+    best_mse = initial_mse
+    best_epoch = 0
+    history.append(initial_metrics)
+    save_checkpoint(
+        checkpoints_dir / "best.json",
+        model=model,
+        epoch=0,
+        metrics=initial_metrics,
+        best_mse=best_mse,
+        args=args,
+        output_bounds=output_bounds,
+    )
+    if writer is not None:
+        writer.add_scalar("Loss/avg", initial_loss, 0)
+        writer.add_scalar("Loss/max", initial_loss, 0)
+        writer.add_scalar("Error/MSE", initial_mse, 0)
+        writer.add_scalar("Error/RMSE", initial_rmse, 0)
 
     progress = tqdm(range(1, args.num_epochs + 1), desc="Training")
     for epoch in progress:

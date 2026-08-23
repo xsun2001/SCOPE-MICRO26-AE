@@ -8,7 +8,7 @@ Run:
 make run
 ```
 
-`extend_attention_fixed_tiles.py --int-softmax-comparison` reproduces the paper table from the archived H100 calibration ratios and writes the latency and speedup CSVs. The validator converts modeled latency to useful attention TFLOP/s and checks the exact paper values. `actual-results/` contains the latest run; `expected-results/` includes the paper-matched attention/full-model data and the other integer-softmax values used for audit.
+`extend_attention_fixed_tiles.py --int-softmax-comparison` reproduces the paper table from the archived H100 calibration ratios and writes the latency and speedup CSVs. The validator converts modeled latency to useful attention TFLOP/s and checks the exact paper values. Fresh runs go to the ignored `actual-results/` tree; `expected-results/` includes the paper-matched attention/full-model data and the other integer-softmax values used for audit.
 
 ## Physical softmax microbenchmark
 
@@ -18,7 +18,7 @@ On an allocated H100 with PyTorch and Triton installed, run:
 
 ```bash
 make microbenchmark RUN_ID=<new-run>
-make validate-microbenchmark PACKAGED_MICROBENCHMARK="$PWD/actual-results/<new-run>/softmax-microbenchmark"
+make validate-microbenchmark REFERENCE_MICROBENCHMARK="$PWD/actual-results/<new-run>/softmax-microbenchmark"
 ```
 
-The packaged run is under `actual-results/2026-07-15_reviewer-fix/softmax-microbenchmark/`. `raw_samples.csv` stores every CUDA-event timing; `softmax_latency.csv` stores medians, means, sample standard deviations, throughput, and ratios; `metadata.json` records the software/device configuration. `make validate-microbenchmark` rejects missing, duplicate, or extra repetitions and recomputes every reported statistic from the raw samples. Physical timings vary with clocks, thermal state, software versions, and GPU contention, so they are expected to validate the calibration trend rather than match the paper TFLOP/s bit-for-bit.
+The compact calibration dataset is under `data/h100-softmax-microbenchmark/`. `raw_samples.csv` stores every CUDA-event timing; `softmax_latency.csv` stores medians, means, sample standard deviations, throughput, and ratios; `metadata.json` records the software/device configuration. `make validate-microbenchmark` rejects missing, duplicate, or extra repetitions and recomputes every reported statistic from the raw samples. Physical timings vary with clocks, thermal state, software versions, and GPU contention, so fresh user runs are expected to validate the calibration trend rather than match the paper TFLOP/s bit-for-bit.

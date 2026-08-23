@@ -5,7 +5,7 @@ This experiment reports the INT8 softmax scale-conversion fusion ablation. The p
 From the bundle root, `make fig-21` first produces the matching conversion/no-conversion Figure 13 conditions. Direct invocation can reuse the included run:
 
 ```bash
-make run FIG13_RUN_DIR=../fig-13-prefill-attention/actual-results/2026-07-13_ae-validation
+make run FIG13_RUN_DIR=../fig-13-prefill-attention/expected-results
 ```
 
-The Makefile copies the paired inputs into its timestamped `actual-results/` directory and invokes `generate_paper_figures.py`. The ablation PNG/PDF and exact result CSV inputs are present under both actual and expected result trees.
+The Makefile copies the paired inputs into its ignored timestamped `actual-results/` directory and invokes `generate_paper_figures.py`. The compact ablation PNG/PDF and exact reference CSV inputs are under `expected-results/`.

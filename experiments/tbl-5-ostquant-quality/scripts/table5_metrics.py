@@ -61,7 +61,8 @@ def officialize_final_metrics(final: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-def load_fp16_baselines(path: Path) -> dict[str, tuple[float, float]]:
+def load_bf16_baselines(path: Path) -> dict[str, tuple[float, float]]:
+    """Load BF16 baselines from Figure 16's legacy ``fp16_exact`` columns."""
     with path.open() as handle:
         rows = list(csv.DictReader(handle))
     indexed = {(row["model"], row["metric"]): row for row in rows}
