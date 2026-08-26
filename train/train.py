@@ -30,6 +30,7 @@ class FunctionSpec:
     default_l_range: float
     default_r_range: float
     description: str
+    default_l_bound: float = 0.15
 
 
 def target_exp(x: torch.Tensor) -> torch.Tensor:
@@ -114,9 +115,10 @@ FUNCTION_SPECS: dict[str, FunctionSpec] = {
     "rsqrt": FunctionSpec(
         name="rsqrt",
         target_fn=target_rsqrt,
-        default_l_range=-256.0,
-        default_r_range=-1.0,
+        default_l_range=-1024.0,
+        default_r_range=-0.1,
         description="1 / sqrt(-x) remapping from the negative-domain rsqrt parameterization",
+        default_l_bound=0.10,
     ),
     "recip": FunctionSpec(
         name="recip",
@@ -410,8 +412,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--l-bound",
         type=float,
-        default=0.15,
-        help="Boundary loss weight. Must be in [0, 0.5) so the MSE term stays non-negative.",
+        default=None,
+        help="Boundary loss weight. Defaults from --func and must be in [0, 0.5).",
     )
     parser.add_argument(
         "--y-min",
@@ -572,6 +574,8 @@ def apply_function_defaults(args: argparse.Namespace) -> None:
         args.l_range = spec.default_l_range
     if args.r_range is None:
         args.r_range = spec.default_r_range
+    if args.l_bound is None:
+        args.l_bound = spec.default_l_bound
 
 
 def validate_args(args: argparse.Namespace) -> None:

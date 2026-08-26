@@ -24,10 +24,14 @@ for task_index in $(seq "$TASK_SLOT" "$WORKER_COUNT" "$((TASK_COUNT - 1))"); do
   line=${line%$'\r'}
   IFS=$'\t' read -r func width reparam run_name <<<"$line"
   out_dir="$RUN_ROOT/fig-17-neuron-scalability/runs/$run_name"
+  range_args=()
+  if [[ "$func" == "rsqrt" ]]; then
+    range_args=(--l-range -256 --r-range -1)
+  fi
   mkdir -p "$out_dir"
   echo "[$(date --iso-8601=seconds)] task=$task_index func=$func width=$width reparam=$reparam"
   if ! "$PYTHON_BIN" "$BUNDLE_ROOT/train/train.py" \
-    --func "$func" --num-units "$width" --reparam "$reparam" --l-bound 0.15 \
+    --func "$func" --num-units "$width" --reparam "$reparam" --l-bound 0.15 "${range_args[@]}" \
     --batch-size 128 --optim Adam --lr 0.05 --lr-scheduler ReduceLROnPlateau \
     --num-epochs 30000 --train-data-shape 4096 4096 --eval-points 1000 \
     --seed 42 --device cuda --pin-memory --early-stop-patience 0 --output-dir "$out_dir"; then

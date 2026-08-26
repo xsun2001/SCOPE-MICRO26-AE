@@ -4,14 +4,14 @@
 
 `data/scna_parameters.json` embeds the fused trained weights and biases for both widths, so evaluation has no checkpoint-file or hash dependency. Each row keeps its original checkpoint path as provenance metadata, but the evaluator reads parameters directly from the manifest. SCNA-16 is the default variant. The SCNA-16 Softplus and GeLU runs are from `20260822-table4-softplus-gelu-scna16`; their SCNA-32 references are from the corresponding `scna32` run. For GeLU, SCNA approximates `erf(x/sqrt(2))+1`; the outer `x/2` multiply is exact. `data/REVISED_TABLE4_DATA.md` is the single data document containing the old table, primary SCNA-16 revision, and SCNA-32 reference.
 
-Rsqrt is evaluated as `1 / sqrt(-x)` on `[-256, -1]`, independently checked point by point by the audit. Reciprocal remains a separate trainer target and is not substituted for the Table 4 Rsqrt row.
+Rsqrt is evaluated as `1 / sqrt(-x)` on the reflected Table 1 range `[-1024, -0.1]`, equivalent to the positive input range `[0.1, 1024]`. Training uses `lambda_bound=0.10`, and the audit checks the protocol and target point by point. Reciprocal remains a separate trainer target and is not substituted for the Table 4 Rsqrt row.
 
 Both evaluations match all 22 rounded values in their respective expected-results CSVs within the unchanged symmetric ±10% audit.
 
 The revised NN-LUT comparison uses all 11 functions, consistent with the final
 paper wording; the T-LUT comparison uses the nine rows with numeric T-LUT
-entries. Corrected SCNA-16 MSE values produce 360.83x and 14.87x improvements,
-respectively. The SCNA-32 reference produces 835.53x and 31.48x.
+entries. Corrected SCNA-16 MSE values produce 355.93x and 14.87x improvements,
+respectively. The SCNA-32 reference produces 908.28x and 31.48x.
 
 Run the actual reproduction with:
 

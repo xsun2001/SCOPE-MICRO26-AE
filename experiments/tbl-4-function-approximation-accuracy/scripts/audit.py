@@ -50,11 +50,12 @@ def main() -> int:
         failures.append("Rsqrt: no checkpoint configuration")
     elif (
         rsqrt_config.get("target") != "reflected_rsqrt"
-        or float(rsqrt_config["l_range"]) != -256.0
-        or float(rsqrt_config["r_range"]) != -1.0
+        or float(rsqrt_config["l_range"]) != -1024.0
+        or float(rsqrt_config["r_range"]) != -0.1
+        or float(rsqrt_config.get("lambda_bound", -1.0)) != 0.10
     ):
         failures.append(
-            "Rsqrt: expected reflected_rsqrt on [-256, -1], not reciprocal semantics"
+            "Rsqrt: expected reflected_rsqrt on [-1024, -0.1] with lambda_bound=0.10"
         )
     for name in sorted(set(generated) & set(expected)):
         config = configured.get(name)
