@@ -1,4 +1,6 @@
 import argparse
+import io
+import re
 import csv
 import os
 from pathlib import Path
@@ -9,8 +11,9 @@ import matplotlib
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
+from matplotlib.transforms import Bbox, ScaledTranslation
 import pandas as pd
-from matplotlib.ticker import FuncFormatter, MaxNLocator
+from matplotlib.ticker import FixedLocator, FuncFormatter, MaxNLocator
 
 
 EXPERIMENT_DIR = Path(__file__).resolve().parent
@@ -92,6 +95,61 @@ def format_context(value, _pos=None) -> str:
 
 
 def save_figure(fig: plt.Figure, output_dir: Path, stem: str) -> None:
+    if stem == "figure_paper_e2e_speedup_main_devices":
+        # Resolve the original layout before enlarging typography.
+        # Fixed export bounds retain the published PDF size and TeX crop offsets.
+        fig.savefig(io.BytesIO(), format="png", dpi=300, bbox_inches="tight", pad_inches=0.08)
+        captured_bounds = []
+        original_tightbbox = fig.get_tightbbox
+
+        def capture_tightbbox(renderer, *args, **kwargs):
+            bounds = original_tightbbox(renderer, *args, **kwargs)
+            captured_bounds.append(bounds.frozen())
+            return bounds
+
+        fig.get_tightbbox = capture_tightbbox
+        try:
+            fig.savefig(io.BytesIO(), format="pdf", bbox_inches="tight", pad_inches=0.08)
+        finally:
+            fig.get_tightbbox = original_tightbbox
+        fig.set_layout_engine(None)
+        bounds = captured_bounds[-1].padded(0.08)
+        bounds = Bbox.from_bounds(bounds.x0, bounds.y0, 601.2 / 72, 234.7 / 72)
+        scale = float(os.environ.get("SCOPE_FIGURE_FONT_SCALE", "1.15"))
+        # Match Figure 15 after both PDFs are scaled to the same TeX column
+        # width. Keep axes, tick locations, and label anchors unchanged.
+        paper_scale = 601.2 / 565.2
+        for ax in fig.axes:
+            for axis in (ax.xaxis, ax.yaxis):
+                axis.set_major_locator(FixedLocator(axis.get_majorticklocs()))
+                label = axis.label
+                axis.set_label_coords(*label.get_position(), transform=label.get_transform())
+                label.set_fontsize(label.get_fontsize() * 1.15 * paper_scale)
+            # The long two-line y label has less margin than Figure 15.
+            # Enlarge it only as far as the original canvas safely permits.
+            if ax.get_ylabel():
+                ax.yaxis.label.set_fontsize(15.5)
+            ax.tick_params(axis="both", which="major", labelsize=15.0 * paper_scale)
+        for legend in fig.legends:
+            for text in legend.get_texts():
+                text.set_fontsize(16.5 * paper_scale)
+            # Lift the legend by 5 points within the existing top margin.
+            # Keep the panel positions and published canvas unchanged.
+            anchor = legend.get_bbox_to_anchor()
+            legend.set_bbox_to_anchor(
+                anchor._bbox,
+                transform=anchor._transform + ScaledTranslation(0, 5 / 72, fig.dpi_scale_trans),
+            )
+        for ax in fig.axes:
+            for text in ax.texts:
+                if re.fullmatch(r"[0-9]+(?:\.[0-9]+)?x?", text.get_text()):
+                    text.set_fontsize(text.get_fontsize() * scale * paper_scale)
+                elif text.get_text() in ("FP16", "INT8"):
+                    text.set_fontsize(text.get_fontsize() * paper_scale)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        fig.savefig(output_dir / f"{stem}.png", dpi=300, bbox_inches=bounds, pad_inches=0)
+        fig.savefig(output_dir / f"{stem}.pdf", bbox_inches=bounds, pad_inches=0)
+        return
     output_dir.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_dir / f"{stem}.png", dpi=300, bbox_inches="tight", pad_inches=0.08)
     fig.savefig(output_dir / f"{stem}.pdf", bbox_inches="tight", pad_inches=0.08)

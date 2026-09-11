@@ -1,4 +1,7 @@
 import argparse
+import io
+import os
+import re
 import json
 from pathlib import Path
 
@@ -7,9 +10,10 @@ import matplotlib
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
+from matplotlib.transforms import Bbox
 import numpy as np
 import pandas as pd
-from matplotlib.ticker import FuncFormatter
+from matplotlib.ticker import FixedLocator, FuncFormatter
 
 
 VARIANT_COLORS = {
@@ -103,6 +107,47 @@ def configure_matplotlib() -> None:
 
 
 def save_figure(fig: plt.Figure, output_dir: Path, stem: str) -> None:
+    if stem == "figure_paper_requested_customsa_conversion_ablation":
+        # Resolve the ORIGINAL layout before changing only legend/value fonts.
+        # Fixed export bounds retain the published PDF size and TeX crop offsets.
+        fig.savefig(io.BytesIO(), format="png", dpi=300, bbox_inches="tight", pad_inches=0.1)
+        captured_bounds = []
+        original_tightbbox = fig.get_tightbbox
+
+        def capture_tightbbox(renderer, *args, **kwargs):
+            bounds = original_tightbbox(renderer, *args, **kwargs)
+            captured_bounds.append(bounds.frozen())
+            return bounds
+
+        fig.get_tightbbox = capture_tightbbox
+        try:
+            fig.savefig(io.BytesIO(), format="pdf", bbox_inches="tight", pad_inches=0.1)
+        finally:
+            fig.get_tightbbox = original_tightbbox
+        fig.set_layout_engine(None)
+        bounds = captured_bounds[-1].padded(0.1)
+        bounds = Bbox.from_bounds(bounds.x0, bounds.y0, 580.8 / 72, 174 / 72)
+        scale = float(os.environ.get("SCOPE_FIGURE_FONT_SCALE", "1.10"))
+        # Enlarge typography after freezing the original panel geometry.
+        for ax in fig.axes:
+            for axis in (ax.xaxis, ax.yaxis):
+                axis.set_major_locator(FixedLocator(axis.get_majorticklocs()))
+                label = axis.label
+                axis.set_label_coords(*label.get_position(), transform=label.get_transform())
+                label.set_fontsize(15.5)
+            ax.tick_params(axis="both", which="major", labelsize=13.5)
+            ax.title.set_fontsize(16)
+        for legend in fig.legends:
+            for text in legend.get_texts():
+                text.set_fontsize(text.get_fontsize() * scale)
+        for ax in fig.axes:
+            for text in ax.texts:
+                if re.fullmatch(r"[0-9]+(?:\.[0-9]+)?x?", text.get_text()):
+                    text.set_fontsize(text.get_fontsize() * scale)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        fig.savefig(output_dir / f"{stem}.png", dpi=300, bbox_inches=bounds, pad_inches=0)
+        fig.savefig(output_dir / f"{stem}.pdf", bbox_inches=bounds, pad_inches=0)
+        return
     output_dir.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_dir / f"{stem}.png", dpi=300, bbox_inches="tight")
     fig.savefig(output_dir / f"{stem}.pdf", bbox_inches="tight")

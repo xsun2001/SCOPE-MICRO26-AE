@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import io
 import csv
 from pathlib import Path
 
@@ -13,6 +14,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import to_hex, to_rgb
 from matplotlib.patches import Patch
+from matplotlib.transforms import Bbox
 
 
 ACC_ORDER = ["FP16", "INT32"]
@@ -99,6 +101,36 @@ def plot_metric(ax: plt.Axes, data: dict, metric: str, ylabel: str) -> set[str]:
     return used
 
 
+def align_paper_style(fig: plt.Figure) -> Bbox:
+    """Apply reference styling while retaining published axes and export bounds."""
+    fig.savefig(io.BytesIO(), format="png", dpi=300, bbox_inches="tight")
+    fig.savefig(io.BytesIO(), format="pdf", bbox_inches="tight")
+    fig.set_layout_engine(None)
+    first_panel = fig.axes[0].get_position()
+    left = first_panel.x0 * fig.get_figwidth() - 57.4969 / 72
+    top = first_panel.y1 * fig.get_figheight() + 77.983 / 72
+    bounds = Bbox.from_bounds(left, top - 394.6 / 72, 669.5 / 72, 394.6 / 72)
+    paper_scale = 239.4 / 669.5
+    for ax in fig.axes:
+        ax.set_facecolor("white")
+        for spine in ax.spines.values():
+            spine.set_color("black")
+            spine.set_linewidth(0.35 / paper_scale)
+        ax.tick_params(width=0.35 / paper_scale)
+        ax.grid(False, which="minor", axis="both")
+        ax.grid(True, which="major", axis="y", linestyle="--",
+                linewidth=0.34 / paper_scale, color="#b0b0b0", alpha=0.22)
+        # Preserve category dividers, but make them as quiet as the grid.
+        for line in ax.lines:
+            line.set_color("#b0b0b0")
+            line.set_alpha(0.22)
+            line.set_linestyle("--")
+            line.set_linewidth(0.34 / paper_scale)
+    for legend in fig.legends:
+        legend.set_frame_on(False)
+    return bounds
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, required=True)
@@ -128,9 +160,11 @@ def main() -> None:
     fig.align_ylabels(axes)
     fig.subplots_adjust(left=0.28, right=0.98, bottom=0.2, top=0.8, hspace=0.12)
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    bounds = align_paper_style(fig)
     for suffix in ("png", "pdf"):
         path = args.output_dir / f"figure19.{suffix}"
-        fig.savefig(path, dpi=300 if suffix == "png" else None, bbox_inches="tight")
+        with plt.rc_context({"pdf.fonttype": 3}):
+            fig.savefig(path, dpi=300 if suffix == "png" else None, bbox_inches=bounds, pad_inches=0)
         print(f"Saved {path}")
     plt.close(fig)
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import io
 import json
 import math
 import os
@@ -15,7 +16,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
 from matplotlib.lines import Line2D
-from matplotlib.ticker import FuncFormatter, LogFormatterMathtext, LogLocator
+from matplotlib.ticker import FixedLocator, FuncFormatter, LogFormatterMathtext, LogLocator
+from matplotlib.transforms import Bbox
 
 from analyze_sweep import build_pair_rows, load_runs, plot_best_mse, plot_ratio, write_pair_csv, write_summary_csv
 from plot_history import downsample, infer_smooth_span, load_history, smooth_metric
@@ -471,6 +473,81 @@ def build_width_colors(widths: list[int]) -> dict[int, object]:
     return {width: cmap(position) for width, position in zip(widths, color_positions)}
 
 
+def save_paper_grid(fig: plt.Figure, output_path: Path, *, width_comparison: bool) -> None:
+    # Resolve original typography first, then freeze the published panel size.
+    fig.savefig(io.BytesIO(), format="png", dpi=320, bbox_inches="tight", pad_inches=GRID_SAVE_PAD_INCHES)
+    fig.savefig(io.BytesIO(), format="pdf", bbox_inches="tight", pad_inches=GRID_SAVE_PAD_INCHES)
+    fig.set_layout_engine(None)
+    width_pt = 247.23 if width_comparison else 245.90
+    height_pt = 147.89
+    first_panel = fig.axes[0].get_position()
+    # Published PDFs have the same panel origins and dimensions in both grids.
+    left = first_panel.x0 * fig.get_figwidth() - 17.7395 / 72
+    top = first_panel.y1 * fig.get_figheight() + 19.0998 / 72
+    bounds = Bbox.from_bounds(left, top - height_pt / 72, width_pt / 72, height_pt / 72)
+    scale = float(os.environ.get("SCOPE_GRID_FONT_SCALE", "1.30"))
+    annotation_scale = scale if width_comparison else min(scale, 1.20)
+    for ax in fig.axes:
+        # Preserve the published two-decade grid, starting at the lower limit.
+        # LogLocator's stride origin differs between Matplotlib releases.
+        low, high = np.log10(ax.get_ylim())
+        ax.yaxis.set_major_locator(FixedLocator(10.0 ** np.arange(round(low), high, 2)))
+        for axis in (ax.xaxis, ax.yaxis):
+            axis.set_major_locator(FixedLocator(axis.get_majorticklocs()))
+            label = axis.label
+            axis.set_label_coords(*label.get_position(), transform=label.get_transform())
+        # Display the log-scale tick exponents directly (e.g. -9, -7, -5).
+        # Keep the curve coordinates and tick locations unchanged.
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{np.log10(value):.0f}"))
+        ax.tick_params(axis="x", labelsize=7.2)
+        ax.tick_params(axis="y", labelsize=7.2, labelrotation=0)
+        for text in ax.get_yticklabels():
+            text.set_horizontalalignment("right")
+            text.set_verticalalignment("center")
+        if ax.get_ylabel():
+            ax.yaxis.label.set_text("Loss / MSE (log10)")
+        # Keep endpoint labels inside their panels so adjacent 10k/0 labels
+        # remain separate when the tick text grows.
+        for tick, value in zip(ax.xaxis.get_major_ticks(), ax.get_xticks()):
+            tick.label1.set_horizontalalignment(
+                "left" if value == ax.get_xlim()[0]
+                else "right" if value == ax.get_xlim()[1]
+                else "center"
+            )
+        for text in ax.texts:
+            text.set_fontsize(GRID_ANNOTATION_FONT_SIZE * annotation_scale)
+    for legend in fig.legends:
+        for text in legend.get_texts():
+            text.set_fontsize(6.0 * min(scale, 1.20))
+    # Match the reference figures at their final paper scale, without moving axes.
+    paper_scale = (252.0 if width_comparison else 0.95 * 252.0) / width_pt
+    for ax in fig.axes:
+        ax.set_facecolor("white")
+        for spine in ax.spines.values():
+            spine.set_color("black")
+            spine.set_linewidth(0.35 / paper_scale)
+        ax.tick_params(width=0.35 / paper_scale)
+        ax.grid(True, which="major", axis="both", linestyle="--",
+                linewidth=0.34 / paper_scale, color="#b0b0b0", alpha=0.22)
+        for line in ax.lines:
+            line.set_linewidth((0.92 if line.get_linestyle() == "-" else 0.80) / paper_scale)
+        for text in ax.texts:
+            patch = text.get_bbox_patch()
+            if patch is not None:
+                patch.set_edgecolor("none")
+                patch.set_linewidth(0)
+    for legend in fig.legends:
+        legend.set_frame_on(False)
+        for line in legend.get_lines():
+            line.set_linewidth((0.92 if line.get_linestyle() == "-" else 0.80) / paper_scale)
+    fig.savefig(output_path, dpi=320, bbox_inches=bounds, pad_inches=0, facecolor="white")
+    if output_path.suffix.lower() == ".png":
+        # Libertinus OTF uses CFF outlines; Type 3 preserves those glyphs.
+        # Type 42 would embed them with an incompatible TrueType declaration.
+        with plt.rc_context({"pdf.fonttype": 3}):
+            fig.savefig(output_path.with_suffix(".pdf"), bbox_inches=bounds, pad_inches=0, facecolor="white")
+
+
 def plot_convergence_grid(
     merged_dir: Path,
     rows: list[dict[str, object]],
@@ -491,7 +568,7 @@ def plot_convergence_grid(
     with plt.rc_context(
         {
             "font.family": PLOT_FONT_FAMILY,
-            "pdf.fonttype": 42,
+            "pdf.fonttype": 3,
             "ps.fonttype": 42,
             "font.size": 6.0,
             "axes.titlesize": 6.4,
@@ -518,7 +595,7 @@ def plot_convergence_grid(
         )
         axes = axes.flatten()
 
-        colors = {"exp": "#1d4ed8", "none": "#94a3b8"}
+        colors = {"exp": build_width_colors([4, 8, 16, 32])[16], "none": "#94a3b8"}
         line_styles = {"mse": "-", "avg_loss": (0, (2.2, 1.6))}
         xticks = None
         if max_epochs > 0:
@@ -640,14 +717,7 @@ def plot_convergence_grid(
             framealpha=1.0,
         )
 
-        fig.savefig(output_path, dpi=320, bbox_inches="tight", pad_inches=GRID_SAVE_PAD_INCHES, facecolor="white")
-        if output_path.suffix.lower() == ".png":
-            fig.savefig(
-                output_path.with_suffix(".pdf"),
-                bbox_inches="tight",
-                pad_inches=GRID_SAVE_PAD_INCHES,
-                facecolor="white",
-            )
+        save_paper_grid(fig, output_path, width_comparison=False)
         plt.close(fig)
 
 
@@ -674,7 +744,7 @@ def plot_scna_width_grid(
     with plt.rc_context(
         {
             "font.family": PLOT_FONT_FAMILY,
-            "pdf.fonttype": 42,
+            "pdf.fonttype": 3,
             "ps.fonttype": 42,
             "font.size": 6.0,
             "axes.titlesize": 6.4,
@@ -822,14 +892,7 @@ def plot_scna_width_grid(
             framealpha=1.0,
         )
 
-        fig.savefig(output_path, dpi=320, bbox_inches="tight", pad_inches=GRID_SAVE_PAD_INCHES, facecolor="white")
-        if output_path.suffix.lower() == ".png":
-            fig.savefig(
-                output_path.with_suffix(".pdf"),
-                bbox_inches="tight",
-                pad_inches=GRID_SAVE_PAD_INCHES,
-                facecolor="white",
-            )
+        save_paper_grid(fig, output_path, width_comparison=True)
         plt.close(fig)
 
 

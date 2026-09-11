@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import io
 import csv
 import os
 from pathlib import Path
@@ -12,6 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import TwoSlopeNorm, to_hex, to_rgb
 from matplotlib.patches import Patch
+from matplotlib.transforms import Bbox
 from matplotlib.ticker import AutoMinorLocator
 
 
@@ -170,12 +172,48 @@ def _axis_limits(values: list[float]) -> tuple[float, float]:
     return vmin - padding, vmax + padding * 1.6
 
 
+def align_paper_style(fig: plt.Figure) -> Bbox:
+    """Apply reference styling while retaining published axes and export bounds."""
+    fig.savefig(io.BytesIO(), format="png", dpi=300, bbox_inches="tight")
+    fig.savefig(io.BytesIO(), format="pdf", bbox_inches="tight")
+    fig.set_layout_engine(None)
+    first_panel = fig.axes[0].get_position()
+    left = first_panel.x0 * fig.get_figwidth() - 65.5906 / 72
+    top = first_panel.y1 * fig.get_figheight() + 62.89594 / 72
+    bounds = Bbox.from_bounds(left, top - 625.89 / 72, 1604.44 / 72, 625.89 / 72)
+    paper_scale = 516.0 / 1604.44
+    for ax in fig.axes:
+        ax.set_facecolor("white")
+        for spine in ax.spines.values():
+            spine.set_color("black")
+            spine.set_linewidth(0.35 / paper_scale)
+        ax.tick_params(width=0.35 / paper_scale)
+        ax.grid(False, which="minor", axis="both")
+        ax.grid(True, which="major", axis="y", linestyle="--",
+                linewidth=0.34 / paper_scale, color="#b0b0b0", alpha=0.22)
+        # Preserve category dividers, but make them as quiet as the grid.
+        for line in ax.lines:
+            line.set_color("#b0b0b0")
+            line.set_alpha(0.22)
+            line.set_linestyle("--")
+            line.set_linewidth(0.34 / paper_scale)
+    for legend in fig.legends:
+        legend.set_frame_on(False)
+    return bounds
+
+
 def _save_figure(fig: plt.Figure, stem: str) -> tuple[Path, Path]:
     PAPER_FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     png_path = PAPER_FIGURES_DIR / f"{stem}.png"
     pdf_path = PAPER_FIGURES_DIR / f"{stem}.pdf"
-    fig.savefig(png_path, dpi=300, bbox_inches="tight")
-    fig.savefig(pdf_path, bbox_inches="tight")
+    if len(fig.axes) == 2 * len(MODEL_ORDER):
+        bounds = align_paper_style(fig)
+        fig.savefig(png_path, dpi=300, bbox_inches=bounds, pad_inches=0)
+        with plt.rc_context({"pdf.fonttype": 3}):
+            fig.savefig(pdf_path, bbox_inches=bounds, pad_inches=0)
+    else:
+        fig.savefig(png_path, dpi=300, bbox_inches="tight")
+        fig.savefig(pdf_path, bbox_inches="tight")
     plt.close(fig)
     return png_path, pdf_path
 

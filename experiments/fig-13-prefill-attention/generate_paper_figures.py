@@ -1,4 +1,7 @@
 import argparse
+import io
+import os
+import re
 import json
 from pathlib import Path
 
@@ -7,9 +10,10 @@ import matplotlib
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
+from matplotlib.transforms import Bbox
 import numpy as np
 import pandas as pd
-from matplotlib.ticker import FuncFormatter
+from matplotlib.ticker import FixedLocator, FuncFormatter
 
 
 VARIANT_COLORS = {
@@ -103,6 +107,107 @@ def configure_matplotlib() -> None:
 
 
 def save_figure(fig: plt.Figure, output_dir: Path, stem: str) -> None:
+    if stem == "figure_paper_requested_e2e_throughput_with_speedup":
+        # Resolve the original layout before enlarging text or formatting ticks.
+        # Fixed export bounds retain the published PDF size and TeX crop offsets.
+        fig.savefig(io.BytesIO(), format="png", dpi=300, bbox_inches="tight", pad_inches=0.1)
+        captured_bounds = []
+        original_tightbbox = fig.get_tightbbox
+
+        def capture_tightbbox(renderer, *args, **kwargs):
+            bounds = original_tightbbox(renderer, *args, **kwargs)
+            captured_bounds.append(bounds.frozen())
+            return bounds
+
+        fig.get_tightbbox = capture_tightbbox
+        try:
+            fig.savefig(io.BytesIO(), format="pdf", bbox_inches="tight", pad_inches=0.1)
+        finally:
+            fig.get_tightbbox = original_tightbbox
+        fig.set_layout_engine(None)
+        bounds = captured_bounds[-1].padded(0.1)
+        bounds = Bbox.from_bounds(bounds.x0, bounds.y0, 616.32 / 72, 518.79 / 72)
+        scale = float(os.environ.get("SCOPE_FIGURE_FONT_SCALE", "1.15"))
+        # Freeze label anchors as well as axes positions: larger tick fonts
+        # must not move the labels or change the published panel geometry.
+        for ax in fig.axes:
+            for axis in (ax.xaxis, ax.yaxis):
+                axis.set_major_locator(FixedLocator(axis.get_majorticklocs()))
+                label = axis.label
+                axis.set_label_coords(*label.get_position(), transform=label.get_transform())
+                label.set_fontsize(label.get_fontsize() * 1.15)
+            ax.tick_params(axis="x", which="major", labelsize=15.0)
+            # Rotated y ticks need slightly more breathing room between values.
+            ax.tick_params(axis="y", which="major", labelsize=13.5)
+        for legend in fig.legends:
+            for text in legend.get_texts():
+                text.set_fontsize(15.75)
+        # Reuse the inter-row whitespace for the requested title/label gaps.
+        # Translate panels without resizing them; frozen x-label anchors stay
+        # put, giving the lower-row ticks 8 pt more space above Prefill Length.
+        for index, ax in enumerate(fig.axes):
+            shift_pt = -9.0 if index % 4 in (0, 1) else 8.0
+            position = ax.get_position()
+            ax.set_position([position.x0, position.y0 + shift_pt / (72 * fig.get_figheight()),
+                             position.width, position.height])
+            if ax.get_title():
+                ax.title.set_fontsize(16.0)
+        for legend in fig.legends:
+            legend.set_bbox_to_anchor((0.5, 1.05 + 10.0 / (72 * fig.get_figheight())))
+        # Values remain in TFLOP/s internally; display PFLOP/s (1e3 TFLOP/s).
+        # Throughput axes are the first and third axes of each device group.
+        for index, ax in enumerate(fig.axes):
+            if index % 4 in (0, 2):
+                ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value / 1000:g}"))
+                if ax.get_ylabel():
+                    ax.set_ylabel("PFLOP/s", fontweight="bold", fontsize=16.1)
+        original_value_sizes = []
+        for ax in fig.axes:
+            for text in ax.texts:
+                if re.fullmatch(r"[0-9]+(?:\.[0-9]+)?x?", text.get_text()):
+                    original_value_sizes.append((ax, text, text.get_fontsize()))
+                    text.set_fontsize(text.get_fontsize() * scale)
+        # Leave a crowded value at its original size rather than move it.
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+        for ax, text, original_size in original_value_sizes:
+            if text.get_window_extent(renderer).y1 > ax.get_window_extent(renderer).y1 - 1:
+                text.set_fontsize(original_size)
+        # Double only the Speedup panel heights. Preserve every panel width,
+        # throughput height, font size, and existing gap by extending the canvas.
+        old_width, old_height = fig.get_size_inches()
+        extra_height = fig.axes[1].get_position().height * old_height
+        positions = [ax.get_position().frozen() for ax in fig.axes]
+        label_anchors = [
+            [(axis.label.get_transform().transform(axis.label.get_position()) / fig.dpi)
+             for axis in (ax.xaxis, ax.yaxis)]
+            for ax in fig.axes
+        ]
+        legend_anchors = [legend.get_bbox_to_anchor().transformed(fig.dpi_scale_trans.inverted())
+                          for legend in fig.legends]
+        new_height = old_height + 2 * extra_height
+        fig.set_size_inches(old_width, new_height, forward=False)
+        for index, (ax, position, anchors) in enumerate(zip(fig.axes, positions, label_anchors)):
+            row = index % 4
+            shift = (2, 1, 1, 0)[row] * extra_height
+            is_speedup = row in (1, 3)
+            ax.set_box_aspect(0.6 if is_speedup else 0.7)
+            ax.set_position([position.x0, (position.y0 * old_height + shift) / new_height,
+                             position.width,
+                             position.height * old_height * (2 if is_speedup else 1) / new_height])
+            for axis_index, (axis, anchor) in enumerate(zip((ax.xaxis, ax.yaxis), anchors)):
+                label_shift = shift + (extra_height / 2 if is_speedup and axis_index == 1 else 0)
+                axis.set_label_coords(anchor[0] / old_width, (anchor[1] + label_shift) / new_height,
+                                      transform=fig.transFigure)
+        for legend, anchor in zip(fig.legends, legend_anchors):
+            legend.set_bbox_to_anchor((anchor.x0 / old_width,
+                                       (anchor.y0 + 2 * extra_height) / new_height))
+        bounds = Bbox.from_bounds(bounds.x0, bounds.y0, bounds.width,
+                                  bounds.height + 2 * extra_height)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        fig.savefig(output_dir / f"{stem}.png", dpi=300, bbox_inches=bounds, pad_inches=0)
+        fig.savefig(output_dir / f"{stem}.pdf", bbox_inches=bounds, pad_inches=0)
+        return
     output_dir.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_dir / f"{stem}.png", dpi=300, bbox_inches="tight")
     fig.savefig(output_dir / f"{stem}.pdf", bbox_inches="tight")
